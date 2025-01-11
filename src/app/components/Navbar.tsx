@@ -10,7 +10,7 @@ export default function Navbar() {
     return(
         <>
 
-        <nav className="bg-gray-800 bg-greenCS text-white flex items-center justify-between sticky top-10 left-10 right-10 mx-auto w-11/12 z-50 rounded-full">
+        <nav className="bg-gray-800 bg-greenCS text-white flex items-center justify-between sticky top-10 left-10 right-10 mx-auto w-11/12 z-50 rounded-full mb-[-100px] shadow-xl">
 
             <Image
             src="/logo.png"
