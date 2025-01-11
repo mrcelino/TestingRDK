@@ -10,14 +10,14 @@ export default function Navbar() {
     return(
         <>
 
-        <nav className="bg-gray-800 bg-greenCS text-white  flex items-center justify-between sticky top-10 left-10 right-10 mx-auto w-11/12 z-50 rounded-full">
+        <nav className="bg-gray-800 bg-greenCS text-white flex items-center justify-between sticky top-10 left-10 right-10 mx-auto w-11/12 z-50 rounded-full">
 
             <Image
             src="/logo.png"
             alt="Logo"
             width={36}
             height={50}
-            className="ml-10 my-2"
+            className="ml-5 my-2"
         
             />
 

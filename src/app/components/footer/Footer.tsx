@@ -64,7 +64,7 @@ export default function Footer() {
                     </div>
 
 
-                    <p className="bg-greenCS text-white w mt-4 py-1 px-10 rounded-full w-fit content-center mx-auto">Jenis Donasi</p>
+                    <p className="bg-greenCS text-white mt-4 py-1 px-20 rounded-full w-fit mx-auto flex">Jenis Donasi</p>
 
                     <div className="flex justify-around items-center mt-6 text-greenCS text-xl font-semibold">
                         <div className="flex items-center">
