@@ -7,10 +7,9 @@ export default function Footer() {
 
 
         <>
-            <div className="right-0 bottom-100 left-0  absolute">
+        <div className="right-0 bottom-100 left-0 absolute">
     
-    
-                <div className="flex text-white w-full bg-greenCS border-black border-4 relative">
+            <div className="flex text-white w-full bg-greenCS border-black border-4 relative">
     
                     <div className="w-1/2 italic text-center p-10 text-3xl font-light">
                         <p>“Ramadan Penuh <span className="font-bold">Berkah,</span></p> 
@@ -37,9 +36,9 @@ export default function Footer() {
                     <div/>
                 </div>
                     
-                </div>
+            </div>
            
-                <div className="flex mt-5 items-center justify-center">
+            <div className="flex mt-5 items-center justify-center">
                     {/* Kiri */}
                     <div className="w-1/2 mx-auto italic">
     
@@ -250,10 +249,10 @@ export default function Footer() {
     
                         </div>
                     </div>
-                 </div>
+            </div>
     
     
-                <div className="position-relative">
+            <div className="position-relative">
     
                     <div className="bg-greenCS mt-10 flex justify-center items-center z-10  border-4 border-black">
                         <div className="flex items-center py-8">
@@ -275,10 +274,10 @@ export default function Footer() {
                         className="absolute top-1/2 left-1/4 transform -translate-x-40 -translate-y-10"/>  
     
                     
-                </div>
+            </div>
     
     
-                <div className="bg-greenCS mt-10 text-white">
+            <div className="bg-greenCS mt-10 text-white">
                     <div className="py-7 px-14 flex ">
                         <div className="w-1/2">
                             <p className="text-3xl font-bold">Ramadhan Di Kampus</p>
@@ -339,7 +338,7 @@ export default function Footer() {
                                 <p>Petunjuk</p>
                             </div>
     
-                            <div className="mt-20 py-48">
+                            <div className="mt-[280px]">
                                 <div className="flex justify-center">
                                     <Image
                                         src="/images/footer/mediaRDK.svg"
@@ -377,16 +376,16 @@ export default function Footer() {
                     <div className="flex justify-center items-center p-6  bg-gradient-to-r from-cyan-700 to-blue-500s ">
                         <p className="italic text-lg">RDK UGM 1446H. All Rights Reserved</p>
                     </div>
-                </div>
+            </div>
     
             
     
     
-            </div>
+        </div>
         </>
 
             
-        // </div>
+
     
     )
 }
