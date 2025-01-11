@@ -5,7 +5,6 @@ export default function Footer() {
 
     return(
 
-        // <div className="relative min-h-screen bg-greenCS">
 
         <>
             <div className="absolute bottom-100 right-0 left-0 ">
