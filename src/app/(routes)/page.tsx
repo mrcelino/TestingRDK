@@ -39,7 +39,7 @@ export default function Home() {
             </div>
       
             {/* Welcome to RDK */}
-            <div className="bg-greenCS w-full h-full ">
+            <div className="bg-greenCS w-full h-full mx-auto">
             
               <p>Welcome</p>
 
