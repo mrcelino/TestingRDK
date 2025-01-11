@@ -7,7 +7,7 @@ export default function Footer() {
 
 
         <>
-            <div className="absolute bottom-100 right-0 left-0 ">
+            <div className="right-0 bottom-100 left-0  absolute">
     
     
                 <div className="flex text-white w-full bg-greenCS border-black border-4 relative">
