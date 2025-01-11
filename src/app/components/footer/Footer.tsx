@@ -8,7 +8,7 @@ export default function Footer() {
         // <div className="relative min-h-screen bg-greenCS">
 
         <>
-            <div className="absolute bottom-0 inset-x-0 ">
+            <div className="absolute bottom-100 right-0 left-0 ">
     
     
                 <div className="flex text-white w-full bg-greenCS border-black border-4 relative">
