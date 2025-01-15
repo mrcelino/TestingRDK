@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
-export default function Donasi(){
+function Header(){
   return(
-    <div className="bg-slate-50 bg-[url('/pattern.png')] bg-repeat bg-contain">
+    <>
       <section className="relative bg-[#15575B]  h-40 lg:h-32 mt-40 border-y-4 border-black flex justify-center">
         <div className="bg-[#F4AA3D] border-4 rounded-[50px] lg:rounded-[70px] border-black h-44 lg:h-40 top-[105px] lg:-top-4 w-[85%] lg:w-[65%] absolute flex flex-col items-center justify-center">
           <h2 className="font-heading text-xl lg:text-4xl text-white font-bold z-20 mb-4">Hadirkan senyuman,</h2>
@@ -16,7 +16,13 @@ export default function Donasi(){
             className="size-44 -mr-10 lg:mr-0 top-28 lg:size-72 lg:-top-16 absolute right-0 z-0 overflow-hidden"
           />
       </section>
+    </>
+  )
+}
 
+function Banner(){
+  return(
+    <>
       <section className="relative flex min-h-[220px] bg-[#15575B] mt-24 border-y-4 border-black ">
         <div className="flex items-center justify-center w-[45%]">
           <h2 className='font-title text-xl text-white max-w-[300px] italic leading-relaxed'>"Ramadhan Penuh <span className='font-bold'>Berkah</span>, Mari Raih <span className='font-bold'>Pahala Jariyah</span>  Mulai dari <span className='font-bold'>Satu Rupiah</span>"</h2>
@@ -35,8 +41,13 @@ export default function Donasi(){
             className="size-44 -mr-10 lg:left-[500px] lg:mr-0 top-28 lg:size-56 lg:top-20 absolute z-0 overflow-hidden"
           />
       </section>
+    </>
+  )
+}
 
-
+function Information(){
+  return(
+    <>
       <section className='flex font-body items-center lg:min-h-32 border-black border-4 mt-36 mx-3 md:mx-72 rounded-[70px] p-10 md:text-xl lg:leading-loose lg:tracking-widest italic'>
         <h2>"Kamu sekali-kali tidak akan memperoleh kebajikan (yang sempurna) sebelum kamu menginfakkan sebagian harta yang kamu cintai. Apa pun yang kamu infakkan, sesungguhnya Allah Maha Mengetahui tentangnya." (QS. Ali Imran : 92)</h2>
       </section>
@@ -55,10 +66,13 @@ export default function Donasi(){
             />
           </div>
       </section>
+    </>
+  )
+}
 
-
-
-
+function JenisDonasi(){
+  return(
+    <>
       <section className='flex relative mx-10'>
         <div className='w-full relative'>
           <Image
@@ -99,7 +113,6 @@ export default function Donasi(){
                 </div>
               </div>
 
-              {/* Logistik Card */}
               <div className="relative w-2/6">
                 <div className="absolute -top-4 -right-4 w-full h-24 bg-[#CCB087] border-4 border-black"></div>
                 <div className="relative bg-[#F4AA3D] text-white px-4  flex items-center justify-between border-4 border-black w-60 h-24">
@@ -158,14 +171,17 @@ export default function Donasi(){
                 <h2 className='font-body italic px-4 py-2 font-semibold '>Contact Person</h2>
                 <hr className='border-black border-[1.5px] w-[80%]'/>
                 <h2 className='font-body italic px-4 py-2 font-semibold'> 081377660189 (Rofi’ Khoirullah)</h2>
-               
               </div>
             </section>
         </section>
       </section>
+    </>
+  )
+}
 
-
-
+function DonasiIftarSahur(){
+  return(
+    <>
       <section className='flex items-center justify-center xl:mx-96 mt-20'>
           <div className='flex items-center justify-center bg-[#F4AA3D] p-12 w-full mt-20 rounded-full border-4 border-black'>
             <p className='text-5xl italic font-body '>Donasi Iftar dan Sahur</p>
@@ -234,8 +250,13 @@ export default function Donasi(){
               </div>
           </div>
       </section>
+    </>
+  )
+}
 
-
+function DonasiKegiatan(){
+  return(
+    <>
       <section className='flex items-center justify-center xl:mx-96 mt-20'>
           <div className='flex items-center justify-center bg-[#15575B] p-12 w-full mt-20 rounded-full border-4 border-black'>
             <p className='text-5xl italic font-body text-white '>Donasi Kegiatan dan Kajian</p>
@@ -288,7 +309,19 @@ export default function Donasi(){
               </div>
           </div>
       </section>
+    </>
+  )
+}
 
+export default function Donasi(){
+  return(
+    <div className="bg-slate-50 bg-[url('/pattern.png')] bg-repeat bg-contain">
+      <Header/>
+      <Banner/>
+      <Information/>
+      <JenisDonasi/>
+      <DonasiIftarSahur/>
+      <DonasiKegiatan/>
     </div>
   )
 }
