@@ -39,8 +39,8 @@ export default function JadwalPage() {
 
         {/* event (untuk check aja)*/}
 
-        <LayoutBigAgendaGrandOpening />
-        {/* <LayoutBigAgendaRdkFest /> */}
+        {/* <LayoutBigAgendaGrandOpening /> */}
+        <LayoutBigAgendaRdkFest />
         {/* <LayoutBigAgendaMIT /> */}
         {/* <LayoutDailyAgendaOnly /> */}
         {/* <LayoutDailyAgendaNoMimbarSubuh /> */}
