@@ -43,124 +43,129 @@ export default function LayoutIdulFitri() {
         {/* end of special eid mubarak header */}
 
         {/* start of eid mubarak content information */}
-        <div className="grid grid-cols-2 w-[672px] h-[389px] bg-white/10 mt-10">
-          {/* left side */}
-          <div>
-            {/* guest1 container */}
-            <div
-              className="w-[220.44px] h-[324.61px] flex flex-col bg-white rounded-[30px] border-[3px] border-black p-1 rotate-[-7deg]"
-              style={{
-                boxShadow: "8px 1px 0px rgba(0, 0, 0, 2)", // arah ke kanan bawah
-              }}
-            >
-              {/* top part icon container */}
-              <div className="w-full h-fit flex flex-row justify-between pl-2 pr-5 align-text-top">
-                {/* yellow circle thing */}
-                <div className="w-4 h-4 bg-[#F4AA3D] border-[2px] border-black rounded-full"></div>
-                <p className="h-3 mb-auto font-black text-lg">...</p>
-              </div>
-
-              {/* photo container */}
-              <div className="w-[207px] h-[249px] bg-[#EFC828] border border-black mt-4">
-                {/* <Image
+        {/* starrt of foto pengisi acarra container */}
+              <div className="grid grid-cols-2 w-[672px] h-[389px] mt-10">
+                {/* left side */}
+                <div>
+                  {/* guest1 container */}
+                  <div
+                    className="relative w-[220.44px] h-[324.61px] flex flex-col bg-white rounded-[30px] border-[3px] border-black p-1 rotate-[-7deg]"
+                    style={{
+                      boxShadow: "8px 1px 0px rgba(0, 0, 0, 2)", // arah ke kanan bawah
+                    }}
+                  >
+                    {/* top part icon container */}
+                    <div className="w-full h-fit flex flex-row justify-between pl-2 pr-5 align-text-top">
+                      {/* yellow circle thing */}
+                      <div className="w-4 h-4 bg-[#F4AA3D] border-[2px] border-black rounded-full"></div>
+                      <p className="h-3 mb-auto font-black text-lg">...</p>
+                    </div>
+        
+                    {/* photo container */}
+                    <div className="w-[207px] h-[249px] bg-[#EFC828] border border-black mt-4">
+                      {/* <Image
                                 src="/images/jadwal/examplePhotoPengisiAcara.svg"
                                 width={207}
                                 height={249}
                                 alt="sign"
                                 className=""
                               /> */}
-                <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div>
-              </div>
-
-              {/* bottom part icon container*/}
-              <div className="w-full h-fit my-auto flex flex-row justify-start align-middle pl-1 pt-1 gap-x-2">
-                <Image
-                  src="/images/jadwal/icon_heart.svg"
-                  width={15}
-                  height={13}
-                  alt="sign"
-                  className=""
-                />
-                <Image
-                  src="/images/jadwal/icon_comment.svg"
-                  width={14}
-                  height={14}
-                  alt="sign"
-                  className=""
-                />
-                <Image
-                  src="/images/jadwal/icon_share.svg"
-                  width={14}
-                  height={13}
-                  alt="sign"
-                  className=""
-                />
-              </div>
-            </div>
-          </div>
-          {/* end of guest1 container */}
-
-          {/* right side */}
-          <div className="flex w-full">
-            {/* guest2 container */}
-            <div
-              className="w-[220.44px] h-[324.61px] flex flex-col bg-white rounded-[30px] border-[3px] border-black p-1 ml-auto rotate-[8deg]"
-              style={{
-                boxShadow: "8px 1px 0px rgba(0, 0, 0, 2)", // arah ke kanan bawah
-              }}
-            >
-              {/* top part icon container */}
-              <div className="w-full h-fit flex flex-row justify-between pl-2 pr-5 align-text-top">
-                {/* yellow circle thing */}
-                <div className="w-4 h-4 bg-[#F4AA3D] border-[2px] border-black rounded-full"></div>
-                <p className="h-3 mb-auto font-black text-lg">...</p>
-              </div>
-
-              {/* photo container */}
-              <div className="w-[207px] h-[249px] bg-[#15575B] border border-black mt-4">
-                {/* <Image
+                      <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div>
+                    </div>
+        
+                    {/* bottom part icon container*/}
+                    <div className="w-full h-fit my-auto flex flex-row justify-start align-middle pl-1 pt-1 gap-x-2">
+                      <Image
+                        src="/images/jadwal/icon_heart.svg"
+                        width={15}
+                        height={13}
+                        alt="sign"
+                        className=""
+                      />
+                      <Image
+                        src="/images/jadwal/icon_comment.svg"
+                        width={14}
+                        height={14}
+                        alt="sign"
+                        className=""
+                      />
+                      <Image
+                        src="/images/jadwal/icon_share.svg"
+                        width={14}
+                        height={13}
+                        alt="sign"
+                        className=""
+                      />
+                    </div>
+        
+                    <img src="/images/jadwal/shadow.svg" alt="" className="absolute -bottom-24 rotate-[7deg]"/>
+                  </div>
+                </div>
+                {/* end of guest1 container */}
+        
+                {/* right side */}
+                <div className="flex w-full">
+                  {/* guest2 container */}
+                  <div
+                    className="w-[220.44px] h-[324.61px] flex flex-col bg-white rounded-[30px] border-[3px] border-black p-1 ml-auto rotate-[8deg] relative"
+                    style={{
+                      boxShadow: "8px 1px 0px rgba(0, 0, 0, 2)", // arah ke kanan bawah
+                    }}
+                  >
+                    {/* top part icon container */}
+                    <div className="w-full h-fit flex flex-row justify-between pl-2 pr-5 align-text-top">
+                      {/* yellow circle thing */}
+                      <div className="w-4 h-4 bg-[#F4AA3D] border-[2px] border-black rounded-full"></div>
+                      <p className="h-3 mb-auto font-black text-lg">...</p>
+                    </div>
+        
+                    {/* photo container */}
+                    <div className="w-[207px] h-[249px] bg-[#15575B] border border-black mt-4">
+                      {/* <Image
                                 src="/images/jadwal/examplePhotoPengisiAcara.svg"
                                 width={207}
                                 height={249}
                                 alt="sign"
                                 className=""
                               /> */}
-                {/* <img src="/images/jadwal/examplePhotoPengisiAcara.svg" alt="" className="w-fit h-fit "/> */}
-                <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div>
+                      {/* <img src="/images/jadwal/examplePhotoPengisiAcara.svg" alt="" className="w-fit h-fit "/> */}
+                      <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div>
+                    </div>
+        
+                    {/* bottom part icon container*/}
+                    <div className="w-full h-fit my-auto flex flex-row justify-start align-middle pl-1 pt-1 gap-x-2">
+                      <Image
+                        src="/images/jadwal/icon_heart.svg"
+                        width={15}
+                        height={13}
+                        alt="sign"
+                        className=""
+                      />
+                      <Image
+                        src="/images/jadwal/icon_comment.svg"
+                        width={14}
+                        height={14}
+                        alt="sign"
+                        className=""
+                      />
+                      <Image
+                        src="/images/jadwal/icon_share.svg"
+                        width={14}
+                        height={13}
+                        alt="sign"
+                        className=""
+                      />
+                    </div>
+                    <img src="/images/jadwal/shadow.svg" alt="" className="absolute -bottom-24 -left-1 rotate-[-8deg]"/>
+                  </div>
+                </div>
+                {/* end of right side */}
               </div>
-
-              {/* bottom part icon container*/}
-              <div className="w-full h-fit my-auto flex flex-row justify-start align-middle pl-1 pt-1 gap-x-2">
-                <Image
-                  src="/images/jadwal/icon_heart.svg"
-                  width={15}
-                  height={13}
-                  alt="sign"
-                  className=""
-                />
-                <Image
-                  src="/images/jadwal/icon_comment.svg"
-                  width={14}
-                  height={14}
-                  alt="sign"
-                  className=""
-                />
-                <Image
-                  src="/images/jadwal/icon_share.svg"
-                  width={14}
-                  height={13}
-                  alt="sign"
-                  className=""
-                />
-              </div>
-            </div>
-          </div>
-          {/* end of right side */}
-        </div>
+              {/* end of foto pengisi acarra container */}
         {/* end of foto pengisi acarra container */}
 
         {/* starrt of nama pengisi acara container (yang ada dua dibelah) */}
-        <div className="relative w-[778px] h-[90px] rounded-[100px] bg-white flex flex-row mt-10">
+        <div className="relative w-[778px] h-[90px] rounded-[100px] bg-white flex flex-row mt-14">
           {/* left name container */}
           <div className="w-1/2 h-full border-[3px] border-black rounded-l-[100px] flex justify-center items-center">
             <p className="w-[289px] text-[#F4AA3D] font-bold italic text-[14px] text-left">
