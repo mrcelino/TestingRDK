@@ -40,12 +40,12 @@ export default function JadwalPage() {
         {/* event (untuk check aja)*/}
 
         {/* <LayoutBigAgendaGrandOpening /> */}
-        <LayoutBigAgendaRdkFest />
+        {/* <LayoutBigAgendaRdkFest /> */}
         {/* <LayoutBigAgendaMIT /> */}
         {/* <LayoutDailyAgendaOnly /> */}
         {/* <LayoutDailyAgendaNoMimbarSubuh /> */}
         {/* <LayoutDailyAgendaRplOnly /> */}
-        {/* <LayoutBeforeRamadan /> */}
+        <LayoutBeforeRamadan />
         {/* <LayoutAfterRamadan /> */}
         {/* <Layout2LastDay /> */}
         {/* <LayoutIdulFitri /> */}
