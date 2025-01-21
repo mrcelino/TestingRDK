@@ -47,8 +47,8 @@ export default function JadwalPage() {
         {/* <LayoutDailyAgendaRplOnly /> */}
         {/* <LayoutBeforeRamadan /> */}
         {/* <LayoutAfterRamadan /> */}
-        <Layout2LastDay />
-        {/* <LayoutIdulFitri /> */}
+        {/* <Layout2LastDay /> */}
+        <LayoutIdulFitri />
 
         {/* event */}
 
