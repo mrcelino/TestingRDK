@@ -45,8 +45,8 @@ export default function JadwalPage() {
         {/* <LayoutDailyAgendaOnly /> */}
         {/* <LayoutDailyAgendaNoMimbarSubuh /> */}
         {/* <LayoutDailyAgendaRplOnly /> */}
-        <LayoutBeforeRamadan />
-        {/* <LayoutAfterRamadan /> */}
+        {/* <LayoutBeforeRamadan /> */}
+        <LayoutAfterRamadan />
         {/* <Layout2LastDay /> */}
         {/* <LayoutIdulFitri /> */}
 
@@ -55,7 +55,7 @@ export default function JadwalPage() {
         {/*  */}
 
         {/* TWO BUTTON CONTAINER */}
-        <div className="flex flex-row mt-2 md:mt-10 lg:mt-20 gap-x-10 md:gap-x-20 lg:gap-x-40 mb-10 z-20">
+        <div className="flex flex-row mt-4 md:mt-10 lg:mt-20 gap-x-10 md:gap-x-20 lg:gap-x-40 mb-10 z-20">
           {/* button day before */}
           <div className="w-[81px] md:w-[160px] lg:w-[278px] h-[17px] md:h-[34px] lg:h-[59px] bg-[#F4AA3D] hover:bg-[#cc8f33] cursor-pointer border lg:border-[3px] border-black rounded-[30px] items-center justify-center flex flex-row gap-x-4">
             <Image
