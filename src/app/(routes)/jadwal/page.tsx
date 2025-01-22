@@ -99,6 +99,7 @@ export default function JadwalPage() {
         />
 
         {/* event (untuk check aja)*/}
+        
 
         <LayoutBigAgendaGrandOpening />
         {/* <LayoutBigAgendaRdkFest /> */}
