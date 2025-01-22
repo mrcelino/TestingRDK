@@ -19,7 +19,7 @@ export default function LayoutBigAgendaGrandOpening() {
 
       <SpectacularShow />
 
-      <div className="w-[153px] md:w-[318px] lg:w-[820px] h-[38px] md:h-[63px] lg:h-[161px] bg-white rounded-[200px] border lg:border-[3px] border-black shadow-lg relative flex justify-center items-center mt-16 lg:mt-40 mb-6 lg:mb-10">
+      <div className="w-[153px] md:w-[318px] lg:w-[820px] h-[38px] md:h-[63px] lg:h-[161px] bg-white rounded-[200px] border lg:border-[3px] border-black shadow-lg relative flex justify-center items-center text-center mt-16 lg:mt-40 mb-6 lg:mb-10 px-2 md:px-6">
         <h1 className="text-[#15575B] text-[8px] md:text-[12px] lg:text-2xl font-bold italic">
           "Stay tuned for exciting agendas this Ramadan!"
         </h1>
