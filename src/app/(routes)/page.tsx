@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       
             {/* Hero Slider */}
-            <div className="relative">
+            <div className="relative font-titania">
               <Image
                 src="/images/home/hero_slider.png"
                 alt="Hero Slider"
@@ -140,9 +140,6 @@ export default function Home() {
     </main>
 
 
-
-
- 
 
   )
 }
