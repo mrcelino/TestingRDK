@@ -2,20 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.bg-greenCS {
+  background-color: #15575B;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.text-greenCS{
+  color: #15575B;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.bg-orangeCS {
+  background-color: #F4AA3D;
+}
+
+.roundedCS {
+  border: #15575B solid 4px;
+}
+
+.text-orangeCS{
+  color: #EFC828;
 }
