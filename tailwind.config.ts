@@ -12,6 +12,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        trirong: "var(--font-trirong)", // Menggunakan variabel dari next/font
+      },
     },
   },
   plugins: [],
