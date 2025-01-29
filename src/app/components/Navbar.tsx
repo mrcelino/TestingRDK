@@ -3,57 +3,75 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { Menu, X } from "lucide-react"; // Gunakan ikon lucide-react
 
 export default function Navbar() {
     const pathname = usePathname();
+    const [isOpen, setIsOpen] = useState(false);
 
-    return(
-        <>
+    const toggleMenu = () => setIsOpen(!isOpen);
 
-        <nav className="bg-gray-800 bg-greenCS text-white flex items-center justify-between sticky top-10 left-10 right-10 mx-auto w-11/12 z-50 rounded-full mb-[-100px] shadow-xl">
+    return (
+        <nav className="bg-gradient-to-r from-[#155458] from-30% to-[#51B2B8] text-white sticky lg:top-10 lg:mt-[-4rem] z-50 shadow-md lg:w-11/12 lg:mx-auto lg:rounded-full">
+            {/* Navbar Container */}
+            <div className="flex items-center lg:justify-between px-4 py-2">
+                {/* Hamburger Icon */}
+                <button
+                    className="md:hidden focus:outline-none"
+                    onClick={toggleMenu}
+                >
+                    {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                </button>
 
-            <Image
-            src="/logo.png"
-            alt="Logo"
-            width={36}
-            height={50}
-            className="ml-5 my-2"
-        
-            />
+                {/* Logo */}
+                <Image
+                    src="/svg/logo-rdk.svg"
+                    alt="Logo"
+                    width={30}
+                    height={50}
+                    className="mx-auto lg:mx-0 w-10 h-10"
+                />
 
-            <ul className="flex">
-              
-                <Link href="/">
-                    <li className={`mr-10 ${pathname === "/" ? "text-orange-400" : "text-white"} hover:text-orange-400`}>Home</li></Link>
 
-                <Link href="/jadwal">
-                    <li className={`mr-10 ${pathname === "/jadwal" ? "text-orange-400" : "text-white"} hover:text-orange-400`}>Jadwal</li></Link>
-
-                <Link href="/artikel">
-                    <li className={`mr-10 ${pathname === "/artikel" ? "text-orange-400" : "text-white"} hover:text-orange-400`}>Artikel</li> </Link>
-
-                <Link href="/makanan">
-                    <li className={`mr-10 ${pathname === "/makanan" ? "text-orange-400" : "text-white"} hover:text-orange-400`}>Menu Hidangan</li></Link>
-
-                <Link href="/kegiatan">
-                    <li className={`mr-10 ${pathname === "/kegiatan" ? "text-orange-400" : "text-white"} hover:text-orange-400`}>Kegiatan</li></Link>
-
-                <Link href="/donasi">
-                    <li className={`mr-10 ${pathname === "/donasi" ? "text-orange-400" : "text-white"} hover:text-orange-400`}>Donasi</li> </Link>
-
-                <Link href="/faq">
-                    <li className={`mr-10 ${pathname === "/faq" ? "text-orange-400" : "text-white"} hover:text-orange-400`}>FAQ</li></Link>
-
-            </ul>
-            
-            <div>
-                
+                {/* Menu Items (Hidden on Mobile) */}
+                <ul className="hidden md:flex space-x-6 mx-auto w-10/11">
+                    {menuItems(pathname)}
+                </ul>
             </div>
 
-    
+            {/* Mobile Menu (Visible only when open) */}
+            {isOpen && (
+                <div className="md:hidden bg-white">
+                    <ul className="flex flex-col space-y-4 py-4 ml-3">
+                        {menuItems(pathname)}
+                    </ul>
+                </div>
+            )}
         </nav>
-        
-        </>
-    )
+    );
+}
 
+function menuItems(pathname: string) {
+    const links = [
+        { href: "/", label: "Home" },
+        { href: "/jadwal", label: "Jadwal" },
+        { href: "/artikel", label: "Artikel" },
+        { href: "/makanan", label: "Menu Hidangan" },
+        { href: "/kegiatan", label: "Kegiatan" },
+        { href: "/donasi", label: "Donasi" },
+        { href: "/faq", label: "FAQ" },
+    ];
+
+    return links.map(({ href, label }) => (
+        <Link key={href} href={href}>
+            <li
+                className={` px-4 py-2  italic lg:not-italic ${
+                    pathname === href ? "text-orange-400" : "text-[#15575B] lg:text-white"
+                } hover:text-orange-400`}
+            >
+                {label}
+            </li>
+        </Link>
+    ));
 }
