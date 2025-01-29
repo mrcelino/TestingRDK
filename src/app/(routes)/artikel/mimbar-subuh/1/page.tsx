@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function KajianSamudra() {
+export default function KajianMimbarSubuh() {
 	return (
 		<section className="p-6">
 			<main className="p-2 lg:w-11/12 lg:mx-auto">
@@ -88,7 +88,7 @@ export default function KajianSamudra() {
 				</article>
 
 				{/* Previous */}
-				<Link href="/artikel/samudra">
+				<Link href="/artikel/mimbar-subuh">
 					<button className="py-2 px-4 border-4 border-black bg-orangeCS rounded-full flex font-medium items-center italic mt-10 active:bg-orange-500 hover:bg-orange-500">
 						<svg
 							width="26"

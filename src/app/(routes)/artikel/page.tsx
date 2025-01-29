@@ -56,7 +56,7 @@ export default function Artikel() {
 	return (
 		<section>
 			{/* Hero Slider */}
-			<div className="relative w-full h-[33vh] lg:h-screen">
+			<div className="relative w-full h-[36vh] lg:h-screen">
 				<Swiper
 					navigation={{
 						nextEl: ".custom-swiper-button-next",
@@ -80,8 +80,8 @@ export default function Artikel() {
 									objectFit="cover"
 								/>
 
-								<div className="absolute bottom-[11rem] left-[4rem] flex gap-5 items-center z-20">
-									<p className="text-xl text-orangeCS italic font-semibold">
+								<div className="absolute lg:bottom-[11rem] lg:left-[4rem] top-[7rem] left-4 flex gap-5 items-center z-20 text-xs ">
+									<p className="lg:text-xl text-orangeCS italic font-semibold">
 										RDK <span className="text-white">News</span>
 									</p>
 									<Image
@@ -89,13 +89,22 @@ export default function Artikel() {
 										alt="Logo RDK"
 										width={30}
 										height={30}
-										className="z-20"
+										className="z-20 hidden lg:block"
 									/>
-									<div className="w-[3px] h-8 bg-white"></div>
+
+									<Image
+										src="/logo.png"
+										alt="Logo RDK"
+										width={20}
+										height={20}
+										className="z-20 lg:hidden"
+									/>
+
+									<div className="lg:w-[3px] w-[1px] lg:h-8 h-6 bg-white"></div>
 									<p className="font-light italic text-white">March, 12 2025</p>
 								</div>
 
-								<div className="absolute bottom-10 text-3xl text-center font-semibold italic text-white p-4 w-[65%] block mx-[14rem] z-20">
+								<div className="absolute lg:bottom-10 lg:text-3xl text-center font-semibold italic text-white p-4 lg:w-[65%] block lg:mx-[14rem] z-20 bottom-5 w-full">
 									{slide.title}
 								</div>
 
@@ -104,7 +113,7 @@ export default function Artikel() {
 									alt="Logo RDK"
 									width={2000}
 									height={100}
-									className="absolute bottom-0 left-0 right-0 b h-96 z-10"
+									className="absolute bottom-0 left-0 right-0 lg:h-96 z-10 h-[10rem]"
 								/>
 							</div>
 						</SwiperSlide>
@@ -112,11 +121,11 @@ export default function Artikel() {
 				</Swiper>
 
 				{/* Tombol Navigasi */}
-				<div className="custom-swiper-button-prev absolute top-1/2 left-5 transform -translate-y-1/2 z-10 cursor-pointer hover:text-gray-200 text-white text-5xl">
+				<div className="custom-swiper-button-prev absolute top-1/2 left-5 transform -translate-y-1/2 z-10 cursor-pointer hover:text-gray-200 text-white lg:text-5xl hidden lg:block">
 					❮
 				</div>
 
-				<div className="custom-swiper-button-next absolute top-1/2 right-5 transform -translate-y-1/2 z-10 cursor-pointer hover:text-gray-200 text-white text-5xl">
+				<div className="custom-swiper-button-next absolute top-1/2 right-5 transform -translate-y-1/2 z-10 cursor-pointer hover:text-gray-200 text-white lg:text-5xl hidden lg:block">
 					❯
 				</div>
 			</div>
@@ -140,7 +149,12 @@ export default function Artikel() {
 							}}
 							loop={true}
 							modules={[Navigation, Autoplay]}
-							slidesPerView={3}
+							slidesPerView={1}
+							breakpoints={{
+								640: { slidesPerView: 1 }, // Mobile (default)
+								768: { slidesPerView: 2 }, // Tablet
+								1024: { slidesPerView: 3 }, // Desktop
+							}}
 							onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
 						>
 							{news.map((slide, index) => {
@@ -149,8 +163,8 @@ export default function Artikel() {
 								return (
 									<SwiperSlide key={index}>
 										<div
-											className={`bg-white shadow-lg border rounded-3xl my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[15rem] ${
-												isHighlighted ? "z-10 object-cover" : "w-[90%]"
+											className={`bg-white lg:shadow-lg border rounded-3xl my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[15rem] ${
+												isHighlighted ? "z-10 object-cover" : "lg:w-[90%]"
 											} `}
 										>
 											<Link href="/artikel/big-agenda-ramadan">
@@ -202,7 +216,12 @@ export default function Artikel() {
 							}}
 							loop={true}
 							modules={[Navigation, Autoplay]}
-							slidesPerView={3}
+							slidesPerView={1} // Default untuk mobile
+							breakpoints={{
+								640: { slidesPerView: 1 }, // Mobile (default)
+								768: { slidesPerView: 2 }, // Tablet
+								1024: { slidesPerView: 3 }, // Desktop
+							}}
 							onSlideChange={(swiper) => setActiveIndexSmd(swiper.realIndex)}
 						>
 							{news.map((slide, index) => {
@@ -211,7 +230,7 @@ export default function Artikel() {
 								return (
 									<SwiperSlide key={index}>
 										<div
-											className={`bg-white shadow-lg border rounded-3xl my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[15rem] ${
+											className={`bg-white lg:shadow-lg border rounded-3xl my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[15rem] ${
 												isHighlighted ? "z-10 object-cover" : "w-[90%] ml-5"
 											} `}
 										>
@@ -264,12 +283,17 @@ export default function Artikel() {
 							}}
 							loop={true}
 							modules={[Navigation, Autoplay]}
-							slidesPerView={3}
+							slidesPerView={1} // Default untuk mobile
+							breakpoints={{
+								640: { slidesPerView: 1 }, // Mobile (default)
+								768: { slidesPerView: 2 }, // Tablet
+								1024: { slidesPerView: 3 }, // Desktop
+							}}
 						>
 							{news.map((slide, index) => {
 								return (
 									<SwiperSlide key={index}>
-										<div className="bg-white shadow-lg border rounded-3xl my-4 transition-transform duration-300 ease-in-out hover:scale-105 h-[15rem] ">
+										<div className="bg-white lg:shadow-lg border rounded-3xl my-4 transition-transform duration-300 ease-in-out hover:scale-105 h-[15rem] ">
 											<Link href="/artikel/ramadan-public-lecture">
 												<Image
 													alt="Mimbar Subuh"
@@ -319,7 +343,12 @@ export default function Artikel() {
 							}}
 							loop={true}
 							modules={[Navigation, Autoplay]}
-							slidesPerView={3}
+							slidesPerView={1} // Default untuk mobile
+							breakpoints={{
+								640: { slidesPerView: 1 }, // Mobile (default)
+								768: { slidesPerView: 2 }, // Tablet
+								1024: { slidesPerView: 3 }, // Desktop
+							}}
 							onSlideChange={(swiper) => setActiveIndexMs(swiper.realIndex)}
 						>
 							{news.map((slide, index) => {
@@ -329,11 +358,11 @@ export default function Artikel() {
 								return (
 									<SwiperSlide key={index}>
 										<div
-											className={`bg-white shadow-lg border rounded-3xl my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[15rem] ${
-												isHighlighted ? "z-10 object-cover" : "w-[90%] ml-5"
+											className={`bg-white lg:shadow-lg border rounded-3xl my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[15rem] ${
+												isHighlighted ? "z-10 object-cover" : "lg:w-[90%] lg:ml-5"
 											} `}
 										>
-											<Link href="/artikel/samudra">
+											<Link href="/artikel/mimbar-subuh">
 												<Image
 													alt={slide.title}
 													src={slide.image}

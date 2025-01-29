@@ -49,7 +49,7 @@ const news = [
 	},
 ];
 
-export default function Samudra() {
+export default function MimbarSubuh() {
 	const pathname = usePathname();
 	const [activeIndex, setActiveIndex] = useState(0);
 
@@ -133,11 +133,11 @@ export default function Samudra() {
 			<main className="p-4 mb-10 w-11/12 mx-auto">
 				<div className="relative z-20 lg:mx-auto bg-gradient-to-r from-white via-[#15575B] to-white lg:bg-transparent lg:p-0 h-10 lg:h-20">
 					<p className="lg:text-3xl text-xl font-semibold text-white text-center mx-auto absolute top-1 lg:top-5 w-full italic">
-						Samudra
+						Mimbar Subuh
 					</p>
 				</div>
 
-				{/* Kajian Samudra */}
+				{/* Kajian Mimbar Subuh */}
 				<ul>
 					{/* Top News on the right */}
 					<li>
@@ -176,7 +176,7 @@ export default function Samudra() {
 												isHighlighted ? "z-10 object-cover" : "lg:w-[90%]"
 											} `}
 										>
-											<Link href="/artikel/samudra/1">
+											<Link href="/artikel/mimbar-subuh/1">
 												<Image
 													alt="Mimbar Subuh"
 													src={slide.image}
@@ -238,7 +238,7 @@ export default function Samudra() {
 								return (
 									<SwiperSlide key={index}>
 										<div className="bg-white lg:shadow-lg border rounded-3xl my-4 transition-transform duration-300 ease-in-out hover:scale-105 h-[15rem] ">
-											<Link href="/artikel/samudra/1">
+											<Link href="/artikel/mimbar-subuh/1">
 												<Image
 													alt="Mimbar Subuh"
 													src={slide.image}
