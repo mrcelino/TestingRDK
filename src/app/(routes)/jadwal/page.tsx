@@ -25,6 +25,7 @@ import Layout2LastDay from "./components/Layout2LastDay";
 import LayoutIdulFitri from "./components/LayoutIdulFitri";
 import LayoutBigAgendaRdkFest from "./components/LayoutBigAgendaRdkFest";
 import Calendar from "./components/shared/Calendar";
+import LayoutAgendaNotReleased from "./components/LayoutAgendaNotReleased";
 
 export default function JadwalPage() {
   const today = startOfToday();
@@ -101,13 +102,14 @@ export default function JadwalPage() {
         {/* event (untuk check aja)*/}
         
 
-        <LayoutBigAgendaGrandOpening />
+        {/* <LayoutBigAgendaGrandOpening /> */}
         {/* <LayoutBigAgendaRdkFest /> */}
         {/* <LayoutBigAgendaMIT /> */}
         {/* <LayoutDailyAgendaOnly /> */}
         {/* <LayoutDailyAgendaNoMimbarSubuh /> */}
         {/* <LayoutDailyAgendaRplOnly /> */}
         {/* <LayoutBeforeRamadan /> */}
+        <LayoutAgendaNotReleased />
         {/* <LayoutAfterRamadan /> */}
         {/* <Layout2LastDay /> */}
         {/* <LayoutIdulFitri /> */}
