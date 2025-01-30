@@ -9,7 +9,7 @@ type Food = {
 };
 
 async function fetchData() {
-  const data = await fetch(`http://localhost:3000/api/makanan/buka`, {
+  const data = await fetch(`/api/makanan/buka`, {
     cache: "no-store",
   });
   return await data.json();
@@ -17,28 +17,28 @@ async function fetchData() {
 
 function Menu({ food }: { food: Food }) {
   return(
-    <div className="flex items-center space-x-2 mx-auto">
+    <div className="flex items-center space-x-2 mt-4 mx-auto">
       <img
         alt="A plate of Sate Betawi with dipping sauce and garnish"
-        className="size-36 xl:size-40 rounded-full border-4 border-black -mt-12 xl:-mt-4 z-10 hover:scale-110 transition duration-500"
+        className="size-28 sm:size-36 xl:size-40 rounded-full border-4 border-black -mt-14 xl:-mt-8 z-10 hover:scale-110 transition duration-500"
         height="100"
         src="https://storage.googleapis.com/a1aa/image/Y8PUtNENfMWLeEb3NfrU8UVSnCpNgOTaYob2YTYc5w2w7dEoA.jpg"
         width="100"
       />
       <div>
-        <div className="flex items-center justify-center bg-[#15575B] text-white px-2 py-2 xl:py-2 -ml-20 xl:mt-14 xl:-ml-20 pl-20 xl:pl-16 xl:px-2 rounded-full border-4 border-black w-70">
-          <span className="text-2xl xl:text-2xl font-medium text-center italic">
+        <div className="flex items-center justify-center bg-[#15575B]  text-white px-2 py-2 pl-14 xl:py-2 -ml-20 xl:mt-14 xl:-ml-20 sm:pl-20 xl:pl-16 xl:px-2 rounded-full border-4 border-black w-70">
+          <span className="sm:text-2xl xl:text-2xl font-medium text-center italic">
             {food.date}
           </span>
         </div>
-        <p className="text-sm xl:text-lg italic font-semibold mt-2 -ml-1">
+        <p className="text-xs sm:text-sm xl:text-lg italic font-semibold mt-2 -ml-1">
           Day {food.id} Ramadhan
         </p>
-        <p className="text-[#F4AA3D] italic font-body font-semibold text-sm xl:text-lg -ml-1 mt-1">
+        <p className="text-xs text-[#F4AA3D] italic font-body font-semibold sm:text-sm xl:text-lg -ml-1 mt-1">
           {food.name}
         </p>
-        <p className="italic text-sm -ml-1 mt-1 font-body font-medium xl:text-base">
-          "Sungguh nikmatnya berbuka <br />puasa dengan penuh syukur <br />kepada Allah SWT."
+        <p className="italic text-xs sm:text-sm -ml-1 mt-1 font-body font-medium xl:text-base max-w-52">
+          "Sungguh nikmatnya berbuka puasa dengan penuh syukur kepada Allah SWT."
         </p>
       </div>
     </div>
@@ -57,7 +57,7 @@ export default function Food() {
   const loadData = useCallback(async () => {
     const data = await fetchData();
     setFoods(data);
-  }, []);
+  }, [fetchData]);
 
   useEffect(() => {
     loadData();
@@ -137,21 +137,21 @@ export default function Food() {
         ))}
       </div>
 
-      <div className="flex justify-between xl:mx-60 min-h-12 my-10">
+      <div className="flex justify-around gap-2 xl:mx-40 mx-2 h-10 sm:h-12 my-10">
         <button
           onClick={prevPage}
-          className="flex justify-between px-6 items-center bg-[#F4AA3D] font-body italic font-medium border-[3px] border-black rounded-full w-44 cursor-pointer hover:scale-105 transition duration-200"
+          className="flex justify-evenly px-4 items-center bg-[#F4AA3D] font-body italic font-medium border-[3px] border-black rounded-full w-32 sm:w-44 cursor-pointer hover:scale-105 transition duration-200"
         >
-          <Image src="/ic_before.png" alt="Before logo" width={20} height={20} />
-          <span>Day Before</span>
+          <Image src="/images/makanan/ic_before.png" alt="Before logo" width={20} height={20} />
+          <span className="text-xs sm:text-base">Day Before</span>
         </button>
         <button
           onClick={nextPage}
           disabled={!hasMoreData}
-          className="flex justify-between px-6 items-center bg-[#15575B] font-body text-white italic font-medium border-[3px] border-black rounded-full w-44 cursor-pointer hover:scale-105 transition duration-200"
+          className="flex justify-evenly px-4 items-center bg-[#15575B] font-body text-white italic font-medium border-[3px] border-black rounded-full w-32 sm:w-44 cursor-pointer hover:scale-105 transition duration-200"
         >
-          <Image src="/ic_after.png" alt="After logo" width={20} height={10} />
-          <span>Next Day</span>
+          <span className="text-xs sm:text-base">Next Day</span>
+          <Image src="/images/makanan/ic_after.png" alt="After logo" width={20} height={10} />
         </button>
       </div>
     </>
