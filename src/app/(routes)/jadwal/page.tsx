@@ -71,7 +71,7 @@ export default function JadwalPage() {
     // <div className="w-full h-fit flex flex-col bg-gradient-to-b from-[#ffffff] from-1%  to-[#21666A] to-30% bg-scroll items-center">
     //   <div className="w-full h-full bg-[url('/images/jadwal/pattern-for-bg.svg')] bg-opacity-5 bg-repeat flex flex-col items-center">
     <div className="w-full h-fit flex flex-col bg-gradient-to-b from-[#ffffff] from-1% to-[#21666A] to-30% bg-scroll items-center relative">
-      <div className="absolute inset-0 bg-[url('/images/jadwal/pattern-for-bg.svg')] bg-repeat opacity-10"></div>
+      <div className="absolute inset-0 lg:bg-[url('/images/jadwal/pattern-for-bg.svg')] bg-repeat opacity-10"></div>
       <div className="w-full h-full relative flex flex-col items-center">
         <JadwalHeader />
         {/* temporary calendar */}
@@ -96,7 +96,7 @@ export default function JadwalPage() {
           // width={210}
           // height={133}
           alt="sign"
-          className="mt-5 md:mt-8 lg:mt-10 w-[51px] h-[32px] md:w-[99px] md:h-[63px] lg:w-[210px] lg:h-[133px]"
+          className="mt-5 md:mt-8 lg:mt-10 w-[63px] h-[40px] md:w-[99px] md:h-[63px] lg:w-[210px] lg:h-[133px]"
         />
 
         {/* event (untuk check aja)*/}
@@ -109,10 +109,10 @@ export default function JadwalPage() {
         {/* <LayoutDailyAgendaNoMimbarSubuh /> */}
         {/* <LayoutDailyAgendaRplOnly /> */}
         {/* <LayoutBeforeRamadan /> */}
-        <LayoutAgendaNotReleased />
+        {/* <LayoutAgendaNotReleased /> */}
         {/* <LayoutAfterRamadan /> */}
         {/* <Layout2LastDay /> */}
-        {/* <LayoutIdulFitri /> */}
+        <LayoutIdulFitri />
 
         {/* event */}
 
