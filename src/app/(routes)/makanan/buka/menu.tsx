@@ -109,26 +109,26 @@ export default function Food() {
     <>
       {showModal && selectedFood && (
         <div className="fixed inset-0 flex justify-center items-start bg-black bg-opacity-50 z-50">
-          <div className="relative p-8 bg-white rounded-[50px] shadow-lg w-80 mt-14 sm:size-[350px]">
+          <div className="relative p-8 bg-white rounded-[35px] lg:rounded-[50px] shadow-lg w-80 mt-14 sm:size-[350px]">
             <img
               alt="A plate of Sate Betawi with dipping sauce and garnish"
               className="p-4 rounded-[50px] size-[350px] object-cover absolute top-0 left-0 z-0"
               src="https://storage.googleapis.com/a1aa/image/Y8PUtNENfMWLeEb3NfrU8UVSnCpNgOTaYob2YTYc5w2w7dEoA.jpg"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-black/10 rounded-[50px] z-10"></div>
-            <div className="relative z-10 text-center text-white mt-36">
-              <h2 className="text-2xl font-bold font-body italic">OUR MENU TODAY</h2>
-              <h2 className="text-lg font-body italic">{selectedFood.id} Ramadan 1446 H</h2>
-              <h2 className="text-lg font-body italic font-semibold mb-2">{selectedFood.name}</h2>
-              <button
-                onClick={closeModal}
-                className="px-4 py-1 bg-[#F4AA3D] text-white rounded-full text-lg font-body font-semibold"
-              >
-                Okay
-              </button>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-black/10 rounded-[35px] lg:rounded-[50px] z-10"></div>
+              <div className="relative z-10 text-center text-white mt-36">
+                <h2 className="text-2xl font-bold font-body italic">OUR MENU TODAY</h2>
+                <h2 className="text-lg font-body italic">{selectedFood.id} Ramadan 1446 H</h2>
+                <h2 className="text-lg font-body italic font-semibold mb-2">{selectedFood.name}</h2>
+                <button
+                  onClick={closeModal}
+                  className="px-4 py-1 bg-[#F4AA3D] text-white rounded-full text-lg font-body font-semibold"
+                >
+                  Okay
+                </button>
+              </div>
             </div>
           </div>
-        </div>
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
