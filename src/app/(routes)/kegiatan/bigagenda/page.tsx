@@ -215,10 +215,10 @@ function RDKFestival(){
           src="/images/kegiatan/hp.svg"
           width={300}
           height={300}
-          className="w-72 xl:w-1/2 my-5 xl:mb-10"
+          className="w-72 xl:w-[550px] my-5 xl:mb-10"
           alt="laptop"
           />
-          <div className="bg-[#15575B] min-h-20 md:h-32 xl:h-56 rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm  xl:max-w-full">
+          <div className="bg-[#15575B] min-h-20 md:h-32 xl:h-56 rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm  xl:max-w-xl">
             <div className="flex flex-row gap-1 mb-2 xl:mb-4">
                 <div className="bg-[#D64758] border-2 border-black rounded-full size-3 xl:size-5"/>
                 <div className="bg-[#F4B653] border-2 border-black rounded-full size-3 xl:size-5"/>
