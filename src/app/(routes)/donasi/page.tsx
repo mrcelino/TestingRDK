@@ -5,8 +5,8 @@ function Header(){
     <>
       <section className="relative bg-[#15575B]  h-24 lg:h-32 mt-40 border-y-4 border-black flex justify-center">
         <div className="bg-[#F4AA3D] border-4 rounded-[50px] lg:rounded-[70px] border-black h-28 p-2 lg:h-40 -top-3 lg:-top-4 w-[85%] lg:w-[65%] absolute flex flex-col items-center justify-center max-w-xl md:max-w-2xl lg:max-w-full">
-          <h2 className="font-heading text-sm md:text-2xl lg:text-4xl text-white font-medium z-20 lg:mb-4">Hadirkan senyuman,</h2>
-          <h2 className="font-heading text-sm md:text-2xl lg:text-4xl text-white font-medium z-20 md:max-w-2xl text-center lg:max-w-full">wujudkan cinta di bulan suci Ramadan</h2>
+          <h2 className="font-heading text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white font-medium z-20 xl:mb-4">Hadirkan senyuman,</h2>
+          <h2 className="font-heading text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white font-medium z-20 md:max-w-2xl text-center lg:max-w-full">wujudkan cinta di bulan suci Ramadan</h2>
         </div>
         {/* <Image
             src="/maskot.webp"
@@ -48,21 +48,21 @@ function Banner(){
 function Information(){
   return(
     <>
-      <section className='flex font-body md:mx-auto text-xs p-4 items-center lg:min-h-32 border-black border-2 xl:border-4 mt-36 mx-3 xl:mx-72 rounded-2xl xl:rounded-[70px] lg:p-10 md:text-lg lg:text-xl lg:leading-loose lg:tracking-widest italic md:max-w-2xl lg:max-w-full'>
+      <section className='flex font-body mx-3 sm:mx-auto md:mx-auto text-xs p-4 items-center xl:min-h-32 border-black border-2 xl:border-4 mt-36 xl:mx-auto rounded-2xl xl:rounded-[70px] xl:p-10 md:text-lg lg:text-xl lg:leading-loose lg:tracking-widest italic max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl'>
         <h2>"Kamu sekali-kali tidak akan memperoleh kebajikan (yang sempurna) sebelum kamu menginfakkan sebagian harta yang kamu cintai. Apa pun yang kamu infakkan, sesungguhnya Allah Maha Mengetahui tentangnya." (QS. Ali Imran : 92)</h2>
       </section>
 
-      <section className='flex flex-col justify-center items-center xl:flex-row xl:mx-52 gap-x-4 p-4 mt-4 md:mx-4'>
-          <div className='font-body text-xs md:text-lg xl:w-[82%] p-2 md:p-4 xl:p-10 text-white xl:text-xl xl:tracking-wider italic leading-normal lg:leading-loose font-medium xl:min-h-36 bg-[#F4AA3D] rounded-2xl xl:rounded-[35px] border-2 xl:border-4 border-black md:max-w-2xl lg:max-w-full'>
+      <section className='flex flex-col lg:flex-row justify-center items-center xl:flex-row lg:mx-24 xl:mx-auto gap-x-4 p-4 mt-4 md:mx-4'>
+          <div className='flex items-center justify-center font-body text-xs md:text-lg xl:w-[82%] p-2 md:p-4 xl:p-10 text-white lg:text-xl xl:tracking-wider italic leading-normal lg:leading-loose font-medium sm:min-h-16 xl:min-h-36 bg-[#F4AA3D] rounded-2xl xl:rounded-[35px] border-2 xl:border-4 border-black max-w-lg md:max-w-2xl xl:max-w-4xl'>
             <h2>Donasi Langsung melalui COD Sekitar Kampus UGM / Sekretariat Jama’ah Shalahuddin (Sayap Selatan Masjid Kampus UGM)</h2>
           </div>
-          <div className='hidden lg:block relative w-1/2 min-h-20 xl:w-[18%] xl:min-h-36 bg-[#15575B] rounded-2xl xl:rounded-[35px] border-2 xl:border-4 border-black'>
+          <div className='hidden lg:block relative w-1/2 max-w-28 xl:max-w-40 lg:min-h-28 xl:min-h-40 bg-[#15575B] rounded-2xl xl:rounded-[35px] border-2 xl:border-4 border-black'>
             <Image
               src="/images/donasi/koin.png"
               alt="Maskot"
               width={300}
               height={300}
-              className='size-10 xl:size-36 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
+              className='size-10 lg:size-20 xl:size-36 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
               />
           </div>
       </section>
@@ -74,7 +74,7 @@ function JenisDonasi(){
   return(
     <>
       <section className='flex relative mx-2 lg:mx-10 mt-4'>
-        <div className='hidden lg:block w-full relative'>
+        <div className='hidden xl:block w-full relative'>
           <Image
                 src="/maskot.webp"
                 alt="Maskot"
@@ -84,7 +84,7 @@ function JenisDonasi(){
           />
         </div>
         <section className='flex flex-col w-full lg:min-h-[500px] lg:mt-20'>
-            <section className='flex mb-14 mx-4 md:mx-20 md:mb-20 xl:mx-28 md:flex md:justify-center'>
+            <section className='flex mb-14 mx-4 md:mx-20 md:mb-20 xl:mx-28 md:flex md:justify-center sm:mx-20 sm:max-w-xl md:max-w-full'>
                 <div className='flex items-center justify-center min-h-14 bg-[#F4AA3D] rounded-tl-[30px] w-1/4 border-2 xl:border-4 border-r-0 border-black'>
                   <Image
                     src="/paperclip.png"
@@ -141,8 +141,8 @@ function JenisDonasi(){
                 </div>
               </div>
             </section>
-            <section className='flex flex-col md:flex-row mt-20 gap-16 items-center justify-center mx-10 md:mx-0'>
-              <div className='relative min-h-14 w-full bg-[#15575B] border-[3px] border-black md:ml-10'>
+            <section className='flex flex-col md:flex-row mt-20 gap-16 items-center justify-center mx-4 md:mx-0'>
+              <div className='relative min-h-14 w-full bg-[#15575B] border-[3px] border-black md:ml-10 max-w-sm md:max-w-full'>
                 <div className='absolute flex items-center justify-center bg-white min-h-10 rounded-b-full w-20 -top-4 left-4 border-2 border-black'>
                   <Image
                     src="/images/donasi/ic_cp.svg"
@@ -158,7 +158,7 @@ function JenisDonasi(){
                   <h2 className='font-body text-xs md:text-base italic px-4 py-2 font-semibold text-white'> 081377660189 (Rofi’ Khoirullah)</h2>
                 </div>
               </div>
-              <div className='relative min-h-14 w-full bg-[#CCB087] border-[3px] border-black md:mr-10'>
+              <div className='relative min-h-14 w-full bg-[#CCB087] border-[3px] border-black md:mr-10 max-w-sm md:max-w-full'>
                 <div className='absolute flex items-center justify-center bg-white min-h-10 rounded-b-full w-20 -top-4 right-4 border-2 border-black'>
                   <Image
                     src="/images/donasi/ic_cp2.svg"
@@ -182,21 +182,23 @@ function JenisDonasi(){
 function DonasiIftarSahur(){
   return(
     <>
-      <section className='flex items-center justify-center mx-4 xl:mx-96 md:mt-20'>
-          <div className='flex items-center justify-center bg-[#F4AA3D] p-4 md:p-8 xl:p-12 w-full mt-20 rounded-full border-2 lg:border-4 border-black md:max-w-2xl lg:max-w-full'>
+      <section className='flex items-center justify-center mx-4 xl:mx-auto md:mt-20'>
+          <div className='flex items-center justify-center bg-[#F4AA3D] p-4 md:p-8 xl:p-12 w-full mt-20 rounded-full border-2 lg:border-4 border-black max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl'>
             <p className='text-xl md:text-2xl xl:text-5xl italic font-body '>Donasi Iftar dan Sahur</p>
           </div>
       </section>
 
-      <section className='flex flex-col items-center justify-center md:min-h-32 border-2 lg:border-4 rounded-2xl md:rounded-[40px]  border-black  mx-6 md:mx-auto xl:mx-[400px] mt-10 md:max-w-2xl xl:max-w-full'>
-        <h2 className='text-center text-xs md:text-xl font-body text-[#15575B] italic p-2 md:p-4 max-w-4xl leading-normal'>
-          Seluruh donasi digunakan untuk 42.000 porsi buka bersama dan 10.000 porsi sahur selama acara 
-          Ramadhan Di Kampus UGM 1446 H
-        </h2>
+      <section className='flex items-center justify-center md:mt-10 mx-6 md:mx-auto mt-10'>
+        <div className='flex flex-col items-center justify-center md:min-h-32 border-2 lg:border-4 rounded-2xl md:rounded-[40px]  border-black max-w-md md:max-w-2xl xl:max-w-full'>
+          <h2 className='text-center text-xs md:text-xl font-body text-[#15575B] italic p-2 md:p-4 max-w-4xl leading-normal'>
+            Seluruh donasi digunakan untuk 42.000 porsi buka bersama dan 10.000 porsi sahur selama acara 
+            Ramadhan Di Kampus UGM 1446 H
+          </h2>
+        </div>
       </section>
 
 
-      <section className="relative flex min-h-12 md:min-h-16 xl:min-h-24 mb-10  bg-white border-black border-2 lg:border-4 rounded-full mt-10 md:mt-20 xl:mx-96 mx-4 md:max-w-2xl xl:max-w-full md:mx-auto">
+      <section className="relative flex min-h-12 md:min-h-16 xl:min-h-24 mb-10  bg-white border-black border-2 lg:border-4 rounded-full mt-10 md:mt-20 xl:mx-auto mx-4 max-w-xl md:max-w-2xl xl:max-w-4xl sm:mx-auto">
         <div className="flex items-center bg-[#15575B] border-r-2 xl:border-r-4 border-black rounded-full justify-center p-2 w-1/2">
           <h2 className='font-medium font-body text-xs md:text-lg xl:text-2xl text-white italic '>Update Donasi</h2>
         </div>
@@ -209,7 +211,8 @@ function DonasiIftarSahur(){
         </div>
       </section>
 
-      <section className='flex flex-col h-96 mx-6 xl:mx-[470px] xl:h-[600px] border-black border-2 xl:border-4 md:max-w-sm xl:max-w-full md:mx-auto'>
+
+      <section className='flex flex-col h-96 xl:mx-auto xl:h-[600px] border-black border-2 xl:border-4 max-w-xs md:max-w-sm xl:max-w-xl mx-auto'>
           <div className='flex flex-col items-center justify-center h-3/4 bg-[#15575B]'>
               <Image
                 src="/images/donasi/qrislogo.png"
@@ -263,19 +266,22 @@ function DonasiIftarSahur(){
 function DonasiKegiatan(){
   return(
     <>
-      <section className='flex items-center justify-center mx-4 xl:mx-96 mt-4 md:mt-20'>
-          <div className='flex items-center justify-center bg-[#15575B] p-4 md:p-8 xl:p-12 w-full mt-20 rounded-full border-2 xl:border-4 border-black md:max-w-2xl lg:max-w-full'>
+      <section className='flex items-center justify-center mx-4 xl:mx-auto mt-4 md:mt-20'>
+          <div className='flex items-center justify-center bg-[#15575B] p-4 md:p-8 xl:p-12 w-full mt-20 rounded-full border-2 xl:border-4 border-black max-w-md md:max-w-2xl lg:max-w-3xl xl:max-w-4xl'>
             <p className='text-lg md:text-2xl xl:text-5xl italic font-body text-white '>Donasi Kegiatan dan Kajian</p>
           </div>
       </section>
 
-      <section className='flex flex-col items-center justify-center md:min-h-32 border-2 xl:border-4 rounded-2xl md:rounded-[40px]  border-black  mx-6 xl:mx-[400px] mt-10 md:max-w-xl xl:max-w-full md:mx-auto'>
-        <h2 className='text-center text-xs md:text-xl font-body text-[#15575B] italic p-2 md:p-10 max-w-xl leading-normal'>
-        Seluruh donasi digunakan untuk  rangkaian acara Ramadhan Di Kampus UGM 1446 H
-        </h2>
-      </section>
+      <section className='flex items-center justify-center md:mt-10 mx-6 md:mx-auto xl:mx-auto mt-10'>
+        <div className='flex flex-col items-center justify-center md:min-h-32 border-2 lg:border-4 rounded-2xl md:rounded-[40px]  border-black max-w-md md:max-w-2xl xl:max-w-4xl'>
+          <h2 className='text-center text-xs md:text-xl font-body text-[#15575B] italic p-2 md:p-4 max-w-4xl leading-normal'>
+             Seluruh donasi digunakan untuk  rangkaian acara Ramadhan Di Kampus UGM 1446 H
 
-      <section className="relative flex min-h-12 md:min-h-16 xl:min-h-24 mb-10  bg-white border-black border-2 lg:border-4 rounded-full mt-10 md:mt-20 xl:mx-96 mx-4 md:max-w-2xl xl:max-w-full md:mx-auto">
+          </h2>
+        </div>
+      </section>
+      
+      <section className="relative flex min-h-12 md:min-h-16 xl:min-h-24 mb-10  bg-white border-black border-2 lg:border-4 rounded-full mt-10 md:mt-20 xl:mx-auto mx-4 max-w-xl md:max-w-2xl xl:max-w-4xl sm:mx-auto">
         <div className="flex items-center bg-[#F4AA3D] border-r-2 xl:border-r-4 border-black rounded-full justify-center p-2 w-1/2">
           <h2 className='font-medium font-body text-xs md:text-lg xl:text-2xl text-white italic '>Update Donasi</h2>
         </div>
@@ -288,7 +294,7 @@ function DonasiKegiatan(){
         </div>
       </section>
 
-      <section className='flex flex-col h-96 mx-6 xl:mx-[470px] xl:h-[600px] border-black border-2 xl:border-4 md:max-w-sm xl:max-w-full md:mx-auto'>
+      <section className='flex flex-col h-96 mx-auto xl:mx-auto xl:h-[600px] border-black border-2 xl:border-4 max-w-xs md:max-w-sm xl:max-w-xl md:mx-auto'>
           <div className='flex flex-col items-center justify-center h-3/4 bg-[#15575B]'>
             <Image
                 src="/images/donasi/qrislogo.png"
