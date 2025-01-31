@@ -53,10 +53,9 @@ function Banner(){
   )
 }
 
-export default function BigAgenda(){
+function GrandOpening(){
   return(
     <>
-      {/* <Header/> */}
       <section className="xl:mx-24 xl:h-[400px] flex lg:space-x-24">
         <Image
           src="/maskot.webp"
@@ -82,7 +81,7 @@ export default function BigAgenda(){
               alt="sign"
               />
           </div>
-          <div className="ml-4 relative flex items-center min-h-12 md:h-14 lg:w-3/4 xl:h-20 rounded-[50px] bg-[#F4AA3D] pr-4 shadow-xl">
+          <div className="ml-4 relative flex items-center min-h-12 md:h-14 lg:max-w-3xl xl:h-20 rounded-[50px] bg-[#F4AA3D] pr-4 shadow-xl">
             <Image
               src="/images/kegiatan/circle.png"
               width={500}
@@ -102,15 +101,15 @@ export default function BigAgenda(){
         </div>
       </section>
 
-      <section className="flex flex-col md:flex-row items-center md:justify-evenly p-4 xl:p-0 xl:mx-32 xl:gap-20 xl:mt-10">
+      <section className="flex flex-col md:flex-row items-center md:justify-evenly p-4 xl:p-0 xl:mx-16 xl:gap-20 xl:mt-10">
         <Image
           src="/images/kegiatan/laptop.svg"
           width={300}
           height={300}
-          className="w-96 xl:w-1/2 h-60 xl:mb-10 md:order-2"
+          className="w-96 xl:w-1/2 h-60 mb-5 xl:mb-10 md:order-2"
           alt="laptop"
           />
-          <div className="bg-[#15575B] min-h-20 md:h-36 lg:h-32 xl:h-56 rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm lg:max-w-md xl:max-w-full">
+          <div className="bg-[#15575B] min-h-20 md:h-36 lg:h-32 xl:h-56 rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm lg:max-w-md xl:max-w-3xl">
             <div className="flex flex-row gap-1 mb-2 xl:mb-4">
                 <div className="bg-[#D64758] border-2 border-black rounded-full size-3 xl:size-5"/>
                 <div className="bg-[#F4B653] border-2 border-black rounded-full size-3 xl:size-5"/>
@@ -121,26 +120,31 @@ export default function BigAgenda(){
             </div>
           </div>
       </section>
+    </>
+  )
+}
 
-
-      <section className="p-4 xl:p-0 xl:mx-36 xl:gap-20 xl:mt-10">
-          <div className="ml-4 relative flex items-center min-h-12 md:h-14 md:w-1/2 xl:h-20 rounded-[50px] bg-[#15575B] pr-4 shadow-xl">
+function MIT(){
+  return(
+    <>
+      <section className="p-4 xl:p-0 xl:mx-auto xl:gap-20 xl:mt-10">
+        <div className="ml-4 relative flex items-center min-h-12 md:h-14 md:w-1/2 xl:h-20 rounded-[50px] bg-[#15575B] pr-4 shadow-xl xl:max-w-2xl xl:ml-16">
+          <Image
+            src="/images/kegiatan/circle2.png"
+            width={500}
+            height={500}
+            className="w-16 md:w-20 xl:w-28 absolute xl:-top-2 -left-1"
+            alt="sign"
+            />
+            <h2 className="font-heading text-white text-sm sm:text-lg md:text-xl xl:text-4xl pl-16 sm:pl-20 mx-auto">Muslimah Inspiring Talk</h2>
             <Image
-              src="/images/kegiatan/circle2.png"
-              width={500}
-              height={500}
-              className="w-16 md:w-20 xl:w-28 absolute xl:-top-2 -left-1"
-              alt="sign"
-              />
-              <h2 className="font-heading text-white text-sm sm:text-lg md:text-xl xl:text-4xl pl-16 sm:pl-20 mx-auto">Muslimah Inspiring Talk</h2>
-              <Image
-              src="/images/kegiatan/mic2.svg"
-              width={500}
-              height={500}
-              className="size-6 md:size-10 xl:size-14 justify-end"
-              alt="sign"
-              />
-          </div>
+            src="/images/kegiatan/mic2.svg"
+            width={500}
+            height={500}
+            className="size-6 md:size-10 xl:size-14 justify-end"
+            alt="sign"
+            />
+        </div>
       </section>
 
       <section className="flex flex-col justify-center items-center md:flex-row p-4 xl:p-0 xl:mx-32 md:justify-evenly xl:space-x-48 xl:mt-10">
@@ -168,7 +172,7 @@ export default function BigAgenda(){
           className="hidden md:block w-28 h-40 xl:w-72 md:w-1/2 xl:h-60 xl:mb-10 md:order-2"
           alt="laptop"
           />
-          <div className="bg-[#15575B] min-h-20 md:h-36 lg:h-32 xl:h-56 rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm lg:max-w-md xl:max-w-full">
+          <div className="bg-[#15575B] min-h-20 md:h-36 lg:h-32 xl:h-56 rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm lg:max-w-md xl:max-w-3xl">
             <div className="flex flex-row gap-1 mb-2 xl:mb-4">
                 <div className="bg-[#D64758] border-2 border-black rounded-full size-3 xl:size-5"/>
                 <div className="bg-[#F4B653] border-2 border-black rounded-full size-3 xl:size-5"/>
@@ -179,38 +183,42 @@ export default function BigAgenda(){
             </div>
           </div>
       </section>
+    </>
+  )
+}
 
-      
-
+function RDKFestival(){
+  return(
+    <>
       <section className="p-4 xl:p-0 xl:mx-32 xl:gap-20 xl:mt-10 md:flex md:justify-end">
-          <div className="ml-4 relative flex items-center min-h-12 md:h-14 md:w-1/2 xl:h-20 rounded-[50px] bg-[#F4AA3D] pr-4 shadow-xl">
+        <div className="ml-4 relative flex items-center min-h-12 md:h-14 md:w-1/2 xl:h-20 rounded-[50px] bg-[#F4AA3D] pr-4 shadow-xl">
+          <Image
+            src="/images/kegiatan/circle.png"
+            width={500}
+            height={500}
+            className="w-16 md:w-20 xl:w-28 absolute xl:-top-2 -left-1"
+            alt="sign"
+            />
+            <h2 className="font-heading text-white text-lg md:text-xl xl:text-4xl pl-20 mx-auto">RDK Festival</h2>
             <Image
-              src="/images/kegiatan/circle.png"
-              width={500}
-              height={500}
-              className="w-16 md:w-20 xl:w-28 absolute xl:-top-2 -left-1"
-              alt="sign"
-              />
-              <h2 className="font-heading text-white text-lg md:text-xl xl:text-4xl pl-20 mx-auto">RDK Festival</h2>
-              <Image
-              src="/images/kegiatan/mic.svg"
-              width={500}
-              height={500}
-              className="size-6 md:size-10 xl:size-14 justify-end"
-              alt="sign"
-              />
-          </div>
+            src="/images/kegiatan/mic.svg"
+            width={500}
+            height={500}
+            className="size-6 md:size-10 xl:size-14 justify-end"
+            alt="sign"
+            />
+        </div>
       </section>
 
-      <section className="flex flex-col md:flex-row justify-center items-center -mt-10 xl:items-center p-4 xl:p-0 xl:mx-32 xl:gap-20 xl:-mt-20">
+      <section className="flex flex-col md:flex-row justify-around items-center -mt-10 xl:items-center p-4 xl:p-0 xl:mx-4 xl:gap-20 xl:-mt-20">
         <Image
           src="/images/kegiatan/hp.svg"
           width={300}
           height={300}
-          className="w-72 xl:w-1/2 xl:mb-10 mx-auto"
+          className="w-72 xl:w-1/2 my-5 xl:mb-10"
           alt="laptop"
           />
-          <div className="bg-[#15575B] min-h-20 md:h-32 xl:h-56 rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm xl:max-w-full">
+          <div className="bg-[#15575B] min-h-20 md:h-32 xl:h-56 rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm  xl:max-w-full">
             <div className="flex flex-row gap-1 mb-2 xl:mb-4">
                 <div className="bg-[#D64758] border-2 border-black rounded-full size-3 xl:size-5"/>
                 <div className="bg-[#F4B653] border-2 border-black rounded-full size-3 xl:size-5"/>
@@ -221,48 +229,64 @@ export default function BigAgenda(){
             </div>
           </div>
       </section>
+    </>
+  )
+}
 
+function GebyarSore(){
+  return(
+    <>
       <section className="p-4 xl:p-0 xl:mx-32 xl:gap-20 xl:-mt-32 md:flex md:justify-end">
-          <div className="ml-4 relative flex items-center min-h-12 md:h-14 md:w-1/2 xl:h-20 rounded-[50px] bg-[#15575B] pr-4 shadow-xl">
+        <div className="ml-4 relative flex items-center min-h-12 md:h-14 md:w-1/2 xl:h-20 rounded-[50px] bg-[#15575B] pr-4 shadow-xl">
+          <Image
+            src="/images/kegiatan/circle2.png"
+            width={500}
+            height={500}
+            className="w-16 md:w-20 xl:w-28 absolute xl:-top-2 -left-1"
+            alt="sign"
+            />
+            <h2 className="font-heading text-white text-lg md:text-2xl xl:text-4xl pl-20 mx-auto">Gebyar Sore</h2>
             <Image
-              src="/images/kegiatan/circle2.png"
-              width={500}
-              height={500}
-              className="w-16 md:w-20 xl:w-28 absolute xl:-top-2 -left-1"
-              alt="sign"
-              />
-              <h2 className="font-heading text-white text-lg md:text-2xl xl:text-4xl pl-20 mx-auto">Gebyar Sore</h2>
-              <Image
-              src="/images/kegiatan/mic2.svg"
-              width={500}
-              height={500}
-              className="size-6 md:size-10 xl:size-14 justify-end"
-              alt="sign"
-              />
-          </div>
+            src="/images/kegiatan/mic2.svg"
+            width={500}
+            height={500}
+            className="size-6 md:size-10 xl:size-14 justify-end"
+            alt="sign"
+            />
+        </div>
       </section>
 
-      <section className="flex flex-col items-center md:flex-row md:justify-evenly p-4 xl:p-0 xl:mx-32 xl:gap-20 xl:mt-10">
+      <section className="flex flex-col items-center md:flex-row md:justify-evenly p-4 xl:p-0 xl:mx-16 xl:gap-20 xl:mt-10">
         <Image
           src="/images/kegiatan/monitor.svg"
           width={300}
           height={300}
-          className="w-72 xl:w-1/2 mb-4 xl:mb-10 md:order-2"
+          className="w-72 xl:w-1/2 my-5 xl:mb-10 md:order-2"
           alt="laptop"
           />
-          <div className="bg-[#15575B] min-h-20 md:h-40 lg:h-36 xl:h-60 rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm lg:max-w-md xl:max-w-full">
+          <div className="bg-[#15575B] min-h-20 md:h-36 xl:h-60 rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm lg:max-w-md xl:max-w-full">
             <div className="flex flex-row gap-1 mb-2 xl:mb-4">
                 <div className="bg-[#D64758] border-2 border-black rounded-full size-3 xl:size-5"/>
                 <div className="bg-[#F4B653] border-2 border-black rounded-full size-3 xl:size-5"/>
                 <div className="bg-[#7DB037] border-2 border-black rounded-full size-3 xl:size-5"/>
             </div>
             <div className="bg-white xl:min-h-40 rounded-xl xl:rounded-2xl">
-                <h2 className="text-xs xl:text-lg italic font-body leading-5 lg:leading-relaxed p-3 lg:p-4">Gebyar Sore merupakan upaya dalam memberikan dampak nyata untuk menjawab isu permasalahan sosial. Rangkaian kegiatannya meliputi RDK berbagi barang layak pakai, buka bersama panti, dan pengembangan skill anak-anak.</h2>
+                <h2 className="text-xs xl:text-lg italic font-body leading-5 lg:leading-relaxed p-3 lg:p-4">Gebyar Sore adalah upaya memberikan dampak nyata untuk menjawab isu permasalahan sosial. Rangkaian kegiatannya meliputi RDK berbagi barang layak pakai, buka bersama panti, dan pengembangan skill anak-anak.</h2>
             </div>
           </div>
       </section>
-      {/* <Banner/> */}
+    </>
+  )
+}
 
+export default function BigAgenda(){
+  return(
+    <>
+      {/* <Header/> */}
+      <GrandOpening/>
+      <MIT/>
+      <RDKFestival/>
+      <GebyarSore/>
     </>
   )
 }
