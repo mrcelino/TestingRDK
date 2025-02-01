@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Work_Sans, Trirong } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/footer/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const trirong = Trirong({
   subsets: ["latin"],
+  weight: ["500", "700"],
+  variable: "--font-trirong",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const worksans = Work_Sans({
   subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-worksans",
 });
 
 export const metadata: Metadata = {
@@ -26,9 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        
-        <Navbar/>
+      <body
+        className={`${worksans.variable} ${trirong.variable} antialiased`}
+      >
         {children}
         <Footer/>
 
