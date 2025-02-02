@@ -76,7 +76,7 @@ function JenisDonasi(){
       <section className='flex relative mx-2 lg:mx-10 mt-4'>
         <div className='hidden xl:block w-full relative'>
           <Image
-                src="/maskot.webp"
+                src="/images/maskot.png"
                 alt="Maskot"
                 width={500}
                 height={500}
@@ -87,7 +87,7 @@ function JenisDonasi(){
             <section className='flex mb-14 mx-4 md:mx-20 md:mb-20 xl:mx-28 md:flex md:justify-center sm:mx-20 sm:max-w-xl md:max-w-full'>
                 <div className='flex items-center justify-center min-h-14 bg-[#F4AA3D] rounded-tl-[30px] w-1/4 border-2 xl:border-4 border-r-0 border-black'>
                   <Image
-                    src="/paperclip.png"
+                    src="/images/donasi/paperclip.png"
                     alt="Maskot"
                     width={60}
                     height={60}
