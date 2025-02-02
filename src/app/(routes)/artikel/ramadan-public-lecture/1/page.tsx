@@ -1,7 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
+
 
 export default function KajianRamadanPublicLecture() {
+	const [apiData, setApiData] = useState("");
+
 	return (
 		<section className="p-6">
 			<main className="p-2 lg:w-11/12 lg:mx-auto">

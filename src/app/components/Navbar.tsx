@@ -18,7 +18,7 @@ export default function Navbar() {
             <div className="flex items-center lg:justify-between px-4 py-2">
                 {/* Hamburger Icon */}
                 <button
-                    className="md:hidden focus:outline-none"
+                    className="lg:hidden focus:outline-none"
                     onClick={toggleMenu}
                 >
                     {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -35,14 +35,14 @@ export default function Navbar() {
 
 
                 {/* Menu Items (Hidden on Mobile) */}
-                <ul className="hidden md:flex space-x-6 mx-auto w-10/11">
+                <ul className="hidden lg:flex space-x-6 mx-auto w-10/11">
                     {menuItems(pathname)}
                 </ul>
             </div>
 
             {/* Mobile Menu (Visible only when open) */}
             {isOpen && (
-                <div className="md:hidden bg-white">
+                <div className="lg:hidden bg-white">
                     <ul className="flex flex-col space-y-4 py-4 ml-3">
                         {menuItems(pathname)}
                     </ul>

@@ -4,9 +4,9 @@ export default function Footer() {
 	return (
 		<>
 			<div className="right-0 bottom-100 left-0 absolute">
-				<div className="flex grid grid-cols-2 items-center text-white w-full bg-greenCS border-black lg:border-4 border-2 relative">
+				<div className="flex grid grid-cols-2 items-center text-white w-full bg-greenCS border-black md:border-4 border-2 relative">
 					{/* Ramadhan penuh berkah */}
-					<div className="italic text-center lg:p-10 lg:text-3xl font-light  text-xs">
+					<div className="italic text-center lg:p-10 lg:text-3xl md:text-2xl font-light text-xs">
 						<p>
 							“Ramadan Penuh <span className="font-bold">Berkah,</span>
 						</p>
@@ -23,7 +23,7 @@ export default function Footer() {
 						alt="Logo"
 						width={225}
 						height={225}
-						className="absolute hidden top lg:block left-[40%] z-10 bottom-[-5rem]"
+						className="absolute hidden top md:block lg:left-[40%] lg:bottom-[-5rem] left-[37%] bottom-[-2rem] h-[160px] lg:h-full"
 					/>
 
 					<Image
@@ -31,17 +31,17 @@ export default function Footer() {
 						alt="Logo"
 						width={80}
 						height={10}
-						className="left-[170px] top-[20px] absolute z-20 h-[80px] lg:hidden"
+						className="left-[170px] top-[20px] absolute z-20 h-[80px] md:hidden"
 					/>
 
 					{/* Titipkan Kebaikan */}
-					<div className="text-white bg-orangeCS border-black rounded-s-full lg:border-l-4 border-l-2 lg:p-10 p-3 pl-10 font-bold lg:flex lg:justify-center">
+					<div className="text-white bg-orangeCS border-black rounded-s-full md:border-l-4 border-l-2 md:p-10 p-3 pl-10 font-bold md:flex md:justify-center">
 						<div>
-							<p className="lg:text-3xl text-greenCS text-xs">
+							<p className="lg:text-3xl md:text-2xl text-greenCS text-xs">
 								Titipkan Kebaikan,
 							</p>
-							<p className="lg:text-5xl text-sm">Tebarkan</p>
-							<p className="lg:text-5xl text-sm">Keberkahan</p>
+							<p className="lg:text-5xl md:text-3xl text-sm">Tebarkan</p>
+							<p className="lg:text-5xl text-sm md:text-3xl">Keberkahan</p>
 						</div>
 
 						<div />
@@ -49,28 +49,28 @@ export default function Footer() {
 				</div>
 
 				{/* Section 2 */}
-				<div className="lg:flex lg:mt-5 items-center justify-center w-fit lg:w-full">
+				<div className="md:flex lg:mt-5 items-center justify-center w-fit lg:w-full ">
 					{/* Kiri */}
-					<div className="lg:w-1/2 w-11/12 mx-auto italic text-xs mt-10 lg:mt-0">
+					<div className="md:w-1/2 w-11/12 mx-auto italic text-xs mt-10 lg:mt-0 md:p-2 lg:p-0">
 						<div className="flex justify-center items-center">
 							<Image
 								src="/logo_with_name.png"
 								alt="Logo"
 								width={200}
 								height={95}
-								className="my-2 hidden lg:block "
+								className="my-2 hidden md:block  "
 							/>
 							<Image
 								src="/logo_with_name.png"
 								alt="Logo"
 								width={100}
 								height={95}
-								className="my-2 lg:hidden"
+								className="my-2 md:hidden"
 							/>
 						</div>
 
 						<div className="lg:w-2/3 mx-auto text-center text-greenCS font-semibold mt-4">
-							<p>Donasi Langsung melalui COD Sekitar Kampus UGM /</p>
+							<p >Donasi Langsung melalui COD Sekitar Kampus UGM /</p>
 
 							<p>Sekretariat Jama’ah Shalahuddin (Sayap Selatan Masjid</p>
 
@@ -122,11 +122,11 @@ export default function Footer() {
 							</p>
 						</div>
 
-						<div className="flex justify-evenly items-center text-greenCS font-bold mt-6 text-sm gap-2 text-center">
-							<p className="rounded-2xl roundedCS py-2 px-4">
+						<div className="flex justify-evenly items-center text-greenCS font-bold mt-6 text-sm gap-2 text-center ">
+							<p className="rounded-2xl roundedCS py-2 px-4 md:px-0 lg:px-4 md:text-sm lg:text-base">
 								0895332785320 (Salma Arsepti)
 							</p>
-							<p className="rounded-2xl roundedCS py-2 px-4">
+							<p className="rounded-2xl roundedCS py-2 px-4 md:px-0 lg:px-4 md:text-sm lg:text-base ">
 								081377660189 (Rofi’ Khoirullah)
 							</p>
 						</div>
@@ -142,7 +142,7 @@ export default function Footer() {
 					</div>
 
 					{/* Kanan */}
-					<div className="lg:w-1/2 w-11/12 mx-auto border-black lg:border-4 border-2 my-5 mr-5 h-fit w-fit ml-4 mt-10 lg:mt-5">
+					<div className="md:w-1/2 mx-auto border-black lg:border-4 border-2 my-5 h-fit w-fit  mt-10 lg:mt-5 bg-black ">
 						{/* Title */}
 						<div className="flex justify-evenly items-center bg-orangeCS font-bold lg:text-xl">
 							<div className="text-center py-2">

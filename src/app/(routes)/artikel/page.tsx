@@ -139,6 +139,7 @@ export default function Artikel() {
 						</h1>
 						<div className="h-0.5 bg-greenCS w-1/2 lg:w-1/3 lg:mt-2"></div>
 						<Swiper
+							spaceBetween={20}
 							navigation={{
 								nextEl: ".custom-swiper-button-next",
 								prevEl: ".custom-swiper-button-prev",
@@ -231,7 +232,7 @@ export default function Artikel() {
 									<SwiperSlide key={index}>
 										<div
 											className={`bg-white lg:shadow-lg border rounded-3xl my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[15rem] ${
-												isHighlighted ? "z-10 object-cover" : "w-[90%] ml-5"
+												isHighlighted ? "z-10 object-cover" : "lg:w-[90%] ml-5"
 											} `}
 										>
 											<Link href="/artikel/samudra">
@@ -327,11 +328,13 @@ export default function Artikel() {
 
 					{/* mimbar subuh */}
 					<li>
+					
 						<h1 className=" text-lg lg:text-2xl font-semibold text-greenCS italic ">
 							Mimbar Subuh
 						</h1>
 						<div className="h-0.5 bg-greenCS w-1/2 lg:w-1/3 lg:mt-2"></div>
 						<Swiper
+						spaceBetween={20}
 							navigation={{
 								nextEl: ".custom-swiper-button-next",
 								prevEl: ".custom-swiper-button-prev",
