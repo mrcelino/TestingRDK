@@ -26,16 +26,17 @@ export default function Calendar({
   onSelectDay,
 }: CalendarProps) {
   return (
-    <div className="mt-4 md:mt-8 lg:mt-16 relative">
+    <div className="mt-8 md:mt-8 lg:mt-16 relative">
       <Image
         src="/images/jadwal/mini-calendar.svg"
         width={203}
         height={203}
         alt="icon_mini_calendar"
-        className="absolute w-[53px] h-[53px] md:w-[108px] md:h-[108px] lg:w-[203px] lg:h-[203px] -bottom-3.5 -right-8 md:-bottom-12 md:-right-4 lg:-bottom-20 lg:-right-[64px]"
+        className="absolute w-[53px] h-[53px] md:w-[108px] md:h-[108px] lg:w-[203px] lg:h-[203px] -bottom-5 -right-4 md:-bottom-12 md:-right-4 lg:-bottom-20 lg:-right-[64px]"
       />
-      <div className="mx-auto bg-white w-[182px] h-[140px] md:w-[384px] md:h-[287px] lg:w-[637px] lg:h-[494px] rounded-[20px] md:rounded-[50px]  lg:rounded-[50px] shadow-md">
-        <div className="w-full h-[19px] md:h-[41px] lg:h-[61px] flex flex-row justify-around items-center bg-[#15575B] rounded-t-[50px] px-5 md:px-14 lg:px-36">
+      <div className="mx-auto bg-white w-[272px] h-[181px] md:w-[384px] md:h-[287px] lg:w-[637px] lg:h-[494px] rounded-[20px] md:rounded-[50px]  lg:rounded-[50px] shadow-md">
+        {/* month container */}
+        <div className="w-full h-[19px] md:h-[41px] lg:h-[61px] flex flex-row justify-around items-center bg-[#15575B] rounded-t-[50px] px-14 md:px-14 lg:px-36">
           <button
             type="button"
             onClick={onPreviousMonth}
@@ -57,7 +58,8 @@ export default function Calendar({
             <ChevronRightIcon className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
           </button>
         </div>
-        <div className="px-0.5 lg:px-1 md:py-1 lg:py-2 grid grid-cols-7 text-center text-[6px] md:text-[12px] lg:text-sm leading-6 text-white bg-[#3D6C6F] italic shadow-md">
+        {/* days of the week container */}
+        <div className="px-0.5 lg:px-1 -py-1 md:py-1 lg:py-2 grid grid-cols-7 text-center text-[10px] md:text-[12px] lg:text-sm md:leading-5 lg:leading-6 text-white bg-[#3D6C6F] italic shadow-md">
           <div>Sun</div>
           <div>Mon</div>
           <div>Tue</div>
@@ -66,7 +68,8 @@ export default function Calendar({
           <div>Fri</div>
           <div>Sat</div>
         </div>
-        <div className="lg:mt-2 grid grid-cols-7 text-sm md:gap-y-1.5 lg:gap-y-5">
+        {/* days container */}
+        <div className="-mt-0.5 md:mt-1 lg:mt-2 grid grid-cols-7 text-sm md:gap-y-1.5 lg:gap-y-5">
           {days.map((day, dayIdx) => {
             const dayOfWeek = getDay(day);
             const isHighlighted = highlightDates.some((highlightDay) =>
@@ -112,7 +115,7 @@ export default function Calendar({
                     isEqual(day, selectedDay) || isToday(day)
                       ? "font-semibold"
                       : "",
-                    "mx-auto flex h-1 w-1 md:h-4 md:w-4 lg:h-8 lg:w-8 items-center justify-center rounded-full italic font-semibold text-[6px] md:text-[12px] lg:text-xl"
+                    "mx-auto flex h-[13px] w-[13px] md:h-4 md:w-4 lg:h-8 lg:w-8 items-center justify-center rounded-full italic font-semibold text-[10px] md:text-[12px] lg:text-xl"
                   )}
                 >
                   <time dateTime={format(day, "yyyy-MM-dd")}>
