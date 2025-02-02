@@ -13,37 +13,36 @@ export default function Navbar() {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     return (
-        <nav className="bg-gradient-to-r from-[#155458] from-30% to-[#51B2B8] text-white sticky lg:top-10 lg:mt-[-4rem] z-50 shadow-md lg:w-11/12 lg:mx-auto lg:rounded-full">
+        <nav className="bg-greenCS text-white sticky top-0 z-50 shadow-md">
             {/* Navbar Container */}
-            <div className="flex items-center lg:justify-between px-4 py-2">
+            <div className="flex items-center justify-between px-4 py-2">
+                {/* Logo */}
+                <Image
+                    src="/logo.png"
+                    alt="Logo"
+                    width={36}
+                    height={50}
+                    className="my-2"
+                />
+
                 {/* Hamburger Icon */}
                 <button
-                    className="lg:hidden focus:outline-none"
+                    className="md:hidden focus:outline-none"
                     onClick={toggleMenu}
                 >
                     {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                 </button>
 
-                {/* Logo */}
-                <Image
-                    src="/svg/logo-rdk.svg"
-                    alt="Logo"
-                    width={30}
-                    height={50}
-                    className="mx-auto lg:mx-0 w-10 h-10"
-                />
-
-
                 {/* Menu Items (Hidden on Mobile) */}
-                <ul className="hidden lg:flex space-x-6 mx-auto w-10/11">
+                <ul className="hidden md:flex space-x-6">
                     {menuItems(pathname)}
                 </ul>
             </div>
 
             {/* Mobile Menu (Visible only when open) */}
             {isOpen && (
-                <div className="lg:hidden bg-white">
-                    <ul className="flex flex-col space-y-4 py-4 ml-3">
+                <div className="md:hidden bg-greenCS">
+                    <ul className="flex flex-col items-center space-y-4 py-4">
                         {menuItems(pathname)}
                     </ul>
                 </div>
@@ -66,8 +65,8 @@ function menuItems(pathname: string) {
     return links.map(({ href, label }) => (
         <Link key={href} href={href}>
             <li
-                className={` px-4 py-2  italic lg:not-italic ${
-                    pathname === href ? "text-orange-400" : "text-[#15575B] lg:text-white"
+                className={`${
+                    pathname === href ? "text-orange-400" : "text-white"
                 } hover:text-orange-400`}
             >
                 {label}

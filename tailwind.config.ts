@@ -8,6 +8,11 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        heading: ['Titania', 'serif'],
+        title: ['Trirong', 'serif'],
+        body: ['Work Sans', 'sans-serif'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
