@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
+<<<<<<< HEAD
 import { Geist, Geist_Mono, Work_Sans } from "next/font/google";
+=======
+import { Work_Sans, Trirong } from "next/font/google";
+>>>>>>> 6fe14db5d0b4ac8ec2d6e1b1bfc6d61e2c0f5460
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/footer/Footer";
 
+<<<<<<< HEAD
 const geistSans = Geist({
 	variable: "--font-geist-sans",
 	subsets: ["latin"],
@@ -12,6 +17,18 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
 	variable: "--font-geist-mono",
 	subsets: ["latin"],
+=======
+const trirong = Trirong({
+  subsets: ["latin"],
+  weight: ["500", "700"],
+  variable: "--font-trirong",
+});
+
+const worksans = Work_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-worksans",
+>>>>>>> 6fe14db5d0b4ac8ec2d6e1b1bfc6d61e2c0f5460
 });
 
 
@@ -30,6 +47,7 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+<<<<<<< HEAD
 	return (
 		<html lang="en">
 			<body
@@ -37,6 +55,15 @@ export default function RootLayout({
 			>
 				<Navbar />
 				{children}
+=======
+  return (
+    <html lang="en">
+      <body
+        className={`${worksans.variable} ${trirong.variable} antialiased`}
+      >
+        {children}
+        <Footer/>
+>>>>>>> 6fe14db5d0b4ac8ec2d6e1b1bfc6d61e2c0f5460
 
 				<Footer />
 			</body>

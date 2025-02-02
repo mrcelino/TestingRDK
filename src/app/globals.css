@@ -17,6 +17,30 @@ body {
   background-color: #15575B;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@font-face {
+  font-family: 'Titania';
+  src: url('/fonts/titania.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+.bg-greenCS {
+  background-color: #15575B;
+}
+
 .text-greenCS{
   color: #15575B;
 }
@@ -32,7 +56,10 @@ body {
 .text-orangeCS{
   color: #EFC828;
 }
+<<<<<<< HEAD
 
 .font-titania {
   font-family: 'Titania';
 }
+=======
+>>>>>>> 6fe14db5d0b4ac8ec2d6e1b1bfc6d61e2c0f5460
