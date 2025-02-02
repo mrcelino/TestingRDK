@@ -4,8 +4,9 @@ export default function Footer() {
 	return (
 		<>
 			<div className="right-0 bottom-100 left-0 absolute">
-				<div className="flex grid grid-cols-2 items-center text-white w-full bg-greenCS border-black md:border-4 border-2 relative">
+				<div className="flex grid grid-cols-2 items-center text-white w-full bg-greenCS border-black md:border-4  border-2 relative">
 					{/* Ramadhan penuh berkah */}
+					{/* Ubah font trirong */}
 					<div className="italic text-center lg:p-10 lg:text-3xl md:text-2xl font-light text-xs">
 						<p>
 							“Ramadan Penuh <span className="font-bold">Berkah,</span>
@@ -40,8 +41,8 @@ export default function Footer() {
 							<p className="lg:text-3xl md:text-2xl text-greenCS text-xs">
 								Titipkan Kebaikan,
 							</p>
-							<p className="lg:text-5xl md:text-3xl text-sm">Tebarkan</p>
-							<p className="lg:text-5xl text-sm md:text-3xl">Keberkahan</p>
+							<p className="lg:text-5xl md:text-3xl text-sm font-titania">Tebarkan</p>
+							<p className="lg:text-5xl text-sm md:text-3xl font-titania">Keberkahan</p>
 						</div>
 
 						<div />
@@ -144,7 +145,7 @@ export default function Footer() {
 					{/* Kanan */}
 					<div className="md:w-1/2 mx-auto border-black lg:border-4 border-2 my-5 h-fit w-fit  mt-10 lg:mt-5 bg-black ">
 						{/* Title */}
-						<div className="flex justify-evenly items-center bg-orangeCS font-bold lg:text-xl">
+						<div className="flex justify-evenly items-center bg-orangeCS font-extrabold lg:text-xl font-titania">
 							<div className="text-center py-2">
 								<p>Donasi</p>
 								<p>Iftar dan Sahur</p>
@@ -256,6 +257,7 @@ export default function Footer() {
 										<p className="text-greenCS font-semibold text-sm">
 											801241004070
 										</p>
+										{/* Ini nanti dibenerin. Dia ga lurus */}
 										<p className="italic text-white text-greenCS text-xs">
 											a.n Jama'ah Shalahuddin
 										</p>
@@ -292,7 +294,8 @@ export default function Footer() {
 
 				{/* Quotes RDK */}
 				<div className="relative">
-					<div className="bg-greenCS mt-10 flex justify-center items-center z-10 border-2 lg:border-4 border-black p-4 px-10 lg:p-10">
+					{/* Ini ndak ada border kanan */}
+					<div className="bg-greenCS mt-10 flex justify-center items-center z-10 border-2 lg:border-y-4 border-black p-4 px-10 lg:p-10">
 						<div className="bg-white border-black lg:border-4 p-4 border-2 rounded-3xl text-center italic text-greenCS font-medium text-xs lg:text-base lg:py-8 lg:w-1/2">
 							<p>
 								"Kamu sekali-kali tidak akan memperoleh kebajikan (yang
@@ -375,13 +378,14 @@ export default function Footer() {
 
 						{/* Kanan */}
 						<div className="lg:w-1/2 lg:h-[356px] flex-items-end mt-6 lg:mt-0">
-							<div className="flex justify-around">
+						{/* Ganti font, kasih margin */}
+							<div className="flex justify-around mt-20 font-titania font-bold">
 								<p>Explorasi</p>
 								<p>Kegiatan</p>
 								<p>Petunjuk</p>
 							</div>
 
-							<div className="lg:mt-[280px] my-5 lg:my-0">
+							<div className="lg:mt-[180px] my-5 lg:my-0">
 								<div className="flex justify-center">
 									<Image
 										src="/images/footer/mediaRDK.svg"

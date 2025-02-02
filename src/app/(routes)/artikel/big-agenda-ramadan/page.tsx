@@ -316,7 +316,7 @@ export default function BigAgendaRamadan() {
 												height={16}
 												className="z-30"
 											/>
-											<div className="lg:w-[3px] w-[1px] lg:h-8 h-6 bg-white"></div>
+											<div className="lg:w-[3px] w-[1px] lg:h-6 h-6 bg-white"></div>
 											<p className="font-light italic text-white">
 												March, 12 2025
 											</p>
@@ -333,7 +333,7 @@ export default function BigAgendaRamadan() {
 											alt="Logo RDK"
 											width={2000}
 											height={1000}
-											className="absolute bottom-0 left-0 right-0 z-20 h-[250px]"
+											className="absolute bottom-0 left-0 right-0 z-20 h-[350px]"
 										/>
 									</div>
 								</SwiperSlide>

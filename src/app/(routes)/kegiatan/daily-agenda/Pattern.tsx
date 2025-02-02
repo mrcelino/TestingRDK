@@ -3,12 +3,13 @@ export default function Pattern() {
 		<>
 			{/* pattern */}
 			<div
+				// Kurang rapih, punya emil rapih
 				className="absolute inset-0"
 				style={{
 					backgroundImage: "url(/svg/pattern.svg)",
 					backgroundRepeat: "repeat",
 					opacity: 0.7,
-					backgroundSize: "50rem 50rem",
+					backgroundSize: "40rem 40rem",
 				}}
 			/>
 
@@ -28,7 +29,7 @@ export default function Pattern() {
 					backgroundImage: "url(/svg/pattern.svg)",
 					backgroundRepeat: "repeat",
 					opacity: 0.1,
-					backgroundSize: "50rem 50rem",
+					backgroundSize: "40rem 40rem",
 				}}
 			>
 				<div className="flex w-full justify-between mt-10">

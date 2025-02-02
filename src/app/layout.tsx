@@ -24,8 +24,6 @@ const worksans = Work_Sans({
 
 
 
-
-
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -34,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${workSans.variable} ${trirong.variable} antialiased`}
+        className={`${worksans.variable} ${trirong.variable} antialiased`}
       >
 
         <Navbar />

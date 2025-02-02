@@ -71,7 +71,6 @@ export default function Home() {
 				</p>
 
 				{/* Tema Besar RDK */}
-
 				<div className="flex justify-between ">
 					{/* Maskot */}
 					<div></div>
