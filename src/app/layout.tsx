@@ -37,8 +37,9 @@ export default function RootLayout({
       <body
         className={`${worksans.variable} ${trirong.variable} antialiased`}
       >
+        <Navbar />
         {children}
-        <Footer/>
+    
 
 				<Footer />
 			</body>
