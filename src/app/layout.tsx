@@ -1,8 +1,11 @@
 
+import type { Metadata } from "next";
+
 import { Work_Sans, Trirong } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/footer/Footer";
+
 
 
 const trirong = Trirong({
@@ -12,12 +15,15 @@ const trirong = Trirong({
 });
 
 
-
-
-const workSans = Work_Sans({
-  variable: "--font-work-sans",
+const worksans = Work_Sans({
   subsets: ["latin"],
-})
+  weight: ["400", "700"],
+  variable: "--font-worksans",
+});
+
+
+
+
 
 
 export default function RootLayout({
@@ -33,6 +39,9 @@ export default function RootLayout({
 
         <Navbar />
         {children}
+
+
+
 
 				<Footer />
 			</body>
