@@ -12,7 +12,7 @@ export default function JadwalGreet({ className, text }: any) {
         alt="sign"
         className="absolute w-[98px] md:w-[163px] lg:w-[405px] h-[98px] md:h-[163px] lg:h-[405px] -left-10 md:-left-24 lg:-left-40 -top-1/2"
       />
-      <p className="text-[#15575B] font-bold text-[10px] md:text-sm lg:text-2xl w-[422px] font-sans italic">
+      <p className="text-[#15575B] font-bold text-[9px] md:text-sm lg:text-2xl w-[422px] font-sans italic">
         {text}
       </p>
     </div>
