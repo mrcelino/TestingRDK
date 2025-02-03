@@ -43,9 +43,9 @@ export default function Calendar({
             className="-my-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
           >
             <span className="sr-only">Previous month</span>
-            <ChevronLeftIcon className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
+            <ChevronLeftIcon className="h-4 w-4 md:h-5 md:w-5 lg:w-10 lg:h-10" aria-hidden="true" />
           </button>
-          <h2 className="flex-auto font-semibold text-[10px] md:text-[12px] lg:text-[20px] text-[#fbfbfb] text-center">
+          <h2 className="flex-auto font-semibold text-[10px] md:text-[12px] lg:text-[20px] text-[#fbfbfb] text-center italic font-body">
             {/* {currentMonth} */}
             {format(currentMonth, "MMMM yyyy")}
           </h2>
@@ -55,18 +55,18 @@ export default function Calendar({
             className="-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
           >
             <span className="sr-only">Next month</span>
-            <ChevronRightIcon className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
+            <ChevronRightIcon className="h-4 w-4 md:h-5 md:w-5 lg:w-10 lg:h-10" aria-hidden="true" />
           </button>
         </div>
         {/* days of the week container */}
         <div className="px-0.5 lg:px-1 -py-1 md:py-1 lg:py-2 grid grid-cols-7 text-center text-[10px] md:text-[12px] lg:text-sm md:leading-5 lg:leading-6 text-white bg-[#3D6C6F] italic shadow-md">
-          <div>Sun</div>
-          <div>Mon</div>
-          <div>Tue</div>
-          <div>Wed</div>
-          <div>Thu</div>
-          <div>Fri</div>
-          <div>Sat</div>
+          <div>SUN</div>
+          <div>MON</div>
+          <div>TUE</div>
+          <div>WED</div>
+          <div>THU</div>
+          <div>FRI</div>
+          <div>SAT</div>
         </div>
         {/* days container */}
         <div className="-mt-0.5 md:mt-1 lg:mt-2 grid grid-cols-7 text-sm md:gap-y-1.5 lg:gap-y-5">
