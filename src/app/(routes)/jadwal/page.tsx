@@ -117,7 +117,7 @@ export default function JadwalPage() {
     // <div className="w-full h-fit flex flex-col bg-gradient-to-b from-[#ffffff] from-1%  to-[#21666A] to-30% bg-scroll items-center">
     //   <div className="w-full h-full bg-[url('/images/jadwal/pattern-for-bg.svg')] bg-opacity-5 bg-repeat flex flex-col items-center">
     <div className="w-full h-fit flex flex-col bg-gradient-to-b from-[#ffffff] from-1% to-[#21666A] to-30% bg-scroll items-center relative">
-      <div className="absolute inset-0 lg:bg-[url('/images/jadwal/pattern-for-bg.svg')] bg-repeat opacity-[0.07] mix-blend-difference"></div>
+      <div className="absolute inset-0 bg-[url('/images/jadwal/pattern-bg-mobile.svg')] lg:bg-[url('/images/jadwal/pattern-for-bg.svg')] bg-repeat opacity-[0.08] mix-blend-difference"></div>
       <div className="w-full h-full relative flex flex-col items-center">
       {/* <div className="w-full h-screen flex flex-col bg-gradient-to-b from-white to-[#21666A] items-center relative">
   <div className="absolute inset-0 lg:bg-[url('/images/jadwal/pattern-for-bg.svg')] bg-repeat opacity-70 mix-blend-difference"></div>
