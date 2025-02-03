@@ -64,6 +64,9 @@ export default function JadwalPage() {
         case "2025-03-01":
           setLayout("LayoutBigAgendaGrandOpening");
           break;
+        case "2025-03-08":
+          setLayout("LayoutBigAgendaMIT");
+          break;
         case "2025-03-21":
           setLayout("LayoutAgendaRdkFest");
           break;
@@ -83,7 +86,7 @@ export default function JadwalPage() {
 
   const highlightDates = [
     parseISO("2025-03-01"),
-    parseISO("2025-03-01"),
+    parseISO("2025-03-08"),
     parseISO("2025-03-21"),
     parseISO("2025-03-22"),
     parseISO("2025-03-30"),
@@ -165,6 +168,7 @@ export default function JadwalPage() {
         {layout === "LayoutBigAgendaGrandOpening" && (
           <LayoutBigAgendaGrandOpening />
         )}
+        {layout === "LayoutBigAgendaMIT" && <LayoutBigAgendaMIT />}
         {layout === "LayoutAgendaRdkFest" && <LayoutBigAgendaRdkFest />}
         {layout === "LayoutDailyAgendaOnly" && <LayoutDailyAgendaOnly />}
         {layout === "LayoutIdulFitri" && <LayoutIdulFitri />}
