@@ -73,6 +73,10 @@ export default function JadwalPage() {
         case "2025-03-22":
           setLayout("LayoutAgendaRdkFest");
           break;
+        case "2025-03-28":
+        case "2025-03-29":
+          setLayout("Layout2LastDay");
+          break;
         case "2025-03-30":
           setLayout("LayoutIdulFitri");
           break;
@@ -171,6 +175,7 @@ export default function JadwalPage() {
         {layout === "LayoutBigAgendaMIT" && <LayoutBigAgendaMIT />}
         {layout === "LayoutAgendaRdkFest" && <LayoutBigAgendaRdkFest />}
         {layout === "LayoutDailyAgendaOnly" && <LayoutDailyAgendaOnly />}
+        {layout === "Layout2LastDay" && <Layout2LastDay />}
         {layout === "LayoutIdulFitri" && <LayoutIdulFitri />}
         {layout === "LayoutAgendaNotReleased" && <LayoutAgendaNotReleased />}
         {layout === "LayoutAfterRamadan" && <LayoutAfterRamadan />}

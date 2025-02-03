@@ -42,7 +42,7 @@ export default function Layout2LastDay() {
           width={116}
           height={116}
           alt="sign"
-          className="absolute w-[69px] h-[69px] md:w-[68px] md:h-[68px] lg:w-[116px] lg:h-[116px] left-2 md:left-[200px] lg:left-[400px] z-10 hover:scale-125 transition"
+          className="absolute w-[69px] h-[69px] md:w-[68px] md:h-[68px] lg:w-[116px] lg:h-[116px] left-0.5 md:left-[200px] lg:left-[400px] z-10 hover:scale-125 transition"
         />
       </div>
 
