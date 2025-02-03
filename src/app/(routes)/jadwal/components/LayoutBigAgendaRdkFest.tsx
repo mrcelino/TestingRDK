@@ -15,7 +15,7 @@ export default function LayoutBigAgendaRdkFest() {
       <JadwalGreet
         className={"mt-12"}
         text={
-          "Hello, today is special day fo you! Join us in a big agenda of Ramadan!"
+          "Hello, today is special day for you! Join us in a big agenda of Ramadan!"
         }
       />
 
