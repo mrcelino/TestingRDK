@@ -54,7 +54,7 @@ export default function Navbar() {
 
 function menuItems(pathname: string) {
     const links = [
-        { href: "/", label: "Home" },
+        { href: "/", label: "Beranda" },
         { href: "/jadwal", label: "Jadwal" },
         { href: "/artikel", label: "Artikel" },
         { href: "/makanan", label: "Menu Hidangan" },
