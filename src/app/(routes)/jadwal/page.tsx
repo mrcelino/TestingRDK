@@ -29,13 +29,7 @@ import LayoutBigAgendaRdkFest from "./components/LayoutBigAgendaRdkFest";
 import Calendar from "./components/shared/Calendar";
 import LayoutAgendaNotReleased from "./components/LayoutAgendaNotReleased";
 
-// sementara untuk nampil layouts
-const layouts = [
-  { tanggal: "2025-03-01", layout: "LayoutBigAgendaGrandOpening" },
-  { tanggal: "2025-03-21", layout: "LayoutBigAgendaMIT" },
-  { tanggal: "2025-03-22", layout: "LayoutDailyAgendaOnly" },
-  // ...
-];
+
 
 export default function JadwalPage() {
   const today = startOfToday();
