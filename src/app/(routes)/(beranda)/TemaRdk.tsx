@@ -6,11 +6,11 @@ export default function TemaRdk() {
 			{/* Maskot */}
 
 			<Image
-				src="/svg/maskot.svg"
+				src="/svg/maskot-main.svg"
 				alt=""
 				height={1000}
 				width={1000}
-				className=" hidden md:block w-1/3"
+				className="hidden md:block w-1/3"
 			/>
 
 			<div className="lg:w-[60%] md:w-3/4 md:ml-auto md:mr-0">

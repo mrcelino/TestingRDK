@@ -141,21 +141,18 @@ export default function Footer() {
 						</div>
 					</div>
 
-					{/* Kanan */}
-					<div className="md:w-1/2 mx-auto border-black lg:border-4 border-2 my-5 h-fit w-fit  mt-10 lg:mt-5 bg-black ">
-						{/* Title */}
-						<div className="flex justify-evenly items-center bg-orangeCS font-bold lg:text-xl">
-							<div className="text-center py-2">
+					{/* Right */}
+					<div className="grid grid-cols-1 md:grid-cols-2  border-black md:w-1/2 lg:border-4 my-5 mt-10 lg:mt-5 w-11/12 mx-auto ">
+						{/* Donasi Iftar dan Sahur */}
+						<div className="mb-10 border-2 border-black md:border-0 md:mb-0">
+							{/* Title */}
+							<div className="text-center bg-orangeCS font-bold lg:text-xl py-2 lg:border-b-4 border-b-2 border-black">
 								<p>Donasi</p>
 								<p>Iftar dan Sahur</p>
 							</div>
 
-							<p>Donasi Kegiatan</p>
-						</div>
-
-						{/* Qris Masjid Kampus */}
-						<div className="flex justify-evenly items-center bg-greenCS p-4 lg:border-y-4 border-y-2 border-black">
-							<div>
+							{/* Qris  Masjid Kampus UGM*/}
+							<div className="p-6 bg-greenCS mx-auto block w-full lg:border-b-4 border-b-2 border-black flex flex-col items-center justify-center">
 								<Image
 									src="/images/footer/text_qris.png"
 									alt="Logo"
@@ -175,8 +172,51 @@ export default function Footer() {
 								</p>
 							</div>
 
-							{/* Qris Jama'ah Shalahuddin */}
-							<div>
+							{/* Bank Masjid Kampus UGM */}
+							<div className="bg-orangeCS p-2 flex flex-col items-center justify-center">
+								{/* BSI */}
+								<div className="flex">
+									<Image
+										src="/svg/logo-bsi.svg"
+										alt="Logo"
+										width={100}
+										height={100}
+										className="mr-10"
+									/>
+
+									<div className="text-white">
+										<p className=" font-semibold text-sm">7191219494</p>
+										<p className="italic text-xs">a.n Masjid Kampus UGM</p>
+									</div>
+								</div>
+
+								{/* Muamalat */}
+								<div className="flex">
+									<Image
+										src="/svg/logo-muamalat.svg"
+										alt="Logo"
+										width={100}
+										height={100}
+										className="mr-10"
+									/>
+
+									<div className="text-white">
+										<p className="font-semibold text-sm">5350007800</p>
+										<p className="italic text-xs">a.n Masjid Kampus UGM</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						{/* Donasi Kegiatan */}
+						<div className="border-2 border-black md:border-0 md:mb-0">
+							{/* Title */}
+							<div className="text-center bg-orangeCS font-bold lg:text-xl py-[1.37rem] border-black lg:border-l-4 lg:border-b-4 border-b-2">
+								<p>Donasi Kegiatan</p>
+							</div>
+
+							{/* Qris  Masjid Kampus UGM*/}
+							<div className="p-6 bg-greenCS w-full border-black lg:border-l-4 lg:border-b-4 border-b-2 flex flex-col items-center justify-center">
 								<Image
 									src="/images/footer/text_qris.png"
 									alt="Logo"
@@ -192,98 +232,25 @@ export default function Footer() {
 								/>
 
 								<p className="italic text-white text-center text-xs mt-2">
-									a.n. Jam'ah Shalahuddin
+									a.n. Jama'ah Shalahuddin
 								</p>
 							</div>
-						</div>
 
-						{/* Donasi Melalui bank*/}
-						<div className="flex items-center  justify-center bg-white p-3">
-							{/* Kiri */}
-							<div className="lg:w-1/2 w-full mx-10 lg:mx-0'">
-								{/* BSI */}
-								<div className="flex ">
-									<Image
-										src="/images/footer/bank_bsi.png"
-										alt="Logo"
-										width={90}
-										className="object-contain h-10 w-20 mr-10"
-										height={4}
-									/>
-
-									<div className="">
-										<p className="text-greenCS font-semibold text-sm">
-											7191219494
-										</p>
-										<p className="italic text-white text-greenCS text-xs">
-											a.n Masjid Kampus UGM
-										</p>
-									</div>
-								</div>
-
-								{/* Muamalat */}
-								<div className="flex">
-									<Image
-										src="/images/footer/bank_muamalat.png"
-										alt="Logo"
-										width={100}
-										height={28}
-										className="object-contain h-10 w-20 mr-10"
-									/>
-
-									<div className="ml-17">
-										<p className="text-greenCS font-semibold text-sm">
-											5350007800
-										</p>
-										<p className="italic text-white text-greenCS text-xs">
-											a.n Masjid Kampus UGM
-										</p>
-									</div>
-								</div>
-
+							{/* Bank Masjid Kampus UGM */}
+							<div className="flex justify-center items-center bg-orangeCS p-3 border-black lg:border-l-4  h-[91px] w-full">
 								{/* BPD */}
-								{/* Hidden Desktop Shape */}
-								<div className="flex lg:hidden">
-									<Image
-										src="/images/footer/bank_bpd.png"
-										alt="Logo"
-										width={100}
-										height={28}
-										className="object-contain h-10 w-20 mr-10"
-									/>
 
-									<div className="ml-17">
-										<p className="text-greenCS font-semibold text-sm">
-											801241004070
-										</p>
-										<p className="italic text-white text-greenCS text-xs">
-											a.n Jama'ah Shalahuddin
-										</p>
-									</div>
-								</div>
-							</div>
+								<Image
+									src="/svg/logo-bpd.svg"
+									alt="Logo"
+									width={100}
+									height={100}
+									className="mr-10"
+								/>
 
-							{/* Kanan */}
-							{/* Hidde when mobile */}
-							<div className="ml-4 hidden lg:block">
-								{/* BPD */}
-								<div className="flex w-auto">
-									<Image
-										src="/images/footer/bank_bpd.png"
-										alt="Logo"
-										width={90}
-										height={10}
-										className="object-contain h-10 w-20"
-									/>
-
-									<div className="w-44 ml-10">
-										<p className="text-greenCS font-semibold text-sm w-fit">
-											801241004070
-										</p>
-										<p className="italic text-white text-greenCS text-xs w-fit">
-											a.n Jama'ah Shalahuddin
-										</p>
-									</div>
+								<div className="text-white">
+									<p className="font-semibold text-sm">801241004070</p>
+									<p className="italic text-xs">a.n Jama'ah Shalahuddin</p>
 								</div>
 							</div>
 						</div>
@@ -303,21 +270,22 @@ export default function Footer() {
 						</div>
 					</div>
 
+					{/* Maskot Web */}
 					<Image
-						src="/images/maskot.png"
+						src="/svg/maskot-wave.svg"
 						alt="Logo"
-						width={294}
-						height={294}
-						className="absolute top-[-3rem] left-[8rem]  hidden lg:block"
+						width={200}
+						height={200}
+						className="absolute top-[-2rem] left-[10rem]  hidden lg:block"
 					/>
 
-					{/* Maskot */}
+					{/* Maskot Mobile*/}
 					<Image
-						src="/images/maskot.png"
+						src="/svg/maskot-wave.svg"
 						alt="Logo"
-						width={120}
-						height={120}
-						className="absolute top-[-2px] left-[-15px] lg:hidden"
+						width={80}
+						height={80}
+						className="absolute top-[10px] md:hidden"
 					/>
 				</div>
 
@@ -413,8 +381,6 @@ export default function Footer() {
 						<p className="italic text-lg">RDK UGM 1446H. All Rights Reserved</p>
 					</div>
 
-					{/* Blur Effect */}
-					{/* Tanya aja deh wkw */}
 					<div className="absolute top-10 left-[-5rem] w-[25rem] h-[25rem] bg-[#76D0D5] rounded-full blur-[10rem] opacity-70"></div>
 				</div>
 			</div>

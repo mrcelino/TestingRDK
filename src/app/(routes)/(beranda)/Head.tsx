@@ -18,7 +18,15 @@ export default function Head() {
 
 			{/* Teaser / Profil RDK */}
 			<div className="bg-white lg:border-4 md:border-[3px] border-2 border-black rounded-3xl lg:w-[60%] md:w-[80%] w-[90%] mx-auto lg:my-16 my-10 lg:h-[25rem] md:h-[20rem] h-[14rem] p-4 text-black">
-				sjssjbakjbjabd
+				<iframe
+					className="w-full h-full object-cover rounded-3xl"
+					src="https://www.youtube.com/embed/z1MU8NsMziI?si=axEs-eDJtGI2r70t"
+					title="YouTube video player"
+					frameBorder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerPolicy="strict-origin-when-cross-origin"
+					allowFullScreen
+				></iframe>
 			</div>
 		</div>
 	);
