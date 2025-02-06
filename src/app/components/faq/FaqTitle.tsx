@@ -11,10 +11,10 @@ export default function FaqTitle() {
                         alt="Logo"
                         width={294}
                         height={294}
-                        className="absolute right-0 mr-20 transform -scale-x-100"
+                        className="absolute right-0 lg:mr-20 transform -scale-x-100 lg:-mt-20"
                     />
                 <div>
-                    <h1 className="text-2xl font-bold text-white p-4 text-center text-4xl ">Hello Sobat RDK!
+                    <h1 className=" font-bold text-white p-4 text-center text-4xl font-titania ">Hello Sobat RDK!
                     <br/> Is there anything we can help with?</h1>
                 </div >
 
