@@ -78,7 +78,7 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
 
             {/* container nama guest nya (cuma untuk mobile) */}
             <div className="absolute md:hidden top-1/2 left-24 w-[193px] h-[36px] bg-[#FBFBFB] border border-black rounded-tr-[100px] rounded-bl-[100px] rotate-[7deg] flex items-center justify-center px-2 shadow-md">
-              <h2 className="font-bold text-[8px] text-[#F4AA3D] text-center italic">
+              <h2 className="font-bold text-[8px] text-[#F4AA3D] text-center italic font-body">
                 Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed.
               </h2>
             </div>
@@ -155,7 +155,7 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
 
             {/* container nama guest nya (cuma untuk mobile) */}
             <div className="absolute md:hidden top-1/2 right-24 w-[193px] h-[36px] bg-[#F4AA3D] border border-black rounded-tr-[100px] rounded-bl-[100px] rotate-[-8deg] flex items-center justify-center px-2 shadow-md">
-              <h2 className="font-bold text-[8px] text-[#15575B] text-center italic">
+              <h2 className="font-bold text-[8px] text-[#15575B] text-center italic font-body">
                 Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed.
               </h2>
             </div>
@@ -169,13 +169,13 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
       <div className="hidden md:flex w-[240px] md:w-[523px] lg:w-[778px] h-[28px] md:h-[60px] lg:h-[90px] rounded-[100px] bg-white flex-row mt-4 lg:mt-10">
         {/* left name container */}
         <div className="w-1/2 h-full border lg:border-[3px] border-black rounded-l-[100px] flex justify-center items-center">
-          <p className="md:w-[219px] w-[289px] text-[#F4AA3D] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-left">
+          <p className="md:w-[219px] lg:w-[289px] text-[#F4AA3D] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-left font-body">
             Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed.
           </p>
         </div>
         {/* right name container */}
         <div className="w-1/2 h-full bg-[#F4AA3D] border lg:border-[3px] border-black rounded-r-[100px] flex justify-center items-center">
-          <p className="md:w-[219px] w-[289px] text-[#15575B] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-left">
+          <p className="md:w-[219px] lg:w-[289px] text-[#15575B] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-left font-body">
             Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed.
           </p>
         </div>
@@ -200,13 +200,13 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
         {/* moderrator name container */}
         <div className="relative w-[83%] h-[30px] md:h-[45px] lg:h-[69px] bg-white border lg:border-[3px] border-black rounded-[100px] flex flex-col items-start justify-center pl-5 md:pl-9 lg:pl-[40px]">
           {/* moderator name */}
-          <h1 className="text-[#F4AA3D] font-bold text-[8px] md:text-[10px] lg:text-sm italic">
+          <h1 className="text-[#F4AA3D] font-bold text-[8px] md:text-[10px] lg:text-sm italic font-body">
             Andri Pratama, M.Phil.
           </h1>
           <hr className="absolute top-1/2 left-0 w-4/6 lg:border-[2px] border-black" />
           {/* ini hr dummy (ignore aja) */}
           <hr className="py-[1px] lg:py-1" />
-          <p className="text-[#15575B] font-bold text-[8px] md:text-[10px] lg:text-xs italic">
+          <p className="text-[#15575B] font-bold text-[8px] md:text-[10px] lg:text-xs italic font-body">
             As Moderator
           </p>
         </div>
@@ -214,21 +214,17 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
       {/* end of moderator container */}
 
       {/* start of box info event */}
-      <div className="w-[282px] md:w-[388px] lg:w-[893px] h-[69px] md:h-[81px] lg:h-[187px] bg-[#FBFBFB] flex flex-col rounded-[50px] items-center justify-center mt-5 md:mt-8 lg:mt-10 py-1 md:py-2 lg:py-5">
+      <div className="w-[282px] md:w-[388px] lg:w-[893px] h-[69px] md:h-[81px] lg:h-[187px] bg-[#FBFBFB] border lg:border-[3px] border-black flex flex-col rounded-[50px] items-center justify-center mt-5 md:mt-8 lg:mt-10 py-1 md:py-2 lg:py-5">
         <div className="relative flex flex-col text-center">
-          <p className="text-[#FFC359] font-semibold text-[8px] md:text-[8px] lg:text-base italic">
+          <p className="text-[#FFC359] font-semibold text-[8px] md:text-[8px] lg:text-base italic font-body">
             Ramadan Berdaya:
           </p>
-          <p className="text-[#15575B] font-semibold text-[8px] md:text-[8px] lg:text-base italic">
+          <p className="text-[#15575B] font-semibold text-[8px] md:text-[8px] lg:text-base italic font-body">
             Upaya Kolaboratif Mewujudkan <br />
             Pembangunan Inklusif dan Berkelanjutan
           </p>
-          <p className="absolute -top-1 lg:-top-6 -left-2 lg:-left-10 text-sm lg:text-[55px] font-extrabold text-[#FFC359] font-serif">
-            "
-          </p>
-          <p className="absolute -bottom-1 lg:-bottom-6 -right-3 lg:-right-10 text-sm lg:text-[55px] font-extrabold text-[#FFC359] font-serif rotate-180">
-            "
-          </p>
+          <Image src={"images/jadwal/petik-kuning.svg"} width={20} height={30} alt="petik" className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute top-0.5 md:-top-2 lg:-top-2 left-1 md:-left-1 lg:-left-10" />
+          <Image src={"images/jadwal/petik-kuning.svg"} width={20} height={30} alt="petik" className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute -bottom-1 lg:-bottom-2 -right-3 md:-right-5 lg:-right-10 rotate-180" />
         </div>
         <hr className="border-b-[0.5px] lg:border-b-2 border-black w-9/12 my-auto" />
         {/* tempat dan waktu */}
@@ -241,14 +237,14 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
               className="w-[8px] md:w-[11px] lg:w-[26px] h-[9px] md:h-[13px] lg:h-[31px]"
             />
             {/* lokasi */}
-            <p className="font-medium text-[6px] md:text-[6px] lg:text-sm text-[#15575B] italic">
+            <p className="font-medium text-[6px] md:text-[6px] lg:text-sm text-[#15575B] italic font-body">
               Mardliyyah <br /> Islamic Center UGM
             </p>
           </div>
           <div className="text-transparent bg-[#15575B] w-[12px] md:w-[17px] lg:w-[40px] h-[1px] rotate-90">
             .
           </div>
-          <div className="flex flex-row gap-x-1 lg:gap-x-8 items-center ml-auto">
+          <div className="flex flex-row gap-x-1 lg:gap-x-6 items-center ml-auto">
             {/* icon calendar */}
             <img
               src="images/jadwal/vektor_kalender.svg"
@@ -256,7 +252,7 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
               className="w-[10px] md:w-[14px] lg:w-[32px] h-[9px] md:h-[13px] lg:h-[30px]"
             />
             {/* waktu */}
-            <p className="w-14 font-medium text-[6px] md:text-[6px] lg:text-sm text-[#15575B] italic flex flex-row">
+            <p className="lg:w-20 font-medium text-[6px] md:text-[6px] lg:text-sm text-[#15575B] italic flex flex-row font-body">
               08:00 WIB
             </p>
           </div>

@@ -8,7 +8,7 @@ export default function MimbarSubuh() {
       {/* start of mimbar subuh */}
       <div className="w-[300px] md:w-[450px] lg:w-[901px] h-[160px] md:h-[250px] lg:h-[500px] flex flex-col mt-8 md:mt-16 lg:mt-32 items-center">
         {/* mimbar subuh header */}
-        <h1 className="text-sm md:text-lg lg:text-[48px] text-white drop-shadow-md">
+        <h1 className="text-sm md:text-lg lg:text-[48px] font-semibold text-white drop-shadow-md font-heading">
           Mimbar Subuh
         </h1>
         {/* end of mimbar subuh header */}
@@ -86,7 +86,7 @@ export default function MimbarSubuh() {
           </div>
 
           {/* right side */}
-          <div className="flex flex-col justify-center gap-y-2 md:gap-y-5 lg:gap-y-10 pl-2.5 pr-0 md:pl-10 md:pr-5">
+          <div className="flex flex-col justify-center gap-y-2 md:gap-y-5 lg:gap-y-10 pl-2.5 pr-0 md:pl-10 md:pr-2 lg:pr-3 font-body">
             {/* name */}
             <div className="flex flex-row gap-x-2 md:gap-x-6 lg:gap-x-10 items-center pl-2">
               <Image

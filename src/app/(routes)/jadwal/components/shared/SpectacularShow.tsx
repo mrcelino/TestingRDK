@@ -6,7 +6,7 @@ export default function SpectacularShow() {
   return (
     <>
       <div className="w-[291px] md:w-[380px] lg:w-[723px] h-[39px] md:h-[51px] lg:h-[90px] flex bg-white rounded-l-[100px] rounded-tr-[100px] border lg:border-[5px] border-black mt-8 md:mt-16 lg:mt-32 justify-center items-center">
-        <h2 className="text-[#15575B] font-normal text-sm md:text-base lg:text-[40px] ">
+        <h2 className="text-[#15575B] font-semibold text-sm md:text-base lg:text-[40px] font-heading [text-shadow:_0_2.5px_5px_rgb(0_0_0_/_0.4)]">
           Spectacular Show
         </h2>
       </div>
@@ -21,7 +21,7 @@ export default function SpectacularShow() {
           </div>
           {/* photo title container */}
           <div className="m-auto">
-            <h2 className="text-[#15575B] font-bold text-[8px] md:text-[6px] lg:text-[10px] italic w-20 md:w-12 lg:w-20 text-center">
+            <h2 className="text-[#15575B] font-bold text-[8px] md:text-[6px] lg:text-[10px] italic w-20 md:w-12 lg:w-20 text-center font-body">
               Aceh Dance By Rampoe UGM
             </h2>
           </div>
@@ -36,7 +36,7 @@ export default function SpectacularShow() {
           </div>
           {/* photo title container */}
           <div className="m-auto">
-            <h2 className="text-[#15575B] font-bold text-[8px] md:text-[6px] lg:text-[10px] italic w-20 md:w-12 lg:w-20 text-center">
+            <h2 className="text-[#15575B] font-bold text-[8px] md:text-[6px] lg:text-[10px] italic w-20 md:w-12 lg:w-20 text-center font-body">
               Aceh Dance By Rampoe UGM
             </h2>
           </div>
@@ -68,7 +68,7 @@ export default function SpectacularShow() {
           </div>
           {/* photo title container */}
           <div className="m-auto">
-            <h2 className="text-[#15575B] font-bold text-[8px] md:text-[6px] lg:text-[10px] italic w-20 md:w-12 lg:w-20 text-center">
+            <h2 className="text-[#15575B] font-bold text-[8px] md:text-[6px] lg:text-[10px] italic w-20 md:w-12 lg:w-20 text-center font-body">
               Aceh Dance By Rampoe UGM
             </h2>
           </div>

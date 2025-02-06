@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function JadwalHeader() {
   return (
-    <div className="relative flex w-[216px] h-[63px] md:w-[335px] md:h-[98px] lg:w-[635px] lg:h-[185px] bg-[#15575B] rounded-[50px] border lg:border-[3px] border-black mx-auto mt-12 md:mt-16 lg:mt-24 justify-center items-center ">
+    <div className="relative flex w-[216px] h-[63px] md:w-[335px] md:h-[98px] lg:w-[635px] lg:h-[185px] bg-[#15575B] rounded-[50px] border lg:border-[3px] border-black mx-auto mt-12 md:mt-16 lg:mt-44 justify-center items-center ">
       {/* left cross thing (i dunno the name bruh) */}
       <img
         src="/images/jadwal/headerJadwalPlus.svg"

@@ -9,22 +9,22 @@ export default function Samudra() {
       <div className="w-[300px] md:w-[450px] lg:w-[901px] h-[160px] md:h-[250px] lg:h-[500px] flex flex-col mt-8 md:mt-16 lg:mt-32 items-center">
         {/* samudra header */}
         <div className="w-fit h-fit flex flex-row justify-center items-center gap-x-1.5 md:gap-x-4">
-          <h1 className="text-sm md:text-base lg:text-[48px] text-white drop-shadow-md">
+          <h1 className="text-sm font-semibold md:text-base lg:text-[48px] text-white drop-shadow-md font-heading">
             Samudra
           </h1>
           <div className="w-[1px] h-[14px] md:h-[11px] lg:h-[45px] text-transparent bg-white">
             .
           </div>
-          <p className="font-semibold text-[10px] md:text-[10px] lg:text-sm text-[#F4AA3D]">
-            Safari Ilmu di Bulan <br /> Ramadan
+          <p className="font-semibold text-[10px] md:text-[10px] lg:text-sm text-[#F4AA3D] drop-shadow-md font-title leading-tight lg:leading-normal">
+            Safari Ilmu <br /> di Bulan Ramadan
           </p>
         </div>
         {/* end of samudra header */}
 
-        {/* content samudra subuh */}
+        {/* content samudra */}
         <div className="w-full h-full grid grid-cols-[2fr_1fr]">
           {/* left side */}
-          <div className="flex flex-col justify-center gap-y-2 md:gap-y-5 lg:gap-y-10 pl-0 md:pl-10 md:pr-5 grow">
+          <div className="flex flex-col justify-center gap-y-2 md:gap-y-5 lg:gap-y-10 pl-0 md:pl-3 md:pr-5 grow font-body">
             {/* name */}
             <div className="flex flex-row gap-x-1 md:gap-x-6 lg:gap-x-10 items-center pl-2">
               <Image

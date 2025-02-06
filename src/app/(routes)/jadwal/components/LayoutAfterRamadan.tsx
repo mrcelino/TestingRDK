@@ -11,7 +11,7 @@ export default function LayoutAfterRamadan() {
           See you again in the next Ramadan
         </h1>
         <Image  
-          src="/images/maskot.png"
+          src="/images/jadwal/maskot_wave.svg"
           width={434}
           height={434}
           alt="sign"

@@ -9,13 +9,13 @@ export default function RamadanPublicLecture() {
       <div className="w-[300px] md:w-[450px] lg:w-[901px] h-[160px] md:h-[250px] lg:h-[500px] flex flex-col mt-8 md:mt-16 lg:mt-32 items-center">
         {/*  RPL header */}
         <div className="w-fit h-fit flex flex-row justify-center items-center gap-x-1.5 md:gap-x-4">
-          <h1 className="text-sm md:text-base lg:text-[48px] text-white drop-shadow-md">
+          <h1 className="text-sm font-semibold md:text-base lg:text-[48px] text-white drop-shadow-md font-heading">
             RPL
           </h1>
           <div className="w-[1px] h-[14px] md:h-[11px] lg:h-[45px] text-transparent bg-white">
             .
           </div>
-          <p className="font-semibold text-[10px] md:text-[10px] lg:text-sm text-[#F4AA3D]">
+          <p className="font-semibold text-[10px] md:text-[10px] lg:text-sm text-[#F4AA3D] drop-shadow-md font-title">
             Ramadan Public <br /> Lecture
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function RamadanPublicLecture() {
           </div>
 
           {/* right side */}
-          <div className="flex flex-col justify-center gap-y-2 md:gap-y-5 lg:gap-y-10 pl-2.5 pr-0 md:pl-10 md:pr-5">
+          <div className="flex flex-col justify-center gap-y-2 md:gap-y-5 lg:gap-y-10 pl-2.5 pr-0 md:pl-10 md:pr-2 lg:pr-3 font-body">
             {/* name */}
             <div className="flex flex-row gap-x-2 md:gap-x-6 lg:gap-x-10 items-center pl-2">
               <Image

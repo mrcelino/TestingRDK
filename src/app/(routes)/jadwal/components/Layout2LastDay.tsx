@@ -13,7 +13,7 @@ export default function Layout2LastDay() {
           Sorry, No Agenda Today!
         </h1>
         <Image
-          src="/images/maskot.png"
+          src="/images/jadwal/maskot_stand.svg"
           width={405}
           height={405}
           alt="sign"

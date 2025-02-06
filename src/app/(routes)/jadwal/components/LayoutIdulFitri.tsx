@@ -14,17 +14,17 @@ export default function LayoutIdulFitri() {
       </div>
 
       <div className="flex relative z-20 w-[253px] h-[53px] md:w-[464px] md:h-[95px] lg:w-[942px] lg:h-[247px] bg-white border lg:border-[3px] border-black rounded-[100px] justify-center items-center translate-y-10 md:translate-y-14 lg:translate-y-28">
-        <div className="flex flex-col justify-center items-end font-bold text-xs md:text-sm lg:text-[32px] text-[#15575B] translate-x-1 md:translate-x-10 lg:-translate-x-20 gap-y-0.5 md:gap-y-2 lg:gap-y-10 font-body">
+        <div className="flex flex-col justify-center items-end font-black text-xs md:text-lg lg:text-[38px] text-[#15575B] translate-x-1 md:translate-x-6 lg:-translate-x-20 gap-y-0.5 md:gap-y-2 lg:gap-y-10 font-body">
           <h2>تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ وَ تَقَبَّلْ ياَ كَرِيْمُ</h2>
           <h2>كُلُّ عَامٍ وَأَنْتُمْ بِخَيْرٍ</h2>
         </div>
 
         <img
-          src="/images/maskot.png"
-          width={328}
-          height={328}
+          src="/images/jadwal/maskot_star.svg"
+          width={297}
+          height={396}
           alt="sign"
-          className="absolute w-[108px] h-[108px] md:w-[199px] md:h-[199px] lg:w-[328px] lg:h-[328px] -right-12 -bottom-9 md:-right-16 lg:right-10 md:-bottom-12 lg:-bottom-24 scale-x-[-1]"
+          className="absolute w-[108px] h-[108px] md:w-[199px] md:h-[199px] lg:w-[297px] lg:h-[396px] -right-10 -bottom-6 md:-right-16 lg:right-8 md:-bottom-12 lg:-bottom-16 scale-x-[-1]"
         />
       </div>
 

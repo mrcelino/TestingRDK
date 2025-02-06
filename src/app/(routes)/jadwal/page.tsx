@@ -28,6 +28,7 @@ import LayoutIdulFitri from "./components/LayoutIdulFitri";
 import LayoutBigAgendaRdkFest from "./components/LayoutBigAgendaRdkFest";
 import Calendar from "./components/shared/Calendar";
 import LayoutAgendaNotReleased from "./components/LayoutAgendaNotReleased";
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/solid";
 
 
 
@@ -185,13 +186,14 @@ export default function JadwalPage() {
             onClick={previousDay}
             className="w-[81px] md:w-[160px] lg:w-[278px] h-[17px] md:h-[34px] lg:h-[59px] bg-[#F4AA3D] hover:bg-[#cc8f33] cursor-pointer border lg:border-[3px] border-black rounded-[30px] items-center justify-center flex flex-row gap-x-4"
           >
-            <Image
+            {/* <Image
               src="/images/jadwal/icon_arrow_left.svg"
               width={24}
               height={24}
               alt="icon_arrow"
               className="w-[20px] md:w-[24px] h-[21px] md:h-[24px]"
-            />
+            /> */}
+            <ArrowLeftIcon className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10" aria-hidden="true" />
             <p className="text-black font-medium text-[6px] md:text-sm lg:text-xl italic">
               Previous Day
             </p>
@@ -204,13 +206,14 @@ export default function JadwalPage() {
             <p className="text-white font-medium text-[6px] md:text-sm lg:text-xl italic">
               Next Day
             </p>
-            <Image
+            {/* <Image
               src="/images/jadwal/icon_arrow_right.svg"
               width={24}
               height={24}
               alt="icon_arrow"
               className="w-[20px] md:w-[24px] h-[21px] md:h-[24px]"
-            />
+            /> */}
+            <ArrowRightIcon className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10 text-white" aria-hidden="true" />
           </div>
         </div>
         {/* end of TWO BUTTON CONTAINER */}
