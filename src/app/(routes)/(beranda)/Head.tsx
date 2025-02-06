@@ -1,10 +1,16 @@
 export default function Head() {
 	return (
 		<div className="bg-greenCS w-full h-full mx-auto text-center text-white content-center p-6 font-titania font-bold ">
-			<p className="lg:text-6xl md:text-4xl text-2xl text-shadow-lg">Welcome To</p>
-			<p className="lg:text-6xl md:text-4xl text-2xl text-shadow-lg">Ramadhan DI Kampus</p>
+			<p className="lg:text-6xl md:text-4xl text-2xl text-shadow-lg">
+				Welcome To
+			</p>
+			<p className="lg:text-6xl md:text-4xl text-2xl text-shadow-lg">
+				Ramadhan DI Kampus
+			</p>
 
-			<p className="lg:text-5xl  md:text-3xl  text-lg lg:mt-6">Universitas Gadjah Mada</p>
+			<p className="lg:text-5xl  md:text-3xl  text-lg lg:mt-6">
+				Universitas Gadjah Mada
+			</p>
 
 			<p className="lg:text-3xl md:text-2xl text-sm border-black border-2 lg:border-4 md:border-[3px] rounded-full bg-white text-greenCS lg:w-1/2 w-[55%] py-1 lg:px-10 mx-auto lg:mt-10 md:mt-6 mt-3">
 				1446 H - 2025 M

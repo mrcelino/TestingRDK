@@ -8,7 +8,7 @@ export default function Rpl() {
 				{/* Title */}
 				<div className="text-white flex items-center justify-evenly bg-greenCS border-2 lg:border-[3px] border-black  border-b-0 lg:p-4 w-[80%] lg:w-[40%] lg:rounded-t-3xl rounded-t-[4rem] py-1">
 					<h1 className="font-bold text-center font-titania font-bold lg:text-4xl text-xl text-shadow-lg">
-						RPl
+						RPL
 					</h1>
 
 					<div className="lg:w-[2px] w-[1px] h-6 lg:h-10 bg-white"></div>

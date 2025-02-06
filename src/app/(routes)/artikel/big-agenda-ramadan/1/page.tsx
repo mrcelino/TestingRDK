@@ -26,7 +26,7 @@ export default function ArtikelBAR() {
 					<p className="font-light italic text-greenCS ">March, 12 2025</p>
 				</div>
 
-				<div className="p-2 rounded mt-4 lg:w-3/4 lg:mx-auto">
+				<div className="p-2 rounded mt-4 lg:mt-10 lg:w-3/4 lg:mx-auto">
 					<Image
 						src={"/images/artikel/kajian.png"}
 						alt="Kajian Samudra"
@@ -45,7 +45,7 @@ export default function ArtikelBAR() {
 					</p>
 				</div>
 
-				<article className="mt-10 text-justify font-medium  ">
+				<article className="mt-10 text-justify  font-greenCS text-lg">
 					<p>
 						Yogyakarta, 4 Januari 2025 — Ramadan Festival UGM 2025 berlangsung
 						meriah dengan kehadiran ratusan mahasiswa Universitas Gadjah Mada

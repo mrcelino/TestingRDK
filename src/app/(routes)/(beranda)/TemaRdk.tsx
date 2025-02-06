@@ -5,8 +5,13 @@ export default function TemaRdk() {
 		<div className="lg:justify-between mt-20 md:flex">
 			{/* Maskot */}
 
-			<Image src="/svg/maskot.svg" alt="" height={1000} width={1000}
-            className=" hidden md:block w-1/3" />
+			<Image
+				src="/svg/maskot.svg"
+				alt=""
+				height={1000}
+				width={1000}
+				className=" hidden md:block w-1/3"
+			/>
 
 			<div className="lg:w-[60%] md:w-3/4 md:ml-auto md:mr-0">
 				<h1 className="lg:text-5xl text-2xl text-greenCS lg:w-[70%] bg-orangeCS border-black lg:border-4 border-2 rounded-tr-[50px] rounded-bl-[50px] font-bold lg:py-3 lg:px-10 text-center  mx-auto font-titania py-2 w-4/5">

@@ -16,11 +16,9 @@ export default function Home() {
 
 			{/* TTG RDK, Tema, RDK Quest */}
 			<div className="lg:w-full h-full lg:p-16 w-11/12 mx-auto p-6 ">
-
 				<AboutRdk />
 				<TemaRdk />
 				<RdkQuest />
-				
 			</div>
 		</main>
 	);

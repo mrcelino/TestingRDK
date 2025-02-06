@@ -24,8 +24,6 @@ const worksans = Work_Sans({
 
 
 
-
-
 export default function RootLayout({
 	children,
 }: Readonly<{

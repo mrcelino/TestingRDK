@@ -19,7 +19,7 @@ export default function DailyAgenda() {
 						viewBox="0 0 183 183"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
-						className="absolute left-[-3rem] lg:left-[15rem] lg:h-full h-20"
+						className="absolute left-[-3rem] lg:left-[15rem] lg:h-full h-20 animateSpin"
 					>
 						<path
 							d="M121.448 30.4004H60.7504V151.796H121.448V30.4004Z"
@@ -129,22 +129,24 @@ export default function DailyAgenda() {
 							d="M121.5 91.1L182.197 91.1C182.197 107.861 168.61 121.449 151.849 121.449C135.088 121.449 121.5 107.861 121.5 91.1ZM121.5 91.1C121.5 107.861 135.088 121.449 151.849 121.449C151.809 104.705 138.243 91.1398 121.5 91.1ZM151.849 121.449C151.889 104.705 165.454 91.1398 182.197 91.1C182.197 107.861 168.61 121.449 151.849 121.449Z"
 							fill="#EFC828"
 						/>
-						<animateTransform
+						{/* <animateTransform
 							attributeName="transform"
 							type="rotate"
-							from="0 0 -36"
+							from="0 0 0"
 							to="360 15 36"
 							dur="5s"
 							repeatCount="indefinite"
-						/>
+						/> */}
+
+						
 					</svg>
 
-					<div className="lg:p-6 px-4 py-2 text-center border-black border-4 bg-greenCS text-white font-bold font-titania lg:w-1/2 w-[80%] rounded-full">
-						<h1 className="lg:text-4xl text-2xl">Daily Agenda</h1>
-						<h2 className="text-orangeCS text-xl lg:text-3xl text-shadow-lg">
+					<div className="lg:p-6 px-4 py-2 text-center border-black border-4 bg-greenCS text-white font-bold  lg:w-1/2 w-[80%] rounded-full">
+						<h1 className="lg:text-4xl text-2xl font-titania">Daily Agenda</h1>
+						<h2 className="text-orangeCS text-xl lg:text-3xl text-shadow-lg font-titania">
 							Ramadhan di Kampus
 						</h2>
-						<h3 className="font-semibold italic lg:text-xl italic">
+						<h3 className="font-semibold italic lg:text-xl italic font-title">
 							Universitas Gadjah Mada
 						</h3>
 					</div>

@@ -17,9 +17,6 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      fontFamily: {
-        trirong: "var(--font-trirong)", // Menggunakan variabel dari next/font
-      },
       textShadow: {
         sm: "1px 1px 2px rgba(0, 0, 0, 0.2)",
         md: "2px 2px 4px rgba(0, 0, 0, 0.3)",
@@ -37,6 +34,7 @@ export default {
         slideInTop: 'slideInTop 1s ease-out',
         fadeInScale: 'fadeInScale 1.5s ease-out',
         zoomIn: 'zoomIn 1.5s ease-out',
+        animateSpin: 'spin 1s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -58,6 +56,10 @@ export default {
         zoomIn: {
           '0%': { transform: 'scale(0.9)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        spin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(270deg)' },
         },
       },
 

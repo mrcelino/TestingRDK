@@ -70,7 +70,7 @@ export default function Footer() {
 						</div>
 
 						<div className="lg:w-2/3 mx-auto text-center text-greenCS font-semibold mt-4">
-							<p >Donasi Langsung melalui COD Sekitar Kampus UGM /</p>
+							<p>Donasi Langsung melalui COD Sekitar Kampus UGM /</p>
 
 							<p>Sekretariat Jama’ah Shalahuddin (Sayap Selatan Masjid</p>
 
@@ -415,10 +415,7 @@ export default function Footer() {
 
 					{/* Blur Effect */}
 					{/* Tanya aja deh wkw */}
-					<div className="absolute top-10 left-[-5rem] w-[25rem] h-[25rem] bg-[#76D0D5] rounded-full blur-[10rem] opacity-70">
-
-					</div>
-					
+					<div className="absolute top-10 left-[-5rem] w-[25rem] h-[25rem] bg-[#76D0D5] rounded-full blur-[10rem] opacity-70"></div>
 				</div>
 			</div>
 		</>

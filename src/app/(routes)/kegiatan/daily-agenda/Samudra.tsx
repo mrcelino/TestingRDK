@@ -5,7 +5,7 @@ export default function Samudra() {
 		<>
 			<div className="flex flex-col justify-center items-center mt-12">
 				{/* Title */}
-				<div className="text-white flex items-center justify-evenly bg-orangeCS border-2 lg:border-[3px] border-black border-b-0 lg:p-4 w-[80%] lg:w-[40%] lg:rounded-t-3xl rounded-t-[4rem] py-1 animate-fadeIn">
+				<div className="text-white flex items-center justify-evenly bg-orangeCS border-2 lg:border-[3px] lg:border-b-0 border-b-0 border-black lg:p-4 w-[80%] lg:w-[40%]  rounded-t-[4rem] py-1 animate-fadeIn">
 					<h1 className="font-bold text-center font-titania font-bold lg:text-4xl text-xl text-shadow-lg animate-fadeInScale">
 						Samudra
 					</h1>
