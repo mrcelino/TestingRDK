@@ -115,6 +115,26 @@ export default function JadwalPage() {
 
   return (
     <div className="w-full h-fit flex flex-col bg-gradient-to-b from-[#ffffff] from-1% to-[#21666A] to-30% bg-scroll items-center relative">
+      <div className="absolute w-full h-fit top-1/3 max-w-[1920px]">
+        <div className="flex w-full justify-between opacity-50">
+          <div className="bg-white h-96 w-96 rounded-full blur-[100px] opacity-[0.09]"></div>
+          <div className="bg-white h-96 w-96 rounded-full blur-[100px] opacity-[0.09]"></div>
+        </div>
+
+        <div className="flex w-full justify-between mt-[18rem]">
+          <div className="bg-white h-96 w-96 rounded-full blur-[100px] opacity-[0.09]"></div>
+          <div className="bg-white h-96 w-96 rounded-full blur-[100px] opacity-[0.09] mt-[8rem]"></div>
+        </div>
+        <div className="flex w-full justify-between mt-10">
+          <div className="bg-white h-96 w-96 rounded-full blur-[100px] opacity-[0.09] mt-[8rem]"></div>
+          <div className="bg-white h-96 w-96 rounded-full blur-[100px] opacity-[0.09]"></div>
+        </div>
+
+        <div className="flex w-full justify-between mt-[18rem]">
+          <div className="bg-white h-96 w-96 rounded-full blur-[100px] opacity-[0.09]"></div>
+          <div className="bg-white h-96 w-96 rounded-full blur-[100px] opacity-[0.09] mt-[8rem]"></div>
+        </div>
+      </div>  
       <div className="absolute inset-0 bg-[url('/images/jadwal/pattern-bg-mobile.svg')] lg:bg-[url('/images/jadwal/pattern-for-bg.svg')] bg-repeat opacity-[0.08] mix-blend-difference"></div>
       <div className="w-full h-full relative flex flex-col items-center">
         <JadwalHeader />

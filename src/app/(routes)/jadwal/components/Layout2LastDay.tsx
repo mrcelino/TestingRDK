@@ -21,7 +21,7 @@ export default function Layout2LastDay() {
         />
       </div>
 
-      <div className="flex relative w-full h-[23px] md:h-[38px] lg:h-[77px] bg-[#F4AA3D] justify-center items-center">
+      <div className="flex relative max-w-[1920px] w-full h-[23px] md:h-[38px] lg:h-[77px] bg-[#F4AA3D] justify-center items-center">
         <h1 className="text-white font-bold text-sm md:text-2xl lg:text-2xl italic">DON’T WORRY!</h1>
         <Image
           src="/images/jadwal/Warning.svg"
@@ -32,7 +32,7 @@ export default function Layout2LastDay() {
         />
       </div>
 
-      <div className="flex relative w-full h-[76px] md:h-[77px] lg:h-[154px] bg-[#fbfbfb] justify-center items-center mb-7 md:mb-10 lg:mb-14">
+      <div className="flex relative max-w-[1920px] w-full h-[76px] md:h-[77px] lg:h-[154px] bg-[#fbfbfb] justify-center items-center mb-7 md:mb-10 lg:mb-14">
         <h1 className="text-[#15575B] font-bold text-xs md:text-base lg:text-2xl italic">
           You Can Have Iftar at the Mosque!
         </h1>
