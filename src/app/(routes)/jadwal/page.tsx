@@ -30,8 +30,6 @@ import Calendar from "./components/shared/Calendar";
 import LayoutAgendaNotReleased from "./components/LayoutAgendaNotReleased";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/solid";
 
-
-
 export default function JadwalPage() {
   const today = startOfToday();
   const [selectedDay, setSelectedDay] = useState<Date>(today);
@@ -116,15 +114,9 @@ export default function JadwalPage() {
   }
 
   return (
-    // <div className="w-full h-fit flex flex-col bg-gradient-to-b from-[#ffffff] from-1%  to-[#21666A] to-30% bg-scroll items-center">
-    //   <div className="w-full h-full bg-[url('/images/jadwal/pattern-for-bg.svg')] bg-opacity-5 bg-repeat flex flex-col items-center">
     <div className="w-full h-fit flex flex-col bg-gradient-to-b from-[#ffffff] from-1% to-[#21666A] to-30% bg-scroll items-center relative">
       <div className="absolute inset-0 bg-[url('/images/jadwal/pattern-bg-mobile.svg')] lg:bg-[url('/images/jadwal/pattern-for-bg.svg')] bg-repeat opacity-[0.08] mix-blend-difference"></div>
       <div className="w-full h-full relative flex flex-col items-center">
-      {/* <div className="w-full h-screen flex flex-col bg-gradient-to-b from-white to-[#21666A] items-center relative">
-  <div className="absolute inset-0 lg:bg-[url('/images/jadwal/pattern-for-bg.svg')] bg-repeat opacity-70 mix-blend-difference"></div>
-  <div className="w-full h-full relative flex flex-col items-center"> */}
-    
         <JadwalHeader />
 
         <Calendar
@@ -193,7 +185,10 @@ export default function JadwalPage() {
               alt="icon_arrow"
               className="w-[20px] md:w-[24px] h-[21px] md:h-[24px]"
             /> */}
-            <ArrowLeftIcon className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10" aria-hidden="true" />
+            <ArrowLeftIcon
+              className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10"
+              aria-hidden="true"
+            />
             <p className="text-black font-medium text-[6px] md:text-sm lg:text-xl italic">
               Previous Day
             </p>
@@ -213,7 +208,10 @@ export default function JadwalPage() {
               alt="icon_arrow"
               className="w-[20px] md:w-[24px] h-[21px] md:h-[24px]"
             /> */}
-            <ArrowRightIcon className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10 text-white" aria-hidden="true" />
+            <ArrowRightIcon
+              className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10 text-white"
+              aria-hidden="true"
+            />
           </div>
         </div>
         {/* end of TWO BUTTON CONTAINER */}
