@@ -262,7 +262,7 @@ export default function LayoutIdulFitri({
                 </h2>
               </div>
               {/* label khatib */}
-              <div className="absolute md:hidden top-[46px] right-[135px] w-[142px] h-[15px] bg-white rounded-t-[30px] flex justify-center items-center rotate-[-8deg]">
+              <div className="absolute md:hidden top-[46px] right-[135px] w-[142px] h-[15px] bg-white rounded-t-[30px] flex justify-center items-center rotate-[-8deg] shadow-lg">
                 <h3 className="text-[8px] text-[#15575B] italic font-bold font-body">
                   Khatib
                 </h3>

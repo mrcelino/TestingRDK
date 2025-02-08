@@ -97,7 +97,7 @@ interface bigAgendaItem {
   place: string;
   date: string;
   time: string;
-  big_agenda_type: "MIT" | "Grand_Opening" | "RDK_Festival" | "Special_Eid";
+  big_agenda_type: "MIT" | "Grand_Opening" | "RDK_Festival" | "Special_Eid" | "Two_Last_Day";
   image_spectacular_shows: [ImageSpectacularShows];
   source_person: Source_person;
   moderator: Moderator;
@@ -269,7 +269,7 @@ export default function JadwalPage() {
           case "Special_Eid":
             setLayout("LayoutIdulFitri");
             break;
-          case "Spectacular_Show":
+          case "Two_Last_Day":
             setLayout("Layout2LastDay");
             break;
           default:

@@ -71,7 +71,7 @@ export default function LayoutBigAgendaMIT({
   dataBigAgenda: BigAgendaItem[];
   dataDailyAgenda: DailyAgendaItem[];
 }) {
-  console.log("check data mit big agenda", dataDailyAgenda);
+  // console.log("check data mit big agenda", dataDailyAgenda);
   const agendaOrder = ["Mimbar_Subuh", "Samudera", "RPL"]; // buat sorting kalau semisal api nya amburadul urutan nya (awikwok)
 
   //sort.
