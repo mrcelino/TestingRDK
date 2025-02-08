@@ -2,13 +2,30 @@
 
 import Image from "next/image";
 
-export default function MimbarSubuh() {
+interface Profile {
+  id: number;
+  documentId: string;
+  name: string;
+  publicUrl: string;
+}
+
+interface AgendaItem {
+  id: number;
+  documentId: string;
+  theme: string;
+  time: string;
+  daily_agenda_type: "Samudera" | "RPL" | "Mimbar_Subuh"; // Pastikan sesuai dengan JSON
+  date: string;
+  profile: Profile;
+}
+
+export default function MimbarSubuh({ data }: { data: AgendaItem }) {
   return (
     <>
       {/* start of mimbar subuh */}
       <div className="w-[300px] md:w-[450px] lg:w-[901px] h-[160px] md:h-[250px] lg:h-[500px] flex flex-col mt-8 md:mt-16 lg:mt-32 items-center">
         {/* mimbar subuh header */}
-        <h1 className="text-sm md:text-lg lg:text-[48px] font-semibold text-white drop-shadow-md font-heading">
+        <h1 className="text-sm md:text-lg lg:text-[48px] font-normal text-white drop-shadow-md font-heading">
           Mimbar Subuh
         </h1>
         {/* end of mimbar subuh header */}
@@ -48,7 +65,13 @@ export default function MimbarSubuh() {
                                       alt="sign"
                                       className=""
                                     /> */}
-                  <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div>
+                  {/* <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div> */}
+                  <div
+                    style={{
+                      backgroundImage: `url("${data.profile.publicUrl}")`,
+                    }}
+                    className="bg-cover bg-center w-full h-full"
+                  ></div>
                 </div>
 
                 {/* bottom part icon container*/}
@@ -97,7 +120,8 @@ export default function MimbarSubuh() {
                 className="w-[22px] h-[22px] md:w-[33px] md:h-[33px] lg:w-[91px] lg:h-[91px]"
               />
               <p className="text-white font-medium text-[8px] md:text-[10px] lg:text-xl italic">
-                Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed.
+                {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
+                {data.profile.name}
               </p>
             </div>
             {/* time */}
@@ -110,7 +134,8 @@ export default function MimbarSubuh() {
                 className="w-[15px] h-[15px] md:w-[24px] md:h-[24px] lg:w-[91px] lg:h-[91px]"
               />
               <p className="text-white font-medium text-[8px] md:text-[10px] lg:text-xl italic">
-                05:00 WIB
+                {/* 05:00 WIB */}
+                {data.time} WIB
               </p>
             </div>
             {/* place */}
@@ -123,8 +148,9 @@ export default function MimbarSubuh() {
                 className="w-[17px] h-[17px] md:w-[24px] md:h-[24px] lg:w-[91px] lg:h-[91px]"
               />
               <p className="text-white font-medium text-[8px] md:text-[10px] lg:text-xl italic">
-                Kausalitas: Hukum Alam atau Tuhan: Pemikiran Religio-Saintifik
-                al-Ghazali
+                {/* Kausalitas: Hukum Alam atau Tuhan: Pemikiran Religio-Saintifik
+                al-Ghazali */}
+                {data.theme}
               </p>
             </div>
           </div>

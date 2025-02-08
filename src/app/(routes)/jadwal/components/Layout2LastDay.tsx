@@ -5,7 +5,54 @@
 import Image from "next/image";
 import BigAgendaHeader from "./shared/BigAgendaHeader";
 
-export default function Layout2LastDay() {
+interface ImageSpectacularShows {
+  id: number;
+  documentId: string;
+  publicUrl: string;
+  title: string;
+}
+
+interface Profile {
+  id: number;
+  documentId: string;
+  name: string;
+  publicUrl: string;
+}
+
+interface Moderator {
+  id: number;
+  documentId: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  locale: string;
+  profile: Profile;
+}
+
+interface Source_person {
+  id: number;
+  documentId: string;
+  profile: Profile;
+}
+
+interface AgendaItem {
+  id: number;
+  documentId: string;
+  theme: string;
+  place: string;
+  date: string;
+  time: string;
+  big_agenda_type: string;
+  image_spectacular_shows: [ImageSpectacularShows];
+  source_person: [Source_person];
+  moderator: Moderator;
+}
+
+export default function Layout2LastDay({
+  dataBigAgenda,
+}: {
+  dataBigAgenda: AgendaItem[];
+}) {
   return (
     <>
       <div className="w-[243px] h-[58px] md:w-[380px] md:h-[78px] lg:w-[779px] lg:h-[204px] bg-white rounded-[200px] border lg:border-[3px] border-black shadow-lg relative flex justify-center items-center mt-10 md:mt-16 lg:mt-40 mb-8 md:mb-14 lg:mb-32">
@@ -22,7 +69,9 @@ export default function Layout2LastDay() {
       </div>
 
       <div className="flex relative max-w-[1920px] w-full h-[23px] md:h-[38px] lg:h-[77px] bg-[#F4AA3D] justify-center items-center">
-        <h1 className="text-white font-bold text-sm md:text-2xl lg:text-2xl italic">DON’T WORRY!</h1>
+        <h1 className="text-white font-bold text-sm md:text-2xl lg:text-2xl italic">
+          DON’T WORRY!
+        </h1>
         <Image
           src="/images/jadwal/Warning.svg"
           width={156}
@@ -47,7 +96,17 @@ export default function Layout2LastDay() {
       </div>
 
       {/* start info buka puasa */}
-      <img src="/images/jadwal/info_buka_example.png" alt="informasi_berbuka" className="w-[300px] md:w-[332px] lg:w-[595px] object-contain rounded-[3px] hover:scale-105 transition"/>
+      {dataBigAgenda[0].image_spectacular_shows?.length > 0 ? (
+        <img
+          // src="/images/jadwal/info_buka_example.png"
+          src={dataBigAgenda[0].image_spectacular_shows[0].publicUrl}
+          alt="informasi_berbuka"
+          className="w-[300px] md:w-[332px] lg:w-[595px] object-contain rounded-[10px] hover:scale-105 transition"
+        />
+      ) : (
+        <h1 className="text-lg lg:text-3xl font-semibold text-white font-title my-2 md:my-5 lg:my-10 hover:scale-105 transition-all hover:drop-shadow-xl">Information will be released soon !!!</h1>
+      )}
+
       {/* end info buka puasa */}
     </>
   );

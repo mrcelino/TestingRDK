@@ -5,7 +5,54 @@ import BigAgenda from "./shared/BigAgenda";
 import JadwalGreet from "./shared/JadwalGreet";
 import SpectacularShow from "./shared/SpectacularShow";
 
-export default function LayoutBigAgendaGrandOpening() {
+interface ImageSpectacularShows {
+  id: number;
+  documentId: string;
+  publicUrl: string;
+  title: string;
+}
+
+interface Profile {
+  id: number;
+  documentId: string;
+  name: string;
+  publicUrl: string;
+}
+
+interface Moderator {
+  id: number;
+  documentId: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  locale: string;
+  profile: Profile;
+}
+
+interface Source_person {
+  id: number;
+  documentId: string;
+  profile: Profile;
+}
+
+interface AgendaItem {
+  id: number;
+  documentId: string;
+  theme: string;
+  place: string;
+  date: string;
+  time: string;
+  big_agenda_type: string;
+  image_spectacular_shows: [ImageSpectacularShows];
+  source_person: [Source_person];
+  moderator: Moderator;
+}
+
+export default function LayoutBigAgendaGrandOpening({
+  dataBigAgenda,
+}: {
+  dataBigAgenda: AgendaItem[];
+}) {
   return (
     <>
       <JadwalGreet
@@ -15,9 +62,12 @@ export default function LayoutBigAgendaGrandOpening() {
         }
       />
 
-      <BigAgenda bigAgendaTitle="Grand Opening" />
+      <BigAgenda
+        bigAgendaTitle="Grand Opening"
+        dataBigAgenda={dataBigAgenda[0]}
+      />
 
-      <SpectacularShow />
+      <SpectacularShow dataBigAgenda={dataBigAgenda} />
 
       <div className="w-[200px] md:w-[318px] lg:w-[820px] h-[48px] md:h-[63px] lg:h-[161px] bg-white rounded-[200px] border lg:border-[3px] border-black shadow-lg relative flex justify-center items-center text-center mt-16 lg:mt-40 mb-6 lg:mb-10 px-2 md:px-6">
         <h1 className="text-[#15575B] text-[8px] md:text-[12px] lg:text-2xl font-semibold italic font-body">

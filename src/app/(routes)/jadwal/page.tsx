@@ -30,6 +30,90 @@ import Calendar from "./components/shared/Calendar";
 import LayoutAgendaNotReleased from "./components/LayoutAgendaNotReleased";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/solid";
 
+// interfaces untuk daily agendaaa
+interface DailyProfile {
+  id: number;
+  documentId: string;
+  name: string;
+  publicUrl: string;
+}
+
+interface DailyAgendaItem {
+  id: number;
+  documentId: string;
+  theme: string;
+  time: string;
+  daily_agenda_type: "Samudera" | "RPL" | "Mimbar_Subuh";
+  date: string;
+  profile: DailyProfile;
+}
+
+interface DailyAPIResponse {
+  data: DailyAgendaItem[];
+  meta: {
+    pagination: {
+      page: number;
+      pageSize: number;
+      total: number;
+    };
+  };
+}
+
+// interafaces sementara untuk big agendaaa
+interface BigProfile {
+  id: number;
+  documentId: string;
+  name: string;
+  publicUrl: string;
+}
+
+interface Moderator {
+  id: number;
+  documentId: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  locale: string;
+  profile: BigProfile;
+}
+
+interface Source_person {
+  id: number;
+  documentId: string;
+  profile: BigProfile;
+}
+
+interface ImageSpectacularShows {
+  id: number;
+  documentId: string;
+  publicUrl: string;
+  title: string;
+}
+
+interface bigAgendaItem {
+  id: number;
+  documentId: string;
+  theme: string;
+  place: string;
+  date: string;
+  time: string;
+  big_agenda_type: "MIT" | "Grand_Opening" | "RDK_Festival" | "Special_Eid";
+  image_spectacular_shows: [ImageSpectacularShows];
+  source_person: Source_person;
+  moderator: Moderator;
+}
+
+interface bigAPIResponse {
+  data: bigAgendaItem[];
+  meta: {
+    pagination: {
+      page: number;
+      pageSize: number;
+      total: number;
+    };
+  };
+}
+
 export default function JadwalPage() {
   const today = startOfToday();
   const [selectedDay, setSelectedDay] = useState<Date>(today);
@@ -39,7 +123,120 @@ export default function JadwalPage() {
   const firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
 
   const [layout, setLayout] = useState<string>("");
+  const [dailyAgenda, setDailyAgenda] = useState<DailyAgendaItem[]>([]);
+  const [bigAgenda, setBigAgenda] = useState<any[]>([]);
+  const [highlightDates, setHighlightDates] = useState<Date[]>([]);
 
+  // fetching daily agenda & big agenda
+  useEffect(() => {
+    const fetchAgendas = async () => {
+      try {
+        const date = format(selectedDay, "yyyy-MM-dd");
+
+        // Jalankan kedua fetch secara paralel dengan Promise.all
+        const [dailyResponse, bigResponse] = await Promise.all([
+          // fetch(`https://be-rdk-website-production.up.railway.app/api/daily-agendas?date=${date}`),
+          fetch(`http://localhost:1337/api/daily-agendas?date=${date}`),
+          // fetch(`https://be-rdk-website-production.up.railway.app/api/big-agenda?date=${date}`)
+          fetch(`http://localhost:1337/api/big-agenda?date=${date}`),
+        ]);
+
+        // Parse JSON response
+        const [dailyData, bigData]: [DailyAPIResponse, bigAPIResponse] =
+          await Promise.all([dailyResponse.json(), bigResponse.json()]);
+
+        // Set state
+        setDailyAgenda(dailyData.data);
+        setBigAgenda(bigData.data);
+
+        console.log("Daily Agenda:", dailyData.data);
+        console.log("Big Agenda:", bigData.data);
+      } catch (error) {
+        console.error("Error fetching agendas:", error);
+      }
+    };
+
+    fetchAgendas();
+  }, [selectedDay]);
+
+  // useEffect(() => {
+  //   const fetchAgendas = async () => {
+  //     const date = format(selectedDay, "yyyy-MM-dd");
+
+  //     // Fetch daily agenda
+  //     const dailyResponse = await fetch(
+  //       `https://be-rdk-website-production.up.railway.app/api/daily-agendas?date=${date}`
+  //     );
+  //     const dailyData = await dailyResponse.json();
+  //     setDailyAgenda(dailyData.data);
+  //     console.log("Daily Agenda:", dailyData.data);
+
+  //     // Fetch big agenda
+  //     const bigResponse = await fetch(
+  //       `https://be-rdk-website-production.up.railway.app/api/big-agenda?date=${date}`
+  //     );
+  //     const bigData = await bigResponse.json();
+  //     setBigAgenda(bigData.data);
+  //     console.log("Big Agenda:", bigData.data);
+  //   };
+
+  //   fetchAgendas();
+  // }, [selectedDay]);
+
+  // Menentukan Highlited Dates berdasarkan Tanggal-tanggal big agenda
+  useEffect(() => {
+    const fetchHighlightDates = async () => {
+      try {
+        const response = await fetch(
+          // "https://be-rdk-website-production.up.railway.app/api/big-agenda"
+          "http://localhost:1337/api/big-agenda"
+        );
+        const data = await response.json();
+
+        if (data?.data) {
+          const highlightDates = data.data
+            .filter(({ date }: { date: string }) => {
+              const formattedDate = format(parseISO(date), "yyyy-MM-dd");
+              return (
+                formattedDate !== "2025-03-28" && formattedDate !== "2025-03-29" // ini biar 28 dan 29 ga ikut highlited date karena dia bukan big agenda tapi 2lastday (2lastday nya dimaskin ke big-agenda buat naruh gambar doang)
+              );
+            })
+            .map(({ date }: { date: string }) => parseISO(date));
+
+          setHighlightDates(highlightDates);
+        }
+      } catch (error) {
+        console.error("Error fetching highlight dates:", error);
+      }
+    };
+
+    fetchHighlightDates();
+  }, []);
+
+  // useEffect(() => {
+  //   const fetchHighlightDates = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         // "https://be-rdk-website-production.up.railway.app/api/big-agenda"
+  //         "http://localhost:1337/api/big-agenda"
+  //       );
+  //       const data = await response.json();
+
+  //       if (data?.data) {
+  //         const highlightDates = data.data.map(({ date }: { date: string }) =>
+  //           parseISO(date)
+  //         );
+  //         setHighlightDates(highlightDates);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching highlight dates:", error);
+  //     }
+  //   };
+
+  //   fetchHighlightDates();
+  // }, []);
+
+  // ini untuk decide layout apa yang mau digunakan
   useEffect(() => {
     const tanggal = format(selectedDay, "yyyy-MM-dd");
 
@@ -47,47 +244,64 @@ export default function JadwalPage() {
     const beforeRamadanDate = parseISO("2025-03-01");
     const afterRamadanDate = parseISO("2025-03-30");
 
-    if (isBefore(selectedDay, beforeRamadanDate)) {
+    if (isBefore(selectedDay, highlightDates[0])) {
       setLayout("LayoutBeforeRamadan");
     } else if (isAfter(selectedDay, afterRamadanDate)) {
       setLayout("LayoutAfterRamadan");
     } else {
-      // Cek tanggal spesifik
-      switch (tanggal) {
-        case "2025-03-01":
-          setLayout("LayoutBigAgendaGrandOpening");
-          break;
-        case "2025-03-08":
-          setLayout("LayoutBigAgendaMIT");
-          break;
-        case "2025-03-21":
-          setLayout("LayoutAgendaRdkFest");
-          break;
-        case "2025-03-22":
-          setLayout("LayoutAgendaRdkFest");
-          break;
-        case "2025-03-28":
-        case "2025-03-29":
-          setLayout("Layout2LastDay");
-          break;
-        case "2025-03-30":
-          setLayout("LayoutIdulFitri");
-          break;
-        // ...
-        default:
+      // Cek agenda besar
+      const bigAgendaForDate = bigAgenda.find(
+        (agenda) => agenda.date === tanggal
+      );
+
+      if (bigAgendaForDate) {
+        // Set layout berdasarkan jenis agenda besar
+        switch (bigAgendaForDate.big_agenda_type) {
+          case "RDK_Festival":
+            setLayout("LayoutBigAgendaRdkFest");
+            break;
+          case "Grand_Opening":
+            setLayout("LayoutBigAgendaGrandOpening");
+            break;
+          case "MIT":
+            setLayout("LayoutBigAgendaMIT");
+            break;
+          case "Special_Eid":
+            setLayout("LayoutIdulFitri");
+            break;
+          case "Spectacular_Show":
+            setLayout("Layout2LastDay");
+            break;
+          default:
+            setLayout("LayoutAgendaNotReleased");
+            break;
+        }
+      } else if (dailyAgenda.length > 0) {
+        // Jika tidak ada agenda besar, cek dailyyy cihuyy
+        if (dailyAgenda.length === 3) {
+          setLayout("LayoutDailyAgendaOnly");
+        } else if (dailyAgenda.length === 1) {
+          setLayout("LayoutDailyAgendaRplOnly");
+        } else if (dailyAgenda.length === 2) {
+          setLayout("LayoutDailyAgendaNoMimbarSubuh");
+        } else {
           setLayout("LayoutAgendaNotReleased");
-          break;
+        }
+      } else {
+        setLayout("LayoutAgendaNotReleased");
       }
     }
-  }, [selectedDay]);
+  }, [selectedDay, dailyAgenda, bigAgenda]);
 
-  const highlightDates = [
-    parseISO("2025-03-01"),
-    parseISO("2025-03-08"),
-    parseISO("2025-03-21"),
-    parseISO("2025-03-22"),
-    parseISO("2025-03-30"),
-  ];
+  console.log(layout);
+
+  // const highlightDates = [
+  //   parseISO("2025-03-01"),
+  //   parseISO("2025-03-08"),
+  //   parseISO("2025-03-21"),
+  //   parseISO("2025-03-22"),
+  //   parseISO("2025-03-30"),
+  // ];
 
   const days = eachDayOfInterval({
     start: firstDayCurrentMonth,
@@ -108,7 +322,6 @@ export default function JadwalPage() {
     setSelectedDay(add(selectedDay, { days: 1 }));
   }
 
-  // Fungsi untuk Previous Day
   function previousDay() {
     setSelectedDay(sub(selectedDay, { days: 1 }));
   }
@@ -116,7 +329,7 @@ export default function JadwalPage() {
   return (
     <div className="w-full h-fit flex flex-col bg-gradient-to-b from-[#ffffff] from-1% to-[#21666A] to-30% bg-scroll items-center relative">
       <div className="absolute w-full h-fit top-1/3 max-w-[1920px]">
-        <div className="flex w-full justify-between opacity-50">
+        <div className="flex w-full justify-between opacity-75">
           <div className="bg-white h-96 w-96 rounded-full blur-[100px] opacity-[0.09]"></div>
           <div className="bg-white h-96 w-96 rounded-full blur-[100px] opacity-[0.09]"></div>
         </div>
@@ -134,8 +347,8 @@ export default function JadwalPage() {
           <div className="bg-white h-96 w-96 rounded-full blur-[100px] opacity-[0.09]"></div>
           <div className="bg-white h-96 w-96 rounded-full blur-[100px] opacity-[0.09] mt-[8rem]"></div>
         </div>
-      </div>  
-      <div className="absolute inset-0 bg-[url('/images/jadwal/pattern-bg-mobile.svg')] lg:bg-[url('/images/jadwal/pattern-for-bg.svg')] bg-repeat opacity-[0.08] mix-blend-difference"></div>
+      </div>
+      <div className="absolute inset-0 bg-[url('/images/jadwal/pattern-bg-mobile3.svg')] lg:bg-[url('/images/jadwal/pattern-for-bg.svg')] bg-repeat opacity-10 lg:opacity-[0.08] mix-blend-difference"></div>
       <div className="w-full h-full relative flex flex-col items-center">
         <JadwalHeader />
 
@@ -160,6 +373,51 @@ export default function JadwalPage() {
           className="mt-5 md:mt-8 lg:mt-10 w-[63px] h-[40px] md:w-[99px] md:h-[63px] lg:w-[210px] lg:h-[133px]"
         />
 
+        {layout === "LayoutBeforeRamadan" && <LayoutBeforeRamadan />}
+        {layout === "LayoutAfterRamadan" && <LayoutAfterRamadan />}
+        {layout === "LayoutDailyAgendaOnly" && (
+          <LayoutDailyAgendaOnly dataDailyAgenda={dailyAgenda} />
+        )}
+        {layout === "LayoutDailyAgendaRplOnly" && (
+          <LayoutDailyAgendaRplOnly dataDailyAgenda={dailyAgenda} />
+        )}
+        {layout === "LayoutDailyAgendaNoMimbarSubuh" && (
+          <LayoutDailyAgendaNoMimbarSubuh dataDailyAgenda={dailyAgenda} />
+        )}
+        {layout === "LayoutBigAgendaGrandOpening" && (
+          <LayoutBigAgendaGrandOpening
+            dataBigAgenda={bigAgenda}
+            // bigAgenda={bigAgenda.find(
+            //   (agenda) => agenda.big_agenda_type === "Grand_Opening"
+            // )}
+          />
+        )}
+        {layout === "LayoutBigAgendaMIT" && (
+          <LayoutBigAgendaMIT
+            dataBigAgenda={bigAgenda}
+            dataDailyAgenda={dailyAgenda}
+            // bigAgenda={bigAgenda.find(
+            //   (agenda) => agenda.big_agenda_type === "MIT"
+            // )}
+          />
+        )}
+        {layout === "LayoutBigAgendaRdkFest" && (
+          <LayoutBigAgendaRdkFest
+            dataBigAgenda={bigAgenda}
+            dataDailyAgenda={dailyAgenda}
+            // bigAgenda={bigAgenda.find(
+            //   (agenda) => agenda.big_agenda_type === "RDK_Festival"
+            // )}
+          />
+        )}
+        {layout === "Layout2LastDay" && <Layout2LastDay dataBigAgenda={bigAgenda} />}
+        {layout === "LayoutIdulFitri" && (
+          <LayoutIdulFitri dataBigAgenda={bigAgenda} />
+        )}
+        {layout === "LayoutAgendaNotReleased" && <LayoutAgendaNotReleased />}
+
+        {/* event */}
+
         {/* event (untuk check aja)*/}
 
         {/* <LayoutBigAgendaGrandOpening /> */}
@@ -175,7 +433,7 @@ export default function JadwalPage() {
         {/* <LayoutIdulFitri /> */}
 
         {/* ini masih coba coba */}
-        {layout === "LayoutBeforeRamadan" && <LayoutBeforeRamadan />}
+        {/* {layout === "LayoutBeforeRamadan" && <LayoutBeforeRamadan />}
         {layout === "LayoutBigAgendaGrandOpening" && (
           <LayoutBigAgendaGrandOpening />
         )}
@@ -185,9 +443,7 @@ export default function JadwalPage() {
         {layout === "Layout2LastDay" && <Layout2LastDay />}
         {layout === "LayoutIdulFitri" && <LayoutIdulFitri />}
         {layout === "LayoutAgendaNotReleased" && <LayoutAgendaNotReleased />}
-        {layout === "LayoutAfterRamadan" && <LayoutAfterRamadan />}
-
-        {/* event */}
+        {layout === "LayoutAfterRamadan" && <LayoutAfterRamadan />} */}
 
         {/*  */}
 

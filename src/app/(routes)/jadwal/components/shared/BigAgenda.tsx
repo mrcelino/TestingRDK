@@ -2,7 +2,56 @@
 import Image from "next/image";
 import BigAgendaHeader from "./BigAgendaHeader";
 
-export default function BigAgenda({ bigAgendaTitle }: any) {
+interface ImageSpectacularShows {
+  id: number;
+  documentId: string;
+  publicUrl: string;
+  title: string;
+}
+
+interface Profile {
+  id: number;
+  documentId: string;
+  name: string;
+  publicUrl: string;
+}
+
+interface Moderator {
+  id: number;
+  documentId: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  locale: string;
+  profile: Profile;
+}
+
+interface Source_person {
+  id: number;
+  documentId: string;
+  profile: Profile;
+}
+
+interface AgendaItem {
+  id: number;
+  documentId: string;
+  theme: string;
+  place: string;
+  date: string;
+  time: string;
+  big_agenda_type: string;
+  image_spectacular_shows: [ImageSpectacularShows];
+  source_person: [Source_person];
+  moderator: Moderator;
+}
+
+export default function BigAgenda({
+  bigAgendaTitle,
+  dataBigAgenda,
+}: {
+  bigAgendaTitle: string;
+  dataBigAgenda: AgendaItem;
+}) {
   return (
     <>
       {/* header even1 */}
@@ -42,7 +91,16 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
                         alt="sign"
                         className=""
                       /> */}
-              <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div>
+              {/* <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div> */}
+              <div
+                style={{
+                  backgroundImage:
+                    dataBigAgenda.source_person?.length > 0
+                      ? `url("${dataBigAgenda.source_person[0]?.profile?.publicUrl}")`
+                      : "none",
+                }}
+                className="bg-cover bg-center w-full h-full"
+              ></div>
             </div>
 
             {/* bottom part icon container*/}
@@ -79,7 +137,10 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
             {/* container nama guest nya (cuma untuk mobile) */}
             <div className="absolute md:hidden top-1/2 left-24 w-[193px] h-[36px] bg-[#FBFBFB] border border-black rounded-tr-[100px] rounded-bl-[100px] rotate-[7deg] flex items-center justify-center px-2 shadow-md">
               <h2 className="font-bold text-[8px] text-[#F4AA3D] text-center italic font-body">
-                Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed.
+                {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
+                {dataBigAgenda.source_person?.length > 0
+                  ? dataBigAgenda.source_person[0]?.profile?.name
+                  : "Guest 1 will annouced soon"}
               </h2>
             </div>
           </div>
@@ -119,7 +180,16 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
                         className=""
                       /> */}
               {/* <img src="/images/jadwal/examplePhotoPengisiAcara.svg" alt="" className="w-fit h-fit "/> */}
-              <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div>
+              {/* <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div> */}
+              <div
+                style={{
+                  backgroundImage:
+                    dataBigAgenda.source_person?.length > 1
+                      ? `url("${dataBigAgenda.source_person[1]?.profile?.publicUrl}")`
+                      : "none",
+                }}
+                className="bg-cover bg-center w-full h-full"
+              ></div>
             </div>
 
             {/* bottom part icon container*/}
@@ -156,7 +226,10 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
             {/* container nama guest nya (cuma untuk mobile) */}
             <div className="absolute md:hidden top-1/2 right-24 w-[193px] h-[36px] bg-[#F4AA3D] border border-black rounded-tr-[100px] rounded-bl-[100px] rotate-[-8deg] flex items-center justify-center px-2 shadow-md">
               <h2 className="font-bold text-[8px] text-[#15575B] text-center italic font-body">
-                Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed.
+                {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
+                {dataBigAgenda.source_person?.length > 1
+                  ? dataBigAgenda.source_person[1]?.profile?.name
+                  : "Guest 2 will annouced soon"}
               </h2>
             </div>
           </div>
@@ -170,13 +243,19 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
         {/* left name container */}
         <div className="w-1/2 h-full border lg:border-[3px] border-black rounded-l-[100px] flex justify-center items-center">
           <p className="md:w-[219px] lg:w-[289px] text-[#F4AA3D] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-left font-body">
-            Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed.
+            {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
+            {dataBigAgenda.source_person?.length > 0
+              ? dataBigAgenda.source_person[0]?.profile?.name
+              : "Guest 1 will annouced soon"}
           </p>
         </div>
         {/* right name container */}
         <div className="w-1/2 h-full bg-[#F4AA3D] border lg:border-[3px] border-black rounded-r-[100px] flex justify-center items-center">
           <p className="md:w-[219px] lg:w-[289px] text-[#15575B] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-left font-body">
-            Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed.
+            {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
+            {dataBigAgenda.source_person?.length > 1
+              ? dataBigAgenda.source_person[1]?.profile?.name
+              : "Guest 2 will annouced soon"}
           </p>
         </div>
       </div>
@@ -194,14 +273,21 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
                         alt="sign"
                         className="rounded-full w-fit h-fit object-cover overflow-hidden"
                       /> */}
-          <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full rounded-full overflow-hidden"></div>
+          {/* <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full rounded-full overflow-hidden"></div> */}
+          <div
+            style={{
+              backgroundImage: `url("${dataBigAgenda.moderator?.profile?.publicUrl}")`,
+            }}
+            className="bg-cover bg-center w-full h-full rounded-full overflow-hidden"
+          ></div>
         </div>
 
         {/* moderrator name container */}
         <div className="relative w-[83%] h-[30px] md:h-[45px] lg:h-[69px] bg-white border lg:border-[3px] border-black rounded-[100px] flex flex-col items-start justify-center pl-5 md:pl-9 lg:pl-[40px]">
           {/* moderator name */}
           <h1 className="text-[#F4AA3D] font-bold text-[8px] md:text-[10px] lg:text-sm italic font-body">
-            Andri Pratama, M.Phil.
+            {/* Andri Pratama, M.Phil. */}
+            {dataBigAgenda.moderator.profile.name}
           </h1>
           <hr className="absolute top-1/2 left-0 w-4/6 lg:border-[2px] border-black" />
           {/* ini hr dummy (ignore aja) */}
@@ -220,11 +306,24 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
             Ramadan Berdaya:
           </p>
           <p className="text-[#15575B] font-semibold text-[8px] md:text-[8px] lg:text-base italic font-body">
-            Upaya Kolaboratif Mewujudkan <br />
-            Pembangunan Inklusif dan Berkelanjutan
+            {/* Upaya Kolaboratif Mewujudkan <br />
+            Pembangunan Inklusif dan Berkelanjutan */}
+            {dataBigAgenda.theme}
           </p>
-          <Image src={"images/jadwal/petik-kuning.svg"} width={20} height={30} alt="petik" className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute top-0.5 md:-top-2 lg:-top-2 left-1 md:-left-1 lg:-left-10" />
-          <Image src={"images/jadwal/petik-kuning.svg"} width={20} height={30} alt="petik" className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute -bottom-1 lg:-bottom-2 -right-3 md:-right-5 lg:-right-10 rotate-180" />
+          <Image
+            src={"images/jadwal/petik-kuning.svg"}
+            width={20}
+            height={30}
+            alt="petik"
+            className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute top-0.5 md:-top-1 lg:-top-2 -left-1 md:-left-4 lg:-left-10"
+          />
+          <Image
+            src={"images/jadwal/petik-kuning.svg"}
+            width={20}
+            height={30}
+            alt="petik"
+            className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute bottom-0 md:-bottom-1 lg:-bottom-2 -right-3 md:-right-5 lg:-right-10 rotate-180"
+          />
         </div>
         <hr className="border-b-[0.5px] lg:border-b-2 border-black w-9/12 my-auto" />
         {/* tempat dan waktu */}
@@ -238,7 +337,8 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
             />
             {/* lokasi */}
             <p className="font-medium text-[6px] md:text-[6px] lg:text-sm text-[#15575B] italic font-body">
-              Mardliyyah <br /> Islamic Center UGM
+              {/* Mardliyyah <br /> Islamic Center UGM */}
+              {dataBigAgenda.place}
             </p>
           </div>
           <div className="text-transparent bg-[#15575B] w-[12px] md:w-[17px] lg:w-[40px] h-[1px] rotate-90">
@@ -253,7 +353,10 @@ export default function BigAgenda({ bigAgendaTitle }: any) {
             />
             {/* waktu */}
             <p className="lg:w-20 font-medium text-[6px] md:text-[6px] lg:text-sm text-[#15575B] italic flex flex-row font-body">
-              08:00 WIB
+              {/* 08:00 WIB */}
+              {dataBigAgenda.time
+                ? dataBigAgenda.time.slice(0, 5) + " WIB"
+                : "Null"}
             </p>
           </div>
         </div>
