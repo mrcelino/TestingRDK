@@ -28,7 +28,7 @@ export function FAQHolder(item: FaqData) {
         </h5>
         <svg
           className={`w-6 h-6 text-gray-900 transition-transform duration-500 transform ${
-            isOpen ? "rotate-180" : "rotate-0"
+            isOpen ? "rotate-0" : "rotate-180"
           }`}
           viewBox="0 0 24 24"
           fill="none"

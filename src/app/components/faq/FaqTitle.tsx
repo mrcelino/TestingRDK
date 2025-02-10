@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function FaqTitle() {
     return (
         <>
-            <div className="bg-greenCS lg:h-32 justify-center items-center flex lg:my-20 lg:py-6 md:py-1 md:my-12 md:-mt-4 -mt-2 my-8">
+            <div className="bg-greenCS lg:h-32 justify-center items-center flex lg:my-20 lg:py-6 md:py-1 md:my-12 md:-mt-4 -mt-6 my-8">
                 <Image
                         src="/images/maskot.png"
                         alt="Logo"

@@ -7,7 +7,6 @@ import FaqTitle from './FaqTitle';
 export default function FAQ() {
 
     const fetchFaqData = async () => {
-        // Simulate an API call
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(faqData);
@@ -18,9 +17,13 @@ export default function FAQ() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
 
+
+
     React.useEffect(() => {
         const getData = async () => {
-            const response = await fetch('http://localhost:1337/api/faqs');
+            console.log(`${process.env.app_url}/faqs`)
+
+            const response = await fetch(`http://localhost:1337/api/faqs`);
             const result = await response.json();
             setData(result.data);
             setLoading(false);
