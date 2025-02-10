@@ -4,46 +4,67 @@ import { useState, useEffect, useCallback } from 'react';
 
 type Food = {
   id: number;
-  name: string;
-  date: string;
+  menu: string;
+  date_romawi: string;
+  day: number;
+  quote: string;
+  date_hijriyah: string;
+  menu_url: string;
 };
 
 async function fetchData() {
-  const data = await fetch(`/api/makanan/buka`, {
+  const response = await fetch("https://be-rdk-website-production.up.railway.app/api/menu-bukas", {
     cache: "no-store",
   });
-  return await data.json();
+  const result = await response.json();
+  
+  return result.data.map((item: any) => ({
+    id: item.id,
+    menu: item.menu,
+    date_romawi: item.date_romawi,
+    day: item.day,
+    quote: item.quote,
+    date_hijriyah: item.date_hijriyah,
+    menu_url: item.menu_url,
+  }));
 }
 
+
+
 function Menu({ food }: { food: Food }) {
-  return(
+  return (
     <div className="flex items-center space-x-2 mt-4 mx-auto">
       <img
-        alt="A plate of Sate Betawi with dipping sauce and garnish"
+        alt={food.menu}
         className="size-28 sm:size-36 xl:size-40 rounded-full border-4 border-black -mt-14 xl:-mt-8 z-10 hover:scale-110 transition duration-500"
         height="100"
-        src="https://storage.googleapis.com/a1aa/image/Y8PUtNENfMWLeEb3NfrU8UVSnCpNgOTaYob2YTYc5w2w7dEoA.jpg"
+        src={food.menu_url}
         width="100"
       />
       <div>
-        <div className="flex items-center justify-center bg-[#15575B]  text-white px-2 py-2 pl-14 xl:py-2 -ml-20 xl:mt-14 xl:-ml-20 sm:pl-20 xl:pl-16 xl:px-2 rounded-full border-4 border-black w-70">
+        <div className={`flex items-center justify-center text-white px-2 py-2 pl-14 xl:py-2 -ml-20 xl:mt-14 xl:-ml-20 sm:pl-20 xl:pl-16 xl:px-2 rounded-full border-4 border-black w-70 
+          ${food.day % 2 === 1 ? "bg-[#15575B]" : "bg-[#F4AA3D]"}`}>
           <span className="sm:text-2xl xl:text-2xl font-medium text-center italic">
-            {food.date}
+            {food.date_romawi}
           </span>
         </div>
+        <div>
         <p className="text-xs sm:text-sm xl:text-lg italic font-semibold mt-2 -ml-1">
-          Day {food.id} Ramadhan
+          Day {food.day} Ramadan
         </p>
         <p className="text-xs text-[#F4AA3D] italic font-body font-semibold sm:text-sm xl:text-lg -ml-1 mt-1">
-          {food.name}
+          {food.menu}
         </p>
-        <p className="italic text-xs sm:text-sm -ml-1 mt-1 font-body font-medium xl:text-base max-w-52">
-          "Sungguh nikmatnya berbuka puasa dengan penuh syukur kepada Allah SWT."
+        <p className="italic text-xs sm:text-sm -ml-1 mt-1 font-body font-medium xl:text-base max-w-52 min-h-14 xl:min-h-[4.5rem] sm:min-w-52 whitespace-pre-wrap ">
+          "{food.quote}"
         </p>
+        </div>
+
       </div>
     </div>
   );
 }
+
 
 export default function Food() {
   const [foods, setFoods] = useState<Food[]>([]);
@@ -88,7 +109,7 @@ export default function Food() {
 
   const selectFoodByDate = useCallback(() => {
     const todayDate = new Date().getDate();
-    const food = foods.find(food => food.id === todayDate);
+    const food = foods.find(food => food.day === todayDate);
     
     if (food) {
       setSelectedFood(food);
@@ -98,6 +119,7 @@ export default function Food() {
       setShowModal(false);
     }
   }, [foods]);
+  
 
   useEffect(() => {
     if (foods.length > 0) {
@@ -108,18 +130,20 @@ export default function Food() {
   return (
     <>
       {showModal && selectedFood && (
-        <div className="fixed inset-0 flex justify-center items-start bg-black bg-opacity-50 z-50">
+        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
           <div className="relative p-8 bg-white rounded-[35px] lg:rounded-[50px] shadow-lg w-80 mt-14 sm:size-[350px]">
             <img
               alt="A plate of Sate Betawi with dipping sauce and garnish"
               className="p-4 rounded-[50px] size-[350px] object-cover absolute top-0 left-0 z-0"
-              src="https://storage.googleapis.com/a1aa/image/Y8PUtNENfMWLeEb3NfrU8UVSnCpNgOTaYob2YTYc5w2w7dEoA.jpg"
+              src={selectedFood.menu_url}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-black/10 rounded-[35px] lg:rounded-[50px] z-10"></div>
-              <div className="relative z-10 text-center text-white mt-36">
-                <h2 className="text-2xl font-bold font-body italic">OUR MENU TODAY</h2>
-                <h2 className="text-lg font-body italic">{selectedFood.id} Ramadan 1446 H</h2>
-                <h2 className="text-lg font-body italic font-semibold mb-2">{selectedFood.name}</h2>
+              <div className="relative z-10 text-center text-white mt-40">
+                <div className="mx-4">
+                  <h2 className="text-2xl text-left font-bold font-body italic">OUR MENU TODAY</h2>
+                  <h2 className="text-sm text-left font-body italic">{selectedFood.date_romawi} / {selectedFood.date_hijriyah}</h2>
+                  <h2 className="text-lg text-left font-body italic font-semibold mb-2">{selectedFood.menu}</h2>
+                </div>
                 <button
                   onClick={closeModal}
                   className="px-4 py-1 bg-[#F4AA3D] text-white rounded-full text-lg font-body font-semibold"
@@ -128,7 +152,7 @@ export default function Food() {
                 </button>
               </div>
             </div>
-          </div>
+        </div>
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
@@ -143,14 +167,14 @@ export default function Food() {
           className="flex justify-evenly px-4 items-center bg-[#F4AA3D] font-body italic font-medium border-[3px] border-black rounded-full w-32 sm:w-44 cursor-pointer hover:scale-105 transition duration-200"
         >
           <Image src="/images/makanan/ic_before.png" alt="Before logo" width={20} height={20} />
-          <span className="text-xs sm:text-base">Day Before</span>
+          <span className="text-xs sm:text-base">Previous</span>
         </button>
         <button
           onClick={nextPage}
           disabled={!hasMoreData}
           className="flex justify-evenly px-4 items-center bg-[#15575B] font-body text-white italic font-medium border-[3px] border-black rounded-full w-32 sm:w-44 cursor-pointer hover:scale-105 transition duration-200"
         >
-          <span className="text-xs sm:text-base">Next Day</span>
+          <span className="text-xs sm:text-base">Next</span>
           <Image src="/images/makanan/ic_after.png" alt="After logo" width={20} height={10} />
         </button>
       </div>
