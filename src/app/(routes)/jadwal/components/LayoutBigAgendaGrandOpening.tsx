@@ -11,7 +11,7 @@ export default function LayoutBigAgendaGrandOpening() {
       <JadwalGreet
         className={"mt-6 md:mt-8 lg:mt-12"}
         text={
-          "Hello, today is special day fo you! Join us in a big agenda of Ramadan!"
+          "Hello, today is special day for you! Join us in a big agenda of Ramadan!"
         }
       />
 

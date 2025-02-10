@@ -243,9 +243,9 @@ function GebyarSore(){
 export default function BigAgenda(){
   return(
     <div className="relative bg-white">
-      <div className="absolute inset-0 lg:bg-[url('/images/pattern-for-bg.svg')] bg-repeat opacity-15 mix-blend-multiply brightness-50 z-1"></div>
+      <div className="absolute inset-0 bg-[url('/images/pattern-bg-mobile3.svg')] lg:bg-[url('/images/pattern-for-bg.svg')] bg-repeat opacity-15 mix-blend-multiply brightness-50 z-1"></div>
       <div className="hidden md:block absolute rounded-full size-52 lg:size-80 blur-[80px] top-0 right-0 bg-[#76D0D5] opacity-60"></div>
-      <div className="relative z-10">
+      <div className="relative z-10 pt-8 lg:pt-36">
         <JadwalHeader/>
         <GrandOpening/>
         <MIT/>

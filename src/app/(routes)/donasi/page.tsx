@@ -119,7 +119,7 @@ function UpdateDonasiKegiatan(){
 function Header(){
   return(
     <>
-      <section className="relative bg-[#15575B]  h-24 lg:h-32 mt-40 border-y-4 border-black flex justify-center">
+      <section className="relative bg-[#15575B]  h-24 lg:h-32 border-y-4 border-black flex justify-center">
         <div className="bg-[#F4AA3D] border-4 rounded-[50px] lg:rounded-[70px] border-black h-28 p-2 lg:h-40 -top-3 lg:-top-4 w-[85%] lg:w-[65%] absolute flex flex-col items-center justify-center max-w-xl md:max-w-2xl lg:max-w-7xl">
           <h2 className="font-heading text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white font-medium z-20 xl:mb-4">Hadirkan senyuman,</h2>
           <h2 className="font-heading text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white font-medium z-20 md:max-w-2xl text-center lg:max-w-full">wujudkan cinta di bulan suci Ramadan</h2>
@@ -430,7 +430,7 @@ export default function Donasi(){
   return(
     <div className="relative bg-white">
       <div className="absolute inset-0 bg-[url('/images/pattern-bg-mobile3.svg')] lg:bg-[url('/images/pattern-for-bg.svg')] bg-repeat opacity-15 mix-blend-multiply brightness-50 z-1"></div>
-      <div className='relative z-10'>
+      <div className='relative z-10 pt-20 lg:pt-52'>
         <Header/>
         {/* <Banner/> */}
         <Information/>
