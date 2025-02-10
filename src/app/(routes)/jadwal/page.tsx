@@ -243,6 +243,7 @@ export default function JadwalPage() {
     // Tanggal batas
     const beforeRamadanDate = parseISO("2025-03-01");
     const afterRamadanDate = parseISO("2025-03-30");
+    console.log(highlightDates[0])
 
     if (isBefore(selectedDay, highlightDates[0])) {
       setLayout("LayoutBeforeRamadan");
@@ -452,7 +453,7 @@ export default function JadwalPage() {
           {/* button previous day */}
           <div
             onClick={previousDay}
-            className="w-[81px] md:w-[160px] lg:w-[278px] h-[17px] md:h-[34px] lg:h-[59px] bg-[#F4AA3D] hover:bg-[#cc8f33] cursor-pointer border lg:border-[3px] border-black rounded-[30px] items-center justify-center flex flex-row gap-x-4"
+            className="w-[100px] md:w-[160px] lg:w-[278px] h-[25px] md:h-[34px] lg:h-[59px] bg-[#F4AA3D] hover:bg-[#cc8f33] cursor-pointer border lg:border-[3px] border-black rounded-[30px] items-center justify-center flex flex-row gap-x-4"
           >
             {/* <Image
               src="/images/jadwal/icon_arrow_left.svg"
@@ -465,16 +466,16 @@ export default function JadwalPage() {
               className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10"
               aria-hidden="true"
             />
-            <p className="text-black font-medium text-[6px] md:text-sm lg:text-xl italic">
+            <p className="text-black font-medium text-[8px] md:text-sm lg:text-xl italic">
               Previous Day
             </p>
           </div>
           {/* button day after */}
           <div
             onClick={nextDay}
-            className="w-[81px] md:w-[160px] lg:w-[278px] h-[17px] md:h-[34px] lg:h-[59px] bg-[#15575B] hover:bg-[#124c4f] cursor-pointer rounded-[30px] border lg:border-[3px] border-black items-center justify-center flex flex-row gap-x-4"
+            className="w-[100px] md:w-[160px] lg:w-[278px] h-[25px] md:h-[34px] lg:h-[59px] bg-[#15575B] hover:bg-[#124c4f] cursor-pointer rounded-[30px] border lg:border-[3px] border-black items-center justify-center flex flex-row gap-x-4"
           >
-            <p className="text-white font-medium text-[6px] md:text-sm lg:text-xl italic">
+            <p className="text-white font-medium text-[8px] md:text-sm lg:text-xl italic">
               Next Day
             </p>
             {/* <Image

@@ -140,7 +140,7 @@ export default function BigAgenda({
                 {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
                 {dataBigAgenda.source_person?.length > 0
                   ? dataBigAgenda.source_person[0]?.profile?.name
-                  : "Guest 1 will annouced soon"}
+                  : "Guest will be annouced soon"}
               </h2>
             </div>
           </div>
@@ -184,8 +184,11 @@ export default function BigAgenda({
               <div
                 style={{
                   backgroundImage:
-                    dataBigAgenda.source_person?.length > 1
-                      ? `url("${dataBigAgenda.source_person[1]?.profile?.publicUrl}")`
+                    (dataBigAgenda.source_person as any)?.length > 1
+                      ? `url("${
+                          (dataBigAgenda.source_person as any)[1]?.profile
+                            ?.publicUrl
+                        }")`
                       : "none",
                 }}
                 className="bg-cover bg-center w-full h-full"
@@ -227,9 +230,9 @@ export default function BigAgenda({
             <div className="absolute md:hidden top-1/2 right-24 w-[193px] h-[36px] bg-[#F4AA3D] border border-black rounded-tr-[100px] rounded-bl-[100px] rotate-[-8deg] flex items-center justify-center px-2 shadow-md">
               <h2 className="font-bold text-[8px] text-[#15575B] text-center italic font-body">
                 {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
-                {dataBigAgenda.source_person?.length > 1
-                  ? dataBigAgenda.source_person[1]?.profile?.name
-                  : "Guest 2 will annouced soon"}
+                {(dataBigAgenda.source_person as any)?.length > 1
+                  ? (dataBigAgenda.source_person as any)[1]?.profile?.name
+                  : "Guest will be annouced soon"}
               </h2>
             </div>
           </div>
@@ -246,16 +249,16 @@ export default function BigAgenda({
             {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
             {dataBigAgenda.source_person?.length > 0
               ? dataBigAgenda.source_person[0]?.profile?.name
-              : "Guest 1 will annouced soon"}
+              : "Guest will be annouced soon"}
           </p>
         </div>
         {/* right name container */}
         <div className="w-1/2 h-full bg-[#F4AA3D] border lg:border-[3px] border-black rounded-r-[100px] flex justify-center items-center">
           <p className="md:w-[219px] lg:w-[289px] text-[#15575B] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-left font-body">
             {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
-            {dataBigAgenda.source_person?.length > 1
-              ? dataBigAgenda.source_person[1]?.profile?.name
-              : "Guest 2 will annouced soon"}
+            {(dataBigAgenda.source_person as any)?.length > 1
+              ? (dataBigAgenda.source_person as any)[1]?.profile?.name
+              : "Guest will be annouced soon"}
           </p>
         </div>
       </div>
@@ -276,7 +279,12 @@ export default function BigAgenda({
           {/* <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full rounded-full overflow-hidden"></div> */}
           <div
             style={{
-              backgroundImage: `url("${dataBigAgenda.moderator?.profile?.publicUrl}")`,
+              backgroundImage: `url("${
+                dataBigAgenda.moderator?.profile?.publicUrl !== "" ||
+                dataBigAgenda.moderator?.profile != null
+                  ? dataBigAgenda.moderator?.profile?.publicUrl
+                  : "?"
+              }")`,
             }}
             className="bg-cover bg-center w-full h-full rounded-full overflow-hidden"
           ></div>
@@ -287,7 +295,10 @@ export default function BigAgenda({
           {/* moderator name */}
           <h1 className="text-[#F4AA3D] font-bold text-[8px] md:text-[10px] lg:text-sm italic font-body">
             {/* Andri Pratama, M.Phil. */}
-            {dataBigAgenda.moderator.profile.name}
+            {dataBigAgenda.moderator.profile.name !== "" ||
+            dataBigAgenda.moderator?.profile !== null
+              ? dataBigAgenda.moderator.profile.name
+              : "???"}
           </h1>
           <hr className="absolute top-1/2 left-0 w-4/6 lg:border-[2px] border-black" />
           {/* ini hr dummy (ignore aja) */}
@@ -308,7 +319,9 @@ export default function BigAgenda({
           <p className="text-[#15575B] font-semibold text-[8px] md:text-[8px] lg:text-base italic font-body">
             {/* Upaya Kolaboratif Mewujudkan <br />
             Pembangunan Inklusif dan Berkelanjutan */}
-            {dataBigAgenda.theme}
+            {dataBigAgenda.theme !== ""
+              ? dataBigAgenda.theme
+              : "The theme will be announced soon."}
           </p>
           <Image
             src={"images/jadwal/petik-kuning.svg"}
@@ -338,7 +351,7 @@ export default function BigAgenda({
             {/* lokasi */}
             <p className="font-medium text-[6px] md:text-[6px] lg:text-sm text-[#15575B] italic font-body">
               {/* Mardliyyah <br /> Islamic Center UGM */}
-              {dataBigAgenda.place}
+              {dataBigAgenda.place !== "" ? dataBigAgenda.place : "???"}
             </p>
           </div>
           <div className="text-transparent bg-[#15575B] w-[12px] md:w-[17px] lg:w-[40px] h-[1px] rotate-90">
@@ -356,7 +369,7 @@ export default function BigAgenda({
               {/* 08:00 WIB */}
               {dataBigAgenda.time
                 ? dataBigAgenda.time.slice(0, 5) + " WIB"
-                : "Null"}
+                : "???"}
             </p>
           </div>
         </div>

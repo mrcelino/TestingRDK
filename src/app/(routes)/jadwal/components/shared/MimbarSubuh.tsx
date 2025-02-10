@@ -135,7 +135,7 @@ export default function MimbarSubuh({ data }: { data: AgendaItem }) {
               />
               <p className="text-white font-medium text-[8px] md:text-[10px] lg:text-xl italic">
                 {/* 05:00 WIB */}
-                {data.time} WIB
+                {data.time.slice(0, 5)} WIB
               </p>
             </div>
             {/* place */}
