@@ -126,6 +126,7 @@ export default function JadwalPage() {
   const [dailyAgenda, setDailyAgenda] = useState<DailyAgendaItem[]>([]);
   const [bigAgenda, setBigAgenda] = useState<any[]>([]);
   const [highlightDates, setHighlightDates] = useState<Date[]>([]);
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   // fetching daily agenda & big agenda
   useEffect(() => {
@@ -135,10 +136,8 @@ export default function JadwalPage() {
 
         // Jalankan kedua fetch secara paralel dengan Promise.all
         const [dailyResponse, bigResponse] = await Promise.all([
-          // fetch(`https://be-rdk-website-production.up.railway.app/api/daily-agendas?date=${date}`),
-          fetch(`http://localhost:1337/api/daily-agendas?date=${date}`),
-          // fetch(`https://be-rdk-website-production.up.railway.app/api/big-agenda?date=${date}`)
-          fetch(`http://localhost:1337/api/big-agenda?date=${date}`),
+          fetch(`${baseUrl}/api/daily-agendas?date=${date}`),
+          fetch(`${baseUrl}/api/big-agenda?date=${date}`),
         ]);
 
         // Parse JSON response
@@ -159,37 +158,12 @@ export default function JadwalPage() {
     fetchAgendas();
   }, [selectedDay]);
 
-  // useEffect(() => {
-  //   const fetchAgendas = async () => {
-  //     const date = format(selectedDay, "yyyy-MM-dd");
-
-  //     // Fetch daily agenda
-  //     const dailyResponse = await fetch(
-  //       `https://be-rdk-website-production.up.railway.app/api/daily-agendas?date=${date}`
-  //     );
-  //     const dailyData = await dailyResponse.json();
-  //     setDailyAgenda(dailyData.data);
-  //     console.log("Daily Agenda:", dailyData.data);
-
-  //     // Fetch big agenda
-  //     const bigResponse = await fetch(
-  //       `https://be-rdk-website-production.up.railway.app/api/big-agenda?date=${date}`
-  //     );
-  //     const bigData = await bigResponse.json();
-  //     setBigAgenda(bigData.data);
-  //     console.log("Big Agenda:", bigData.data);
-  //   };
-
-  //   fetchAgendas();
-  // }, [selectedDay]);
-
   // Menentukan Highlited Dates berdasarkan Tanggal-tanggal big agenda
   useEffect(() => {
     const fetchHighlightDates = async () => {
       try {
         const response = await fetch(
-          // "https://be-rdk-website-production.up.railway.app/api/big-agenda"
-          "http://localhost:1337/api/big-agenda"
+          `${baseUrl}/api/big-agenda`
         );
         const data = await response.json();
 
@@ -213,28 +187,6 @@ export default function JadwalPage() {
     fetchHighlightDates();
   }, []);
 
-  // useEffect(() => {
-  //   const fetchHighlightDates = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         // "https://be-rdk-website-production.up.railway.app/api/big-agenda"
-  //         "http://localhost:1337/api/big-agenda"
-  //       );
-  //       const data = await response.json();
-
-  //       if (data?.data) {
-  //         const highlightDates = data.data.map(({ date }: { date: string }) =>
-  //           parseISO(date)
-  //         );
-  //         setHighlightDates(highlightDates);
-  //       }
-  //     } catch (error) {
-  //       console.error("Error fetching highlight dates:", error);
-  //     }
-  //   };
-
-  //   fetchHighlightDates();
-  // }, []);
 
   // ini untuk decide layout apa yang mau digunakan
   useEffect(() => {
@@ -296,13 +248,6 @@ export default function JadwalPage() {
 
   console.log(layout);
 
-  // const highlightDates = [
-  //   parseISO("2025-03-01"),
-  //   parseISO("2025-03-08"),
-  //   parseISO("2025-03-21"),
-  //   parseISO("2025-03-22"),
-  //   parseISO("2025-03-30"),
-  // ];
 
   const days = eachDayOfInterval({
     start: firstDayCurrentMonth,
@@ -388,27 +333,18 @@ export default function JadwalPage() {
         {layout === "LayoutBigAgendaGrandOpening" && (
           <LayoutBigAgendaGrandOpening
             dataBigAgenda={bigAgenda}
-            // bigAgenda={bigAgenda.find(
-            //   (agenda) => agenda.big_agenda_type === "Grand_Opening"
-            // )}
           />
         )}
         {layout === "LayoutBigAgendaMIT" && (
           <LayoutBigAgendaMIT
             dataBigAgenda={bigAgenda}
             dataDailyAgenda={dailyAgenda}
-            // bigAgenda={bigAgenda.find(
-            //   (agenda) => agenda.big_agenda_type === "MIT"
-            // )}
           />
         )}
         {layout === "LayoutBigAgendaRdkFest" && (
           <LayoutBigAgendaRdkFest
             dataBigAgenda={bigAgenda}
             dataDailyAgenda={dailyAgenda}
-            // bigAgenda={bigAgenda.find(
-            //   (agenda) => agenda.big_agenda_type === "RDK_Festival"
-            // )}
           />
         )}
         {layout === "Layout2LastDay" && <Layout2LastDay dataBigAgenda={bigAgenda} />}
@@ -433,19 +369,6 @@ export default function JadwalPage() {
         {/* <Layout2LastDay /> */}
         {/* <LayoutIdulFitri /> */}
 
-        {/* ini masih coba coba */}
-        {/* {layout === "LayoutBeforeRamadan" && <LayoutBeforeRamadan />}
-        {layout === "LayoutBigAgendaGrandOpening" && (
-          <LayoutBigAgendaGrandOpening />
-        )}
-        {layout === "LayoutBigAgendaMIT" && <LayoutBigAgendaMIT />}
-        {layout === "LayoutAgendaRdkFest" && <LayoutBigAgendaRdkFest />}
-        {layout === "LayoutDailyAgendaOnly" && <LayoutDailyAgendaOnly />}
-        {layout === "Layout2LastDay" && <Layout2LastDay />}
-        {layout === "LayoutIdulFitri" && <LayoutIdulFitri />}
-        {layout === "LayoutAgendaNotReleased" && <LayoutAgendaNotReleased />}
-        {layout === "LayoutAfterRamadan" && <LayoutAfterRamadan />} */}
-
         {/*  */}
 
         {/* TWO BUTTON CONTAINER */}
@@ -455,13 +378,7 @@ export default function JadwalPage() {
             onClick={previousDay}
             className="w-[100px] md:w-[160px] lg:w-[278px] h-[25px] md:h-[34px] lg:h-[59px] bg-[#F4AA3D] hover:bg-[#cc8f33] cursor-pointer border lg:border-[3px] border-black rounded-[30px] items-center justify-center flex flex-row gap-x-4"
           >
-            {/* <Image
-              src="/images/jadwal/icon_arrow_left.svg"
-              width={24}
-              height={24}
-              alt="icon_arrow"
-              className="w-[20px] md:w-[24px] h-[21px] md:h-[24px]"
-            /> */}
+
             <ArrowLeftIcon
               className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10"
               aria-hidden="true"
@@ -478,13 +395,7 @@ export default function JadwalPage() {
             <p className="text-white font-medium text-[8px] md:text-sm lg:text-xl italic">
               Next Day
             </p>
-            {/* <Image
-              src="/images/jadwal/icon_arrow_right.svg"
-              width={24}
-              height={24}
-              alt="icon_arrow"
-              className="w-[20px] md:w-[24px] h-[21px] md:h-[24px]"
-            /> */}
+
             <ArrowRightIcon
               className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10 text-white"
               aria-hidden="true"

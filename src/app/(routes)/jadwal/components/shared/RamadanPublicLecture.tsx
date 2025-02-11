@@ -76,7 +76,7 @@ export default function RamadanPublicLecture({ data }: { data: AgendaItem }) {
                   {/* <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div> */}
                   <div
                     style={{
-                      backgroundImage: `url("${data.profile.publicUrl}")`,
+                      backgroundImage: `url("${data.profile.publicUrl !== '' ? data.profile.publicUrl : '???'}")`,
                     }}
                     className="bg-cover bg-center w-full h-full"
                   ></div>
@@ -129,7 +129,7 @@ export default function RamadanPublicLecture({ data }: { data: AgendaItem }) {
               />
               <p className="text-white font-medium text-[8px] md:text-[10px] lg:text-xl italic">
                 {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
-                {data.profile.name}
+                {data.profile.name !== '' ? data.profile.name : '???'}
               </p>
             </div>
             {/* time */}
@@ -143,7 +143,7 @@ export default function RamadanPublicLecture({ data }: { data: AgendaItem }) {
               />
               <p className="text-white font-medium text-[8px] md:text-[10px] lg:text-xl italic">
                 {/* 05:00 WIB */}
-                {data.time.slice(0, 5)} WIB
+                {data.time !== '' ? data.time.slice(0, 5) + ' WIB' : '???'} 
               </p>
             </div>
             {/* place */}
@@ -158,7 +158,7 @@ export default function RamadanPublicLecture({ data }: { data: AgendaItem }) {
               <p className="text-white font-medium text-[8px] md:text-[10px] lg:text-xl italic">
                 {/* Kausalitas: Hukum Alam atau Tuhan: Pemikiran Religio-Saintifik
                 al-Ghazali */}
-                {data.theme}
+                {data.theme !== '' ? data.theme : '???'}
               </p>
             </div>
           </div>
