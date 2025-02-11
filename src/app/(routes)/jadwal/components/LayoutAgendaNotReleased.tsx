@@ -12,11 +12,11 @@ export default function LayoutAgendaNotReleased() {
           Sorry, the agenda is not available yet. <br /> Please stay tuned!
         </h1>
         <Image
-          src="/images/maskot.png"
+          src="/images/jadwal/maskot_wave.svg"
           width={318}
           height={318}
           alt="sign"
-          className="absolute w-[86px] h-[86px] md:w-[163px] md:h-[163px] lg:w-[318px] lg:h-[318px] -left-9 md:-left-20 lg:-left-36"
+          className="absolute w-[86px] h-[86px] md:w-[163px] md:h-[163px] lg:w-[318px] lg:h-[318px] -left-12 md:-left-20 lg:-left-36"
         />
       </div>
     </>

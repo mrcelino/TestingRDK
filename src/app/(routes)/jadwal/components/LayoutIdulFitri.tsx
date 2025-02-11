@@ -3,35 +3,88 @@
 "use client";
 
 import Image from "next/image";
+// import BigAgenda from "./shared/BigAgenda";
 
-export default function LayoutIdulFitri() {
+interface Profile {
+  id: number;
+  documentId: string;
+  name: string;
+  publicUrl: string;
+}
+
+interface Moderator {
+  id: number;
+  documentId: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  locale: string;
+  profile: Profile;
+}
+
+interface Source_person {
+  id: number;
+  documentId: string;
+  profile: Profile;
+}
+
+interface AgendaItem {
+  id: number;
+  documentId: string;
+  theme: string;
+  place: string;
+  date: string;
+  time: string;
+  big_agenda_type: string;
+  image_spectacular_shows: [];
+  source_person: [Source_person];
+  moderator: Moderator;
+}
+
+export default function LayoutIdulFitri({
+  dataBigAgenda,
+}: {
+  dataBigAgenda: AgendaItem[];
+}) {
+  // console.log(
+  //   "chechk source person",
+  //   dataBigAgenda[0].source_person[0].profile
+  // );
+  // console.log("chechk moderator", dataBigAgenda[0].moderator.profile);
   return (
     <>
-      <div className="w-[206px] h-[30px] md:w-[380px] md:h-[56px] lg:w-[608px] lg:h-[90px] bg-[#F4AA3D] border lg:border-[3px] border-black flex justify-center items-center rounded-[20px] lg:rounded-[30px] mt-5 md:mt-10 lg:mt-20">
-        <h1 className="text-[#fbfbfb] font-normal text-xs md:text-base lg:text-[32px]">
+      <div className="w-[206px] h-[30px] md:w-[380px] md:h-[56px] lg:w-[608px] lg:h-[90px] bg-[#F4AA3D] border lg:border-[3px] border-black flex justify-center items-center rounded-[20px] lg:rounded-[30px] mt-5 md:mt-12 lg:mt-24">
+        <h1 className="text-[#fbfbfb] font-normal text-xs md:text-base lg:text-[32px] font-heading">
           Eid Mubarak 1446 H
         </h1>
       </div>
 
-      <div className="flex relative w-[253px] h-[53px] md:w-[464px] md:h-[95px] lg:w-[942px] lg:h-[247px] bg-white border lg:border-[3px] border-black rounded-[100px] justify-center items-center translate-y-10 md:translate-y-16 lg:translate-y-36 mb-4">
-        <div className="flex flex-col justify-center items-end font-bold text-xs md:text-sm lg:text-[32px] text-[#15575B] translate-x-1 md:translate-x-10 lg:-translate-x-20 gap-y-0.5 md:gap-y-2 lg:gap-y-10">
+      <div className="flex relative z-20 w-[253px] h-[53px] md:w-[464px] md:h-[95px] lg:w-[942px] lg:h-[247px] bg-white border lg:border-[3px] border-black rounded-[100px] justify-center items-center translate-y-10 md:translate-y-14 lg:translate-y-28">
+        <div className="flex flex-col justify-center items-end font-black text-xs md:text-lg lg:text-[38px] text-[#15575B] translate-x-1 md:translate-x-6 lg:-translate-x-20 gap-y-0.5 md:gap-y-2 lg:gap-y-10 font-body">
           <h2>تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ وَ تَقَبَّلْ ياَ كَرِيْمُ</h2>
           <h2>كُلُّ عَامٍ وَأَنْتُمْ بِخَيْرٍ</h2>
         </div>
 
-        <img
-          src="/images/maskot.png"
-          width={328}
-          height={328}
+        <Image
+          src="/images/jadwal/maskot_star.svg"
+          width={297}
+          height={396}
           alt="sign"
-          className="absolute w-[108px] h-[108px] md:w-[199px] md:h-[199px] lg:w-[328px] lg:h-[328px] -right-12 -bottom-9 md:-right-16 lg:right-10 md:-bottom-12 lg:-bottom-24 scale-x-[-1]"
+          className="absolute w-[108px] h-[108px] md:w-[199px] md:h-[199px] lg:w-[297px] lg:h-[396px] -right-10 -bottom-6 md:-right-16 lg:right-8 md:-bottom-12 lg:-bottom-16 scale-x-[-1]"
+        />
+        <Image
+          src="/images/jadwal/petik-kuning.svg"
+          width={72}
+          height={61}
+          alt="sign"
+          className="absolute w-[18px] h-[15.25px] md:w-[36px] md:h-[30.5px] lg:w-[72px] lg:h-[61px] left-4 -top-2 md:left-8 lg:left-24 md:-top-4 lg:-top-8"
         />
       </div>
 
-      <div className="w-full h-fit bg-transparent md:bg-white flex flex-col items-center justify-center py-10">
+      <div className="relative w-full h-fit bg-transparent bg-white flex flex-col items-center justify-center pt-10 pb-20">
         {/* start of special eid mubarak header */}
-        <div className="w-[221px] h-[21px] md:w-[407px] md:h-[41px] lg:w-[641px] lg:h-[90px] bg-[#F4AA3D] border lg:border-[3px] border-black shadow-[rgba(21,87,91,1)_-2px_2px_0px] md:shadow-[rgba(21,87,91,1)_-4px_4px_0px] lg:shadow-[rgba(21,87,91,1)_-8px_8px_0px] rounded-tl-[100px] rounded-br-[100px] flex justify-center items-center mt-6 md:mt-20 lg:mt-56 mb-2">
-          <h1 className="text-[#fbfbfb] font-normal text-[10px] md:text-[12px] lg:text-2xl">
+        <div className="w-[221px] h-[21px] md:w-[407px] md:h-[41px] lg:w-[641px] lg:h-[90px] bg-[#F4AA3D] border lg:border-[3px] border-black shadow-[rgba(21,87,91,1)_-2px_2px_0px] md:shadow-[rgba(21,87,91,1)_-4px_4px_0px] lg:shadow-[rgba(21,87,91,1)_-8px_8px_0px] rounded-tl-[100px] rounded-br-[100px] flex justify-center items-center mt-8 md:mt-20 lg:mt-56 mb-2">
+          <h1 className="text-[#fbfbfb] font-normal text-[10px] md:text-[12px] lg:text-2xl font-heading">
             Special Eid al-Fitr Prayer
           </h1>
         </div>
@@ -71,7 +124,13 @@ export default function LayoutIdulFitri() {
                                 alt="sign"
                                 className=""
                               /> */}
-                <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div>
+                {/* <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div> */}
+                <div
+                  style={{
+                    backgroundImage: `url("${dataBigAgenda[0].moderator.profile.publicUrl}")`,
+                  }}
+                  className="bg-cover bg-center w-full h-full"
+                ></div>
               </div>
 
               {/* bottom part icon container*/}
@@ -107,13 +166,16 @@ export default function LayoutIdulFitri() {
 
               {/* container nama guest nya (cuma untuk mobile) */}
               <div className="absolute md:hidden top-1/2 left-24 w-[193px] h-[36px] bg-[#FBFBFB] border border-black rounded-tr-[100px] rounded-bl-[100px] rotate-[7deg] flex items-center justify-center px-2 shadow-md">
-                <h2 className="font-bold text-[8px] text-[#F4AA3D] text-center italic">
-                  Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed.
+                <h2 className="font-bold text-[8px] text-[#F4AA3D] text-center italic font-body">
+                  {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
+                  {dataBigAgenda[0].moderator.profile.name}
                 </h2>
               </div>
               {/* label imam */}
               <div className="absolute md:hidden top-[43.5px] left-[115px] w-[142px] h-[15px] bg-[#F4AA3D] rounded-t-[30px] flex justify-center items-center rotate-[7deg]">
-                <h3 className="text-[8px] text-white italic font-bold">Imam</h3>
+                <h3 className="text-[8px] text-white italic font-bold font-body">
+                  Imam
+                </h3>
               </div>
             </div>
           </div>
@@ -152,7 +214,13 @@ export default function LayoutIdulFitri() {
                                 className=""
                               /> */}
                 {/* <img src="/images/jadwal/examplePhotoPengisiAcara.svg" alt="" className="w-fit h-fit "/> */}
-                <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div>
+                {/* <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div> */}
+                <div
+                  style={{
+                    backgroundImage: `url("${dataBigAgenda[0].source_person[0].profile.publicUrl}")`,
+                  }}
+                  className="bg-cover bg-center w-full h-full"
+                ></div>
               </div>
 
               {/* bottom part icon container*/}
@@ -188,13 +256,16 @@ export default function LayoutIdulFitri() {
 
               {/* container nama khatib nya (cuma untuk mobile) */}
               <div className="absolute md:hidden top-1/2 right-24 w-[193px] h-[36px] bg-[#F4AA3D] border border-black rounded-tr-[100px] rounded-bl-[100px] rotate-[-8deg] flex items-center justify-center px-2 shadow-md">
-                <h2 className="font-bold text-[8px] text-[#15575B] text-center italic">
-                  Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed.
+                <h2 className="font-bold text-[8px] text-[#15575B] text-center italic font-body">
+                  {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
+                  {dataBigAgenda[0].source_person[0].profile.name}
                 </h2>
               </div>
               {/* label khatib */}
-              <div className="absolute md:hidden top-[46px] right-[135px] w-[142px] h-[15px] bg-white rounded-t-[30px] flex justify-center items-center rotate-[-8deg]">
-                <h3 className="text-[8px] text-[#15575B] italic font-bold">Khatib</h3>
+              <div className="absolute md:hidden top-[46px] right-[135px] w-[142px] h-[15px] bg-white rounded-t-[30px] flex justify-center items-center rotate-[-8deg] shadow-lg">
+                <h3 className="text-[8px] text-[#15575B] italic font-bold font-body">
+                  Khatib
+                </h3>
               </div>
             </div>
           </div>
@@ -203,17 +274,19 @@ export default function LayoutIdulFitri() {
         {/* end of foto pengisi acarra container */}
 
         {/* starrt of nama pengisi acara container (yang ada dua dibelah) */}
-        <div className="relative hidden w-[200px] md:w-[523px] lg:w-[778px] h-[28px] md:h-[60px] lg:h-[90px] rounded-[100px] bg-white md:flex flex-row mt-4 md:mt-8 lg:mt-10">
+        <div className="relative hidden w-[200px] md:w-[523px] lg:w-[778px] h-[28px] md:h-[60px] lg:h-[90px] rounded-[100px] bg-white md:flex flex-row mt-4 md:mt-8 lg:mt-14">
           {/* left name container */}
           <div className="w-1/2 h-full border lg:border-[3px] border-black rounded-l-[100px] flex justify-center items-center">
-            <p className="md:w-[219px] w-[289px] text-[#F4AA3D] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-left">
-              Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed.
+            <p className="md:w-[219px] lg:w-[289px] text-[#F4AA3D] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-left font-body">
+              {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
+              {dataBigAgenda[0].moderator.profile.name}
             </p>
           </div>
           {/* right name container */}
           <div className="w-1/2 h-full bg-[#F4AA3D] border lg:border-[3px] border-black rounded-r-[100px] flex justify-center items-center">
-            <p className="md:w-[219px] w-[289px] text-[#15575B] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-left">
-              Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed.
+            <p className="md:w-[219px] lg:w-[289px] text-[#15575B] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-left font-body">
+              {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
+              {dataBigAgenda[0].source_person[0].profile.name}
             </p>
           </div>
 
@@ -225,53 +298,31 @@ export default function LayoutIdulFitri() {
         </div>
         {/* end of nama pengisi acara container (yang ada dua dibelah) */}
 
-        {/* start of moderator container */}
-        <div className="w-[163px] h-[45px] md:w-[238px] md:h-[67px] lg:w-[367px] lg:h-[102px] mt-5 lg:mt-10 relative flex items-center justify-end">
-          {/* photo container */}
-          <div className="absolute top-0 left-0 w-[45px] h-[45px] md:w-[68px] md:h-[68px] lg:w-[102px] lg:h-[102px] bg-white rounded-full border lg:border-[3px] border-black z-10">
-            {/* gambar moderator */}
-            {/* <img
-                        src="/images/maskot.png"
-                        // width={207}
-                        // height={248}
-                        alt="sign"
-                        className="rounded-full w-fit h-fit object-cover overflow-hidden"
-                      /> */}
-            <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full rounded-full overflow-hidden"></div>
-          </div>
-
-          {/* moderrator name container */}
-          <div className="relative w-[83%] h-[30px] md:h-[45px] lg:h-[69px] bg-white border lg:border-[3px] border-black rounded-[100px] flex flex-col items-start justify-center pl-5 md:pl-9 lg:pl-[40px]">
-            {/* moderator name */}
-            <h1 className="text-[#F4AA3D] font-bold text-[8px] md:text-[10px] lg:text-sm italic">
-              Andri Pratama, M.Phil.
-            </h1>
-            <hr className="absolute top-1/2 left-0 w-4/6 lg:border-[2px] border-black" />
-            {/* ini hr dummy (ignore aja) */}
-            <hr className="py-[1px] lg:py-1" />
-            <p className="text-[#15575B] font-bold text-[8px] md:text-[10px] lg:text-xs italic">
-              As Moderator
-            </p>
-          </div>
-        </div>
-        {/* end of moderator container */}
-
         {/* start of box info event */}
-        <div className="w-[282px] md:w-[388px] lg:w-[893px] h-[69px] md:h-[81px] lg:h-[187px] bg-[#FBFBFB] border border-black flex flex-col rounded-[50px] items-center justify-center mt-5 md:mt-8 lg:mt-10 py-1 md:py-2 lg:py-5">
-          <div className="relative flex flex-col text-center">
+        <div className="w-[282px] md:w-[388px] lg:w-[893px] h-[69px] md:h-[81px] lg:h-[187px] bg-[#FBFBFB] border lg:border-[3px] border-black flex flex-col rounded-[50px] items-center justify-center mt-5 md:mt-8 lg:mt-10 py-1 md:py-2 lg:py-5">
+          <div className="relative flex flex-col text-center items-center font-body">
             <p className="text-[#FFC359] font-semibold text-[8px] md:text-[8px] lg:text-base italic">
               Ramadan Berdaya:
             </p>
             <p className="text-[#15575B] font-semibold text-[8px] md:text-[8px] lg:text-base italic">
-              Upaya Kolaboratif Mewujudkan <br />
-              Pembangunan Inklusif dan Berkelanjutan
+              {/* Upaya Kolaboratif Mewujudkan <br />
+              Pembangunan Inklusif dan Berkelanjutan */}
+              {dataBigAgenda[0].theme}
             </p>
-            <p className="absolute -top-1 lg:-top-6 -left-2 lg:-left-10 text-sm lg:text-[55px] font-extrabold text-[#FFC359] font-serif">
-              "
-            </p>
-            <p className="absolute -bottom-1 lg:-bottom-6 -right-3 lg:-right-10 text-sm lg:text-[55px] font-extrabold text-[#FFC359] font-serif rotate-180">
-              "
-            </p>
+            <Image
+              src={"images/jadwal/petik-kuning.svg"}
+              width={20}
+              height={30}
+              alt="petik"
+              className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute top-0.5 md:-top-2 lg:-top-2 -left-1 md:-left-4 lg:-left-10"
+            />
+            <Image
+              src={"images/jadwal/petik-kuning.svg"}
+              width={20}
+              height={30}
+              alt="petik"
+              className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute bottom-0 md:-bottom-2 lg:-bottom-2 -right-3 md:-right-5 lg:-right-10 rotate-180"
+            />
           </div>
           <hr className="border-b-[0.5px] lg:border-b-2 border-black w-9/12 my-auto" />
           {/* tempat dan waktu */}
@@ -285,13 +336,14 @@ export default function LayoutIdulFitri() {
               />
               {/* lokasi */}
               <p className="font-medium text-[6px] md:text-[6px] lg:text-sm text-[#15575B] italic">
-                Mardliyyah <br /> Islamic Center UGM
+                {/* Mardliyyah <br /> Islamic Center UGM */}
+                {dataBigAgenda[0].place}
               </p>
             </div>
             <div className="text-transparent bg-[#15575B] w-[12px] md:w-[17px] lg:w-[40px] h-[1px] rotate-90">
               .
             </div>
-            <div className="flex flex-row gap-x-1 lg:gap-x-8 items-center ml-auto">
+            <div className="flex flex-row gap-x-1 lg:gap-x-6 items-center ml-auto">
               {/* icon calendar */}
               <img
                 src="images/jadwal/vektor_kalender.svg"
@@ -299,13 +351,22 @@ export default function LayoutIdulFitri() {
                 className="w-[10px] md:w-[14px] lg:w-[32px] h-[9px] md:h-[13px] lg:h-[30px]"
               />
               {/* waktu */}
-              <p className="w-14 font-medium text-[6px] md:text-[6px] lg:text-sm text-[#15575B] italic flex flex-row">
-                08:00 WIB
+              <p className="w-14 lg:w-20 font-medium text-[6px] md:text-[6px] lg:text-sm text-[#15575B] italic flex flex-row">
+                {/* 08:00 WIB */}
+                {/* {dataBigAgenda[0].time !== null
+                  ? dataBigAgenda[0].time + " WIB"
+                  : "Null"} */}
+                {dataBigAgenda[0].time
+                  ? dataBigAgenda[0].time.slice(0, 5) + " WIB"
+                  : "Null"}
               </p>
             </div>
           </div>
         </div>
         {/* end of box info event */}
+
+        {/* div untuk background putih dibelakang two button */}
+        <div className="absolute bg-white w-full h-52 -bottom-44"></div>
       </div>
     </>
   );

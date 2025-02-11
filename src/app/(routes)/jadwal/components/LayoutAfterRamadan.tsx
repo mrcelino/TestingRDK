@@ -11,11 +11,11 @@ export default function LayoutAfterRamadan() {
           See you again in the next Ramadan
         </h1>
         <Image  
-          src="/images/maskot.png"
+          src="/images/jadwal/maskot_wave.svg"
           width={434}
           height={434}
           alt="sign"
-          className="absolute w-[106px] h-[106px] md:w-[257px] md:h-[257px] lg:w-[434px] lg:h-[434px] left-7 md:left-20 lg:left-28 -bottom-3 md:-bottom-7 lg:-bottom-14 z-20"
+          className="absolute w-[106px] h-[106px] md:w-[257px] md:h-[257px] lg:w-[434px] lg:h-[434px] left-2 md:left-20 lg:left-28 -bottom-3 md:-bottom-7 lg:-bottom-14 z-20"
         />
         <div className="absolute w-full h-[73px] md:h-[120px] lg:h-[180px] bg-white text-transparent -bottom-[74px] md:-bottom-[122px] lg:-bottom-[185px] z-10">.</div>
       </div>
