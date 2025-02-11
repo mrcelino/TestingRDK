@@ -11,7 +11,7 @@ export function FAQHolder(item: FaqData) {
 
   return (
     <div
-      className="accordion border-solid border-black border-[3px] p-4 rounded-xl mb-4 lg:p-4"
+      className="accordion border-solid border-black border-[3px] md:p-2 rounded-xl mb-4 lg:p-4 p-2"
       id="basic-heading-two-with-icon"
     >
       <button
@@ -20,7 +20,7 @@ export function FAQHolder(item: FaqData) {
         aria-controls="basic-collapse-two-with-icon"
       >
         <h5
-          className={`text-xl transition-all duration-500 transform px-6 ${
+          className={`lg:text-xl transition-all duration-500 transform px-6 md:text-lg sm:text-base text-sm ${
             isOpen ? "font-bold" : "italic"
           }`}
         >
@@ -28,8 +28,8 @@ export function FAQHolder(item: FaqData) {
         </h5>
         <svg
           className={`w-6 h-6 text-gray-900 transition-transform duration-500 transform ${
-            isOpen ? "rotate-180" : "rotate-0"
-          } group-hover:text-indigo-600`}
+            isOpen ? "rotate-0" : "rotate-180"
+          }`}
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ export function FAQHolder(item: FaqData) {
         }`}
         aria-labelledby="basic-heading-two"
       >
-        <p className="text-xl text-gray-900 font-normal leading-6 py-2 px-6">
+        <p className="lg:text-xl text-gray-900 font-normal leading-6 py-2 px-6 md:text-lg sm:text-base text-sm">
           {item.answer}
         </p>
       </div>
