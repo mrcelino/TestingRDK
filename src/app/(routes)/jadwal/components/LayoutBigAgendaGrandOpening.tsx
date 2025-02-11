@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import BigAgenda from "./shared/BigAgenda";
 import JadwalGreet from "./shared/JadwalGreet";
 import SpectacularShow from "./shared/SpectacularShow";

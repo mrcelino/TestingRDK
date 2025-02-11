@@ -3,7 +3,7 @@
 "use client";
 
 import Image from "next/image";
-import BigAgendaHeader from "./shared/BigAgendaHeader";
+// import BigAgendaHeader from "./shared/BigAgendaHeader";
 
 interface ImageSpectacularShows {
   id: number;

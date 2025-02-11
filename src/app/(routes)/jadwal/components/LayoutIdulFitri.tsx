@@ -3,7 +3,7 @@
 "use client";
 
 import Image from "next/image";
-import BigAgenda from "./shared/BigAgenda";
+// import BigAgenda from "./shared/BigAgenda";
 
 interface Profile {
   id: number;
