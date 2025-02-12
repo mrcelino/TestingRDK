@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HeroSlider() {
 	return (
-		<div className="relative ">
+		<div className="relative">
 			<Image
 				src="/images/home/hero_slider.png"
 				alt="Hero Slider"
@@ -25,7 +25,7 @@ export default function HeroSlider() {
 				alt="Hero Slider"
 				height={42}
 				width={160}
-				className="absolute lg:top-52 top-16 md:left-10 md:block hidden lg:w-[20%]"
+				className="absolute lg:top-52 top-16 md:left-10 md:block hidden lg:w-[20%] 2xl:top-40 "
 			/>
 
 			{/* Hidden desktop */}
@@ -37,10 +37,10 @@ export default function HeroSlider() {
 				className="z-20 absolute top-12 left-5 w-[20%] md:hidden "
 			/>
 
-			<div className="md:top-40 lg:top-[23rem] z-20 absolute md:left-10 font-semibold text-white italic left-5 top-24">
+			<div className="md:top-40 lg:top-[20em] z-20 absolute md:left-10 font-semibold text-white italic left-5 top-24">
 				<p className="lg:text-[6rem] md:text-5xl text-3xl ">Ramadhan Di</p>
 				<p className="lg:text-[6rem] md:text-5xl text-3xl">Kampus</p>
-				<p className="lg:text-[3rem]  text-orangeCS md:text-2xl text-xl">
+				<p className="lg:text-[3rem]  text-orangeCS md:text-2xl text-xl lg:mt-4">
 					Universitas Gadjah Mada
 				</p>
 			</div>

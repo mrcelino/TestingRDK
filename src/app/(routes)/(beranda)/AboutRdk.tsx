@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export default function AboutRdk() {
 	return (
-		<div className=" md:flex justify-between lg:justify-start">
+		<div className=" md:flex justify-between lg:justify-start max-w">
 			<div className="md:w-4/5 lg:w-3/4">
-				<h1 className="lg:text-5xl text-2xl text-greenCS lg:w-[60%] md:w-2/3 bg-orangeCS border-black lg:border-4 border-2 rounded-tr-[50px] rounded-bl-[50px] font-bold lg:py-3 lg:px-10 text-center  mx-auto md:ml-auto md:mr-4 lg:mr-24 font-titania py-2 w-4/5">
+				<h1 className="lg:text-5xl text-2xl text-greenCS lg:w-[60%] md:w-2/3 bg-orangeCS border-black lg:border-4 border-2 rounded-tr-[50px] rounded-bl-[50px] lg:rounded-tr-[30px] lg:rounded-bl-[30px] lg:py-3 lg:px-10 text-center  mx-auto md:ml-auto md:mr-4 lg:mr-24 font-heading py-2 w-4/5 text-shadow-md">
 					Tentang RDK
 				</h1>
 
-				<p className="lg:text-2xl indent-10 text-justify text-greenCS italic mt-10 md:mt-4 lg:mt-10 lg:w-[75%] lg:ml-auto lg:mr-20">
+				<p className="lg:text-2xl indent-10 text-justify text-greenCS mt-10 md:mt-4 lg:mt-10 lg:w-[75%] lg:ml-auto lg:mr-20 font-body font-medium">
 					Ramadhan di Kampus (RDK) merupakan kegiatan yang diadakan setiap tahun
 					di Universitas Gadjah Mada sejak tahun 1976. Kegiatan RDK
 					diselenggarakan di lingkungan kampus Universitas Gadjah Mada. Berbagai
