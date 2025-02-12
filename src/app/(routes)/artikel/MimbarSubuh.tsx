@@ -43,7 +43,7 @@ export default function MimbarSubuh() {
 						<SwiperSlide key={index}>
 							<div
 								className={`bg-white lg:shadow-lg border rounded-3xl my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[15rem] ${
-									isHighlighted ? "z-10 object-cover" : "lg:w-[90%] lg:ml-5"
+									isHighlighted ? "z-10 object-cover lg:w-[25rem] transform lg:-translate-x-4" : "lg:w-[90%] lg:ml-5"
 								} `}
 							>
 								<Link href="/artikel/mimbar-subuh">

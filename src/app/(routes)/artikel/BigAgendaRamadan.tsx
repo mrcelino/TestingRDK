@@ -19,7 +19,7 @@ export default function BigAgendaRamadan() {
 			</h1>
 			<div className="h-0.5 bg-greenCS w-1/2 lg:w-1/3 lg:mt-2"></div>
 			<Swiper
-		
+				spaceBetween={20}
 				navigation={{
 					nextEl: ".custom-swiper-button-next",
 					prevEl: ".custom-swiper-button-prev",
@@ -45,7 +45,7 @@ export default function BigAgendaRamadan() {
 						<SwiperSlide key={index}>
 							<div
 								className={`bg-white lg:shadow-lg border rounded-3xl my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[15rem] ${
-									isHighlighted ? "z-10 object-cover lg:w-[25rem] lg:transform lg:-translate-x-6" : "lg:w-[90%]"
+									isHighlighted ? "z-10 object-cover lg:w-[25rem] lg:transform lg:-translate-x-10" : "lg:w-[90%] "
 								} `}
 							>
 								<Link href="/artikel/big-agenda-ramadan">
