@@ -29,6 +29,7 @@ import LayoutBigAgendaRdkFest from "./components/LayoutBigAgendaRdkFest";
 import Calendar from "./components/shared/Calendar";
 import LayoutAgendaNotReleased from "./components/LayoutAgendaNotReleased";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/solid";
+import Loading from "./loading";
 
 // interfaces untuk daily agendaaa
 interface DailyProfile {
@@ -97,7 +98,12 @@ interface bigAgendaItem {
   place: string;
   date: string;
   time: string;
-  big_agenda_type: "MIT" | "Grand_Opening" | "RDK_Festival" | "Special_Eid" | "Two_Last_Day";
+  big_agenda_type:
+    | "MIT"
+    | "Grand_Opening"
+    | "RDK_Festival"
+    | "Special_Eid"
+    | "Two_Last_Day";
   image_spectacular_shows: [ImageSpectacularShows];
   source_person: Source_person;
   moderator: Moderator;
@@ -126,6 +132,7 @@ export default function JadwalPage() {
   const [dailyAgenda, setDailyAgenda] = useState<DailyAgendaItem[]>([]);
   const [bigAgenda, setBigAgenda] = useState<any[]>([]);
   const [highlightDates, setHighlightDates] = useState<Date[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   // fetching daily agenda & big agenda
@@ -152,6 +159,8 @@ export default function JadwalPage() {
         console.log("Big Agenda:", bigData.data);
       } catch (error) {
         console.error("Error fetching agendas:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -162,9 +171,7 @@ export default function JadwalPage() {
   useEffect(() => {
     const fetchHighlightDates = async () => {
       try {
-        const response = await fetch(
-          `${baseUrl}/api/big-agenda`
-        );
+        const response = await fetch(`${baseUrl}/api/big-agenda`);
         const data = await response.json();
 
         if (data?.data) {
@@ -187,7 +194,6 @@ export default function JadwalPage() {
     fetchHighlightDates();
   }, []);
 
-
   // ini untuk decide layout apa yang mau digunakan
   useEffect(() => {
     const tanggal = format(selectedDay, "yyyy-MM-dd");
@@ -195,7 +201,7 @@ export default function JadwalPage() {
     // Tanggal batas
     const beforeRamadanDate = parseISO("2025-03-01");
     const afterRamadanDate = parseISO("2025-03-30");
-    console.log(highlightDates[0])
+    console.log(highlightDates[0]);
 
     if (isBefore(selectedDay, highlightDates[0])) {
       setLayout("LayoutBeforeRamadan");
@@ -246,8 +252,7 @@ export default function JadwalPage() {
     }
   }, [selectedDay, dailyAgenda, bigAgenda]);
 
-  console.log(layout);
-
+  
 
   const days = eachDayOfInterval({
     start: firstDayCurrentMonth,
@@ -296,62 +301,70 @@ export default function JadwalPage() {
       </div>
       <div className="absolute inset-0 bg-[url('/images/jadwal/pattern-bg-mobile3.svg')] lg:bg-[url('/images/jadwal/pattern-for-bg.svg')] bg-repeat opacity-10 lg:opacity-[0.08] mix-blend-difference"></div>
       <div className="w-full h-full relative flex flex-col items-center">
-        <JadwalHeader />
+        {loading ? (
+          <Loading />
+        ) : (
+          <>
+            <JadwalHeader />
 
-        <Calendar
-          days={days}
-          selectedDay={selectedDay}
-          currentMonth={currentMonth}
-          highlightDates={highlightDates}
-          onPreviousMonth={previousMonth}
-          onNextMonth={nextMonth}
-          onSelectDay={setSelectedDay}
-        />
+            <Calendar
+              days={days}
+              selectedDay={selectedDay}
+              currentMonth={currentMonth}
+              highlightDates={highlightDates}
+              onPreviousMonth={previousMonth}
+              onNextMonth={nextMonth}
+              onSelectDay={setSelectedDay}
+            />
 
-        {/* rdk logo */}
-        <Image
-          src="/images/jadwal/rdk_logo_with_title.svg"
-          width={0}
-          height={0}
-          // width={210}
-          // height={133}
-          alt="sign"
-          className="mt-5 md:mt-8 lg:mt-10 w-[63px] h-[40px] md:w-[99px] md:h-[63px] lg:w-[210px] lg:h-[133px]"
-        />
+            {/* rdk logo */}
+            <Image
+              src="/images/jadwal/rdk_logo_with_title.svg"
+              width={0}
+              height={0}
+              // width={210}
+              // height={133}
+              alt="sign"
+              className="mt-5 md:mt-8 lg:mt-10 w-[63px] h-[40px] md:w-[99px] md:h-[63px] lg:w-[210px] lg:h-[133px]"
+            />
 
-        {layout === "LayoutBeforeRamadan" && <LayoutBeforeRamadan />}
-        {layout === "LayoutAfterRamadan" && <LayoutAfterRamadan />}
-        {layout === "LayoutDailyAgendaOnly" && (
-          <LayoutDailyAgendaOnly dataDailyAgenda={dailyAgenda} />
+            {layout === "LayoutBeforeRamadan" && <LayoutBeforeRamadan />}
+            {layout === "LayoutAfterRamadan" && <LayoutAfterRamadan />}
+            {layout === "LayoutDailyAgendaOnly" && (
+              <LayoutDailyAgendaOnly dataDailyAgenda={dailyAgenda} />
+            )}
+            {layout === "LayoutDailyAgendaRplOnly" && (
+              <LayoutDailyAgendaRplOnly dataDailyAgenda={dailyAgenda} />
+            )}
+            {layout === "LayoutDailyAgendaNoMimbarSubuh" && (
+              <LayoutDailyAgendaNoMimbarSubuh dataDailyAgenda={dailyAgenda} />
+            )}
+            {layout === "LayoutBigAgendaGrandOpening" && (
+              <LayoutBigAgendaGrandOpening dataBigAgenda={bigAgenda} />
+            )}
+            {layout === "LayoutBigAgendaMIT" && (
+              <LayoutBigAgendaMIT
+                dataBigAgenda={bigAgenda}
+                dataDailyAgenda={dailyAgenda}
+              />
+            )}
+            {layout === "LayoutBigAgendaRdkFest" && (
+              <LayoutBigAgendaRdkFest
+                dataBigAgenda={bigAgenda}
+                dataDailyAgenda={dailyAgenda}
+              />
+            )}
+            {layout === "Layout2LastDay" && (
+              <Layout2LastDay dataBigAgenda={bigAgenda} />
+            )}
+            {layout === "LayoutIdulFitri" && (
+              <LayoutIdulFitri dataBigAgenda={bigAgenda} />
+            )}
+            {layout === "LayoutAgendaNotReleased" && (
+              <LayoutAgendaNotReleased />
+            )}
+          </>
         )}
-        {layout === "LayoutDailyAgendaRplOnly" && (
-          <LayoutDailyAgendaRplOnly dataDailyAgenda={dailyAgenda} />
-        )}
-        {layout === "LayoutDailyAgendaNoMimbarSubuh" && (
-          <LayoutDailyAgendaNoMimbarSubuh dataDailyAgenda={dailyAgenda} />
-        )}
-        {layout === "LayoutBigAgendaGrandOpening" && (
-          <LayoutBigAgendaGrandOpening
-            dataBigAgenda={bigAgenda}
-          />
-        )}
-        {layout === "LayoutBigAgendaMIT" && (
-          <LayoutBigAgendaMIT
-            dataBigAgenda={bigAgenda}
-            dataDailyAgenda={dailyAgenda}
-          />
-        )}
-        {layout === "LayoutBigAgendaRdkFest" && (
-          <LayoutBigAgendaRdkFest
-            dataBigAgenda={bigAgenda}
-            dataDailyAgenda={dailyAgenda}
-          />
-        )}
-        {layout === "Layout2LastDay" && <Layout2LastDay dataBigAgenda={bigAgenda} />}
-        {layout === "LayoutIdulFitri" && (
-          <LayoutIdulFitri dataBigAgenda={bigAgenda} />
-        )}
-        {layout === "LayoutAgendaNotReleased" && <LayoutAgendaNotReleased />}
 
         {/* event */}
 
@@ -378,7 +391,6 @@ export default function JadwalPage() {
             onClick={previousDay}
             className="w-[100px] md:w-[160px] lg:w-[278px] h-[25px] md:h-[34px] lg:h-[59px] bg-[#F4AA3D] hover:bg-[#cc8f33] cursor-pointer border lg:border-[3px] border-black rounded-[30px] items-center justify-center flex flex-row gap-x-4"
           >
-
             <ArrowLeftIcon
               className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10"
               aria-hidden="true"
