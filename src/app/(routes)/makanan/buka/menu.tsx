@@ -42,7 +42,7 @@ function Menu({ food }: { food: Food }) {
         width="100"
       />
       <div>
-        <div className={`flex items-center justify-center text-white px-2 py-2 pl-14 xl:py-2 -ml-20 xl:mt-14 xl:-ml-20 sm:pl-20 xl:pl-16 xl:px-2 rounded-full border-4 border-black w-70 
+        <div className={`flex items-center justify-center text-white px-2 py-2 pl-14 xl:py-2 -ml-20 xl:mt-14 xl:-ml-20 sm:pl-20 xl:pl-16 xl:px-2 rounded-full border-4 border-black 
           ${food.day % 2 === 1 ? "bg-[#15575B]" : "bg-[#F4AA3D]"}`}>
           <span className="sm:text-2xl xl:text-2xl font-medium text-center italic">
             {food.date_romawi}

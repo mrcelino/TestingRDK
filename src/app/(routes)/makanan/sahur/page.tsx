@@ -4,7 +4,7 @@ import Food from "./menu";
 function Menu(){
   return(
     <>
-      <section className="mt-20 w-full px-2 sm:px-4 mx-auto md:max-w-5xl">
+      <section className="pt-20 lg:pt-40 w-full px-2 sm:px-4 mx-auto md:max-w-5xl">
         <div className="flex flex-col justify-center items-center bg-[#15575B]  text-center py-12 px-4 rounded-t-[45px] sm:rounded-t-[70px] md:rounded-t-[80px] xl:rounded-t-[120px] border-[6px] sm:border-8 border-black min-h-80">
           <h1 className="md:text-8xl text-5xl sm:text-7xl font-bold font-body text-[#F4AA3D] drop-shadow-[0_5px_0_rgba(0,0,0,0.4)]">
             MENU
