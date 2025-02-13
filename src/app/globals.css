@@ -25,3 +25,10 @@
 .font-titania {
   font-family: 'Titania';
 }
+
+@font-face {
+  font-family: 'Titania';
+  src: url('/fonts/titania.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

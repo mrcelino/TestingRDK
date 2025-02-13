@@ -2,29 +2,46 @@
 
 import Image from "next/image";
 
-export default function Samudra() {
+interface Profile {
+  id: number;
+  documentId: string;
+  name: string;
+  publicUrl: string;
+}
+
+interface AgendaItem {
+  id: number;
+  documentId: string;
+  theme: string;
+  time: string;
+  daily_agenda_type: "Samudera" | "RPL" | "Mimbar_Subuh"; // Pastikan sesuai dengan JSON
+  date: string;
+  profile: Profile;
+}
+
+export default function Samudra({ data }: { data: AgendaItem }) {
   return (
     <>
       {/* start of samudra */}
       <div className="w-[300px] md:w-[450px] lg:w-[901px] h-[160px] md:h-[250px] lg:h-[500px] flex flex-col mt-8 md:mt-16 lg:mt-32 items-center">
         {/* samudra header */}
         <div className="w-fit h-fit flex flex-row justify-center items-center gap-x-1.5 md:gap-x-4">
-          <h1 className="text-sm md:text-base lg:text-[48px] text-white drop-shadow-md">
+          <h1 className="text-sm font-normal md:text-base lg:text-[48px] text-white drop-shadow-md font-heading">
             Samudra
           </h1>
           <div className="w-[1px] h-[14px] md:h-[11px] lg:h-[45px] text-transparent bg-white">
             .
           </div>
-          <p className="font-semibold text-[10px] md:text-[10px] lg:text-sm text-[#F4AA3D]">
-            Safari Ilmu di Bulan <br /> Ramadan
+          <p className="font-semibold text-[10px] md:text-[10px] lg:text-sm text-[#F4AA3D] drop-shadow-md font-title leading-tight lg:leading-normal">
+            Safari Ilmu <br /> di Bulan Ramadan
           </p>
         </div>
         {/* end of samudra header */}
 
-        {/* content samudra subuh */}
+        {/* content samudra */}
         <div className="w-full h-full grid grid-cols-[2fr_1fr]">
           {/* left side */}
-          <div className="flex flex-col justify-center gap-y-2 md:gap-y-5 lg:gap-y-10 pl-0 md:pl-10 md:pr-5 grow">
+          <div className="flex flex-col justify-center gap-y-2 md:gap-y-5 lg:gap-y-10 pl-0 md:pl-3 md:pr-5 grow font-body">
             {/* name */}
             <div className="flex flex-row gap-x-1 md:gap-x-6 lg:gap-x-10 items-center pl-2">
               <Image
@@ -35,7 +52,8 @@ export default function Samudra() {
                 className="w-[22px] h-[22px] md:w-[33px] md:h-[33px] lg:w-[91px] lg:h-[91px]"
               />
               <p className="text-white font-medium text-[8px] md:text-[10px] lg:text-xl italic">
-                Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed.
+                {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
+                {data.profile.name !== '' ? data.profile.name : '???'}
               </p>
             </div>
             {/* time */}
@@ -48,7 +66,8 @@ export default function Samudra() {
                 className="w-[15px] h-[15px] md:w-[24px] md:h-[24px] lg:w-[91px] lg:h-[91px]"
               />
               <p className="text-white font-medium text-[8px] md:text-[10px] lg:text-xl italic">
-                05:00 WIB
+                {/* 05:00 WIB */}
+                {data.time !== '' ? data.time.slice(0, 5) + ' WIB' : '???'} 
               </p>
             </div>
             {/* place */}
@@ -61,8 +80,9 @@ export default function Samudra() {
                 className="w-[17px] h-[17px] md:w-[24px] md:h-[24px] lg:w-[91px] lg:h-[91px]"
               />
               <p className="text-white font-medium text-[8px] md:text-[10px] lg:text-xl italic">
-                Kausalitas: Hukum Alam atau Tuhan: Pemikiran Religio-Saintifik
-                al-Ghazali
+                {/* Kausalitas: Hukum Alam atau Tuhan: Pemikiran Religio-Saintifik
+                al-Ghazali */}
+                {data.theme !== '' ? data.theme : '???'}
               </p>
             </div>
           </div>
@@ -101,7 +121,13 @@ export default function Samudra() {
                                       className=""
                                     /> */}
                   {/* <img src="/images/jadwal/examplePhotoPengisiAcara.svg" alt="" className="w-fit h-fit "/> */}
-                  <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div>
+                  {/* <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div> */}
+                  <div
+                    style={{
+                      backgroundImage: `url("${data.profile.publicUrl !== '' ? data.profile.publicUrl : '???'}")`,
+                    }}
+                    className="bg-cover bg-center w-full h-full"
+                  ></div>
                 </div>
 
                 {/* bottom part icon container*/}

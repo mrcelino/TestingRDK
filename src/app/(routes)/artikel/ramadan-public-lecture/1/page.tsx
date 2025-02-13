@@ -111,7 +111,7 @@ export default function KajianRamadanPublicLecture() {
 							/>
 						</svg>
 
-						<p className="ml-2">Previous</p>
+						<p className="ml-2">Back</p>
 					</button>
 				</Link>
 			</main>

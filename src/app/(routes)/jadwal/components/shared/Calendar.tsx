@@ -29,10 +29,10 @@ export default function Calendar({
     <div className="mt-8 md:mt-8 lg:mt-16 relative">
       <Image
         src="/images/jadwal/mini-calendar.svg"
-        width={203}
-        height={203}
+        width={130}
+        height={130}
         alt="icon_mini_calendar"
-        className="absolute w-[53px] h-[53px] md:w-[108px] md:h-[108px] lg:w-[203px] lg:h-[203px] -bottom-5 -right-4 md:-bottom-12 md:-right-4 lg:-bottom-20 lg:-right-[64px]"
+        className="absolute w-[38px] h-[38px] md:w-[78px] md:h-[78px] lg:w-[130px] lg:h-[130px] -bottom-2 -right-3 md:-bottom-8 md:-right-4 lg:-bottom-12 lg:-right-[40px]"
       />
       <div className="mx-auto bg-white w-[272px] h-[181px] md:w-[384px] md:h-[287px] lg:w-[637px] lg:h-[494px] rounded-[20px] md:rounded-[50px]  lg:rounded-[50px] shadow-md">
         {/* month container */}
@@ -43,9 +43,9 @@ export default function Calendar({
             className="-my-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
           >
             <span className="sr-only">Previous month</span>
-            <ChevronLeftIcon className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
+            <ChevronLeftIcon className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10" aria-hidden="true" />
           </button>
-          <h2 className="flex-auto font-semibold text-[10px] md:text-[12px] lg:text-[20px] text-[#fbfbfb] text-center">
+          <h2 className="flex-auto font-semibold text-[10px] md:text-[12px] lg:text-[20px] text-[#fbfbfb] text-center italic font-body">
             {/* {currentMonth} */}
             {format(currentMonth, "MMMM yyyy")}
           </h2>
@@ -55,18 +55,18 @@ export default function Calendar({
             className="-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
           >
             <span className="sr-only">Next month</span>
-            <ChevronRightIcon className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
+            <ChevronRightIcon className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10" aria-hidden="true" />
           </button>
         </div>
         {/* days of the week container */}
         <div className="px-0.5 lg:px-1 -py-1 md:py-1 lg:py-2 grid grid-cols-7 text-center text-[10px] md:text-[12px] lg:text-sm md:leading-5 lg:leading-6 text-white bg-[#3D6C6F] italic shadow-md">
-          <div>Sun</div>
-          <div>Mon</div>
-          <div>Tue</div>
-          <div>Wed</div>
-          <div>Thu</div>
-          <div>Fri</div>
-          <div>Sat</div>
+          <div>SUN</div>
+          <div>MON</div>
+          <div>TUE</div>
+          <div>WED</div>
+          <div>THU</div>
+          <div>FRI</div>
+          <div>SAT</div>
         </div>
         {/* days container */}
         <div className="-mt-0.5 md:mt-1 lg:mt-2 grid grid-cols-7 text-sm md:gap-y-1.5 lg:gap-y-5">

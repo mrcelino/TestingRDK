@@ -104,7 +104,7 @@ export default function ArtikelBAR() {
 							/>
 						</svg>
 
-						<p className="ml-2">Previous</p>
+						<p className="ml-2">Back</p>
 					</button>
 				</Link>
 			</main>
