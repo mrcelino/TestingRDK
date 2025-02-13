@@ -23,7 +23,7 @@ export default function FAQ() {
         const getData = async () => {
             console.log(`${process.env.app_url}/faqs`)
 
-            const response = await fetch(`http://localhost:1337/api/faqs`);
+            const response = await fetch(`https://be-rdk-website-production.up.railway.app/api/faqs`);
             const result = await response.json();
             setData(result.data);
             setLoading(false);
