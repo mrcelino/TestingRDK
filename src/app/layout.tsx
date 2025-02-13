@@ -17,7 +17,6 @@ const trirong = Trirong({
 
 const worksans = Work_Sans({
   subsets: ["latin"],
-  weight: ["400", "700"],
   variable: "--font-worksans",
 });
 

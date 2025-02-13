@@ -1,8 +1,8 @@
-import Image from "next/image";
+
 import Pattern from "./Pattern";
 import Samudra from "./Samudra";
-import Rpl from "./Rpl";
 import MimbarSubuh from "./MimbarSubuh";
+import RPL from "./RPL";
 
 export default function DailyAgenda() {
 	return (
@@ -19,7 +19,7 @@ export default function DailyAgenda() {
 						viewBox="0 0 183 183"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
-						className="absolute left-[-3rem] lg:left-[15rem] lg:h-full h-20 animateSpin"
+						className="absolute left-[-1rem] md:left-[8rem] lg:left-[15rem] lg:h-full h-20 animateSpin md:h-[120px] md:w-[120px] lg:w-[200px] w-[110px] h-[110px]"
 					>
 						<path
 							d="M121.448 30.4004H60.7504V151.796H121.448V30.4004Z"
@@ -58,14 +58,14 @@ export default function DailyAgenda() {
 							fill="#FFE887"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M91.0988 0.000817672L91.0988 60.6985C74.3376 60.6985 60.75 47.1106 60.75 30.3494C60.75 13.5882 74.3376 0.000816939 91.0988 0.000817672ZM91.0988 0.000817672C74.3376 0.000816939 60.75 13.5882 60.75 30.3494C77.4934 30.3096 91.0591 16.7442 91.0988 0.000817672ZM60.75 30.3494C77.4934 30.3891 91.0591 43.9551 91.0988 60.6985C74.3376 60.6985 60.75 47.1106 60.75 30.3494Z"
 							fill="#EFC828"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M91.1 0.105142L91.1 60.8027C107.861 60.8027 121.449 47.2158 121.449 30.4546C121.449 13.6934 107.861 0.105143 91.1 0.105142ZM91.1 0.105142C107.861 0.105143 121.449 13.6934 121.449 30.4546C104.705 30.4148 91.1398 16.8486 91.1 0.105142ZM121.449 30.4546C104.705 30.4943 91.1398 44.0593 91.1 60.8027C107.861 60.8027 121.449 47.2158 121.449 30.4546Z"
 							fill="#EFC828"
 						/>
@@ -78,14 +78,14 @@ export default function DailyAgenda() {
 							fill="#FFE887"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M91.1531 182.196L91.1531 121.499C107.914 121.499 121.502 135.087 121.502 151.848C121.502 168.609 107.914 182.196 91.1531 182.196ZM91.1531 182.196C107.914 182.196 121.502 168.609 121.502 151.848C104.759 151.888 91.1929 165.453 91.1531 182.196ZM121.502 151.848C104.759 151.808 91.1929 138.242 91.1531 121.499C107.914 121.499 121.502 135.087 121.502 151.848Z"
 							fill="#EFC828"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M91.1519 182.092L91.1519 121.395C74.3907 121.395 60.8031 134.981 60.8031 151.743C60.8031 168.504 74.3907 182.092 91.1519 182.092ZM91.1519 182.092C74.3907 182.092 60.8031 168.504 60.8031 151.743C77.5465 151.782 91.1122 165.349 91.1519 182.092ZM60.8031 151.743C77.5465 151.703 91.1122 138.138 91.1519 121.395C74.3907 121.395 60.8031 134.981 60.8031 151.743Z"
 							fill="#EFC828"
 						/>
@@ -98,14 +98,14 @@ export default function DailyAgenda() {
 							fill="#FFE887"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M60.8019 91.1004L0.104234 91.1004C0.104235 107.862 13.6922 121.449 30.4534 121.449C47.2146 121.449 60.8019 107.862 60.8019 91.1004ZM60.8019 91.1004C60.8019 107.862 47.2146 121.449 30.4534 121.449C30.4931 104.706 44.0585 91.1401 60.8019 91.1004ZM30.4534 121.449C30.4136 104.706 16.8477 91.1401 0.104234 91.1004C0.104235 107.862 13.6922 121.449 30.4534 121.449Z"
 							fill="#EFC828"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M60.6976 91.0992L-2.65328e-06 91.0992C-4.85125e-06 74.338 13.587 60.7504 30.3482 60.7503C47.1094 60.7503 60.6976 74.338 60.6976 91.0992ZM60.6976 91.0992C60.6976 74.338 47.1094 60.7503 30.3482 60.7503C30.3879 77.4938 43.9542 91.0594 60.6976 91.0992ZM30.3482 60.7503C30.3084 77.4938 16.7434 91.0594 -2.65328e-06 91.0992C-4.85125e-06 74.338 13.587 60.7504 30.3482 60.7503Z"
 							fill="#EFC828"
 						/>
@@ -118,14 +118,14 @@ export default function DailyAgenda() {
 							fill="#FFE887"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M121.395 91.0989L182.093 91.0988C182.093 74.3376 168.505 60.75 151.744 60.75C134.983 60.75 121.395 74.3377 121.395 91.0989ZM121.395 91.0989C121.395 74.3377 134.983 60.75 151.744 60.75C151.704 77.4934 138.139 91.0591 121.395 91.0989ZM151.744 60.75C151.784 77.4934 165.35 91.0591 182.093 91.0988C182.093 74.3376 168.505 60.75 151.744 60.75Z"
 							fill="#EFC828"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M121.5 91.1L182.197 91.1C182.197 107.861 168.61 121.449 151.849 121.449C135.088 121.449 121.5 107.861 121.5 91.1ZM121.5 91.1C121.5 107.861 135.088 121.449 151.849 121.449C151.809 104.705 138.243 91.1398 121.5 91.1ZM151.849 121.449C151.889 104.705 165.454 91.1398 182.197 91.1C182.197 107.861 168.61 121.449 151.849 121.449Z"
 							fill="#EFC828"
 						/>
@@ -141,7 +141,7 @@ export default function DailyAgenda() {
 						
 					</svg>
 
-					<div className="lg:p-6 px-4 py-2 text-center border-black border-4 bg-greenCS text-white font-bold  lg:w-1/2 w-[80%] rounded-full">
+					<div className="lg:p-6 px-4 py-2 text-center border-black border-4 bg-greenCS text-white font-bold md:w-1/2 w-[80%] rounded-full">
 						<h1 className="lg:text-4xl text-2xl font-titania">Daily Agenda</h1>
 						<h2 className="text-orangeCS text-xl lg:text-3xl text-shadow-lg font-titania">
 							Ramadhan di Kampus
@@ -157,7 +157,7 @@ export default function DailyAgenda() {
 						viewBox="0 0 183 183"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
-						className="absolute right-[-3rem] lg:right-[15rem] lg:h-full h-20 "
+						className="absolute right-[-1rem] md:right-[8rem]  lg:right-[15rem] lg:h-full h-20 lg:w-[200px] md:w-[120px] md:h-[120px] w-[110px] h-[110px]"
 					>
 						<path
 							d="M60.7492 30.4004H121.447V151.796H60.7492V30.4004Z"
@@ -196,14 +196,14 @@ export default function DailyAgenda() {
 							fill="#FFE887"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M91.0984 0.000817672L91.0984 60.6985C107.86 60.6985 121.447 47.1106 121.447 30.3494C121.447 13.5882 107.86 0.000816939 91.0984 0.000817672ZM91.0984 0.000817672C107.86 0.000816939 121.447 13.5882 121.447 30.3494C104.704 30.3096 91.1382 16.7442 91.0984 0.000817672ZM121.447 30.3494C104.704 30.3891 91.1382 43.9551 91.0984 60.6985C107.86 60.6985 121.447 47.1106 121.447 30.3494Z"
 							fill="#EFC828"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M91.0972 0.105142L91.0972 60.8027C74.336 60.8027 60.7484 47.2158 60.7484 30.4546C60.7484 13.6934 74.336 0.105143 91.0972 0.105142ZM91.0972 0.105142C74.336 0.105143 60.7484 13.6934 60.7484 30.4546C77.4918 30.4148 91.0575 16.8486 91.0972 0.105142ZM60.7484 30.4546C77.4918 30.4943 91.0575 44.0593 91.0972 60.8027C74.336 60.8027 60.7484 47.2158 60.7484 30.4546Z"
 							fill="#EFC828"
 						/>
@@ -216,14 +216,14 @@ export default function DailyAgenda() {
 							fill="#FFE887"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M91.0442 182.196L91.0441 121.499C74.2829 121.499 60.6953 135.087 60.6953 151.848C60.6953 168.609 74.2829 182.196 91.0442 182.196ZM91.0442 182.196C74.2829 182.196 60.6953 168.609 60.6953 151.848C77.4387 151.888 91.0044 165.453 91.0442 182.196ZM60.6953 151.848C77.4387 151.808 91.0044 138.242 91.0441 121.499C74.2829 121.499 60.6953 135.087 60.6953 151.848Z"
 							fill="#EFC828"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M91.0453 182.092L91.0453 121.395C107.807 121.395 121.394 134.981 121.394 151.743C121.394 168.504 107.807 182.092 91.0453 182.092ZM91.0453 182.092C107.807 182.092 121.394 168.504 121.394 151.743C104.651 151.782 91.0851 165.349 91.0453 182.092ZM121.394 151.743C104.651 151.703 91.0851 138.138 91.0453 121.395C107.807 121.395 121.394 134.981 121.394 151.743Z"
 							fill="#EFC828"
 						/>
@@ -236,14 +236,14 @@ export default function DailyAgenda() {
 							fill="#FFE887"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M121.395 91.1004L182.093 91.1004C182.093 107.862 168.505 121.449 151.744 121.449C134.983 121.449 121.395 107.862 121.395 91.1004ZM121.395 91.1004C121.395 107.862 134.983 121.449 151.744 121.449C151.704 104.706 138.139 91.1401 121.395 91.1004ZM151.744 121.449C151.784 104.706 165.35 91.1401 182.093 91.1004C182.093 107.862 168.505 121.449 151.744 121.449Z"
 							fill="#EFC828"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M121.5 91.0992L182.197 91.0992C182.197 74.338 168.61 60.7504 151.849 60.7503C135.088 60.7503 121.5 74.338 121.5 91.0992ZM121.5 91.0992C121.5 74.338 135.088 60.7503 151.849 60.7503C151.809 77.4938 138.243 91.0594 121.5 91.0992ZM151.849 60.7503C151.889 77.4938 165.454 91.0594 182.197 91.0992C182.197 74.338 168.61 60.7504 151.849 60.7503Z"
 							fill="#EFC828"
 						/>
@@ -256,14 +256,14 @@ export default function DailyAgenda() {
 							fill="#FFE887"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M60.8019 91.0989L0.104231 91.0988C0.104233 74.3376 13.6922 60.75 30.4534 60.75C47.2146 60.75 60.8019 74.3377 60.8019 91.0989ZM60.8019 91.0989C60.8019 74.3377 47.2146 60.75 30.4534 60.75C30.4931 77.4934 44.0585 91.0591 60.8019 91.0989ZM30.4534 60.75C30.4136 77.4934 16.8477 91.0591 0.104231 91.0988C0.104233 74.3376 13.6922 60.75 30.4534 60.75Z"
 							fill="#EFC828"
 						/>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M60.6976 91.1L-5.30657e-06 91.1C-8.96984e-06 107.861 13.5869 121.449 30.3481 121.449C47.1093 121.449 60.6976 107.861 60.6976 91.1ZM60.6976 91.1C60.6976 107.861 47.1093 121.449 30.3481 121.449C30.3879 104.705 43.9542 91.1398 60.6976 91.1ZM30.3481 121.449C30.3084 104.705 16.7434 91.1398 -5.30657e-06 91.1C-8.96984e-06 107.861 13.5869 121.449 30.3481 121.449Z"
 							fill="#EFC828"
 						/>
@@ -278,11 +278,11 @@ export default function DailyAgenda() {
 					</svg>
 				</div>
 
-				{/* Konten */}
+			
 				<main className="w-11/12 mx-auto">
-					<Samudra />
-					<Rpl />
 					<MimbarSubuh />
+					<Samudra />
+					<RPL />
 				</main>
 			</div>
 		</section>

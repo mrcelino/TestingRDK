@@ -5,7 +5,7 @@ export default function Samudra() {
 		<>
 			<div className="flex flex-col justify-center items-center mt-12">
 				{/* Title */}
-				<div className="text-white flex items-center justify-evenly bg-orangeCS border-2 lg:border-[3px] lg:border-b-0 border-b-0 border-black lg:p-4 w-[80%] lg:w-[40%]  rounded-t-[4rem] py-1 animate-fadeIn">
+				<div className="text-white flex items-center justify-center gap-3 md:justify-evenly bg-orangeCS border-2 lg:border-[3px] lg:border-b-0 border-b-0 border-black lg:p-4 w-[63%] md:w-[50%] md:ml-10 ml-14 lg:w-[40%] rounded-t-[3rem] py-1 md:py-2 animate-fadeIn">
 					<h1 className="font-bold text-center font-titania font-bold lg:text-4xl text-xl text-shadow-lg animate-fadeInScale">
 						Samudra
 					</h1>
@@ -19,18 +19,18 @@ export default function Samudra() {
 				</div>
 
 				{/* Date & Information */}
-				<div className="flex lg:justify-center mx-auto justify-end w-full relative ">
+				<div className="flex md:justify-center mx-auto justify-end w-full relative ">
 					{/* Date */}
 					<Image
-						src="/images/date.png"
+						src="/svg/samudra-time.svg"
 						alt="date"
 						height={176}
 						width={176}
-						className="lg:h-[176px] w-[115px] h-[115px] lg:w-[176px] transform lg:translate-x-[10%] lg:-translate-y-[12%] absolute lg:static -left-2 -top-2 animate-slideInLeft"
+						className="lg:h-[176px] w-[115px] h-[115px] lg:w-[176px] transform lg:translate-x-[10%] lg:-translate-y-[12%] absolute lg:static -left-2 -top-2 md:left-16 md:top-[-0.7rem] animate-slideInLeft"
 					/>
 
 					{/* Information */}
-					<div className="bg-greenCS border-[3px] border-black rounded-tr-[3rem] lg:rounded-tr-[6rem] lg:p-8 lg:pl-10 lg:py-9 text-white italic lg:w-[60%] w-[80%] h-[50%] font-medium text-xs lg:text-base p-2 px-8 pl-10 text-justify animate-fadeInScale">
+					<div className="bg-greenCS border-[3px] border-black rounded-tr-[3rem] lg:rounded-tr-[6rem] lg:p-8 lg:pl-10 lg:py-12 md:py-6 text-white italic lg:w-[60%] md:w-[65%] w-[80%] h-[50%] font-medium text-xs lg:text-base p-2 px-8 pl-10 text-justify md:ml-16 lg:ml-0">
 						Samudra atau Safari Ilmu di Bulan Ramadan merupakan kajian dan
 						diskusi panel yang diisi oleh pembicara yang dilaksanakan menjelang
 						waktu berbuka puasa.
