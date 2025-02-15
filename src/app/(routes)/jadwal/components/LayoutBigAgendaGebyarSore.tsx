@@ -98,10 +98,10 @@ export default function LayoutBigAgendaGebyarSore({
       {/* start of box info event */}
       <div className="w-[282px] md:w-[388px] lg:w-[893px] h-[69px] md:h-[81px] lg:h-[187px] bg-[#FBFBFB] border lg:border-[3px] border-black flex flex-col rounded-[50px] items-center justify-center mt-5 md:mt-8 lg:mt-10 py-1 md:py-2 lg:py-5 lg:mb-16">
         <div className="relative flex flex-col text-center">
-          <p className="text-[#FFC359] font-semibold text-[8px] md:text-[8px] lg:text-base italic font-body">
+          {/* <p className="text-[#FFC359] font-semibold text-[8px] md:text-[8px] lg:text-base italic font-body">
             Ramadan Berdaya:
-          </p>
-          <p className="text-[#15575B] font-semibold text-[8px] md:text-[8px] lg:text-base italic font-body">
+          </p> */}
+          <p className="text-[#15575B] font-semibold max-w-[190px] md:max-w-[250px] lg:max-w-[550px] text-[8px] md:text-[8px] lg:text-base italic font-body">
             {/* Upaya Kolaboratif Mewujudkan <br />
                   Pembangunan Inklusif dan Berkelanjutan */}
             {dataBigAgenda[0].theme !== ""
@@ -175,7 +175,9 @@ export default function LayoutBigAgendaGebyarSore({
             <div className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg">
               <div className="relative bg-[#15575B] w-[20%] h-full flex items-center justify-center min-h-[30px] md:min-h-[45px] lg:min-h-[72px] rounded-l-full">
                 <div className="absolute -right-[5px] lg:-right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[8px] xl:border-y-[15px] border-y-transparent border-l-[8px] xl:border-l-[15px] border-l-[#15575B]"></div>
-                <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">1</span>
+                <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">
+                  1
+                </span>
               </div>
               <div className="px-4 py-2 w-[80%] flex items-center justify-center">
                 <span className="text-[#15575B] text-[9px] md:text-base lg:text-2xl font-semibold">
@@ -189,7 +191,9 @@ export default function LayoutBigAgendaGebyarSore({
               <div className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg">
                 <div className="relative bg-[#F4AA3D] w-[20%] h-full flex items-center justify-center min-h-[30px] md:min-h-[45px] lg:min-h-[72px] rounded-l-full">
                   <div className="absolute -right-[5px] lg:-right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[8px] xl:border-y-[15px] border-y-transparent border-l-[8px] xl:border-l-[15px] border-l-[#F4AA3D]"></div>
-                  <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">2</span>
+                  <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">
+                    2
+                  </span>
                 </div>
                 <div className="px-4 py-2 w-[80%] flex items-center justify-center">
                   <span className="text-[#15575B] text-[9px] md:text-base lg:text-2xl font-semibold">
@@ -200,7 +204,9 @@ export default function LayoutBigAgendaGebyarSore({
               <div className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg">
                 <div className="relative bg-[#15575B] w-[20%] h-full flex items-center justify-center min-h-[30px] md:min-h-[45px] lg:min-h-[72px] rounded-l-full">
                   <div className="absolute -right-[5px] lg:-right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[8px] xl:border-y-[15px] border-y-transparent border-l-[8px] xl:border-l-[15px] border-l-[#15575B]"></div>
-                  <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">3</span>
+                  <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">
+                    3
+                  </span>
                 </div>
                 <div className="px-4 py-2 w-[80%] flex items-center justify-center">
                   <span className="text-[#15575B] text-[9px] md:text-base lg:text-2xl font-semibold">
@@ -211,7 +217,9 @@ export default function LayoutBigAgendaGebyarSore({
               <div className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg">
                 <div className="relative bg-[#F4AA3D] w-[20%] h-full flex items-center justify-center min-h-[30px] md:min-h-[45px] lg:min-h-[72px] rounded-l-full">
                   <div className="absolute -right-[5px] lg:-right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[8px] xl:border-y-[15px] border-y-transparent border-l-[8px] xl:border-l-[15px] border-l-[#F4AA3D]"></div>
-                  <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">4</span>
+                  <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">
+                    4
+                  </span>
                 </div>
                 <div className="px-4 py-2 w-[80%] flex items-center justify-center">
                   <span className="text-[#15575B] text-[9px] md:text-base lg:text-2xl font-semibold">
@@ -222,7 +230,9 @@ export default function LayoutBigAgendaGebyarSore({
               <div className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg">
                 <div className="relative bg-[#15575B] w-[20%] h-full flex items-center justify-center min-h-[30px] md:min-h-[45px] lg:min-h-[72px] rounded-l-full">
                   <div className="absolute -right-[5px] lg:-right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[8px] xl:border-y-[15px] border-y-transparent border-l-[8px] xl:border-l-[15px] border-l-[#15575B]"></div>
-                  <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">5</span>
+                  <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">
+                    5
+                  </span>
                 </div>
                 <div className="px-4 py-2 w-[80%] flex items-center justify-center">
                   <span className="text-[#15575B] text-[9px] md:text-base lg:text-2xl font-semibold">
@@ -233,7 +243,9 @@ export default function LayoutBigAgendaGebyarSore({
               <div className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg">
                 <div className="relative bg-[#F4AA3D] w-[20%] h-full flex items-center justify-center min-h-[30px] md:min-h-[45px] lg:min-h-[72px] rounded-l-full">
                   <div className="absolute -right-[5px] lg:-right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[8px] xl:border-y-[15px] border-y-transparent border-l-[8px] xl:border-l-[15px] border-l-[#F4AA3D]"></div>
-                  <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">6</span>
+                  <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">
+                    6
+                  </span>
                 </div>
                 <div className="px-4 py-2 w-[80%] flex items-center justify-center">
                   <span className="text-[#15575B] text-[9px] md:text-base lg:text-2xl font-semibold">
