@@ -245,7 +245,7 @@ export default function BigAgenda({
       <div className="hidden md:flex w-[240px] md:w-[523px] lg:w-[778px] h-[28px] md:h-[60px] lg:h-[90px] rounded-[100px] bg-white flex-row mt-4 lg:mt-10">
         {/* left name container */}
         <div className="w-1/2 h-full border lg:border-[3px] border-black rounded-l-[100px] flex justify-center items-center">
-          <p className="md:w-[219px] lg:w-[289px] text-[#F4AA3D] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-left font-body">
+          <p className="md:w-[219px] lg:w-[289px] text-[#F4AA3D] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-center font-body">
             {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
             {dataBigAgenda.source_person?.length > 0
               ? dataBigAgenda.source_person[0]?.profile?.name
@@ -254,7 +254,7 @@ export default function BigAgenda({
         </div>
         {/* right name container */}
         <div className="w-1/2 h-full bg-[#F4AA3D] border lg:border-[3px] border-black rounded-r-[100px] flex justify-center items-center">
-          <p className="md:w-[219px] lg:w-[289px] text-[#15575B] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-left font-body">
+          <p className="md:w-[219px] lg:w-[289px] text-[#15575B] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-center font-body">
             {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
             {(dataBigAgenda.source_person as any)?.length > 1
               ? (dataBigAgenda.source_person as any)[1]?.profile?.name
@@ -313,10 +313,10 @@ export default function BigAgenda({
       {/* start of box info event */}
       <div className="w-[282px] md:w-[388px] lg:w-[893px] h-[69px] md:h-[81px] lg:h-[187px] bg-[#FBFBFB] border lg:border-[3px] border-black flex flex-col rounded-[50px] items-center justify-center mt-5 md:mt-8 lg:mt-10 py-1 md:py-2 lg:py-5">
         <div className="relative flex flex-col text-center">
-          <p className="text-[#FFC359] font-semibold text-[8px] md:text-[8px] lg:text-base italic font-body">
+          {/* <p className="text-[#FFC359] font-semibold text-[8px] md:text-[8px] lg:text-base italic font-body">
             Ramadan Berdaya:
-          </p>
-          <p className="text-[#15575B] font-semibold text-[8px] md:text-[8px] lg:text-base italic font-body">
+          </p> */}
+          <p className="text-[#15575B] font-semibold max-w-[190px] md:max-w-[250px] lg:max-w-[550px] text-[8px] md:text-[8px] lg:text-base italic font-body">
             {/* Upaya Kolaboratif Mewujudkan <br />
             Pembangunan Inklusif dan Berkelanjutan */}
             {dataBigAgenda.theme !== ""
