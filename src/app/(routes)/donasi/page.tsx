@@ -16,7 +16,7 @@ function UpdateDonasiIftar() {
     const fetchDonasiData = async () => {
       try {
         const base = process.env.NEXT_PUBLIC_API_BASE_URL;
-        const response = await fetch( base+`donasis`, {
+        const response = await fetch(`${base}/api/donasis`, {
           cache: "no-store",
         });
         const data = await response.json();
@@ -73,7 +73,7 @@ function UpdateDonasiKegiatan(){
     const fetchDonasiData = async () => {
       try {
         const base = process.env.NEXT_PUBLIC_API_BASE_URL;
-        const response = await fetch(base+`/donasis`, {
+        const response = await fetch(`${base}/api/donasis`, {
           cache: "no-store",
         });
         const data = await response.json();
