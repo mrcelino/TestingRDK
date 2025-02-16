@@ -13,7 +13,8 @@ type Food = {
 };
 
 async function fetchData() {
-  const response = await fetch("https://be-rdk-website-production.up.railway.app/api/menu-bukas", {
+  const baseurl  = process.env.NEXT_PUBLIC_API_BASE_URL
+  const response = await fetch(baseurl+"menu-bukas", {
     cache: "no-store",
   });
   const result = await response.json();

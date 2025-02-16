@@ -15,7 +15,8 @@ function UpdateDonasiIftar() {
     // Fungsi untuk fetch data dari Strapi
     const fetchDonasiData = async () => {
       try {
-        const response = await fetch(`https://be-rdk-website-production.up.railway.app/api/donasis`, {
+        const base = process.env.NEXT_PUBLIC_API_BASE_URL;
+        const response = await fetch( base+`donasis`, {
           cache: "no-store",
         });
         const data = await response.json();
@@ -71,7 +72,8 @@ function UpdateDonasiKegiatan(){
     // Fungsi untuk fetch data dari Strapi
     const fetchDonasiData = async () => {
       try {
-        const response = await fetch(`https://be-rdk-website-production.up.railway.app/api/donasis`, {
+        const base = process.env.NEXT_PUBLIC_API_BASE_URL;
+        const response = await fetch(base+`/donasis`, {
           cache: "no-store",
         });
         const data = await response.json();
