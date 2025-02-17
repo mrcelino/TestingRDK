@@ -81,18 +81,19 @@ export default function DetailArtikel() {
 						className="z-30"
 					/>
 					<div className="w-[3px] h-8 bg-greenCS"></div>
+					{/* Ini diganti jg */}
 					<p className="font-light italic text-greenCS ">March, 12 2025</p>
 				</div>
 
 				{/* Author and Editor */}
 				<div className="flex gap-4 mt-6 lg:ml-12 text-greenCS text-xs md:text-base">
 					<p className="font-semibold ">Penulis: Miftahul Khairati</p>
-					<p className="font-semibold ml-4">Penulis: Miftahul Khairati</p>
+					<p className="font-semibold ml-4">Editor: Miftahul Khairati</p>
 				</div>
 
 				<div className="p-2 rounded mt-4 lg:mt-10 lg:w-2/3 lg:mx-auto max-w-screen-2xl">
 					<Image
-						src={"/images/artikel/kajian.png"}
+						src={`${article.article_images[0].publicUrl}`}
 						alt="Kajian Samudra"
 						width={500}
 						height={10}
@@ -101,15 +102,11 @@ export default function DetailArtikel() {
 
 
 					<p className="italic mt-5 text-center text-sm w-[90%] md:w-[85%] lg:w-full  mx-auto">
-						Ratusan mahasiswa Universitas Gadjah Mada (UGM) memenuhi Grha Sabha
-						Pramana dalam acara Ramadan Festival UGM 2025. Acara ini dimeriahkan
-						dengan berbagai kegiatan Islami seperti seminar, bazar, dan
-						pertunjukan seni. Presiden RI, Prabowo Subianto, turut memberikan
-						apresiasi atas semangat kebersamaan dan keberagaman yang ditunjukkan
-						dalam festival ini.
+						{article.article_images[0].image_description}
 					</p>
 				</div>
 
+				{/* Isinya masih belum tepat */}
 				<article className="mt-10 text-justify font-greenCS  md:text-lg">
 					{article.content.length > 0 &&
 						article.content.map(
