@@ -25,8 +25,9 @@ export interface Article {
   
   export const fetchArticles = async (): Promise<Article[]> => {
     try {
+      const baseurl = process.env.NEXT_PUBLIC_API_BASE_URL;
       const response = await fetch(
-        "https://be-rdk-website-production.up.railway.app/api/articles"
+        baseurl+"articles"
       );
       if (!response.ok) {
         throw new Error("Gagal mengambil data artikel");

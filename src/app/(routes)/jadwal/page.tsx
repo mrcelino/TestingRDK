@@ -30,6 +30,7 @@ import Calendar from "./components/shared/Calendar";
 import LayoutAgendaNotReleased from "./components/LayoutAgendaNotReleased";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/solid";
 import Loading from "./loading";
+import LayoutBigAgendaGebyarSore from "./components/LayoutBigAgendaGebyarSore";
 
 // interfaces untuk daily agendaaa
 interface DailyProfile {
@@ -103,7 +104,8 @@ interface bigAgendaItem {
     | "Grand_Opening"
     | "RDK_Festival"
     | "Special_Eid"
-    | "Two_Last_Day";
+    | "Two_Last_Day"
+    | "Gebyar_Sore";
   image_spectacular_shows: [ImageSpectacularShows];
   source_person: Source_person;
   moderator: Moderator;
@@ -225,6 +227,9 @@ export default function JadwalPage() {
           case "MIT":
             setLayout("LayoutBigAgendaMIT");
             break;
+          case "Gebyar_Sore":
+            setLayout("LayoutBigAgendaGebyarSore");
+            break;
           case "Special_Eid":
             setLayout("LayoutIdulFitri");
             break;
@@ -344,6 +349,12 @@ export default function JadwalPage() {
             )}
             {layout === "LayoutBigAgendaMIT" && (
               <LayoutBigAgendaMIT
+                dataBigAgenda={bigAgenda}
+                dataDailyAgenda={dailyAgenda}
+              />
+            )}
+            {layout === "LayoutBigAgendaGebyarSore" && (
+              <LayoutBigAgendaGebyarSore
                 dataBigAgenda={bigAgenda}
                 dataDailyAgenda={dailyAgenda}
               />
