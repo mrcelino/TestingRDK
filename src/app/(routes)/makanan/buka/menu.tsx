@@ -13,7 +13,8 @@ type Food = {
 };
 
 async function fetchData() {
-  const response = await fetch("https://be-rdk-website-production.up.railway.app/api/menu-bukas", {
+  const baseurl  = process.env.NEXT_PUBLIC_API_BASE_URL
+  const response = await fetch(`${baseurl}/api/menu-bukas`, {
     cache: "no-store",
   });
   const result = await response.json();
@@ -42,7 +43,7 @@ function Menu({ food }: { food: Food }) {
         width="100"
       />
       <div>
-        <div className={`flex items-center justify-center text-white px-2 py-2 pl-14 xl:py-2 -ml-20 xl:mt-14 xl:-ml-20 sm:pl-20 xl:pl-16 xl:px-2 rounded-full border-4 border-black w-70 
+        <div className={`flex items-center justify-center text-white px-2 py-2 pl-14 xl:py-2 -ml-20 xl:mt-14 xl:-ml-20 sm:pl-20 xl:pl-16 xl:px-2 rounded-full border-4 border-black 
           ${food.day % 2 === 1 ? "bg-[#15575B]" : "bg-[#F4AA3D]"}`}>
           <span className="sm:text-2xl xl:text-2xl font-medium text-center italic">
             {food.date_romawi}
@@ -55,7 +56,7 @@ function Menu({ food }: { food: Food }) {
         <p className="text-xs text-[#F4AA3D] italic font-body font-semibold sm:text-sm xl:text-lg -ml-1 mt-1">
           {food.menu}
         </p>
-        <p className="italic text-xs sm:text-sm -ml-1 mt-1 font-body font-medium xl:text-base max-w-52 min-h-14 xl:min-h-[4.5rem] sm:min-w-52 whitespace-pre-wrap ">
+        <p className="italic text-xs sm:text-sm -ml-1 mt-1 font-body font-medium xl:text-base max-w-40  md:max-w-56 min-w-40 sm:min-w-52 min-h-14 xl:min-h-[4.5rem] whitespace-pre-wrap ">
           "{food.quote}"
         </p>
         </div>

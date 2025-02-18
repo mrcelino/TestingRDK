@@ -21,9 +21,8 @@ export default function FAQ() {
 
     React.useEffect(() => {
         const getData = async () => {
-            console.log(`${process.env.app_url}/faqs`)
-
-            const response = await fetch(`http://localhost:1337/api/faqs`);
+            const base = process.env.NEXT_PUBLIC_API_BASE_URL
+            const response = await fetch(base+`faqs`);
             const result = await response.json();
             setData(result.data);
             setLoading(false);
