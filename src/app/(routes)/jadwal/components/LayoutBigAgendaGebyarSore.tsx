@@ -96,7 +96,11 @@ export default function LayoutBigAgendaGebyarSore({
       <BigAgendaHeader text={"Gebyar Sore"} />
 
       {/* start of box info event */}
-      <div className="w-[282px] md:w-[388px] lg:w-[893px] h-[69px] md:h-[81px] lg:h-[187px] bg-[#FBFBFB] border lg:border-[3px] border-black flex flex-col rounded-[50px] items-center justify-center mt-5 md:mt-8 lg:mt-10 py-1 md:py-2 lg:py-5 lg:mb-16">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className="w-[282px] md:w-[388px] lg:w-[893px] h-[69px] md:h-[81px] lg:h-[187px] bg-[#FBFBFB] border lg:border-[3px] border-black flex flex-col rounded-[50px] items-center justify-center mt-5 md:mt-8 lg:mt-10 py-1 md:py-2 lg:py-5 lg:mb-16"
+      >
         <div className="relative flex flex-col text-center">
           {/* <p className="text-[#FFC359] font-semibold text-[8px] md:text-[8px] lg:text-base italic font-body">
             Ramadan Berdaya:
@@ -172,7 +176,12 @@ export default function LayoutBigAgendaGebyarSore({
         {/* <!-- Event List Container --> */}
         <section className="w-full h-[260px] md:h-[450px] lg:h-[758px] border-x-[2px] lg:border-x-[5px] border-b-[2px] lg:border-b-[5px] border-black rounded-b-[50px] bg-white font-body flex justify-center items-center">
           <div className="space-y-2 md:space-y-6 lg:space-y-9">
-            <div className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg">
+            <div
+              data-aos="flip-down"
+              data-aos-duration="1000"
+              data-aos-delay="400"
+              className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg"
+            >
               <div className="relative bg-[#15575B] w-[20%] h-full flex items-center justify-center min-h-[30px] md:min-h-[45px] lg:min-h-[72px] rounded-l-full">
                 <div className="absolute -right-[5px] lg:-right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[8px] xl:border-y-[15px] border-y-transparent border-l-[8px] xl:border-l-[15px] border-l-[#15575B]"></div>
                 <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">
@@ -188,7 +197,12 @@ export default function LayoutBigAgendaGebyarSore({
 
             {/* <!-- Event Items --> */}
             <div className="space-y-2 md:space-y-6 lg:space-y-9">
-              <div className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg">
+              <div
+                data-aos="flip-down"
+                data-aos-duration="1000"
+                data-aos-delay="400"
+                className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg"
+              >
                 <div className="relative bg-[#F4AA3D] w-[20%] h-full flex items-center justify-center min-h-[30px] md:min-h-[45px] lg:min-h-[72px] rounded-l-full">
                   <div className="absolute -right-[5px] lg:-right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[8px] xl:border-y-[15px] border-y-transparent border-l-[8px] xl:border-l-[15px] border-l-[#F4AA3D]"></div>
                   <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">
@@ -201,7 +215,12 @@ export default function LayoutBigAgendaGebyarSore({
                   </span>
                 </div>
               </div>
-              <div className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg">
+              <div
+                data-aos="flip-down"
+                data-aos-duration="1000"
+                data-aos-delay="400"
+                className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg"
+              >
                 <div className="relative bg-[#15575B] w-[20%] h-full flex items-center justify-center min-h-[30px] md:min-h-[45px] lg:min-h-[72px] rounded-l-full">
                   <div className="absolute -right-[5px] lg:-right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[8px] xl:border-y-[15px] border-y-transparent border-l-[8px] xl:border-l-[15px] border-l-[#15575B]"></div>
                   <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">
@@ -214,7 +233,12 @@ export default function LayoutBigAgendaGebyarSore({
                   </span>
                 </div>
               </div>
-              <div className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg">
+              <div
+                data-aos="flip-down"
+                data-aos-duration="1000"
+                data-aos-delay="400"
+                className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg"
+              >
                 <div className="relative bg-[#F4AA3D] w-[20%] h-full flex items-center justify-center min-h-[30px] md:min-h-[45px] lg:min-h-[72px] rounded-l-full">
                   <div className="absolute -right-[5px] lg:-right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[8px] xl:border-y-[15px] border-y-transparent border-l-[8px] xl:border-l-[15px] border-l-[#F4AA3D]"></div>
                   <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">
@@ -227,7 +251,12 @@ export default function LayoutBigAgendaGebyarSore({
                   </span>
                 </div>
               </div>
-              <div className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg">
+              <div
+                data-aos="flip-down"
+                data-aos-duration="1000"
+                data-aos-delay="400"
+                className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg"
+              >
                 <div className="relative bg-[#15575B] w-[20%] h-full flex items-center justify-center min-h-[30px] md:min-h-[45px] lg:min-h-[72px] rounded-l-full">
                   <div className="absolute -right-[5px] lg:-right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[8px] xl:border-y-[15px] border-y-transparent border-l-[8px] xl:border-l-[15px] border-l-[#15575B]"></div>
                   <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">
@@ -240,7 +269,12 @@ export default function LayoutBigAgendaGebyarSore({
                   </span>
                 </div>
               </div>
-              <div className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg">
+              <div
+                data-aos="flip-down"
+                data-aos-duration="1000"
+                data-aos-delay="400"
+                className="flex w-[190px] md:w-[290px] lg:w-[663px] bg-white rounded-full mx-auto max-w-3xl shadow-lg"
+              >
                 <div className="relative bg-[#F4AA3D] w-[20%] h-full flex items-center justify-center min-h-[30px] md:min-h-[45px] lg:min-h-[72px] rounded-l-full">
                   <div className="absolute -right-[5px] lg:-right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[8px] xl:border-y-[15px] border-y-transparent border-l-[8px] xl:border-l-[15px] border-l-[#F4AA3D]"></div>
                   <span className="text-white text-[13px] md:text-base lg:text-2xl font-bold">
