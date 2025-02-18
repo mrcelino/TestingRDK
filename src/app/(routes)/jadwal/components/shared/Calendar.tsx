@@ -26,7 +26,7 @@ export default function Calendar({
   onSelectDay,
 }: CalendarProps) {
   return (
-    <div className="mt-8 md:mt-8 lg:mt-16 relative">
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" className="mt-8 md:mt-8 lg:mt-16 relative">
       <Image
         src="/images/jadwal/mini-calendar.svg"
         width={130}

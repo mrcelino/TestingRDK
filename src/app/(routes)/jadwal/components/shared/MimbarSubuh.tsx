@@ -25,7 +25,11 @@ export default function MimbarSubuh({ data }: { data: AgendaItem }) {
       {/* start of mimbar subuh */}
       <div className="w-[300px] md:w-[450px] lg:w-[901px] h-[160px] md:h-[250px] lg:h-[500px] flex flex-col mt-8 md:mt-16 lg:mt-32 items-center">
         {/* mimbar subuh header */}
-        <h1 className="text-sm md:text-lg lg:text-[48px] font-normal text-white drop-shadow-md font-heading">
+        <h1
+          data-aos="fade-up"
+          data-aos-duration="950"
+          className="text-sm md:text-lg lg:text-[48px] font-normal text-white drop-shadow-md font-heading"
+        >
           Mimbar Subuh
         </h1>
         {/* end of mimbar subuh header */}
@@ -33,7 +37,12 @@ export default function MimbarSubuh({ data }: { data: AgendaItem }) {
         {/* content mimbar subuh */}
         <div className="w-full h-full grid grid-cols-[1fr_2fr]">
           {/* left side */}
-          <div className="flex">
+          <div
+            className="flex"
+            data-aos="fade-right"
+            data-aos-duration="950"
+            data-aos-delay="100"
+          >
             <div className="mr-auto my-auto">
               {/* guest1 container */}
               <div className="relative w-[79px] md:w-[116px] lg:w-[220.44px] h-[121px] md:h-[171px] lg:h-[324.61px] flex flex-col bg-white rounded-[5px] md:rounded-[15px] lg:rounded-[30px] border lg:border-[3px] border-black lg:p-1 rotate-[-7deg] items-center shadow-[3px_1px_0px_rgba(0,0,0,2)] lg:shadow-[8px_1px_0px_rgba(0,0,0,2)]">
@@ -68,7 +77,11 @@ export default function MimbarSubuh({ data }: { data: AgendaItem }) {
                   {/* <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div> */}
                   <div
                     style={{
-                      backgroundImage: `url("${data.profile.publicUrl !== '' ? data.profile.publicUrl : '???'}")`,
+                      backgroundImage: `url("${
+                        data.profile.publicUrl !== ""
+                          ? data.profile.publicUrl
+                          : "???"
+                      }")`,
                     }}
                     className="bg-cover bg-center w-full h-full"
                   ></div>
@@ -109,7 +122,12 @@ export default function MimbarSubuh({ data }: { data: AgendaItem }) {
           </div>
 
           {/* right side */}
-          <div className="flex flex-col justify-center gap-y-2 md:gap-y-5 lg:gap-y-10 pl-2.5 pr-0 md:pl-10 md:pr-2 lg:pr-3 font-body">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="950"
+            data-aos-delay="200"
+            className="flex flex-col justify-center gap-y-2 md:gap-y-5 lg:gap-y-10 pl-2.5 pr-0 md:pl-10 md:pr-2 lg:pr-3 font-body"
+          >
             {/* name */}
             <div className="flex flex-row gap-x-2 md:gap-x-6 lg:gap-x-10 items-center pl-2">
               <Image
@@ -121,7 +139,7 @@ export default function MimbarSubuh({ data }: { data: AgendaItem }) {
               />
               <p className="text-white font-medium text-[8px] md:text-[10px] lg:text-xl italic">
                 {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
-                {data.profile.name !== '' ? data.profile.name : '???'}
+                {data.profile.name !== "" ? data.profile.name : "???"}
               </p>
             </div>
             {/* time */}
@@ -135,7 +153,7 @@ export default function MimbarSubuh({ data }: { data: AgendaItem }) {
               />
               <p className="text-white font-medium text-[8px] md:text-[10px] lg:text-xl italic">
                 {/* 05:00 WIB */}
-                {data.time !== '' ? data.time.slice(0, 5) + ' WIB' : '???'}
+                {data.time !== "" ? data.time.slice(0, 5) + " WIB" : "???"}
               </p>
             </div>
             {/* place */}
@@ -150,7 +168,7 @@ export default function MimbarSubuh({ data }: { data: AgendaItem }) {
               <p className="text-white font-medium text-[8px] md:text-[10px] lg:text-xl italic">
                 {/* Kausalitas: Hukum Alam atau Tuhan: Pemikiran Religio-Saintifik
                 al-Ghazali */}
-                {data.theme !== '' ? data.theme : '???'}
+                {data.theme !== "" ? data.theme : "???"}
               </p>
             </div>
           </div>

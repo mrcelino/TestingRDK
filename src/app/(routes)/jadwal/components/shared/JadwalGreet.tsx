@@ -3,6 +3,8 @@ import Image from "next/image";
 export default function JadwalGreet({ className, text }: any) {
   return (
     <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
       className={`relative flex w-[228px] md:w-[380px] lg:w-[779px] h-[46px] md:h-[78px] lg:h-[204px] bg-[#fbfbfb] rounded-[200px] border-[1px] lg:border-[3px] border-black justify-center items-center pl-11 pr-3 md:pl-16 md:pr-14 lg:pr-0 lg:pl-0 shadow-md ${className}`}
     >
       <Image
