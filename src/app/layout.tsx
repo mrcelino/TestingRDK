@@ -34,7 +34,7 @@ export default function RootLayout({
         className={`${worksans.variable} ${trirong.variable} antialiased`}
       >
 
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
 
 

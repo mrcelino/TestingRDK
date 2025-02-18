@@ -32,3 +32,10 @@
   font-weight: normal;
   font-style: normal;
 }
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  image-rendering: pixelated;
+  height: 100%;
+}
