@@ -14,7 +14,7 @@ type Food = {
 
 async function fetchData() {
   const baseurl  = process.env.NEXT_PUBLIC_API_BASE_URL
-  const response = await fetch(`${baseurl}/api/menu-bukas`, {
+  const response = await fetch(`${baseurl}menu-bukas`, {
     cache: "no-store",
   });
   const result = await response.json();

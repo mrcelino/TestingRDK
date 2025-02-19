@@ -173,7 +173,7 @@ export default function JadwalPage() {
   useEffect(() => {
     const fetchHighlightDates = async () => {
       try {
-        const response = await fetch(`${baseUrl}/api/big-agenda`);
+        const response = await fetch(`${baseUrl}big-agenda`);
         const data = await response.json();
 
         if (data?.data) {

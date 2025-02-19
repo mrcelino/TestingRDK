@@ -4,8 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
+import { ChevronDown } from "lucide-react"; // Import ikon panah
 interface MenuItem {
 	href: string;
 	label: string;
@@ -17,15 +18,7 @@ export default function Navbar() {
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 	const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(
 		null
-	);
-
-	const toggleDropdown = (label: string) => {
-		setOpenDropdown(openDropdown === label ? null : label);
-	};
-
-	const toggleMobileDropdown = (label: string) => {
-		setOpenMobileDropdown(openMobileDropdown === label ? null : label);
-	};
+	); // Untuk menyimpan submenu yang terbuka di mobile
 
 	return (
 		<nav className="bg-gradient-to-r from-[#155458] from-30% to-[#51B2B8] text-white sticky lg:top-10 lg:mt-[-4rem] z-50 shadow-md lg:w-11/12 lg:mx-auto lg:rounded-full">
@@ -33,7 +26,9 @@ export default function Navbar() {
 				{/* Hamburger Icon */}
 				<button
 					className="lg:hidden focus:outline-none"
-					onClick={() => toggleDropdown("menu")}
+					onClick={() =>
+						setOpenDropdown(openDropdown === "menu" ? null : "menu")
+					}
 				>
 					{openDropdown === "menu" ? (
 						<X className="w-6 h-6" />
@@ -53,7 +48,13 @@ export default function Navbar() {
 
 				{/* Desktop Menu */}
 				<ul className="hidden lg:flex space-x-6 mx-auto w-10/11">
-					{menuItems(pathname, openDropdown, toggleDropdown, false)}
+					{menuItems(
+						pathname,
+						openMobileDropdown,
+						setOpenMobileDropdown,
+						false
+					)}{" "}
+					{/* False untuk nonaktifkan click pada desktop */}
 				</ul>
 			</div>
 
@@ -64,9 +65,10 @@ export default function Navbar() {
 						{menuItems(
 							pathname,
 							openMobileDropdown,
-							toggleMobileDropdown,
+							setOpenMobileDropdown,
 							true
-						)}
+						)}{" "}
+						{/* True untuk enable klik di mobile */}
 					</ul>
 				</div>
 			)}
@@ -76,8 +78,8 @@ export default function Navbar() {
 
 function menuItems(
 	pathname: string,
-	openDropdown: string | null,
-	toggleDropdown: (label: string) => void,
+	openMobileDropdown: string | null,
+	setOpenMobileDropdown: React.Dispatch<React.SetStateAction<string | null>>,
 	isMobile: boolean
 ) {
 	const links: MenuItem[] = [
@@ -115,33 +117,37 @@ function menuItems(
 	];
 
 	return links.map(({ href, label, submenu }) => {
-		const isOpen = openDropdown === label;
 		const isActive =
 			pathname === href || (submenu && pathname.startsWith(href));
-
+	
+		// Periksa apakah submenu ini sedang terbuka
+		const isOpen = openMobileDropdown === href;
+	
 		if (isMobile) {
 			return (
-				<div key={label} className="relative">
+				<div key={href} className="relative">
 					<button
-						className={`px-4 italic cursor-pointer flex items-center transition text-greenCS ${
-							pathname === href ? "text-orange-400" : "text-[#15575B]"
-						} hover:text-orange-400`}
-						onClick={() => submenu && toggleDropdown(label)}
+						className={`px-4 italic cursor-pointer flex items-center justify-between w-full transition text-left ${
+							isActive ? "text-orange-400" : "text-[#15575B]"
+						}`}
+						onClick={() => {
+							// Jika submenu ini sudah terbuka, tutup. Jika belum, buka dan tutup yang lain.
+							setOpenMobileDropdown(isOpen ? null : href);
+						}}
 					>
-						<Link href={href}>{label}</Link>
-
-						{/* {label} */}
+						{label}
 						{submenu && (
 							<ChevronDown
-								className={`ml-2 transition-transform durationn-500 ${
+								className={`ml-2 transition-transform ${
 									isOpen ? "rotate-180" : "rotate-0"
 								}`}
 							/>
 						)}
 					</button>
-
+	
+					{/* Dropdown Submenu (Mobile) */}
 					{submenu && isOpen && (
-						<ul className="ml-2 transition-transform">
+						<ul className="ml-8 space-y-2 transition-all duration-300">
 							{submenu.map(({ href: subHref, label: subLabel }) => (
 								<Link key={subHref} href={subHref}>
 									<li
@@ -162,17 +168,17 @@ function menuItems(
 				<div key={href} className="relative group">
 					<Link href={href}>
 						<li
-							className={`px-4 py-2 cursor-pointer flex items-center transitionc ${
+							className={`px-4 py-2 cursor-pointer flex items-center transition ${
 								isActive ? "text-orange-400" : "text-white"
 							} hover:text-orange-400`}
 						>
 							{label}
 							{submenu && (
-								<ChevronDown className="ml-2 transition-transform duration-500 group-hover:rotate-180" />
+								<ChevronDown className="ml-2 transition-transform duration- group-hover:rotate-180" />
 							)}
 						</li>
 					</Link>
-
+	
 					{/* Dropdown Submenu (Desktop - Hover) */}
 					{submenu && (
 						<ul className="invisible opacity-0 scale-95 group-hover:visible group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 absolute left-0 top-full mt-2 w-40 bg-white shadow-lg rounded-lg z-50 py-2">
@@ -193,4 +199,6 @@ function menuItems(
 			);
 		}
 	});
+	
+	
 }

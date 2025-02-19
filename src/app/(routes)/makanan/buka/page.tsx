@@ -88,7 +88,7 @@ function Kupon(){
         </section>
       </section>
       {/* Video */}
-      <section className="flex justify-center items-center p-1 xl:p-2 bg-white border-2 border-black rounded-3xl mt-10 mx-4 sm:mx-auto lg:w-[550px] xl:w-[700px]">
+      <section className="flex justify-center items-center p-1 xl:p-2 bg-white border-2 border-black rounded-3xl mt-10 mx-4 sm:mx-auto lg:w-[550px] xl:w-[700px] mb-20 ">
         <iframe
           width="560"
           height="200"
@@ -105,7 +105,7 @@ function Kupon(){
 }
 export default function Buka() {
   return (
-    <div className="relative bg-gradient-to-b from-[#ffffff] from-1% to-[#21666A] to-40% xl:max-w-8xl  ">
+    <div className="relative bg-gradient-to-b from-[#ffffff] from-1% to-[#21666A] to-40% xl:max-w-8xl ">
       {/* Pattern pertama untuk area putih (opacity rendah, brightness 50) */}
       <div className="absolute inset-0 h-full bg-[url('/images/pattern-bg-mobile3.svg')] lg:bg-[url('/images/pattern-for-bg.svg')] bg-repeat opacity-20 mix-blend-difference brightness-50"></div>
       {/* Pattern kedua untuk area hijau (opacity lebih tinggi, brightness lebih terang) */}
