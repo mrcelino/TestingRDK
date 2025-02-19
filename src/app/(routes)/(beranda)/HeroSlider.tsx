@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HeroSlider() {
 	return (
-		<div className="relative">
+		<div className="relative ">
 			<Image
 				src="/images/home/hero_slider.png"
 				alt="Hero Slider"
@@ -19,30 +19,36 @@ export default function HeroSlider() {
 				className="absolute top-0 right-0 left-0 h-full w-full"
 			/>
 
-			{/* Hidden mobile */}
-			<Image
-				src="/svg/logoordk.svg"
-				alt="Hero Slider"
-				height={42}
-				width={160}
-				className="absolute lg:top-52 top-16 md:left-10 md:block hidden lg:w-[20%] 2xl:top-40 "
-			/>
+			<div className="">
+				{/* Hidden mobile */}
+				<Image
+					src="/svg/logoordk.svg"
+					alt="Hero Slider"
+					height={42}
+					width={160}
+					className="absolute lg:top-52 top-16 md:left-10 md:block hidden lg:w-[20%] 2xl:h-[200px] 2xl:w-[30rem] 2xl:top-40 2xl:left-[0rem] max-w-7xl"
+				/>
 
-			{/* Hidden desktop */}
-			<Image
-				src="/svg/logoordk.svg"
-				alt="Hero Slider"
-				height={42}
-				width={64}
-				className="z-20 absolute top-12 left-5 w-[20%] md:hidden "
-			/>
+				{/* Hidden desktop */}
+				<Image
+					src="/svg/logoordk.svg"
+					alt="Hero Slider"
+					height={42}
+					width={64}
+					className="z-20 absolute top-8 left-5 w-[20%] md:hidden max-w-7xl"
+				/>
 
-			<div className="md:top-40 lg:top-[20em] z-20 absolute md:left-10 font-semibold text-white italic left-5 top-24">
-				<p className="lg:text-[6rem] md:text-5xl text-3xl ">Ramadhan Di</p>
-				<p className="lg:text-[6rem] md:text-5xl text-3xl">Kampus</p>
-				<p className="lg:text-[3rem]  text-orangeCS md:text-2xl text-xl lg:mt-4">
-					Universitas Gadjah Mada
-				</p>
+				<div className="md:top-40 lg:top-[20rem] xl:top-[22rem] z-20 absolute md:left-10 font-semibold text-white italic left-5 top-20 max-w-7xl 5xl:top-[25rem]">
+					<p className=" xl:text-[6rem] lg:text-[4rem] md:text-5xl text-3xl ">
+						Ramadhan Di
+					</p>
+					<p className="xl:text-[6rem] lg:text-[4rem] md:text-5xl text-3xl">
+						Kampus
+					</p>
+					<p className="xl:text-[3rem] lg:text-[2rem]  text-orangeCS md:text-2xl text-xl lg:mt-4">
+						Universitas Gadjah Mada
+					</p>
+				</div>
 			</div>
 		</div>
 	);

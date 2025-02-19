@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function AboutRdk() {
 	return (
-		<div className=" md:flex justify-between lg:justify-start max-w">
+		<div className=" md:flex justify-between lg:justify-start max-w-7xl mx-auto">
 			<div className="md:w-4/5 lg:w-3/4">
-				<h1 className="lg:text-5xl text-2xl text-greenCS lg:w-[60%] md:w-2/3 bg-orangeCS border-black lg:border-4 border-2 rounded-tr-[50px] rounded-bl-[50px] lg:rounded-tr-[30px] lg:rounded-bl-[30px] lg:py-3 lg:px-10 text-center  mx-auto md:ml-auto md:mr-4 lg:mr-24 font-heading py-2 w-4/5 text-shadow-md">
+				<h1 className="lg:text-5xl text-2xl text-greenCS lg:w-[60%] md:w-2/3 bg-orangeCS border-black lg:border-4 border-2 rounded-tr-[50px] rounded-bl-[50px] lg:rounded-tr-[30px] lg:rounded-bl-[30px] lg:py-3 text-center  mx-auto md:ml-auto md:mr-4 lg:mr-24 font-heading py-2 w-4/5 text-shadow-md">
 					Tentang RDK
 				</h1>
 
