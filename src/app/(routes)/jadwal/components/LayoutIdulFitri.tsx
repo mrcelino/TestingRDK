@@ -53,13 +53,18 @@ export default function LayoutIdulFitri({
   // console.log("chechk moderator", dataBigAgenda[0].moderator.profile);
   return (
     <>
-      <div className="w-[206px] h-[30px] md:w-[380px] md:h-[56px] lg:w-[608px] lg:h-[90px] bg-[#F4AA3D] border lg:border-[3px] border-black flex justify-center items-center rounded-[20px] lg:rounded-[30px] mt-5 md:mt-12 lg:mt-24">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="600"
+        data-aos-delay="400"
+        className="w-[206px] h-[30px] md:w-[380px] md:h-[56px] lg:w-[608px] lg:h-[90px] bg-[#F4AA3D] border lg:border-[3px] border-black flex justify-center items-center rounded-[20px] lg:rounded-[30px] mt-5 md:mt-12 lg:mt-24"
+      >
         <h1 className="text-[#fbfbfb] font-normal text-xs md:text-base lg:text-[32px] font-heading">
           Eid Mubarak 1446 H
         </h1>
       </div>
 
-      <div className="flex relative z-20 w-[253px] h-[53px] md:w-[464px] md:h-[95px] lg:w-[942px] lg:h-[247px] bg-white border lg:border-[3px] border-black rounded-[100px] justify-center items-center translate-y-10 md:translate-y-14 lg:translate-y-28">
+      <div className="flex relative z-20 w-[253px] h-[53px] md:w-[464px] md:h-[95px] lg:w-[942px] lg:h-[247px] bg-white border lg:border-[3px] border-black rounded-[100px] justify-center items-center translate-y-8 md:translate-y-14 lg:translate-y-28">
         <div className="flex flex-col justify-center items-end font-black text-xs md:text-lg lg:text-[38px] text-[#15575B] translate-x-1 md:translate-x-6 lg:-translate-x-20 gap-y-0.5 md:gap-y-2 lg:gap-y-10 font-body">
           <h2>تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ وَ تَقَبَّلْ ياَ كَرِيْمُ</h2>
           <h2>كُلُّ عَامٍ وَأَنْتُمْ بِخَيْرٍ</h2>
@@ -83,7 +88,12 @@ export default function LayoutIdulFitri({
 
       <div className="relative w-full h-fit bg-transparent bg-white flex flex-col items-center justify-center pt-10 pb-20">
         {/* start of special eid mubarak header */}
-        <div className="w-[221px] h-[21px] md:w-[407px] md:h-[41px] lg:w-[641px] lg:h-[90px] bg-[#F4AA3D] border lg:border-[3px] border-black shadow-[rgba(21,87,91,1)_-2px_2px_0px] md:shadow-[rgba(21,87,91,1)_-4px_4px_0px] lg:shadow-[rgba(21,87,91,1)_-8px_8px_0px] rounded-tl-[100px] rounded-br-[100px] flex justify-center items-center mt-8 md:mt-20 lg:mt-56 mb-2">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="600"
+          data-aos-delay="400"
+          className="w-[221px] h-[21px] md:w-[407px] md:h-[41px] lg:w-[641px] lg:h-[90px] bg-[#F4AA3D] border lg:border-[3px] border-black shadow-[rgba(21,87,91,1)_-2px_2px_0px] md:shadow-[rgba(21,87,91,1)_-4px_4px_0px] lg:shadow-[rgba(21,87,91,1)_-8px_8px_0px] rounded-tl-[100px] rounded-br-[100px] flex justify-center items-center mt-8 md:mt-20 lg:mt-56 mb-2"
+        >
           <h1 className="text-[#fbfbfb] font-normal text-[10px] md:text-[12px] lg:text-2xl font-heading">
             Special Eid al-Fitr Prayer
           </h1>
@@ -93,7 +103,11 @@ export default function LayoutIdulFitri({
         {/* starrt of foto pengisi acarra container */}
         <div className="grid grid-cols-1 md:grid-cols-2 w-[300px] md:w-[354px] lg:w-[672px] h-[280px] md:h-[204px] lg:h-[389px] mt-6 md:mt-8 lg:mt-10">
           {/* left side */}
-          <div>
+          <div
+            data-aos="fade-left"
+            data-aos-duration="600"
+            data-aos-delay="300"
+          >
             {/* guest1 container */}
             <div className="relative w-[79px] md:w-[116px] lg:w-[220.44px] h-[121px] md:h-[171px] lg:h-[324.61px] flex flex-col bg-white rounded-[5px] md:rounded-[15px] lg:rounded-[30px] border lg:border-[3px] border-black lg:p-1 rotate-[-7deg] items-center shadow-[3px_1px_0px_rgba(0,0,0,2)] lg:shadow-[8px_1px_0px_rgba(0,0,0,2)]">
               {/* top part icon container */}
@@ -182,7 +196,12 @@ export default function LayoutIdulFitri({
           {/* end of guest1 container */}
 
           {/* right side */}
-          <div className="flex w-full">
+          <div
+            className="flex w-full"
+            data-aos="fade-right"
+            data-aos-duration="600"
+            data-aos-delay="300"
+          >
             {/* guest2 container */}
             <div className="relative w-[79px] md:w-[116px] lg:w-[220.44px] h-[121px] md:h-[171px] lg:h-[324.61px] flex flex-col bg-white rounded-[5px] md:rounded-[15px] lg:rounded-[30px] border lg:border-[3px] border-black lg:p-1 ml-auto rotate-[8deg] items-center shadow-[3px_1px_0px_rgba(0,0,0,2)] lg:shadow-[8px_1px_0px_rgba(0,0,0,2)]">
               {/* top part icon container */}
@@ -274,7 +293,12 @@ export default function LayoutIdulFitri({
         {/* end of foto pengisi acarra container */}
 
         {/* starrt of nama pengisi acara container (yang ada dua dibelah) */}
-        <div className="relative hidden w-[200px] md:w-[523px] lg:w-[778px] h-[28px] md:h-[60px] lg:h-[90px] rounded-[100px] bg-white md:flex flex-row mt-4 md:mt-8 lg:mt-14">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="600"
+          data-aos-delay="400"
+          className="relative hidden w-[200px] md:w-[523px] lg:w-[778px] h-[28px] md:h-[60px] lg:h-[90px] rounded-[100px] bg-white md:flex flex-row mt-4 md:mt-8 lg:mt-14"
+        >
           {/* left name container */}
           <div className="w-1/2 h-full border lg:border-[3px] border-black rounded-l-[100px] flex justify-center items-center">
             <p className="md:w-[219px] lg:w-[289px] text-[#F4AA3D] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-center font-body">
@@ -299,7 +323,12 @@ export default function LayoutIdulFitri({
         {/* end of nama pengisi acara container (yang ada dua dibelah) */}
 
         {/* start of box info event */}
-        <div className="w-[282px] md:w-[388px] lg:w-[893px] h-[69px] md:h-[81px] lg:h-[187px] bg-[#FBFBFB] border lg:border-[3px] border-black flex flex-col rounded-[50px] items-center justify-center mt-5 md:mt-8 lg:mt-10 py-1 md:py-2 lg:py-5">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="600"
+          data-aos-delay="500"
+          className="w-[282px] md:w-[388px] lg:w-[893px] h-[69px] md:h-[81px] lg:h-[187px] bg-[#FBFBFB] border lg:border-[3px] border-black flex flex-col rounded-[50px] items-center justify-center mt-5 md:mt-8 lg:mt-10 py-1 md:py-2 lg:py-5"
+        >
           <div className="relative flex flex-col text-center items-center font-body">
             {/* <p className="text-[#FFC359] font-semibold text-[8px] md:text-[8px] lg:text-base italic">
               Ramadan Berdaya:

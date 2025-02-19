@@ -60,7 +60,7 @@ export default function BigAgenda({
       {/* starrt of foto pengisi acarra container */}
       <div className="grid grid-cols-1 md:grid-cols-2 w-[300px] md:w-[354px] lg:w-[672px] h-[280px] md:h-[204px] lg:h-[389px] mt-6 md:mt-8 lg:mt-10">
         {/* left side */}
-        <div>
+        <div data-aos="fade-right" data-aos-duration="1000">
           {/* guest1 container */}
           <div className="relative w-[79px] md:w-[116px] lg:w-[220.44px] h-[121px] md:h-[171px] lg:h-[324.61px] flex flex-col bg-white rounded-[5px] md:rounded-[15px] lg:rounded-[30px] border lg:border-[3px] border-black lg:p-1 rotate-[-7deg] items-center shadow-[3px_1px_0px_rgba(0,0,0,2)] lg:shadow-[8px_1px_0px_rgba(0,0,0,2)]">
             {/* top part icon container */}
@@ -148,7 +148,11 @@ export default function BigAgenda({
         {/* end of guest1 container */}
 
         {/* right side */}
-        <div className="flex w-full">
+        <div
+          className="flex w-full"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
           {/* guest2 container */}
           <div className="relative w-[79px] md:w-[116px] lg:w-[220.44px] h-[121px] md:h-[171px] lg:h-[324.61px] flex flex-col bg-white rounded-[5px] md:rounded-[15px] lg:rounded-[30px] border lg:border-[3px] border-black lg:p-1 ml-auto rotate-[8deg] items-center shadow-[3px_1px_0px_rgba(0,0,0,2)] lg:shadow-[8px_1px_0px_rgba(0,0,0,2)]">
             {/* top part icon container */}
@@ -242,7 +246,11 @@ export default function BigAgenda({
       {/* end of foto pengisi acarra container */}
 
       {/* starrt of nama pengisi acara container (yang ada dua dibelah) */}
-      <div className="hidden md:flex w-[240px] md:w-[523px] lg:w-[778px] h-[28px] md:h-[60px] lg:h-[90px] rounded-[100px] bg-white flex-row mt-4 lg:mt-10">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className="hidden md:flex w-[240px] md:w-[523px] lg:w-[778px] h-[28px] md:h-[60px] lg:h-[90px] rounded-[100px] bg-white flex-row mt-4 lg:mt-10"
+      >
         {/* left name container */}
         <div className="w-1/2 h-full border lg:border-[3px] border-black rounded-l-[100px] flex justify-center items-center">
           <p className="md:w-[219px] lg:w-[289px] text-[#F4AA3D] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-center font-body">
@@ -265,7 +273,11 @@ export default function BigAgenda({
       {/* end of nama pengisi acara container (yang ada dua dibelah) */}
 
       {/* start of moderator container */}
-      <div className="w-[163px] h-[45px] md:w-[238px] md:h-[67px] lg:w-[367px] lg:h-[102px] mt-5 lg:mt-10 relative flex items-center justify-end">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className="w-[163px] h-[45px] md:w-[238px] md:h-[67px] lg:w-[367px] lg:h-[102px] mt-5 lg:mt-10 relative flex items-center justify-end"
+      >
         {/* photo container */}
         <div className="absolute top-0 left-0 w-[45px] h-[45px] md:w-[68px] md:h-[68px] lg:w-[102px] lg:h-[102px] bg-white rounded-full border lg:border-[3px] border-black z-10">
           {/* gambar moderator */}
@@ -311,7 +323,11 @@ export default function BigAgenda({
       {/* end of moderator container */}
 
       {/* start of box info event */}
-      <div className="w-[282px] md:w-[388px] lg:w-[893px] h-[69px] md:h-[81px] lg:h-[187px] bg-[#FBFBFB] border lg:border-[3px] border-black flex flex-col rounded-[50px] items-center justify-center mt-5 md:mt-8 lg:mt-10 py-1 md:py-2 lg:py-5">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className="w-[282px] md:w-[388px] lg:w-[893px] h-[69px] md:h-[81px] lg:h-[187px] bg-[#FBFBFB] border lg:border-[3px] border-black flex flex-col rounded-[50px] items-center justify-center mt-5 md:mt-8 lg:mt-10 py-1 md:py-2 lg:py-5"
+      >
         <div className="relative flex flex-col text-center">
           {/* <p className="text-[#FFC359] font-semibold text-[8px] md:text-[8px] lg:text-base italic font-body">
             Ramadan Berdaya:
