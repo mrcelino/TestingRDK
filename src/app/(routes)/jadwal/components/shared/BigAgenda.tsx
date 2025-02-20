@@ -307,9 +307,7 @@ export default function BigAgenda({
           {/* moderator name */}
           <h1 className="text-[#F4AA3D] font-bold text-[8px] md:text-[10px] lg:text-sm italic font-body">
             {/* Andri Pratama, M.Phil. */}
-            {dataBigAgenda.moderator?.profile !== null
-              ? dataBigAgenda.moderator.profile.name
-              : "???"}
+            {dataBigAgenda.moderator?.profile?.name || "???"}
           </h1>
           <hr className="absolute top-1/2 left-0 w-4/6 lg:border-[2px] border-black" />
           {/* ini hr dummy (ignore aja) */}
