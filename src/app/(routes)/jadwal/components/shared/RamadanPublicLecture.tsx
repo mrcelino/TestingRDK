@@ -45,7 +45,7 @@ export default function RamadanPublicLecture({ data }: { data: AgendaItem }) {
             data-aos="fade-right"
             data-aos-duration="950"
             data-aos-delay="600"
-            className="font-semibold text-[10px] md:text-[10px] lg:text-sm text-[#F4AA3D] drop-shadow-md font-title"
+            className="font-semibold text-[10px] md:text-[10px] lg:text-xl text-[#F4AA3D] drop-shadow-md font-title"
           >
             Ramadan Public <br /> Lecture
           </p>
