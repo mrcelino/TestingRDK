@@ -453,29 +453,24 @@ export const npcs: NPC[] = [
       {
         name: "Player",
         dialogs:
-          "Bang, tadi sempet ikut kajian di masjid nggak?",
+          "Bang, Nggak masuk ke masjid buat ngikutin kajian?",
       },
       {
         name: "Dani",
         dialogs:
-          "Iya dong! Hari ini bahas tentang bagaimana puasa bisa jadi tameng dari dosa.",
+          "Belum, tadi aku lagi ngobrol sama temen-temen di luar.",
       },
       { 
         name: "Player", 
-        dialogs: "Menarik! Setiap hari beda tema ya?"
+        dialogs: "Oalah, aku duluan ya"
       },
       {
         name: "Dani",
         dialogs:
-          "Iya, tiap hari ada tema berbeda. Makanya seru, nggak bosen nunggu buka.",
-      },
-      {
-        name: "Player",
-        dialogs:
-          "Bener juga! Besok aku mau datang lebih awal biar nggak ketinggalan.",
+          "Iya, iya, nggak apa-apa. Aku juga mau masuk nih, biar nggak ketinggalan kajian.",
       }
   ],
-    order: [[[0, 1, 2, 3, 4]]],
+    order: [[[0, 1, 2, 3]]],
     correctAnswer: [],
     frames: ["panitiaidle1", "panitiaidle2"],
     src: ["/assets/game/Karakter RDK/Panitia RDK/Panit lk (1).png", "/assets/game/Karakter RDK/Panitia RDK/Panit lk (2).png"],
@@ -494,7 +489,7 @@ export const npcs: NPC[] = [
       {
         name: "Fikri",
         dialogs:
-          "Wa’alaikumussalam! Iya, sekalian dengerin kajian di dalam masjid.",
+          "Wa’alaikumussalam! Iya, suasanya enak banget apalagi ada kajiannya",
       },
       { 
         name: "Player", 
@@ -503,7 +498,7 @@ export const npcs: NPC[] = [
       {
         name: "Fikri",
         dialogs:
-          "Iya, sebelum buka selalu ada kajian singkat. Hari ini temanya tentang kesabaran dalam berpuasa.",
+          "Iya, sebelum buka selalu ada kajian singkat.",
       },
       {
         name: "Player",
@@ -530,24 +525,20 @@ export const npcs: NPC[] = [
       {
         name: "Rizal",
         dialogs:
-          "Belum lama, tadi sekalian dengerin kajian di masjid.",
+          "Belum lama, ini baru dateng.",
       },
       { 
         name: "Player", 
-        dialogs: "Oh ya? Tema kajiannya apa hari ini?"
+        dialogs: "Oh, aku duluan ya, takut ketinggalan kajian"
       },
       {
         name: "Rizal",
         dialogs:
-          "Tentang keutamaan berbagi di bulan Ramadhan. Bener-bener bikin pengen lebih sering sedekah!",
-      },
-      {
-        name: "Player",
-        dialogs:
-          "Wah, pas banget! Ramadhan emang momen terbaik buat berbuat baik.",
+          "Iya, iya, nggak apa-apa. Aku juga mau masuk nih, biar nggak ketinggalan kajian.",
       }
+
     ],
-    order: [[[0, 1, 2, 3, 4]]],
+    order: [[[0, 1, 2, 3]]],
     correctAnswer: [],
     frames: ["PengunjungPutihMerahLk1", "PengunjungPutihMerahLk2"],
     src: ["/assets/game/Karakter RDK/Pengunjung/Putih-Merah/Putih merah lk (1).png", "/assets/game/Karakter RDK/Pengunjung/Putih-Merah/Putih merah lk (2).png"],
@@ -566,11 +557,11 @@ export const npcs: NPC[] = [
       {
         name: "Asih",
         dialogs:
-          "Wa’alaikumussalam! Iya, masih. Tadi Ustaznya bahas tentang keutamaan malam Lailatul Qadar.",
+          "Wa’alaikumussalam! Iya, masih",
       },
       { 
         name: "Player", 
-        dialogs: "Wah, menarik! Aku boleh ikut gabung?"
+        dialogs: "Wah, masih sempet nih! Aku boleh ikut gabungkan?"
       },
       {
         name: "Asih",
