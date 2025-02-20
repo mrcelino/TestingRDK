@@ -2,7 +2,7 @@
 import Pattern from "./Pattern";
 import Samudra from "./Samudra";
 import MimbarSubuh from "./MimbarSubuh";
-import RPL from "./Rpl";
+import RPL from "./RPL";
 
 export default function DailyAgenda() {
 	return (

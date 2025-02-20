@@ -35,6 +35,7 @@ export default {
         fadeInScale: 'fadeInScale 1.5s ease-out',
         zoomIn: 'zoomIn 1.5s ease-out',
         animateSpin: 'spin 1s linear infinite',
+        spinn: 'spin 2s ease-in-out forwards, spinBack 2s ease-in-out forwards',
       },
       keyframes: {
         fadeIn: {
@@ -59,9 +60,14 @@ export default {
         },
         spin: {
           '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(270deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        spinBack: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(90deg)' },
         },
       },
+      
 
     },
   },

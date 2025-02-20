@@ -145,8 +145,8 @@ export default function JadwalPage() {
 
         // Jalankan kedua fetch secara paralel dengan Promise.all
         const [dailyResponse, bigResponse] = await Promise.all([
-          fetch(`${baseUrl}/api/daily-agendas?date=${date}`),
-          fetch(`${baseUrl}/api/big-agenda?date=${date}`),
+          fetch(`${baseUrl}daily-agendas?date=${date}`),
+          fetch(`${baseUrl}big-agenda?date=${date}`),
         ]);
 
         // Parse JSON response
@@ -173,7 +173,7 @@ export default function JadwalPage() {
   useEffect(() => {
     const fetchHighlightDates = async () => {
       try {
-        const response = await fetch(`${baseUrl}/api/big-agenda`);
+        const response = await fetch(`${baseUrl}big-agenda`);
         const data = await response.json();
 
         if (data?.data) {
