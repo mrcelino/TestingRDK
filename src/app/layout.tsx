@@ -1,12 +1,10 @@
 
 import type { Metadata } from "next";
-
+import AOSInitializer from "./aos";
 import { Work_Sans, Trirong } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/footer/Footer";
-
-
 
 const trirong = Trirong({
   subsets: ["latin"],
@@ -20,8 +18,10 @@ const worksans = Work_Sans({
   variable: "--font-worksans",
 });
 
-
-
+export const metadata: Metadata = {
+  title: "RDK UGM Website",
+  description: "Ramadhan di Kampus UGM Offical Website",
+};
 
 export default function RootLayout({
 	children,
@@ -31,16 +31,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${worksans.variable} ${trirong.variable} antialiased`}
+        className={`${worksans.variable} ${trirong.variable} antialiased font-body`}
       >
-
+        <AOSInitializer/>
         <Navbar />
         {children}
 
+        <Footer />
 
 
 
-				<Footer />
+				{/* <Footer /> */}
 			</body>
 		</html>
 	);

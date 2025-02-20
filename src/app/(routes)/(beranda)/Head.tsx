@@ -17,7 +17,7 @@ export default function Head() {
 			</p>
 
 			{/* Teaser / Profil RDK */}
-			<div className="bg-white lg:border-4 md:border-[3px] border-2 border-black rounded-3xl lg:rounded-[30px] lg:w-[60%] md:w-[80%] w-[90%] mx-auto lg:my-16 my-10 lg:h-[25rem] md:h-[20rem] h-[14rem] md:p-4 p-3 text-black max-w-2xl">
+			<div className="bg-white lg:border-4 md:border-[3px] border-2 border-black rounded-3xl lg:rounded-[30px] lg:w-[45rem] md:w-[35rem] w-[20rem] mx-auto lg:my-16 my-10 lg:h-[25rem] md:h-[20rem] h-[14rem] md:p-4 p-3 text-black max-w-2xl">
 				<iframe
 					className="w-full h-full object-cover rounded-3xl"
 					src="https://www.youtube.com/embed/z1MU8NsMziI?si=axEs-eDJtGI2r70t"

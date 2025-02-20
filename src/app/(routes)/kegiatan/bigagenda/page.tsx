@@ -30,7 +30,7 @@ function Banner(){
 function GrandOpening(){
   return(
     <>
-    <section className="xl:mx-auto flex justify-center items-center xl:h-[400px] lg:space-x-60 max-w-6xl ">
+    <section data-aos="fade-up" data-aos-duration="1000" className="xl:mx-auto flex justify-center items-center xl:h-[400px] lg:space-x-60 max-w-6xl ">
       <Image
         src="/images/kegiatan/rdkmaskot.svg"
         width={300}
@@ -78,7 +78,7 @@ function GrandOpening(){
 
 
 
-      <section className="flex flex-col md:flex-row items-center md:justify-center p-4 xl:p-0 xl:mx-16 xl:gap-20 xl:mt-10">
+      <section data-aos="fade-up" data-aos-duration="500" className="flex flex-col md:flex-row items-center md:justify-center p-4 xl:p-0 xl:mx-16 xl:gap-20 xl:mt-10">
         <Image
           src="/images/kegiatan/laptop.svg"
           width={300}
@@ -103,7 +103,7 @@ function GrandOpening(){
 
 function MIT(){
   return(
-    <>
+    <div data-aos="fade-up" data-aos-duration="500">
       <section className="p-4 xl:p-0 xl:mx-32 xl:gap-20 xl:mt-10 md:flex md:justify-center">
         <div className="ml-4 relative flex items-center min-h-12 md:h-14 md:w-1/2 xl:h-20 rounded-[50px] bg-[#15575B] pr-4 shadow-xl">
           <Image
@@ -143,13 +143,13 @@ function MIT(){
             </div>
           </div>
       </section>
-    </>
+    </div>
   )
 }
 
 function RDKFestival(){
   return(
-    <>
+    <div data-aos="fade-up" data-aos-duration="500">
       <section className="relative p-4 xl:p-0 xl:mx-32 xl:gap-20 xl:mt-10 md:flex md:justify-center">
         <div className="ml-4 relative flex items-center min-h-12 md:h-14 md:w-1/2 xl:h-20 rounded-[50px] bg-[#F4AA3D] pr-4 shadow-xl">
           <Image
@@ -190,13 +190,13 @@ function RDKFestival(){
             </div>
           </div>
       </section>
-    </>
+    </div>
   )
 }
 
 function GebyarSore(){
   return(
-    <>
+    <div data-aos="fade-up" data-aos-duration="500">
       <section className="p-4 xl:p-0 xl:mx-32 xl:gap-20 md:flex md:justify-center">
         <div className="ml-4 relative flex items-center min-h-12 md:h-14 md:w-1/2 xl:h-20 rounded-[50px] bg-[#15575B] pr-4 shadow-xl">
           <Image
@@ -236,7 +236,7 @@ function GebyarSore(){
             </div>
           </div>
       </section>
-    </>
+    </div>
   )
 }
 

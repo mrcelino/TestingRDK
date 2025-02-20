@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function TemaRdk() {
 	return (
-		<div className="lg:justify-between mt-20 md:flex">
+		<div className="lg:justify-between mt-20 md:flex max-w-7xl mx-auto">
 			{/* Maskot */}
 			<Image
 				src="/svg/maskot-main.svg"

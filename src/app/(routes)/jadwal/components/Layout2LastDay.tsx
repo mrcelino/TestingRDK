@@ -55,7 +55,11 @@ export default function Layout2LastDay({
 }) {
   return (
     <>
-      <div className="w-[243px] h-[58px] md:w-[380px] md:h-[78px] lg:w-[779px] lg:h-[204px] bg-white rounded-[200px] border lg:border-[3px] border-black shadow-lg relative flex justify-center items-center mt-10 md:mt-16 lg:mt-40 mb-8 md:mb-14 lg:mb-32">
+      <div
+        data-aos="fade-right"
+        data-aos-duration="1000"
+        className="w-[243px] h-[58px] md:w-[380px] md:h-[78px] lg:w-[779px] lg:h-[204px] bg-white rounded-[200px] border lg:border-[3px] border-black shadow-lg relative flex justify-center items-center mt-10 md:mt-16 lg:mt-40 mb-8 md:mb-14 lg:mb-32"
+      >
         <h1 className="text-[#15575B] text-xs md:text-sm lg:text-2xl font-bold italic">
           Sorry, No Agenda Today!
         </h1>
@@ -69,7 +73,11 @@ export default function Layout2LastDay({
       </div>
 
       <div className="flex relative max-w-[1920px] w-full h-[23px] md:h-[38px] lg:h-[77px] bg-[#F4AA3D] justify-center items-center">
-        <h1 className="text-white font-bold text-sm md:text-2xl lg:text-2xl italic">
+        <h1
+          data-aos="zoom-in"
+          data-aos-duration="600"
+          className="text-white font-bold text-sm md:text-2xl lg:text-2xl italic"
+        >
           DON’T WORRY!
         </h1>
         <Image
@@ -78,11 +86,19 @@ export default function Layout2LastDay({
           height={156}
           alt="sign"
           className="absolute right-4 md:right-16 lg:right-64 z-10 w-[70px] h-[70px] md:w-[91px] md:h-[91px] lg:w-[156px] lg:h-[156px] hover:scale-125 transition"
+          data-aos="zoom-in"
+          data-aos-duration="600"
+          data-aos-delay="300"
         />
       </div>
 
       <div className="flex relative max-w-[1920px] w-full h-[76px] md:h-[77px] lg:h-[154px] bg-[#fbfbfb] justify-center items-center mb-7 md:mb-10 lg:mb-14">
-        <h1 className="text-[#15575B] font-bold text-xs md:text-base lg:text-2xl italic">
+        <h1
+          data-aos="zoom-in"
+          data-aos-duration="600"
+          data-aos-delay="450"
+          className="text-[#15575B] font-bold text-xs md:text-base lg:text-2xl italic"
+        >
           You Can Have Iftar at the Mosque!
         </h1>
 
@@ -92,6 +108,9 @@ export default function Layout2LastDay({
           height={116}
           alt="sign"
           className="absolute w-[69px] h-[69px] md:w-[68px] md:h-[68px] lg:w-[116px] lg:h-[116px] left-0.5 md:left-[200px] lg:left-[400px] z-10 hover:scale-125 transition"
+          data-aos="zoom-in"
+          data-aos-duration="600"
+          data-aos-delay="400"
         />
       </div>
 
@@ -104,7 +123,9 @@ export default function Layout2LastDay({
           className="w-[300px] md:w-[332px] lg:w-[595px] object-contain rounded-[10px] hover:scale-105 transition"
         />
       ) : (
-        <h1 className="text-lg lg:text-3xl font-semibold text-white font-title my-2 md:my-5 lg:my-10 hover:scale-105 transition-all hover:drop-shadow-xl">Information will be released soon !!!</h1>
+        <h1 className="text-lg lg:text-3xl font-semibold text-white font-title my-2 md:my-5 lg:my-10 hover:scale-105 transition-all hover:drop-shadow-xl">
+          Information will be released soon !!!
+        </h1>
       )}
 
       {/* end info buka puasa */}

@@ -145,8 +145,8 @@ export default function JadwalPage() {
 
         // Jalankan kedua fetch secara paralel dengan Promise.all
         const [dailyResponse, bigResponse] = await Promise.all([
-          fetch(`${baseUrl}/api/daily-agendas?date=${date}`),
-          fetch(`${baseUrl}/api/big-agenda?date=${date}`),
+          fetch(`${baseUrl}daily-agendas?date=${date}`),
+          fetch(`${baseUrl}big-agenda?date=${date}`),
         ]);
 
         // Parse JSON response
@@ -173,7 +173,7 @@ export default function JadwalPage() {
   useEffect(() => {
     const fetchHighlightDates = async () => {
       try {
-        const response = await fetch(`${baseUrl}/api/big-agenda`);
+        const response = await fetch(`${baseUrl}big-agenda`);
         const data = await response.json();
 
         if (data?.data) {
@@ -257,8 +257,6 @@ export default function JadwalPage() {
     }
   }, [selectedDay, dailyAgenda, bigAgenda]);
 
-  
-
   const days = eachDayOfInterval({
     start: firstDayCurrentMonth,
     end: endOfMonth(firstDayCurrentMonth),
@@ -331,6 +329,8 @@ export default function JadwalPage() {
               // height={133}
               alt="sign"
               className="mt-5 md:mt-8 lg:mt-10 w-[63px] h-[40px] md:w-[99px] md:h-[63px] lg:w-[210px] lg:h-[133px]"
+              data-aos="fade-up"
+              data-aos-duration="950"
             />
 
             {layout === "LayoutBeforeRamadan" && <LayoutBeforeRamadan />}
@@ -374,6 +374,41 @@ export default function JadwalPage() {
             {layout === "LayoutAgendaNotReleased" && (
               <LayoutAgendaNotReleased />
             )}
+            {/* TWO BUTTON CONTAINER */}
+            <div className="flex flex-row mt-4 md:mt-10 lg:mt-20 gap-x-10 md:gap-x-20 lg:gap-x-40 mb-10 z-20">
+              {/* button previous day */}
+              <div
+                data-aos="fade-right"
+                data-aos-duration="1000"
+                onClick={previousDay}
+                className="w-[100px] md:w-[160px] lg:w-[278px] h-[25px] md:h-[34px] lg:h-[59px] bg-[#F4AA3D] hover:bg-[#cc8f33] cursor-pointer border lg:border-[3px] border-black rounded-[30px] items-center justify-center flex flex-row gap-x-4"
+              >
+                <ArrowLeftIcon
+                  className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10"
+                  aria-hidden="true"
+                />
+                <p className="text-black font-medium text-[8px] md:text-sm lg:text-xl italic">
+                  Previous Day
+                </p>
+              </div>
+              {/* button day after */}
+              <div
+                data-aos="fade-left"
+                data-aos-duration="1000"
+                onClick={nextDay}
+                className="w-[100px] md:w-[160px] lg:w-[278px] h-[25px] md:h-[34px] lg:h-[59px] bg-[#15575B] hover:bg-[#124c4f] cursor-pointer rounded-[30px] border lg:border-[3px] border-black items-center justify-center flex flex-row gap-x-4"
+              >
+                <p className="text-white font-medium text-[8px] md:text-sm lg:text-xl italic">
+                  Next Day
+                </p>
+
+                <ArrowRightIcon
+                  className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10 text-white"
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
+            {/* end of TWO BUTTON CONTAINER */}
           </>
         )}
 
@@ -394,38 +429,6 @@ export default function JadwalPage() {
         {/* <LayoutIdulFitri /> */}
 
         {/*  */}
-
-        {/* TWO BUTTON CONTAINER */}
-        <div className="flex flex-row mt-4 md:mt-10 lg:mt-20 gap-x-10 md:gap-x-20 lg:gap-x-40 mb-10 z-20">
-          {/* button previous day */}
-          <div
-            onClick={previousDay}
-            className="w-[100px] md:w-[160px] lg:w-[278px] h-[25px] md:h-[34px] lg:h-[59px] bg-[#F4AA3D] hover:bg-[#cc8f33] cursor-pointer border lg:border-[3px] border-black rounded-[30px] items-center justify-center flex flex-row gap-x-4"
-          >
-            <ArrowLeftIcon
-              className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10"
-              aria-hidden="true"
-            />
-            <p className="text-black font-medium text-[8px] md:text-sm lg:text-xl italic">
-              Previous Day
-            </p>
-          </div>
-          {/* button day after */}
-          <div
-            onClick={nextDay}
-            className="w-[100px] md:w-[160px] lg:w-[278px] h-[25px] md:h-[34px] lg:h-[59px] bg-[#15575B] hover:bg-[#124c4f] cursor-pointer rounded-[30px] border lg:border-[3px] border-black items-center justify-center flex flex-row gap-x-4"
-          >
-            <p className="text-white font-medium text-[8px] md:text-sm lg:text-xl italic">
-              Next Day
-            </p>
-
-            <ArrowRightIcon
-              className="h-4 w-4 md:h-7 md:w-7 lg:w-10 lg:h-10 text-white"
-              aria-hidden="true"
-            />
-          </div>
-        </div>
-        {/* end of TWO BUTTON CONTAINER */}
 
         {/* end bagian content event */}
       </div>
