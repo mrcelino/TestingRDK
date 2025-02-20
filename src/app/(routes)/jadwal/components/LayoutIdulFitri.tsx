@@ -141,7 +141,11 @@ export default function LayoutIdulFitri({
                 {/* <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div> */}
                 <div
                   style={{
-                    backgroundImage: `url("${dataBigAgenda[0].moderator.profile.publicUrl}")`,
+                    backgroundImage: `url("${
+                      dataBigAgenda[0].moderator !== null
+                        ? dataBigAgenda[0].moderator.profile.publicUrl
+                        : "???"
+                    }")`,
                   }}
                   className="bg-cover bg-center w-full h-full"
                 ></div>
@@ -182,7 +186,9 @@ export default function LayoutIdulFitri({
               <div className="absolute md:hidden top-1/2 left-24 w-[193px] h-[36px] bg-[#FBFBFB] border border-black rounded-tr-[100px] rounded-bl-[100px] rotate-[7deg] flex items-center justify-center px-2 shadow-md">
                 <h2 className="font-bold text-[8px] text-[#F4AA3D] text-center italic font-body">
                   {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
-                  {dataBigAgenda[0].moderator.profile.name}
+                  {dataBigAgenda[0].moderator !== null
+                    ? dataBigAgenda[0].moderator.profile.name
+                    : "???"}
                 </h2>
               </div>
               {/* label imam */}
@@ -236,7 +242,11 @@ export default function LayoutIdulFitri({
                 {/* <div className="bg-[url('/images/jadwal/examplePhotoPengisiAcara.svg')] bg-cover bg-center w-full h-full"></div> */}
                 <div
                   style={{
-                    backgroundImage: `url("${dataBigAgenda[0].source_person[0].profile.publicUrl}")`,
+                    backgroundImage: `url("${
+                      dataBigAgenda[0]?.source_person.length > 0
+                        ? dataBigAgenda[0].source_person[0].profile.publicUrl
+                        : "???"
+                    }")`,
                   }}
                   className="bg-cover bg-center w-full h-full"
                 ></div>
@@ -277,7 +287,9 @@ export default function LayoutIdulFitri({
               <div className="absolute md:hidden top-1/2 right-24 w-[193px] h-[36px] bg-[#F4AA3D] border border-black rounded-tr-[100px] rounded-bl-[100px] rotate-[-8deg] flex items-center justify-center px-2 shadow-md">
                 <h2 className="font-bold text-[8px] text-[#15575B] text-center italic font-body">
                   {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
-                  {dataBigAgenda[0].source_person[0].profile.name}
+                  {dataBigAgenda[0]?.source_person.length > 0
+                    ? dataBigAgenda[0].source_person[0].profile.name
+                    : "???"}
                 </h2>
               </div>
               {/* label khatib */}
@@ -303,14 +315,14 @@ export default function LayoutIdulFitri({
           <div className="w-1/2 h-full border lg:border-[3px] border-black rounded-l-[100px] flex justify-center items-center">
             <p className="md:w-[219px] lg:w-[289px] text-[#F4AA3D] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-center font-body">
               {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
-              {dataBigAgenda[0].moderator.profile.name}
+              {dataBigAgenda[0].moderator?.profile?.name || "???"}
             </p>
           </div>
           {/* right name container */}
           <div className="w-1/2 h-full bg-[#F4AA3D] border lg:border-[3px] border-black rounded-r-[100px] flex justify-center items-center">
             <p className="md:w-[219px] lg:w-[289px] text-[#15575B] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-center font-body">
               {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
-              {dataBigAgenda[0].source_person[0].profile.name}
+              {dataBigAgenda[0].source_person[0]?.profile?.name || "???"}
             </p>
           </div>
 
@@ -336,7 +348,7 @@ export default function LayoutIdulFitri({
             <p className="text-[#15575B] font-semibold max-w-[190px] md:max-w-[250px] lg:max-w-[550px] text-[8px] md:text-[8px] lg:text-base italic font-body">
               {/* Upaya Kolaboratif Mewujudkan <br />
               Pembangunan Inklusif dan Berkelanjutan */}
-              {dataBigAgenda[0].theme}
+              {dataBigAgenda[0]?.theme || "???"}
             </p>
             <Image
               src={"images/jadwal/petik-kuning.svg"}
@@ -366,7 +378,7 @@ export default function LayoutIdulFitri({
               {/* lokasi */}
               <p className="font-medium text-[6px] md:text-[6px] lg:text-sm text-[#15575B] italic">
                 {/* Mardliyyah <br /> Islamic Center UGM */}
-                {dataBigAgenda[0].place}
+                {dataBigAgenda[0]?.place || "???"}
               </p>
             </div>
             <div className="text-transparent bg-[#15575B] w-[12px] md:w-[17px] lg:w-[40px] h-[1px] rotate-90">
@@ -385,7 +397,7 @@ export default function LayoutIdulFitri({
                 {/* {dataBigAgenda[0].time !== null
                   ? dataBigAgenda[0].time + " WIB"
                   : "Null"} */}
-                {dataBigAgenda[0].time
+                {dataBigAgenda[0]?.time
                   ? dataBigAgenda[0].time.slice(0, 5) + " WIB"
                   : "Null"}
               </p>
