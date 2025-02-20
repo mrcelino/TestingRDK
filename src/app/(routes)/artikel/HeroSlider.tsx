@@ -45,8 +45,9 @@ export default function HeroSlider() {
                   <Image
                     src={article.article_images[0].publicUrl}
                     alt={article.title}
-                    layout="fill"
-                    objectFit="cover"
+                    className="w-full md:h-[520px]  md:h-[520px]  object-cover lg:h-full"
+                    width={1507}
+                    height={805}  
                   />
                 ) : (
                   <div className="w-full h-full bg-gray-500 flex items-center justify-center">
@@ -54,7 +55,7 @@ export default function HeroSlider() {
                   </div>
                 )}
 
-                <div className="absolute lg:bottom-[0rem] lg:left-[4rem] top-[7rem] left-4 flex gap-5 items-center z-20 text-xs ">
+                <div className="absolute top-[6rem] lg:bottom-[0rem] lg:left-[4rem] top-[7rem] left-4 flex gap-5 items-center z-20 text-xs ">
                   <p className="lg:text-xl text-orangeCS italic font-semibold">
                     RDK <span className="text-white">News</span>
                   </p>
@@ -97,7 +98,7 @@ export default function HeroSlider() {
                   alt="smoke-rdk"
                   width={2000}
                   height={100}
-                  className="absolute bottom-0 left-0 right-0 lg:h-[30rem] z-10 h-[10rem]"
+                  className="absolute bottom-0 left-0 right-0 lg:h-[30rem] md:h-[25rem] h-[16rem]"
                 />
               </div>
             </SwiperSlide>

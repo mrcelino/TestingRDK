@@ -1,37 +1,26 @@
 "use client";
 
-import { Article, fetchArticles } from "@/app/lib/article";
+import { Article, fetchArticleById } from "@/app/lib/article";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function DetailArtikel() {
-	const [articles, setArticles] = useState<Article[]>([]);
 	const [article, setArticle] = useState<Article | null>(null);
-	const slug = useParams();
-	const id = slug.id;
+const { id } = useParams(); // Destructuring langsung dari useParams
 
-	useEffect(() => {
-		const getArticles = async () => {
-			const data = await fetchArticles();
-			setArticles(data);
-		};
+useEffect(() => {
+  const getArticle = async () => {
+    if (!id) return; // Pastikan id tersedia sebelum fetch
 
-		getArticles();
-	}, []);
+    const data = await fetchArticleById(Number(id)); // Pastikan id dikonversi ke angka
+    setArticle(data);
+  };
 
-	useEffect(() => {
-		if (articles.length > 0) {
-			if (id) {
-				const foundArticle = articles.find(
-					(article) => article.id.toString() === id
-				);
+  getArticle();
+}, [id]); // Hanya tergantung pada id
 
-				setArticle(foundArticle || null);
-			}
-		}
-	}, [articles]);
 
 	if (!article) {
 		return (

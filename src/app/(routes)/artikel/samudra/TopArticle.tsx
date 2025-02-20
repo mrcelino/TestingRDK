@@ -47,8 +47,6 @@ export default function TopArticle() {
                     alt={article.title}
                     width={1507}
                     height={805}
-                   
-                    objectFit="cover"
                     className="w-full md:h-[520px]  md:h-[520px]  object-cover lg:h-full"
                   />
                 ) : (
