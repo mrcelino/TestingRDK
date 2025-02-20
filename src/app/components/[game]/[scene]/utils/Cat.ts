@@ -1,6 +1,8 @@
 import { Tilemaps } from "phaser";
 import { Player } from "./Player";
 import { NavMesh } from "navmesh";
+import { ca, th } from "date-fns/locale";
+import { catsData } from "./const";
 
 export class Cat {
     scene: Phaser.Scene;
@@ -12,18 +14,22 @@ export class Cat {
     map: Tilemaps.Tilemap;
     tileset:string;
     currentTargetPosition?: Phaser.Math.Vector2|null;
+    lastAnimation: string = '';
+    getFood: boolean = false;
 
-    constructor(scene: Phaser.Scene, player: Player, map: Tilemaps.Tilemap, tileset:string) {
+    constructor(scene: Phaser.Scene, player: Player, map: Tilemaps.Tilemap, tileset:string, position: {x: number, y: number}, navMesh: NavMesh) {
         this.scene = scene;
         this.player = player;
         this.tileset = tileset
-        this.sprite = this.scene.physics.add.sprite(454, 44, this.tileset, 36).setScale(0.5);
+        this.sprite = this.scene.physics.add.sprite(position.x, position.y, this.tileset, 36).setScale(0.5);
         this.map = map;
+        this.navMesh = navMesh
 
         this.loadAnimations();
         this.create();
         this.sprite.setOrigin(0.5, 0.5); // Center anchor
         this.sprite.setBodySize(this.sprite.width * 0.5, this.sprite.height * 0.5);
+
     }
 
     create() {
@@ -31,21 +37,6 @@ export class Cat {
         this.scene.physics.add.collider(this.player.object, this.sprite);
         this.sprite.setBodySize(this.sprite.width, this.sprite.height - 10, false);
         this.sprite.setOffset(0, 10);
-        const navmeshObjectLayer = this.map.getObjectLayer(`navmesh`);
-
-        if (navmeshObjectLayer) {
-            const boundariesLayer = this.map.getObjectLayer(`Boundaries`);
-        
-            if (!boundariesLayer) {
-            }
-        const meshPolygonPoints = navmeshObjectLayer.objects
-            .filter(obj => obj.polygon)
-            .map(obj => obj.polygon!.map(point => ({ x: point.x + obj.x!, y: point.y + obj.y! })));
-        this.navMesh = new NavMesh(meshPolygonPoints);
-        }
-
-
-
         
         this.sprite.play(`${this.tileset}LookingAroundDown`, true);
 
@@ -57,7 +48,7 @@ export class Cat {
 
     moveTo(targetX: number, targetY: number) {
         if (!this.navMesh) return;
-    
+
         const start = new Phaser.Math.Vector2(this.sprite.x, this.sprite.y);
         const end = new Phaser.Math.Vector2(targetX, targetY);
     
@@ -66,6 +57,7 @@ export class Cat {
         console.log(pathPoints);    
         if (!pathPoints || pathPoints.length === 0) {   
             this.moving()
+            console.log('No path found');
             return;
         }
     
@@ -79,9 +71,9 @@ export class Cat {
     
     followPath() {
         if (this.path.length === 0) {
-            this.sprite.play(`${this.tileset}LookingAroundDown`);
+            this.sprite.play(`${this.tileset}SitingDownDown`);
             this.sprite.once('animationcomplete', () => {
-                this.sprite.play(`${this.tileset}SitingDownDown`);
+                this.sprite.play({ key: `${this.tileset}LookingAroundDown`, repeat: -1 });
                 this.currentTargetPosition = null;
                 this.scene.time.delayedCall(10000, () => {
                     this.moving();``
@@ -142,7 +134,7 @@ export class Cat {
     {
         this.scene.anims.create({
             key: `${this.tileset}LookingAroundDown`,
-            frames: this.scene.anims.generateFrameNumbers(this.tileset, { frames: [36, 37, 38,39,68] }),
+            frames: this.scene.anims.generateFrameNumbers(this.tileset, { frames: [36, 37, 38,39,68, 39, 38,37] }),
             frameRate: 3,
         });
 
@@ -285,16 +277,32 @@ export class Cat {
 
     interact() {
         const tweens = this.scene.tweens.getTweensOf(this.sprite);
-    
         if (tweens.length > 0) {
             if (tweens[0].isPlaying()) { 
                 tweens.forEach(tween => tween.pause());
+                const currentAnimation = this.sprite.anims.getName();
+                this.lastAnimation = currentAnimation;
+                this.sprite.play(`${this.tileset}SitingDownDown`);
+                this.sprite.once('animationcomplete', () => {
+                    this.sprite.play({ key: `${this.tileset}LookingAroundDown`, repeat: -1 });
+                });
             } else {
+                this.sprite.play(this.lastAnimation);
                 tweens.forEach(tween => tween.resume()); 
             }
         }
-        
     }
 
-
+    getCatsFood(){
+        this.getFood = true;
+        
+        const loveSprite = this.scene.add.sprite(this.sprite.x, this.sprite.y - 5, 'love').setOrigin(0.5, 0.5).play("love").setScale(0.5);
+        loveSprite.on('animationcomplete', () => {
+            loveSprite.destroy();
+        });
+        const catQuantity = catsData.length;
+        if(this.player.catCounter === catQuantity){
+            this.player.data.Achievements.achievement3.isAchieved = true;
+        }
+    }
 }

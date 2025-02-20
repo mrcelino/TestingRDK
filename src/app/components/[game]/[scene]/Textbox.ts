@@ -35,38 +35,27 @@ init(data:{player: Player, text: DIALOG[], order: number[][][], callback: Functi
     }
 
     create(){
+        this.scale.on('enterfullscreen', () => {
+            this.sys.canvas.classList.remove('hidden')
+            this.sys.canvas.classList.add('block')
+            this.scale.refresh()
+            const musicScene = this.scene.get("MusicScene");
+            if (musicScene && musicScene.bgMusic) {
+                musicScene.bgMusic.resume();
+            }
+            this.scene.resume();
+        });
 
-        // this.player = new Player(this, "Pria");
-        // this.text = [
-        //     {
-        //         name: "panitia",
-        //         dialogs: "Halo, selamat datang di acara kamisa asdasd asdasdas adas dasd asdasd asdasd asdas dasd adas dasd asdas !"
-        //     },
-        //     {
-        //         name: "Player",
-        //         dialogs: "Terima kasih, senang berada di sini."
-        //     },
-        //     {
-        //         name: "panitia",
-        //         dialogs: "Apakah kamu sudah mendaftar?"
-        //     },
-        //     {
-        //         name: "Player",
-        //         dialogs: "Belum, saya akan mendaftar sekarang."
-        //     },
-        //     {
-        //         name:"player",
-        //         dialogs: "Saya sudah mendaftar, apa yang harus saya lakukan selanjutnya?"
-        //     }
-        // ]
-        // this.order = [[[0,1], [4,0],[3,1]],[[0,1], [0,1]]];
+        this.scale.on('leavefullscreen', () => {
+            this.sys.canvas.classList.remove('block')
+            this.sys.canvas.classList.add('hidden')
+            this.scene.pause();
+            const musicScene = this.scene.get("MusicScene");
+            if (musicScene && musicScene.bgMusic) {
+                musicScene.bgMusic.pause();
+            }
+        });
 
-        // this.callback = () => {
-        //     console.log("callback")
-        // }
-
-        // this.npcProfile = "PengunjungIjoPr1"
-        // this.correctAnswer = [1, 1]
 
         const boxWidth = 800;
         const boxHeight = 200;
@@ -76,7 +65,7 @@ init(data:{player: Player, text: DIALOG[], order: number[][][], callback: Functi
         this.currentDialog =this.text[this.currentOrder[0].shift()!] 
         this.currentText = this.currentDialog.dialogs;
         
-const profile = this.add.image(685, 20, (this.currentDialog.name==="Player")? this.player.data.profile : this.npcProfile ).setScale(5);
+        const profile = this.add.image(685, 20, (this.currentDialog.name==="Player")? this.player.data.profile : this.npcProfile ).setScale(5);
 
         const text = this.add.text(20 , -80, this.currentText , {
             fontSize: `${20}px`,

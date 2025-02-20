@@ -1,6 +1,7 @@
 import { Scene } from "phaser";
 import { Player } from "./utils/Player";
 import { Control } from "./utils/control";
+import GlobalFullscreenPlugin from "./utils/globalInitialize";
 
 
 
@@ -21,6 +22,28 @@ export class ControllerScene extends Scene
     }
     preload()
     {
+        this.scale.on('enterfullscreen', () => {
+            this.sys.canvas.classList.remove('hidden')
+            this.sys.canvas.classList.add('block')
+            this.scale.refresh()
+            const musicScene = this.scene.get("MusicScene");
+            if (musicScene && musicScene.bgMusic) {
+                musicScene.bgMusic.resume();
+            }
+            this.scene.resume();
+        });
+
+        this.scale.on('leavefullscreen', () => {
+            this.sys.canvas.classList.remove('block')
+            this.sys.canvas.classList.add('hidden')
+            this.scene.pause();
+            const musicScene = this.scene.get("MusicScene");
+            if (musicScene && musicScene.bgMusic) {
+                musicScene.bgMusic.pause();
+            }
+        });
+
+        
         const url = 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexvirtualjoystickplugin.min.js';
         this.load.plugin('rexvirtualjoystickplugin', url, true);   
     }

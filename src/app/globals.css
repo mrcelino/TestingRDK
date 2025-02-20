@@ -39,3 +39,10 @@ canvas {
   image-rendering: pixelated;
   height: 100%;
 }
+
+#game-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

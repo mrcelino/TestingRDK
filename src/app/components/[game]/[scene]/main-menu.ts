@@ -1,6 +1,7 @@
 import { Scene, Tilemaps } from "phaser";
 import { EventBus } from "../EventBus";
 import { Player } from "./utils/Player";
+import GlobalFullscreenPlugin from "./utils/globalInitialize";
 
 
 
@@ -18,13 +19,36 @@ export class Menu extends Scene
 
     create()
     {
+        this.scene.launch("MusicScene");
+
+        this.scale.on('enterfullscreen', () => {
+            this.sys.canvas.classList.remove('hidden')
+            this.sys.canvas.classList.add('block')
+            this.scale.refresh()
+            const musicScene = this.scene.get("MusicScene");
+            if (musicScene && musicScene.bgMusic) {
+                musicScene.bgMusic.resume();
+            }
+            this.scene.resume();
+        });
+
+        this.scale.on('leavefullscreen', () => {
+            this.sys.canvas.classList.remove('block')
+            this.sys.canvas.classList.add('hidden')
+            this.scene.pause();
+            const musicScene = this.scene.get("MusicScene");
+            if (musicScene && musicScene.bgMusic) {
+                musicScene.bgMusic.pause();
+            }
+        });
+
+
         const background = this.add.image(0, 0, 'MenuBackground').setOrigin(0, 0);
         background.displayWidth = this.sys.canvas.width;
         background.displayHeight = this.sys.canvas.height;
 
         // UI Container
         const container = this.add.container(this.sys.canvas.width / 2, this.sys.canvas.height / 2);
-``
 
         let selectedValue: 'Pria' | 'Wanita'  = 'Pria';
 
@@ -82,13 +106,6 @@ export class Menu extends Scene
         playButton.on('pointerover', () => playButton.setScale(3.15));
         playButton.on('pointerout', () => playButton.setScale(3));
         container.add(playButton);
-        this.scale.on('enterfullscreen', () => {
-            this.scale.scaleMode = Phaser.Scale.ScaleModes.FIT;
-        });
-
-        this.scale.on('leavefullscreen', () => {
-            this.scale.scaleMode = Phaser.Scale.ScaleModes.NONE;
-        });
 
         
 
@@ -116,7 +133,4 @@ export class Menu extends Scene
             console.error("Failed to lock orientation:", error);
         }
     }
-
-    
-
 }

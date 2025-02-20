@@ -1,6 +1,7 @@
 import { Scene } from "phaser";
 import { Player } from "./utils/Player";
 import { Achievement, Item } from "./utils/PlayerData";
+import GlobalFullscreenPlugin from "./utils/globalInitialize";
 
 
 
@@ -20,7 +21,27 @@ export class Ending extends Scene
 
     create()
     {
-        this.player = new Player(this, 'Pria');
+        this.scale.on('enterfullscreen', () => {
+            this.sys.canvas.classList.remove('hidden')
+            this.sys.canvas.classList.add('block')
+            this.scale.refresh()
+            const musicScene = this.scene.get("MusicScene");
+            if (musicScene && musicScene.bgMusic) {
+                musicScene.bgMusic.resume();
+            }
+            this.scene.resume();
+        });
+
+        this.scale.on('leavefullscreen', () => {
+            this.sys.canvas.classList.remove('block')
+            this.sys.canvas.classList.add('hidden')
+            this.scene.pause();
+            const musicScene = this.scene.get("MusicScene");
+            if (musicScene && musicScene.bgMusic) {
+                musicScene.bgMusic.pause();
+            }
+        });
+        this.cameras.main.setBackgroundColor('#000000');
 
         const ending = this.add.image(0, 0, 'Ending').setOrigin(0.5, 0.5).setScale(0.6);   
         ending.setPosition(this.sys.canvas.width / 2, this.sys.canvas.height / 2);
@@ -49,7 +70,9 @@ export class Ending extends Scene
 
         const close = this.add.image(0,0, 'Ending-Button').setScale(0.7);
         close.setPosition(this.sys.canvas.width / 2, 650);
-
+        close.setInteractive().on('pointerup', () => {
+            this.scale.stopFullscreen();
+        });
         const container = this.add.container(0, -70);
         container.add([ending, AchivementText, ItemText, close]);
     }

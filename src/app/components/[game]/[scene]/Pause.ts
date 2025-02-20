@@ -1,4 +1,5 @@
 import { EventBus } from "../EventBus";
+import GlobalFullscreenPlugin from "./utils/globalInitialize";
 import { Player } from "./utils/Player";
 
 
@@ -25,6 +26,28 @@ export class Pause extends Phaser.Scene {
     }
 
     show() {
+        this.scale.on('enterfullscreen', () => {
+            this.sys.canvas.classList.remove('hidden')
+            this.sys.canvas.classList.add('block')
+            this.scale.refresh()
+            const musicScene = this.scene.get("MusicScene");
+            if (musicScene && musicScene.bgMusic) {
+                musicScene.bgMusic.resume();
+            }
+            this.scene.resume();
+        });
+
+        this.scale.on('leavefullscreen', () => {
+            this.sys.canvas.classList.remove('block')
+            this.sys.canvas.classList.add('hidden')
+            this.scene.pause();
+            const musicScene = this.scene.get("MusicScene");
+            if (musicScene && musicScene.bgMusic) {
+                musicScene.bgMusic.pause();
+            }
+        });
+
+
         const PauseBox = this.add.image(0, 0, 'Pause-box').setScale(0.582);
         const Resume = this.add.image(0, 0, 'Resume-Button').setScale(0.4);
 
@@ -114,7 +137,7 @@ export class Pause extends Phaser.Scene {
             itemHolder.setPosition(offset+item.position.x,item.position.y);
             itemsContainer.add(itemHolder);
 
-            if(item.quantity > 0){
+            if(item.quantity > 0 || item.acquired){
                 const kupon = this.add.image(0, 0, item.image).setScale(1);
                 kupon.setPosition(offset+item.position.x, item.position.y);
                 itemsContainer.add(kupon);

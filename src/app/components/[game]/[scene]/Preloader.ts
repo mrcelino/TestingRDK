@@ -7,6 +7,7 @@ export class Preloader extends Scene {
 
     constructor() {
         super({ key: 'Preloader' });
+        
     }
 
     preload() {
@@ -62,8 +63,10 @@ export class Preloader extends Scene {
 
         // Papan Pengumuman
         this.load.image("papan", 'assets/game/Pengumuman/Pengumuman Board.png');
+        this.load.image("papanTanpa", 'assets/game/Pengumuman/Papan.png');
         this.load.image("close-button", 'assets/game/Pengumuman/Exit Icon.png');
         this.load.image("poster-competition", 'assets/game/Pengumuman/RDk-Competition.png');
+
 
         // Pause Menu
         this.load.image("Pause-box", 'assets/game/Pause/Pause Board.png');
@@ -81,7 +84,8 @@ export class Preloader extends Scene {
         // Masjid
         this.load.image("Masjid", 'assets/game/Chatbox/Cutscene RDK-01.png');
         this.load.image("Ustad", "assets/game/Chatbox/CHAR/USTADZ.png")
-
+        this.load.json("masjidData", process.env.NEXT_PUBLIC_API_BASE_URL + "data-masjids");
+    
         // Player 
         this.load.image("lkbelakang1", 'assets/game/Karakter Cowo Cewe/idle lk/belakang/MC-43.png');
         this.load.image("lkbelakang2", 'assets/game/Karakter Cowo Cewe/idle lk/belakang/MC-44.png');
@@ -140,7 +144,7 @@ export class Preloader extends Scene {
 
 
         // Maps V2
-        this.load.tilemapTiledJSON("GameRDKVTWO", 'assets/game/V2/GAME RDK8.json');
+        this.load.tilemapTiledJSON("GameRDKVTWO", 'assets/game/V2/GAME RDK10.json');
         this.load.image("Maskam Fixed-07-07", 'assets/game/V2/Maskam Fixed-07-07.png');
         this.load.image("Tangga Fixed-09", 'assets/game/V2/Tangga Fixed-09.png');
         this.load.image("Papan Fixed-11", 'assets/game/V2/Papan Fixed-11.png');
@@ -181,11 +185,17 @@ export class Preloader extends Scene {
         // Cat
         this.load.spritesheet("BlackCat", 'assets/game/Cats/black_2.png', {frameWidth: 32, frameHeight: 32});
         this.load.spritesheet("BrownCat", 'assets/game/Cats/brown_2.png', {frameWidth: 32, frameHeight: 32});
+        this.load.spritesheet("WhiteCat", 'assets/game/Cats/white_0.png', {frameWidth: 32, frameHeight: 32});
+        this.load.spritesheet("OrangeCat", 'assets/game/Cats/orange_0.png', {frameWidth: 32, frameHeight: 32});
+        this.load.spritesheet("GreyCat", 'assets/game/Cats/grey_2.png', {frameWidth: 32, frameHeight: 32});
+        this.load.spritesheet("YellowCat", 'assets/game/Cats/yellow_0.png', {frameWidth: 32, frameHeight: 32});
+
 
         // Icon
         this.load.spritesheet("Chat", "assets/game/V2/Chat.png", {frameWidth:16, frameHeight:16})
         this.load.spritesheet("TandaSeru", "assets/game/V2/TandaSeru.png", {frameWidth:16, frameHeight:16})
         this.load.spritesheet("LoveIcon", 'assets/game/Cats/Love.png', {frameWidth: 16, frameHeight: 16})
+        this.load.spritesheet("TandaSeruOrange", 'assets/game/V2/TandaSeruOranget.png', {frameWidth: 16, frameHeight: 16})
 
         // 
         this.load.image("MenuBackground", 'assets/game/Menu/Bitmask references gif (2).png');
@@ -196,9 +206,14 @@ export class Preloader extends Scene {
 
         this.load.image("Btn-perempuan-Off", 'assets/game/Menu/pr1.png');
         this.load.image("Btn-perempuan-On", 'assets/game/Menu/pr2.png');
+
+        // Music
+        this.load.audio('bgMusic', 'assets/game/Music/RDK Piano 80bpm.mp3');
     }
 
     create() {
         this.scene.start("Menu");
+
+
     }
 }

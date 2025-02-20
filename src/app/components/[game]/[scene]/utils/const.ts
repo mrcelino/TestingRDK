@@ -447,8 +447,252 @@ export const npcs: NPC[] = [
     isInteracted: false,
     position: { x: 208.00, y: 393.60},
   },
+  {
+    name: "Bagas",
+    dialogs: [
+      {
+        name: "Player",
+        dialogs:
+          "Bang, tadi sempet ikut kajian di masjid nggak?",
+      },
+      {
+        name: "Dani",
+        dialogs:
+          "Iya dong! Hari ini bahas tentang bagaimana puasa bisa jadi tameng dari dosa.",
+      },
+      { 
+        name: "Player", 
+        dialogs: "Menarik! Setiap hari beda tema ya?"
+      },
+      {
+        name: "Dani",
+        dialogs:
+          "Iya, tiap hari ada tema berbeda. Makanya seru, nggak bosen nunggu buka.",
+      },
+      {
+        name: "Player",
+        dialogs:
+          "Bener juga! Besok aku mau datang lebih awal biar nggak ketinggalan.",
+      }
+  ],
+    order: [[[0, 1, 2, 3, 4]]],
+    correctAnswer: [],
+    frames: ["panitiaidle1", "panitiaidle2"],
+    src: ["/assets/game/Karakter RDK/Panitia RDK/Panit lk (1).png", "/assets/game/Karakter RDK/Panitia RDK/Panit lk (2).png"],
+    class: "NPC",
+    isInteracted: false,
+    position: { x: 89.60, y: 406.40},
+  },
+  {
+    name: "Fikri",
+    dialogs: [
+      {
+        name: "Player",
+        dialogs:
+          "Assalamu’alaikum, Kak! Lagi nunggu buka di sini ya?",
+      },
+      {
+        name: "Fikri",
+        dialogs:
+          "Wa’alaikumussalam! Iya, sekalian dengerin kajian di dalam masjid.",
+      },
+      { 
+        name: "Player", 
+        dialogs: "Oh, tiap hari ada kajian ya?"
+      },
+      {
+        name: "Fikri",
+        dialogs:
+          "Iya, sebelum buka selalu ada kajian singkat. Hari ini temanya tentang kesabaran dalam berpuasa.",
+      },
+      {
+        name: "Player",
+        dialogs:
+          "Menarik! Aku masuk ke dalam dulu deh, sekalian ikut dengerin.",
+      }
+    ], 
+    order: [[[0, 1, 2, 3, 4, 5]]],
+    correctAnswer: [],
+    frames: ["PengunjungPutihBiruLk1", "PengunjungPutihBiruLk2"],
+    src: ["/assets/game/Karakter RDK/Pengunjung/Putih-Biru/Putih biru lk (1).png", "/assets/game/Karakter RDK/Pengunjung/Putih-Biru/Putih biru lk (2).png"],
+    class: "NPCMakan",
+    isInteracted: false,
+    position: { x: 448.00, y: 396.80},
+  },
+  {
+    name: "Rizal",
+    dialogs: [
+      {
+        name: "Player",
+        dialogs:
+          "Bang, udah lama nunggu buka di sini?",
+      },
+      {
+        name: "Rizal",
+        dialogs:
+          "Belum lama, tadi sekalian dengerin kajian di masjid.",
+      },
+      { 
+        name: "Player", 
+        dialogs: "Oh ya? Tema kajiannya apa hari ini?"
+      },
+      {
+        name: "Rizal",
+        dialogs:
+          "Tentang keutamaan berbagi di bulan Ramadhan. Bener-bener bikin pengen lebih sering sedekah!",
+      },
+      {
+        name: "Player",
+        dialogs:
+          "Wah, pas banget! Ramadhan emang momen terbaik buat berbuat baik.",
+      }
+    ],
+    order: [[[0, 1, 2, 3, 4]]],
+    correctAnswer: [],
+    frames: ["PengunjungPutihMerahLk1", "PengunjungPutihMerahLk2"],
+    src: ["/assets/game/Karakter RDK/Pengunjung/Putih-Merah/Putih merah lk (1).png", "/assets/game/Karakter RDK/Pengunjung/Putih-Merah/Putih merah lk (2).png"],
+    class: "NPCMakan",
+    isInteracted: false,
+    position: { x: 486.40, y: 259.20},
+  },
+  {
+    name: "Asih",
+    dialogs: [
+      {
+        name: "Player",
+        dialogs:
+          "Assalamu’alaikum! Kajian di dalam masih berlangsung ya?",
+      },
+      {
+        name: "Asih",
+        dialogs:
+          "Wa’alaikumussalam! Iya, masih. Tadi Ustaznya bahas tentang keutamaan malam Lailatul Qadar.",
+      },
+      { 
+        name: "Player", 
+        dialogs: "Wah, menarik! Aku boleh ikut gabung?"
+      },
+      {
+        name: "Asih",
+        dialogs:
+          "Tentu! Semua orang boleh ikut. Kajian sebelum buka memang selalu ada di sini.",
+      },
+      {
+        name: "Player",
+        dialogs:
+          "Makasih infonya! Aku masuk dulu, biar nggak ketinggalan.",
+      }
+    ],
+    order: [[[0, 1, 2, 3, 4]]],
+    correctAnswer: [],
+    frames: ["PengunjungPutihPutihPr1", "PengunjungPutihPutihPr2"],
+    src: ["/assets/game/Karakter RDK/Pengunjung/Putih-Putih/Peng outih pr (1).png", "/assets/game/Karakter RDK/Pengunjung/Putih-Putih/Peng outih pr (2).png"],
+    class: "NPCMakan",
+    isInteracted: false,
+    position: { x: 54.40, y: 163.20},
+  },
+  {
+    name: "Pak joko",
+    dialogs: [
+      {
+        name: "Pak joko",
+        dialogs:
+          "Assalamu’alaikum mas, Maaf menggannggu boleh minta tolong?",
+      },
+      {
+        name: "Player",
+        dialogs:
+          "Wa’alaikumussalam pak boleh, Kenapa pak",
+      },
+      { 
+        name: "Pak joko", 
+        dialogs: "Ini mas saya sebelumnya sedang ada rezeki lebih jadi saya membagikan iftar tetapi ada iftar yang belum abis mas. boleh minta tolong dibagiin nggak mas?"
+      },
+      {
+        name: "Player",
+        dialogs:
+          "Boleh pak, saya bantu ya",
+      },
+      {
+        name: "Pak joko",
+        dialogs:
+          "Terima kasih mas",
+      }
+    ],
+    order: [[[0, 1, 2, 3, 4]]],
+    correctAnswer: [],
+    frames: ["PengunjungPutihBiruLk1", "PengunjungPutihBiruLk2"],
+    src: ["/assets/game/Karakter RDK/Pengunjung/Putih-Biru/Putih biru lk (1).png", "/assets/game/Karakter RDK/Pengunjung/Putih-Biru/Putih biru lk (2).png"],
+    class: "NPCPemberiMakan",
+    isInteracted: false,
+    position: { x: 256, y: 160},
+  },
+  {
+    name: "Mas Agus",
+    dialogs: [
+      {
+        name: "Player",
+        dialogs:
+          "Assalamulaikum kak, Aku liat disini banyak kucing, boleh nggak kak aku memberi makan kucing-kucing ini?",
+      },
+      {
+        name: "Mas Agus",
+        dialogs:
+          "Wa’alaikumussalam, boleh banget kak, ini aku ada beberapa makananan kucing. Boleh kak ambil dan berikan ke kucing-kucing ini",
+      },
+      {
+        name: "Player",
+        dialogs:
+          "Terima kasih kak, aku bantu ya",
+      },
+      { 
+        name: "Mas Agus", 
+        dialogs: "Terima kasih kak"
+      }
+    ],
+    order: [[[0, 1, 2, 3]]],
+    correctAnswer: [],
+    frames: ["panitiaidle1", "panitiaidle2"],
+    src: ["/assets/game/Karakter RDK/Panitia RDK/Panit lk (1).png", "/assets/game/Karakter RDK/Panitia RDK/Panit lk (2).png"],
+    class: "NPCPemberiMakanKucing",
+    isInteracted: false,
+    position: { x: 28, y: 403},
+  },
+
+
 ];
 
+interface Cat {
+  tileset: string;
+position: { x: number; y: number };
+}
+
+export const catsData:Cat[] =[
+  {
+    tileset: "BlackCat",
+    position: { x: 249.60, y: 256 },
+  },
+  {
+    tileset: "BrownCat",
+    position: { x: 48.20, y: 249.60 },
+  },
+  {
+    tileset: "WhiteCat",
+    position: { x: 163, y: 240 },
+  },
+  {
+    tileset: "OrangeCat",
+    position: { x: 432.00, y: 35.20 },
+  },
+  {
+    tileset: "GreyCat",
+    position: { x: 467.80, y: 166.40 },
+  },
+  {
+    tileset: "YellowCat",
+    position: { x: 35.60, y: 99.40 },
+  },
+]
 
 
 

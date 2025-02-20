@@ -9,7 +9,10 @@ import { Pause } from './[scene]/Pause';
 import { Ending } from './[scene]/Ending';
 import rexVirtualJoystickPlugin from 'phaser3-rex-plugins/plugins/virtualjoystick-plugin';
 import { ControllerScene } from './[scene]/ControllerScene';
+import { MusicScene } from './[scene]/MusicScene';
+
 import PreviewScene from './[scene]/Preview';
+import { TutorialScene } from './[scene]/Tutorial';
 //  Find out more information about the Game Config at:
 //  https://newdocs.phaser.io/docs/3.70.0/Phaser.Types.Core.GameConfig
 
@@ -22,6 +25,7 @@ const config: Phaser.Types.Core.GameConfig = {
     width: 1024,
     height: 708,
     scale: {
+        mode: Phaser.Scale.FIT,
     },
     plugins: {
         global: [
@@ -34,7 +38,6 @@ const config: Phaser.Types.Core.GameConfig = {
         pixelArt: true,
     },
     scene: [
-        PreviewScene,
         Preloader,
         Menu,
         GameScene,
@@ -43,7 +46,9 @@ const config: Phaser.Types.Core.GameConfig = {
         Textbox,
         Pause,
         Ending,
-        ControllerScene
+        ControllerScene,
+        MusicScene,
+        TutorialScene
     ],
     physics: {
         default: 'Arcade',

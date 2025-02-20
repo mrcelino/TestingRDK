@@ -55,35 +55,24 @@ export const PlayerDatas: PlayerData[] = [
                 position: { x: - 290, y: 240 }
             },
             achievement2: {
-                name: "BerOtak Senku",
+                name: "Cerdas",
                 isAchieved: false,
                 image: "achievement2.png",
                 position: { x: 0, y: 240 }
             },
             achievement3: {
-                name: "Third Achievement",
+                name: "Pecinta Kucing",
                 isAchieved: false,
                 image: "achievement3.png",
                 position: { x: 290, y: 240 }
             },
             achievement4: {
-                name: "Fourth Achievement",
+                name: "Suka Membantu",
                 isAchieved: false,
                 image: "achievement4.png",
                 position: { x:  - 290, y: 310 }
-            },
-            achievement5: {
-                name: "Fifth Achievement",
-                isAchieved: false,
-                image: "achievement5.png",
-                position: { x: 0, y: 310 }
-            },
-            achievement6: {
-                name: "Sixth Achievement",
-                isAchieved: false,
-                image: "achievement6.png",
-                position: { x: 290, y: 310 }
             }
+
         },
         Items: {
             Kupon: {
@@ -106,14 +95,7 @@ export const PlayerDatas: PlayerData[] = [
                 quantity: 0,
                 position: { x: 180, y: 460 },
                 acquired: false
-            },
-            Uang: {
-                name: "Uang",
-                image: "Uang",
-                quantity: 0,
-                position: { x: 270, y: 460 },
-                acquired: false
-            },
+            }
         }
         ,
         animations: [
@@ -180,35 +162,24 @@ export const PlayerDatas: PlayerData[] = [
                 position: { x: - 290, y: 240 }
             },
             achievement2: {
-                name: "BerOtak Senku",
+                name: "Cerdas",
                 isAchieved: false,
                 image: "achievement2.png",
                 position: { x: 0, y: 240 }
             },
             achievement3: {
-                name: "Third Achievement",
+                name: "Pecinta Kucing",
                 isAchieved: false,
                 image: "achievement3.png",
                 position: { x: 290, y: 240 }
             },
             achievement4: {
-                name: "Fourth Achievement",
+                name: "Suka Membantu",
                 isAchieved: false,
                 image: "achievement4.png",
                 position: { x:  - 290, y: 310 }
-            },
-            achievement5: {
-                name: "Fifth Achievement",
-                isAchieved: false,
-                image: "achievement5.png",
-                position: { x: 0, y: 310 }
-            },
-            achievement6: {
-                name: "Sixth Achievement",
-                isAchieved: false,
-                image: "achievement6.png",
-                position: { x: 290, y: 310 }
             }
+
         },
         Items: {
             Kupon: {
@@ -231,14 +202,7 @@ export const PlayerDatas: PlayerData[] = [
                 quantity: 0,
                 position: { x: 180, y: 460 },
                 acquired: false
-            },
-            Uang: {
-                name: "Uang",
-                image: "Uang",
-                quantity: 0,
-                position: { x: 270, y: 460 },
-                acquired: false
-            },
+            }
         },
         animations: [
             {
@@ -290,7 +254,7 @@ export const PlayerDatas: PlayerData[] = [
                 repeat: -1
             }
         ],
-        position: {x: 256, y: 445.33 },
+        position: { x:256, y:432 },
         NpcInteraction: 0,
         profile: "prdepan1"
     },

@@ -1,4 +1,5 @@
 import { Scene } from "phaser";
+import GlobalFullscreenPlugin from "./utils/globalInitialize";
 
 
 export class papan extends Scene
@@ -8,6 +9,28 @@ export class papan extends Scene
     }
 
     create(){
+        this.scale.on('enterfullscreen', () => {
+            this.sys.canvas.classList.remove('hidden')
+            this.sys.canvas.classList.add('block')
+            this.scale.refresh()
+            const musicScene = this.scene.get("MusicScene");
+            if (musicScene && musicScene.bgMusic) {
+                musicScene.bgMusic.resume();
+            }
+            this.scene.resume();
+        });
+
+        this.scale.on('leavefullscreen', () => {
+            this.sys.canvas.classList.remove('block')
+            this.sys.canvas.classList.add('hidden')
+            this.scene.pause();
+            const musicScene = this.scene.get("MusicScene");
+            if (musicScene && musicScene.bgMusic) {
+                musicScene.bgMusic.pause();
+            }
+        });
+
+
         const papan = this.add.image(0, 0, 'papan').setScale(0.62);
     const close = this.add.image(0,0, 'close-button').setScale(0.7);
 

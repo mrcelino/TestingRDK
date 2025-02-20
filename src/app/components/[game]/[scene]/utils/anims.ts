@@ -206,4 +206,97 @@ export const npcsAnims: Dictinary<Dictinary<animation>> = {
             repeat: -1
         }
     },
+    "Risky": {
+        "Rizky_idle":
+        {
+            key: 'Rizky_idle',
+            frames:
+                [
+                    'panitiaidle1',
+                    'panitiaidle2'
+                ],
+            duration: 1000,
+            repeat: -1
+        }
+    },
+    "Bagas": {
+        "Bagas_idle":
+        {
+            key: 'Bagas_idle',
+            frames:
+                [
+                    'panitiaidle1',
+                    'panitiaidle2'
+                ],
+            duration: 1000,
+            repeat: -1
+        }
+    },
+
+    "Fikri":{
+        "Fikri_idle":
+        {
+            key: 'Fikri_idle',
+            frames:
+                [
+                    'PengunjungPutihBiruLk1',
+                    'PengunjungPutihBiruLk2'
+                ],
+            duration: 1000,
+            repeat: -1
+        }
+    },
+    "Rizal":{
+        "Rizal_idle":
+        {
+            key: 'Rizal_idle',
+            frames:
+                [
+                    'PengunjungPutihMerahLk1',
+                    'PengunjungPutihMerahLk2'
+                ],
+            duration: 1000,
+            repeat: -1
+        }
+    },
+    "Asih":{
+        "Asih_idle":
+        {
+            key: 'Asih_idle',
+            frames:
+                [
+                    'PengunjungPutihPutihPr1',
+                    'PengunjungPutihPutihPr1'
+                ],
+            duration: 1000,
+            repeat: -1
+        }
+    },
+    "Mas Agus":{
+        "Mas Agus_idle":
+        {
+            key: 'Mas Agus_idle',
+            frames:
+                [
+                    "panitiaidle1", 
+                    "panitiaidle2"
+                ],
+            duration: 1000,
+            repeat: -1
+        }
+    },
+    "Pak joko":{
+        "Pak joko_idle":
+        {
+            key: 'Pak joko_idle',
+            frames:
+                [
+                    "PengunjungPutihBiruLk1", 
+                    "PengunjungPutihBiruLk2"
+                ],
+            duration: 1000,
+            repeat: -1
+        }
+    },
+
 };

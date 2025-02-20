@@ -11,6 +11,10 @@ export class Player  {
     rectangle: Phaser.GameObjects.Rectangle;
     data : PlayerData
     gender: string; 
+    catQuest:number=0;
+    catCounter:number=0;
+    makananQuest:number=0;
+    makananQuestCounter:number=0
 
     constructor(scene: Phaser.Scene, gender: string){
         this.position = {x: 3 * tilesize, y: 3 *tilesize};
