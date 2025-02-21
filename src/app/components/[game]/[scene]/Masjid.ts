@@ -105,10 +105,11 @@ export class Masjid extends Scene
             const rawData = jsonData.data[0];
             const parsedData: DataMasjid = {
                 text: rawData.text,
-                order: [rawData.order],
+                order: rawData.order,
                 callback: rawData.callback || null,
                 correctAnswer: rawData.correctAnswer
             };
+            console.log(parsedData)
             this.datalogs = parsedData;
         }
 
