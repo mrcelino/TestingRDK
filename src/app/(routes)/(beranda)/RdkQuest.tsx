@@ -8,7 +8,7 @@ export default function RdkQuest() {
 	
 
 	return (
-		<div className="mx-auto max-w-5xl">
+		<div className="mx-auto max-w-5xl" id="rdk-quest">
 			<h1 className="lg:text-5xl text-2xl text-greenCS lg:w-[50%] md:w-[55%] w-3/4 bg-orangeCS border-black lg:border-4 border-2 rounded-tr-[50px] rounded-bl-[50px] lg:rounded-tr-[30px] lg:rounded-bl-[30px]  lg:py-3 lg:px-10 text-center mx-auto font-heading md:mt-20 mt-10 py-2 text-shadow-md">
 				RDK Quest
 			</h1>
