@@ -13,7 +13,7 @@ interface DailyAgendaItem {
   documentId: string;
   theme: string;
   time: string;
-  daily_agenda_type: "Samudera" | "RPL" | "Mimbar_Subuh"; // Pastikan sesuai dengan JSON
+  daily_agenda_type: "Samudera" | "RPL" | "Mimbar_Subuh"; 
   date: string;
   profile: Profile;
 }

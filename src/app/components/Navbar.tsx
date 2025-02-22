@@ -28,7 +28,7 @@ export default function Navbar() {
 	};
 
 	return (
-		<nav className="bg-gradient-to-r from-[#155458] from-30% to-[#51B2B8] text-white sticky lg:top-10 z-50 lg:mt-[-4rem] shadow-md lg:w-11/12 lg:mx-auto lg:rounded-full ">
+		<nav className="bg-gradient-to-r from-[#155458] from-30% to-[#51B2B8] text-white fixed lg:top-32 lg:left-1/2 lg:transform lg:-translate-x-1/2 z-50 lg:mt-[-4rem] shadow-md lg:w-[75%] lg:mx-auto lg:rounded-full ">
 			<div className="flex items-center lg:justify-between px-4 py-2">
 				{/* Hamburger Icon */}
 				<button
@@ -52,7 +52,7 @@ export default function Navbar() {
 				/>
 
 				{/* Desktop Menu */}
-				<ul className="hidden lg:flex space-x-6 mx-auto w-10/11">
+				<ul className="hidden lg:flex space-x-0 mx-auto">
 					{menuItems(pathname, openDropdown, toggleDropdown, false)}
 				</ul>
 			</div>
@@ -136,7 +136,7 @@ function menuItems(
 			return (
 				<div key={label} className="relative">
 					<button
-						className={`px-4 italic cursor-pointer flex items-center transition text-greenCS ${
+						className={`px-4 italic cursor-pointer flex items-center transition text-greenCS text-lg ${
 							pathname === href ? "text-orange-400" : "text-[#15575B]"
 						} hover:text-orange-400`}
 						onClick={() => submenu && toggleDropdown(label)}
@@ -158,7 +158,7 @@ function menuItems(
 							{submenu.map(({ href: subHref, label: subLabel }) => (
 								<Link key={subHref} href={subHref}>
 									<li
-										className={`px-4 py-2 text-[#15575B] hover:text-orange-400 cursor-pointer italic font-medium ${
+										className={`px-4 py-2 text-[#15575B] hover:text-orange-400 cursor-pointer italic text-lg font-medium ${
 											pathname === subHref ? "text-orange-400" : ""
 										}`}
 									>
@@ -175,7 +175,7 @@ function menuItems(
 				<div key={href} className="relative group">
 					<Link href={href}>
 						<li
-							className={`px-4 py-2 cursor-pointer flex items-center transition ${
+							className={`px-4 py-2 cursor-pointer flex items-center transition text-lg ${
 								isActive ? "text-orange-400" : "text-white"
 							} hover:text-orange-400`}
 						>
@@ -192,7 +192,7 @@ function menuItems(
 							{submenu.map(({ href: subHref, label: subLabel }) => (
 								<Link key={subHref} href={subHref}>
 									<li
-										className={`px-4 py-2 text-[#15575B] hover:text-orange-400 cursor-pointer italic text-center font-medium ${
+										className={`px-4 py-2 text-[#15575B] hover:text-orange-400 cursor-pointer italic text-center font-medium text-lg ${
 											pathname === subHref ? "text-orange-400" : ""
 										}`}
 									>
