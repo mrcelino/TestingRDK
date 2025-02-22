@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function MimbarSubuh() {
 	return (
 		<>
-			<div className="flex flex-col justify-center items-center mt-12">
+			<div className="flex flex-col justify-center items-center mt-12" id="mimbar-subuh">
 				{/* Title */}
 				<div className="text-white bg-orangeCS border-2 lg:border-[3px] border-b-0 lg:border-b-0 border-black lg:p-4 lg:w-[40%] md:w-[50%] w-[60%] ml-16 md:ml-10 md:py-2 lg:py-4 lg:ml-0  rounded-t-[3rem]">
 					<h1 className="text-center font-heading lg:text-4xl text-xl text-shadow-lg">
@@ -23,7 +23,7 @@ export default function MimbarSubuh() {
 					/>
 
 					{/* Information */}
-					<div className="bg-greenCS border-[3px] border-black rounded-tr-[3rem] lg:rounded-tr-[6rem] lg:p-8 lg:pl-10 lg:py-9 md:py-6 text-white italic lg:w-[60%] md:w-[65%] w-[80%] h-[50%] font-medium text-xs lg:text-base p-2 px-8 pl-10 text-justify md:ml-16 lg:ml-0">
+					<div className="bg-greenCS border-[3px] border-black rounded-tr-[3rem] lg:rounded-tr-[6rem] lg:p-8 lg:pl-10 lg:py-9 md:py-6 text-white italic lg:w-[60%] md:w-[65%] w-[80%] h-[50%] font-medium text-[10px] lg:text-base p-2 px-8 pl-10 text-justify md:ml-16 lg:ml-0">
 						Kajian keilmuan ba'da  subuh bertujuan untuk
 						memanfaatkan waktu di bulan Ramadan dengan maksimal, serta
 						diharapkan mampu memberikan ilmu yang bermanfaat bagi peserta.

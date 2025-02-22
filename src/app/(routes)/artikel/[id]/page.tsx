@@ -8,19 +8,18 @@ import { useEffect, useState } from "react";
 
 export default function DetailArtikel() {
 	const [article, setArticle] = useState<Article | null>(null);
-const { id } = useParams(); // Destructuring langsung dari useParams
+	const { id } = useParams(); // Destructuring langsung dari useParams
 
-useEffect(() => {
-  const getArticle = async () => {
-    if (!id) return; // Pastikan id tersedia sebelum fetch
+	useEffect(() => {
+		const getArticle = async () => {
+			if (!id) return; // Pastikan id tersedia sebelum fetch
 
-    const data = await fetchArticleById(Number(id)); // Pastikan id dikonversi ke angka
-    setArticle(data);
-  };
+			const data = await fetchArticleById(Number(id)); // Pastikan id dikonversi ke angka
+			setArticle(data);
+		};
 
-  getArticle();
-}, [id]); // Hanya tergantung pada id
-
+		getArticle();
+	}, [id]); // Hanya tergantung pada id
 
 	if (!article) {
 		return (
@@ -70,14 +69,20 @@ useEffect(() => {
 						className="z-30"
 					/>
 					<div className="w-[3px] h-8 bg-greenCS"></div>
-					{/* Ini diganti jg */}
-					<p className="font-light italic text-greenCS ">March, 12 2025</p>
+					{/* Ini diganti jg JANGAN LUPA FORMAT */}
+					<p className="font-light italic text-greenCS ">
+						{new Date(article.date).toLocaleDateString("id-ID", {
+							day: "numeric",
+							month: "long",
+							year: "numeric",
+						})}
+					</p>
 				</div>
 
 				{/* Author and Editor */}
 				<div className="flex gap-4 mt-6 lg:ml-12 text-greenCS text-xs md:text-base">
-					<p className="font-semibold ">Penulis: Miftahul Khairati</p>
-					<p className="font-semibold ml-4">Editor: Miftahul Khairati</p>
+					<p className="font-semibold ">Penulis: {article.author}</p>
+					<p className="font-semibold ml-4">Editor: {article.editor}</p>
 				</div>
 
 				<div className="p-2 rounded mt-4 lg:mt-10 lg:w-2/3 lg:mx-auto max-w-screen-2xl">
@@ -88,7 +93,6 @@ useEffect(() => {
 						height={10}
 						className="lg:h-[80vh] lg:w-[700px] lg:h-[80vh] md:h-[70vh] md:w-[600px] h-[60vh] object-cover mx-auto"
 					/>
-
 
 					<p className="italic mt-5 text-center text-sm w-[90%] md:w-[85%] lg:w-full  mx-auto">
 						{article.article_images[0].image_description}
@@ -109,7 +113,7 @@ useEffect(() => {
 						)}
 				</article>
 
-				<Link href="/artikel">
+				<Link href={`/artikel`}>
 					<button className="py-2 px-4 border-2 md:border-[3px] lg:border-4 border-black bg-orangeCS rounded-full flex font-medium items-center italic mt-10 active:bg-orange-500 hover:bg-orange-500 ">
 						<svg
 							width="26"
