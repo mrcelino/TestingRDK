@@ -7,6 +7,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { fetchArticles, Article } from "@/app/lib/article";
+import Link from "next/link";
 
 export default function TopArticle() {
 	const [articles, setArticles] = useState<Article[]>([]);
@@ -73,62 +74,66 @@ export default function TopArticle() {
 					{articles.map((article) => (
 						<SwiperSlide key={article.id}>
 							<div className="relative w-full h-full ">
-								{/* Menampilkan gambar dari article_images */}
-								{article.article_images.length > 0 ? (
-									<Image
-										src={article.article_images[0].publicUrl || "/images/default.png"} 
-										alt={article.title}
-										width={1507}
-										height={805}
-										className="w-full md:h-[520px]  md:h-[520px]  object-cover lg:h-full"
-									/>
-								) : (
-									<div className="w-full h-full bg-gray-500 flex items-center justify-center">
-										<p className="text-white">Gambar tidak tersedia</p>
+								<Link href={`/artikel/${article.id}`}>
+									{/* Menampilkan gambar dari article_images */}
+									{article.article_images.length > 0 ? (
+										<Image
+											src={
+												article.article_images[0].publicUrl ||
+												"/images/default.png"
+											}
+											alt={article.title}
+											width={1507}
+											height={805}
+											className="w-full md:h-[520px]  md:h-[520px]  object-cover lg:h-full"
+										/>
+									) : (
+										<div className="w-full h-full bg-gray-500 flex items-center justify-center">
+											<p className="text-white">Gambar tidak tersedia</p>
+										</div>
+									)}
+
+									<div className="absolute 2xl:bottom-[16rem] lg:bottom-[14rem] lg:left-[4rem] md:bottom-[10rem] bottom-[8rem] md:left-[4rem]  left-4 flex gap-5 items-center z-20 text-xs ">
+										<p className="lg:text-xl text-orangeCS italic font-semibold">
+											RDK <span className="text-white">News</span>
+										</p>
+										<Image
+											src="/svg/logo-rdk.svg"
+											alt="Logo RDK"
+											width={30}
+											height={30}
+											className="hidden lg:block"
+										/>
+										<Image
+											src="/svg/logo-rdk.svg"
+											alt="Logo RDK"
+											width={20}
+											height={20}
+											className="lg:hidden"
+										/>
+										<div className="lg:w-[3px] w-[1px] lg:h-8 h-6 bg-white"></div>
+										<p className="font-light italic text-white lg:text-lg">
+											{new Date(article.date).toLocaleDateString("id-ID", {
+												day: "numeric",
+												month: "long",
+												year: "numeric",
+											})}
+										</p>
 									</div>
-								)}
 
-								<div className="absolute 2xl:bottom-[-10rem] lg:bottom-[0rem] lg:left-[4rem] md:bottom-[-20px] md:left-[4rem] top-[7rem] left-4 flex gap-5 items-center z-20 text-xs xl:invisible">
-									<p className="lg:text-xl text-orangeCS italic font-semibold">
-										RDK <span className="text-white">News</span>
-									</p>
+									{/* Judul Artikel */}
+									<div className=" absolute lg:bottom-16 md:bottom-14 bottom-5 text-center font-semibold italic text-white p-4  z-50 w-full lg:text-3xl md:text-xl lg:w-[75%] md:w-[70%] left-1/2 transform -translate-x-1/2">
+										{article.title}
+									</div>
+
 									<Image
-										src="/svg/logo-rdk.svg"
-										alt="Logo RDK"
-										width={30}
-										height={30}
-										className="hidden lg:block"
+										src="/images/smoke-green.png"
+										alt="smoke-rdk"
+										width={1507}
+										height={100}
+										className="absolute bottom-0 left-0 right-0 lg:h-[30rem] md:h-[25rem] h-[16rem] w-full"
 									/>
-									<Image
-										src="/svg/logo-rdk.svg"
-										alt="Logo RDK"
-										width={20}
-										height={20}
-										className="lg:hidden"
-									/>
-									<div className="lg:w-[3px] w-[1px] lg:h-8 h-6 bg-white"></div>
-									<p className="font-light italic text-white lg:text-lg">
-										{new Date(article.date).toLocaleDateString("id-ID", {
-											day: "numeric",
-											month: "long",
-											year: "numeric",
-										})}
-									</p>
-								</div>
-
-								{/* Judul Artikel */}
-								<div className="block absolute lg:bottom-16 bottom-5 text-center font-semibold italic text-white p-4 lg:w-[65%]  md:w-[80%] md:mx-[6rem] md:bottom-14 left-1/2 transform -translate-x-1/2 md:block z-50 w-full lg:text-3xl text-lg mx-auto">
-									{article.title}
-								</div>
-
-
-								<Image
-									src="/images/smoke-green.png"
-									alt="smoke-rdk"
-									width={1507}
-									height={100}
-									className="absolute bottom-0 left-0 right-0 lg:h-[30rem] md:h-[25rem] h-[16rem] w-full"
-								/>
+								</Link>
 							</div>
 						</SwiperSlide>
 					))}
