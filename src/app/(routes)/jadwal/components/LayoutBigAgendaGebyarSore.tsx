@@ -113,7 +113,7 @@ export default function LayoutBigAgendaGebyarSore({
             width={20}
             height={30}
             alt="petik"
-            className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute top-0.5 md:-top-1 lg:-top-2 -left-1 md:-left-4 lg:-left-10"
+            className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute top-0.5 md:-top-1 lg:-top-2 -left-3 md:-left-4 lg:-left-10"
           />
           <Image
             src={"images/jadwal/petik-kuning.svg"}
