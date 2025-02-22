@@ -166,6 +166,8 @@ export default function Food() {
         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
           <div className="relative p-8 bg-white rounded-[35px] lg:rounded-[50px] shadow-lg w-80 mt-14 sm:size-[350px]">
             <Image
+              width="300"
+              height="300"
               alt="A plate of Sate Betawi with dipping sauce and garnish"
               className="p-4 rounded-[50px] size-[350px] object-cover absolute top-0 left-0 z-0"
               src={selectedFood.menu_url}

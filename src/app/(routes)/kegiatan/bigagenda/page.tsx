@@ -56,7 +56,7 @@ function GrandOpening(){
 
       <section data-aos="fade-up" data-aos-duration="500" className="flex flex-col md:flex-row items-center md:justify-center p-4 xl:p-0 xl:mx-16 xl:gap-20 xl:mt-10">
         <Image
-          src="/images/kegiatan/laptop.svg"
+          src="/images/kegiatan/go.svg"
           width={300}
           height={300}
           className="w-96 xl:w-[500px] mb-5 xl:mb-10 md:order-2"
@@ -102,7 +102,7 @@ function MIT(){
 
       <section className="flex flex-col items-center md:flex-row md:justify-center p-4 xl:p-0 xl:mx-auto md:gap-10 xl:gap-20 xl:mt-10">
         <Image
-          src="/images/kegiatan/tablet.svg"
+          src="/images/kegiatan/mit.svg"
           width={300}
           height={300}
           className="w-72 md:w-80 xl:w-[550px] mb-4 xl:mb-10"
@@ -195,7 +195,7 @@ function GebyarSore(){
 
       <section className="flex flex-col items-center md:flex-row md:justify-center p-4 xl:p-0 xl:mx-16 md:gap-10 xl:gap-20 xl:mt-10">
         <Image
-          src="/images/kegiatan/monitor.svg"
+          src="/images/kegiatan/gebsor.svg"
           width={300}
           height={300}
           className="w-72 xl:w-[550px] mb-10 my-5 xl:mb-10"
