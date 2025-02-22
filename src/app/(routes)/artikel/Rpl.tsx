@@ -114,11 +114,8 @@ export default function RamadanPublicLecture() {
 					{articles.length > 0 ? (
 						articles
 							.filter((slide) => slide.category === "RPL")
-							.map((slide, index) => {
-								const totalBigAgenda = articles.filter(
-									(slide) => slide.category === "RPL"
-								).length;
-
+							.map((slide) => {
+							
 								return (
 									<SwiperSlide key={slide.id}>
 										<div

@@ -1,10 +1,10 @@
-import Image from "next/image";
+
 import HeroSlider from "./HeroSlider";
 import Head from "./Head";
 import AboutRdk from "./AboutRdk";
 import TemaRdk from "./TemaRdk";
 import RdkQuest from "./RdkQuest";
-import PhaserGame from "@/app/components/[game]/GameComponent";
+
 
 export default function Home() {
 	return (

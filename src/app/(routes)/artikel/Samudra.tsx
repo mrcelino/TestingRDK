@@ -114,10 +114,8 @@ export default function Samudra() {
 					{articles.length > 0 ? (
 						articles
 							.filter((slide) => slide.category === "Samudera")
-							.map((slide, index) => {
-								const totalBigAgenda = articles.filter(
-									(slide) => slide.category === "Samudera"
-								).length;
+							.map((slide) => {
+								
 
 								return (
 									<SwiperSlide key={slide.id}>

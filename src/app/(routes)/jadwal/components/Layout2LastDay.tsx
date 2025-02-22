@@ -1,9 +1,8 @@
-// Layout2LastDay.tsx
 
 "use client";
 
 import Image from "next/image";
-// import BigAgendaHeader from "./shared/BigAgendaHeader";
+
 
 interface ImageSpectacularShows {
   id: number;
@@ -123,9 +122,11 @@ export default function Layout2LastDay({
 
       {/* start info buka puasa */}
       {dataBigAgenda[0].image_spectacular_shows?.length > 0 ? (
-        <img
+        <Image
           // src="/images/jadwal/info_buka_example.png"
           src={dataBigAgenda[0].image_spectacular_shows[0].publicUrl}
+          width={500}
+          height={500}
           alt="informasi_berbuka"
           className="w-[300px] md:w-[332px] lg:w-[595px] object-contain rounded-[10px] hover:scale-105 transition"
         />

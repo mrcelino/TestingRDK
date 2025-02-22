@@ -6,13 +6,6 @@ import FaqTitle from './FaqTitle';
 
 export default function FAQ() {
 
-    const fetchFaqData = async () => {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(faqData);
-            }, 1000);
-        });
-    };
 
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
