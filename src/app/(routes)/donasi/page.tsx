@@ -46,7 +46,7 @@ function UpdateDonasiIftar() {
   
 
   return (
-    <div data-aos="fade-up" data-aos-duration="500">
+    <div data-aos="fade-up" data-aos-duration="1000">
       <section className="relative flex min-h-12 md:min-h-16 xl:min-h-24 mb-10 bg-white border-black border-2 lg:border-4 rounded-full mt-10 md:mt-20 xl:mx-auto mx-4 max-w-xl md:max-w-2xl xl:max-w-4xl sm:mx-auto">
         <div className="flex items-center bg-[#15575B] border-r-2 xl:border-r-4 border-black rounded-full justify-center p-2 w-1/2">
           <h2 className='font-medium font-body text-xs md:text-lg xl:text-2xl text-white italic '>Update Donasi</h2>
@@ -100,7 +100,7 @@ function UpdateDonasiKegiatan(){
   };
   
   return(
-    <div data-aos="fade-up" data-aos-duration="500">
+    <div data-aos="fade-up" data-aos-duration="1000">
       <section className="relative flex min-h-12 md:min-h-16 xl:min-h-24 mb-10  bg-white border-black border-2 lg:border-4 rounded-full mt-10 md:mt-20 xl:mx-auto mx-4 max-w-xl md:max-w-2xl xl:max-w-4xl sm:mx-auto">
         <div className="flex items-center bg-[#F4AA3D] border-r-2 xl:border-r-4 border-black rounded-full justify-center p-2 w-1/2">
           <h2 className='font-medium font-body text-xs md:text-lg xl:text-2xl text-white italic '>Update Donasi</h2>
@@ -152,7 +152,7 @@ function Information(){
         <h2>"Kamu sekali-kali tidak akan memperoleh kebajikan (yang sempurna) sebelum kamu menginfakkan sebagian harta yang kamu cintai. Apa pun yang kamu infakkan, sesungguhnya Allah Maha Mengetahui tentangnya." <span className='font-bold text-[#15575B]'>(QS. Ali Imran : 92)</span></h2>
       </section>
 
-      <section data-aos="fade-up" data-aos-duration="500" className='flex flex-col lg:flex-row justify-center items-center xl:flex-row lg:mx-24 xl:mx-auto gap-x-4 p-4 mt-4 md:mx-4'>
+      <section data-aos="fade-up" data-aos-duration="1000" className='flex flex-col lg:flex-row justify-center items-center xl:flex-row lg:mx-24 xl:mx-auto gap-x-4 p-4 mt-4 md:mx-4'>
           <div className='flex items-center justify-center font-body text-xs md:text-lg xl:w-[82%] p-2 md:p-4 xl:p-10 text-white lg:text-xl xl:tracking-wider italic leading-normal lg:leading-loose font-medium sm:min-h-16 xl:min-h-36 bg-[#F4AA3D] rounded-2xl xl:rounded-[35px] border-2 xl:border-4 border-black max-w-lg md:max-w-2xl xl:max-w-4xl'>
             <h2>Donasi Langsung melalui COD Sekitar Kampus UGM / Sekretariat Jama’ah Shalahuddin (Sayap Selatan Masjid Kampus UGM)</h2>
           </div>
@@ -173,7 +173,7 @@ function Information(){
 function JenisDonasi(){
   return(
     <>
-      <section data-aos="fade-up" data-aos-duration="500" className='flex relative mx-2 lg:mx-10 lg:justify-center lg:max-w-8xl 2xl:max-w-7xl 2xl:mx-auto mt-4'>
+      <section data-aos="fade-up" data-aos-duration="1000" className='flex relative mx-2 lg:mx-10 lg:justify-center lg:max-w-8xl 2xl:max-w-7xl 2xl:mx-auto mt-4'>
         <div className='xl:items-center xl:justify-center hidden xl:flex w-full relative'>
           <Image
                 src="/images/donasi/rdkmaskot.svg"
@@ -302,13 +302,13 @@ function KonfirmasiDonasi({ nama, linkKonfirmasi }: KonfirmasiDonasiProps) {
 function DonasiIftarSahur(){
   return(
     <>
-      <section data-aos="fade-up" data-aos-duration="500" className='flex items-center justify-center mx-4 xl:mx-auto md:mt-20'>
+      <section data-aos="fade-up" data-aos-duration="1000" className='flex items-center justify-center mx-4 xl:mx-auto md:mt-20'>
           <div className='flex items-center justify-center bg-[#F4AA3D] p-4 md:p-8 xl:p-12 w-full mt-20 rounded-full border-2 lg:border-4 border-black max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl'>
             <p className='text-xl md:text-2xl xl:text-5xl italic font-body '>Donasi Iftar dan Sahur</p>
           </div>
       </section>
 
-      <section data-aos="fade-up" data-aos-duration="500" className='flex items-center justify-center md:mt-10 mx-6 md:mx-auto mt-10'>
+      <section data-aos="fade-up" data-aos-duration="1000" className='flex items-center justify-center md:mt-10 mx-6 md:mx-auto mt-10'>
         <div className='flex flex-col bg-white items-center justify-center md:min-h-32 border-2 lg:border-4 rounded-2xl md:rounded-[40px]  border-black max-w-md md:max-w-2xl xl:max-w-full'>
           <h2 className='text-center text-xs md:text-xl font-body text-[#15575B] italic p-2 md:p-4 max-w-4xl leading-normal'>
             Seluruh donasi digunakan untuk 42.000 porsi buka bersama dan 10.000 porsi sahur selama acara 
@@ -321,7 +321,7 @@ function DonasiIftarSahur(){
 
 
 
-      <section data-aos="fade-up" data-aos-duration="500" className='flex flex-col h-96 xl:mx-auto xl:h-[600px] border-black border-2 xl:border-4 max-w-xs md:max-w-sm xl:max-w-xl mx-auto'>
+      <section data-aos="fade-up" data-aos-duration="1000" className='flex flex-col h-96 xl:mx-auto xl:h-[600px] border-black border-2 xl:border-4 max-w-xs md:max-w-sm xl:max-w-xl mx-auto'>
           <div className='flex flex-col items-center justify-center h-3/4 bg-[#15575B]'>
               <Image
                 src="/images/donasi/qrislogo.png"
@@ -377,13 +377,13 @@ function DonasiIftarSahur(){
 function DonasiKegiatan(){
   return(
     <div className='pb-20'>
-      <section data-aos="fade-up" data-aos-duration="500" className='flex items-center justify-center mx-4 xl:mx-auto mt-4 md:mt-20'>
+      <section data-aos="fade-up" data-aos-duration="1000" className='flex items-center justify-center mx-4 xl:mx-auto mt-4 md:mt-20'>
           <div className='flex items-center justify-center bg-[#15575B] p-4 md:p-8 xl:p-12 w-full mt-20 rounded-full border-2 xl:border-4 border-black max-w-md md:max-w-2xl lg:max-w-3xl xl:max-w-4xl'>
             <p className='text-lg md:text-2xl xl:text-5xl italic font-body text-white '>Donasi Kegiatan dan Kajian</p>
           </div>
       </section>
 
-      <section data-aos="fade-up" data-aos-duration="500" className='flex items-center justify-center md:mt-10 mx-6 md:mx-auto xl:mx-auto mt-10'>
+      <section data-aos="fade-up" data-aos-duration="1000" className='flex items-center justify-center md:mt-10 mx-6 md:mx-auto xl:mx-auto mt-10'>
         <div className='flex bg-white flex-col items-center justify-center md:min-h-32 border-2 lg:border-4 rounded-2xl md:rounded-[40px]  border-black max-w-md md:max-w-2xl xl:max-w-4xl'>
           <h2 className='text-center text-xs md:text-xl font-body text-[#15575B] italic p-2 md:p-4 max-w-4xl leading-normal'>
              Seluruh donasi digunakan untuk  rangkaian acara Ramadhan Di Kampus UGM 1446 H
@@ -394,7 +394,7 @@ function DonasiKegiatan(){
       
       <UpdateDonasiKegiatan/>
 
-      <section data-aos="fade-up" data-aos-duration="500" className='flex flex-col h-96 mx-auto xl:mx-auto xl:h-[600px] border-black border-2 xl:border-4 max-w-xs md:max-w-sm xl:max-w-xl md:mx-auto'>
+      <section data-aos="fade-up" data-aos-duration="1000" className='flex flex-col h-96 mx-auto xl:mx-auto xl:h-[600px] border-black border-2 xl:border-4 max-w-xs md:max-w-sm xl:max-w-xl md:mx-auto'>
           <div className='flex flex-col items-center justify-center h-3/4 bg-[#15575B]'>
             <Image
                 src="/images/donasi/qrislogo.png"
