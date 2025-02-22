@@ -44,16 +44,17 @@ export class ControllerScene extends Scene
     {   
 
 
-        const  joyStick = this.plugins.get('rexvirtualjoystickplugin')!.add(this, {
+        const joystickPlugin = (this.plugins.get('rexVirtualJoystickPlugin') as Phaser.Plugins.BasePlugin & {add : Function});
+        const joyStick = joystickPlugin.add(this, {
             x: 200,
             y: 550,
             radius: 50,
             base: this.add.circle(0, 0, 50, 0x888888),
             thumb: this.add.circle(0, 0, 25, 0xcccccc),
-            // dir: '8dir',   // 'up&down'|0|'left&right'|1|'4dir'|2|'8dir'|3
-            // forceMin: 16,
-            // enable: true
-        })
+            dir: '8dir', // 'up&down'|0|'left&right'|1|'4dir'|2|'8dir'|3
+            forceMin: 16,
+            enable: true
+        });
 
 
 
