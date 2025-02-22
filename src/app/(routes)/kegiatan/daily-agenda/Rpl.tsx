@@ -39,6 +39,7 @@ export default function RPL() {
 
                 {/* Dokumentasi Samudra */}
                 <Image
+                    data-aos="fade-up" data-aos-duration="1000"
                     src="/svg/kajian-samudra.svg"
                     alt="kajian samudra"
                     height={423}
