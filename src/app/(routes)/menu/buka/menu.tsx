@@ -39,7 +39,7 @@ function Menu({ food }: { food: Food }) {
         alt={food.menu}
         className="size-28 sm:size-36 xl:size-40 rounded-full border-4 border-black -mt-14 xl:-mt-8 z-10 hover:scale-110 transition duration-500 object-cover"
         height="100"
-        src={food.menu_url || "/images/makanan/place.png"}
+        src={food.menu_url || "/images/makanan/placeholder2.png"}
         width="100"
       />
       <div>
