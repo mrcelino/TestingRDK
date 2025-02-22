@@ -95,11 +95,11 @@ function menuItems(
 			],
 		},
 		{
-			href: "/makanan/buka",
+			href: "/menu/buka",
 			label: "Menu Hidangan",
 			submenu: [
-				{ href: "/makanan/buka", label: "Buka" },
-				{ href: "/makanan/sahur", label: "Sahur" },
+				{ href: "/menu/buka", label: "Buka" },
+				{ href: "/menu/sahur", label: "Sahur" },
 			],
 		},
 		{
@@ -117,7 +117,20 @@ function menuItems(
 	return links.map(({ href, label, submenu }) => {
 		const isOpen = openDropdown === label;
 		const isActive =
-			pathname === href || (submenu && pathname.startsWith(href));
+			pathname === href ||
+			(submenu && pathname.startsWith(href)) ||
+			(submenu &&
+				href.startsWith("/kegiatan") &&
+				["/kegiatan/bigagenda", "/kegiatan/daily-agenda"].some((route) =>
+					pathname.startsWith(route)
+				)) ||
+
+				// Nanti cukup pakai sub menu yang salah satunya saja
+			(submenu &&
+				href.startsWith("/menu") &&
+				["/menu/sahur", "/menu/buka"].some((route) =>
+					pathname.startsWith(route)
+				));
 
 		if (isMobile) {
 			return (
@@ -162,7 +175,7 @@ function menuItems(
 				<div key={href} className="relative group">
 					<Link href={href}>
 						<li
-							className={`px-4 py-2 cursor-pointer flex items-center transitionc ${
+							className={`px-4 py-2 cursor-pointer flex items-center transition ${
 								isActive ? "text-orange-400" : "text-white"
 							} hover:text-orange-400`}
 						>
