@@ -31,9 +31,7 @@ export class Pause extends Phaser.Scene {
             this.sys.canvas.classList.add('block')
             this.scale.refresh()
             const musicScene = this.scene.get("MusicScene");
-            if (musicScene && musicScene.bgMusic) {
-                musicScene.bgMusic.resume();
-            }
+
             this.scene.resume();
         });
 
@@ -41,15 +39,13 @@ export class Pause extends Phaser.Scene {
             this.sys.canvas.classList.remove('block')
             this.sys.canvas.classList.add('hidden')
             this.scene.pause();
-            const musicScene = this.scene.get("MusicScene");
-            if (musicScene && musicScene.bgMusic) {
-                musicScene.bgMusic.pause();
-            }
+
         });
 
 
         const PauseBox = this.add.image(0, 0, 'Pause-box').setScale(0.582);
         const Resume = this.add.image(0, 0, 'Resume-Button').setScale(0.4);
+
 
         PauseBox.setPosition(this.sys.canvas.width / 2, this.sys.canvas.height / 2);
         Resume.setPosition(this.sys.canvas.width / 2 + 390, 50);

@@ -13,6 +13,7 @@ import { MusicScene } from './[scene]/MusicScene';
 
 import PreviewScene from './[scene]/Preview';
 import { TutorialScene } from './[scene]/Tutorial';
+import { Escape } from './[scene]/Escape';
 //  Find out more information about the Game Config at:
 //  https://newdocs.phaser.io/docs/3.70.0/Phaser.Types.Core.GameConfig
 
@@ -48,7 +49,8 @@ const config: Phaser.Types.Core.GameConfig = {
         Ending,
         ControllerScene,
         MusicScene,
-        TutorialScene
+        TutorialScene,
+        Escape
     ],
     physics: {
         default: 'Arcade',

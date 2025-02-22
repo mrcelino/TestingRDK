@@ -83,7 +83,7 @@ export class NPCPemberiMakan extends Npc
         }
 
         this.scene.scene.launch("Textbox", { player: this.player, text: [...this.data.dialogs], order:  JSON.parse(JSON.stringify(this.data.order)), callback: ()=>{
-            this.player.makananQuest=1
+            this.player.makananQuest=1;
         }, correctAnswer: [...this.data.correctAnswer], npcProfile: this.data.frames[0] });
     }
 

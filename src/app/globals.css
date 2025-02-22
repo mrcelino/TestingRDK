@@ -45,4 +45,6 @@ canvas {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  z-index: 1;
+  position: relative; /* Ensure proper stacking context */
 }

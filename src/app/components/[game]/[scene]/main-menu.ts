@@ -36,12 +36,8 @@ export class Menu extends Scene
             this.sys.canvas.classList.remove('block')
             this.sys.canvas.classList.add('hidden')
             this.scene.pause();
-            const musicScene = this.scene.get("MusicScene");
-            if (musicScene && musicScene.bgMusic) {
-                musicScene.bgMusic.pause();
-            }
-        });
 
+        });
 
         const background = this.add.image(0, 0, 'MenuBackground').setOrigin(0, 0);
         background.displayWidth = this.sys.canvas.width;
@@ -109,15 +105,18 @@ export class Menu extends Scene
 
         
 
-
         
         EventBus.emit('current-scene-ready', this);
     }
 
     async lockOrientation() {
         try {
+            const isMobileOrTablet = /Mobi|Tablet|iPad|iPhone|Android/i.test(navigator.userAgent);
+            if (!isMobileOrTablet) {
+                return;
+            }
+
             if (!("orientation" in screen && "lock" in screen.orientation)) {
-                console.error("Screen orientation API is not supported.");
                 return;
             }
 
@@ -128,7 +127,6 @@ export class Menu extends Scene
 
             // Lock the orientation to landscape
             await screen.orientation.lock("landscape");
-            console.log("Orientation locked to landscape.");
         } catch (error) {
             console.error("Failed to lock orientation:", error);
         }
