@@ -1,7 +1,6 @@
 import { Tilemaps } from "phaser";
 import { Player } from "./Player";
 import { NavMesh } from "navmesh";
-import { ca, th } from "date-fns/locale";
 import { catsData } from "./const";
 
 export class Cat {
@@ -79,7 +78,7 @@ export class Cat {
                     if(this.inInteraction) {
                         this.needReset = true;
                         return;}
-                    this.moving();``
+                    this.moving();
                 });
             });
 
@@ -268,7 +267,7 @@ export class Cat {
             const randomIndex = Phaser.Math.Between(0, objectLayer.objects.length - 1);
             const randomObject = objectLayer.objects[randomIndex];
             if (randomObject.x !== undefined && randomObject.y !== undefined && randomObject.width !== undefined && randomObject.height !== undefined) {
-                var randomPoint = {
+                const randomPoint = {
                     x: Phaser.Math.Between(randomObject.x, randomObject.x + randomObject.width),
                     y: Phaser.Math.Between(randomObject.y, randomObject.y + randomObject.height)
                 };

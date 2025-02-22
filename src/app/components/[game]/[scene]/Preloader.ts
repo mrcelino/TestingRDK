@@ -1,6 +1,5 @@
 import { Scene } from "phaser";
 import { npcs } from "./utils/const";
-import { npcsAnims } from "./utils/anims";
 
 
 export class Preloader extends Scene {

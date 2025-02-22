@@ -41,6 +41,7 @@ export default class PreviewScene extends Phaser.Scene {
             await screen.orientation.lock("landscape");
 
         } catch (error) {
+            console.error("Failed to lock orientation:", error);
         }
     }
 }

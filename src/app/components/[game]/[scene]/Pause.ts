@@ -1,5 +1,4 @@
 import { EventBus } from "../EventBus";
-import GlobalFullscreenPlugin from "./utils/globalInitialize";
 import { Player } from "./utils/Player";
 
 
@@ -30,7 +29,6 @@ export class Pause extends Phaser.Scene {
             this.sys.canvas.classList.remove('hidden')
             this.sys.canvas.classList.add('block')
             this.scale.refresh()
-            const musicScene = this.scene.get("MusicScene");
 
             this.scene.resume();
         });
@@ -88,7 +86,7 @@ export class Pause extends Phaser.Scene {
 
     setUpAchivement() {
 
-        for (let achivement of Object.values(this.player.data.Achievements)) {
+        for (const achivement of Object.values(this.player.data.Achievements)) {
             const achievementImage = this.add.image(0, 0, 'Achivement').setScale(0.582);
             achievementImage.setPosition(this.sys.canvas.width / 2 +  achivement.position.x, achivement.position.y);
             this.pauseContainer.add(achievementImage);
@@ -117,16 +115,9 @@ export class Pause extends Phaser.Scene {
 
     setUpItem() {
         const itemsContainer = this.add.container(0, 0);
-        const SPACE = 20;
-        const ITEM_WIDTH = 70;
+
         const offset = this.sys.canvas.width / 2 - 390
 
-        const positions = [
-            { x: 0, y: 460 },
-            { x:   90, y: 460 },
-            { x:  180, y: 460 },
-            { x:  270, y: 460 }
-        ];
 
         for (const item of Object.values(this.player.data.Items)) {
             const itemHolder = this.add.image(0, 0, 'Item-Holder').setScale(0.5);

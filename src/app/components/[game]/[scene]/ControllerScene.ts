@@ -1,7 +1,5 @@
 import { Scene } from "phaser";
-import { Player } from "./utils/Player";
 import { Control } from "./utils/control";
-import GlobalFullscreenPlugin from "./utils/globalInitialize";
 
 
 

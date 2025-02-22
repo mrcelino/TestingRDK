@@ -12,7 +12,6 @@ export class TutorialScene extends Scene
             this.sys.canvas.classList.remove('hidden')
             this.sys.canvas.classList.add('block')
             this.scale.refresh()
-            const musicScene = this.scene.get("MusicScene");
 
             this.scene.resume();
         });

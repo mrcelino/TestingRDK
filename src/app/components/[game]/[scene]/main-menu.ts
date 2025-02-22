@@ -1,7 +1,5 @@
-import { Scene, Tilemaps } from "phaser";
+import { Scene } from "phaser";
 import { EventBus } from "../EventBus";
-import { Player } from "./utils/Player";
-import GlobalFullscreenPlugin from "./utils/globalInitialize";
 
 
 
@@ -48,7 +46,7 @@ export class Menu extends Scene
 
         let selectedValue: 'Pria' | 'Wanita'  = 'Pria';
 
-        let player = this.add.sprite(this.sys.canvas.width / 2, 250, "lkdepan1").setScale(10);
+        const player = this.add.sprite(this.sys.canvas.width / 2, 250, "lkdepan1").setScale(10);
 
         const priaBox = this.add.image(-150, 100, "Btn-laki-On").setOrigin(0.5);
         priaBox.setDisplaySize(100, 150)
