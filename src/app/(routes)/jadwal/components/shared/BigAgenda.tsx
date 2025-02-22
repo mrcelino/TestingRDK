@@ -257,7 +257,7 @@ export default function BigAgenda({
             {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
             {dataBigAgenda.source_person?.length > 0
               ? dataBigAgenda.source_person[0]?.profile?.name
-              : "Guest will be annouced soon"}
+              : ""}
           </p>
         </div>
         {/* right name container */}
@@ -266,7 +266,7 @@ export default function BigAgenda({
             {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
             {(dataBigAgenda.source_person as any)?.length > 1
               ? (dataBigAgenda.source_person as any)[1]?.profile?.name
-              : "Guest will be annouced soon"}
+              : ""}
           </p>
         </div>
       </div>
@@ -305,14 +305,14 @@ export default function BigAgenda({
         {/* moderrator name container */}
         <div className="relative w-[83%] h-[30px] md:h-[45px] lg:h-[69px] bg-white border lg:border-[3px] border-black rounded-[100px] flex flex-col items-start justify-center pl-5 md:pl-9 lg:pl-[40px]">
           {/* moderator name */}
-          <h1 className="text-[#F4AA3D] font-bold text-[8px] md:text-[10px] lg:text-sm italic font-body">
+          <h1 className="text-[#F4AA3D] font-bold text-[7.5px] md:text-[10px] lg:text-sm italic font-body">
             {/* Andri Pratama, M.Phil. */}
             {dataBigAgenda.moderator?.profile?.name || "???"}
           </h1>
           <hr className="absolute top-1/2 left-0 w-4/6 lg:border-[2px] border-black" />
           {/* ini hr dummy (ignore aja) */}
           <hr className="py-[1px] lg:py-1" />
-          <p className="text-[#15575B] font-bold text-[8px] md:text-[10px] lg:text-xs italic font-body">
+          <p className="text-[#15575B] font-bold text-[7.5px] md:text-[10px] lg:text-xs italic font-body">
             As Moderator
           </p>
         </div>

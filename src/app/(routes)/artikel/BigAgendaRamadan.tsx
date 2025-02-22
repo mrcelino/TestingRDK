@@ -11,14 +11,16 @@ import { Article, fetchArticles, updateArticleLike } from "@/app/lib/article";
 
 export default function BigAgendaRamadan() {
 	const [articles, setArticles] = useState<Article[]>([]);
-	const [loading, setLoading] = useState(true);
-	const [likedArticles, setLikedArticles] = useState<Record<number, boolean>>({});
+	const [likedArticles, setLikedArticles] = useState<Record<number, boolean>>(
+		{}
+	);
+	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
 		const getArticles = async () => {
 			const data = await fetchArticles();
 			setArticles(data);
-			setLoading(false);
+			setIsLoading(false);
 		};
 		getArticles();
 	}, []);
@@ -28,36 +30,42 @@ export default function BigAgendaRamadan() {
 		setArticles((prevArticles) =>
 			prevArticles.map((article) =>
 				article.id === articleId
-					? { ...article, like: article.like + (likedArticles[articleId] ? -1 : 1) }
+					? {
+							...article,
+							like: article.like + (likedArticles[articleId] ? -1 : 1),
+					  }
 					: article
 			)
 		);
-	
+
 		// Pastikan state terbaru digunakan
 		setLikedArticles((prev) => {
 			const newLikedArticles = { ...prev, [articleId]: !prev[articleId] };
-	
+
 			// Update backend dengan nilai terbaru
-			updateArticleLike(articleId, newLikedArticles[articleId] ? 1 : -1)
-				.catch(() => {
+			updateArticleLike(articleId, newLikedArticles[articleId] ? 1 : -1).catch(
+				() => {
 					// Jika gagal, rollback UI
 					setArticles((prevArticles) =>
 						prevArticles.map((article) =>
 							article.id === articleId
-								? { ...article, like: article.like + (newLikedArticles[articleId] ? -1 : 1) }
+								? {
+										...article,
+										like: article.like + (newLikedArticles[articleId] ? -1 : 1),
+								  }
 								: article
 						)
 					);
 					setLikedArticles(prev); // Rollback state like
-				});
-	
+				}
+			);
+
 			return newLikedArticles;
 		});
 	};
-	
 
 	return (
-		<li className="mb-10">
+		<li className="mb-10 max-w-7xl mx-auto">
 			{/* Title and Nav View More */}
 			<div className="flex justify-between items-center">
 				<div>
@@ -74,9 +82,9 @@ export default function BigAgendaRamadan() {
 				</Link>
 			</div>
 
-			{loading ? (
-				<div className="flex space-x-4 py-6">
-					{Array.from({ length: 3 }).map((_, index) => (
+			{isLoading ? (
+				<div className="flex space-x-4 mt-6">
+					{[...Array(3)].map((_, index) => (
 						<div
 							key={index}
 							className="bg-gray-200 animate-pulse w-[90%] lg:w-[25rem] h-[15rem] rounded-3xl"
@@ -114,18 +122,22 @@ export default function BigAgendaRamadan() {
 								return (
 									<SwiperSlide key={slide.id}>
 										<div
-											className={`my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[17rem]`}
+											className={`my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[17rem] max-w-lg mx-auto`}
 										>
-											<Link href={`/artikel/${slide.id}`} passHref>
+											<Link
+												href={`/artikel/${slide.id}`}
+												passHref
+												className="max-w-7xl"
+											>
 												<Image
 													alt={slide.title}
 													src={
 														slide.article_images?.[0]?.publicUrl ||
 														"/default.jpg"
 													}
-													width={500}
+													width={1000}
 													height={300}
-													className="rounded-t-3xl bg-black h-44 object-cover rounded-t-3xl"
+													className="rounded-t-3xl bg-black h-44 w-[500px] xl:w-full object-cover rounded-t-3xl "
 												/>
 											</Link>
 											<div className="flex bg-white rounded-b-3xl border-2 relative">
@@ -160,7 +172,7 @@ export default function BigAgendaRamadan() {
 							})
 					) : (
 						<div className="text-center py-4 text-gray-500">
-							Tidak ada kajian
+							<p className="font-heading text-lg">Kajian Belum tersedia</p>
 						</div>
 					)}
 				</Swiper>

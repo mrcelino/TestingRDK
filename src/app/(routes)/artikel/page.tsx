@@ -6,22 +6,20 @@ import HeroSlider from "./HeroSlider";
 import BigAgendaRamadan from "./BigAgendaRamadan";
 import Samudra from "./Samudra";
 import MimbarSubuh from "./MimbarSubuh";
-import Rpl from "./Rpl";
-
+import RamadanPublicLecture from "./Rpl";
 
 export default function Artikel() {
 
 	return (
 		<section>
 			<HeroSlider />
-	
+
 			<article className="p-4 w-11/12 mx-auto">
 				<ul>
 					<BigAgendaRamadan />
 					<Samudra />
-					<Rpl />
+					<RamadanPublicLecture />
 					<MimbarSubuh />
-					
 				</ul>
 			</article>
 		</section>

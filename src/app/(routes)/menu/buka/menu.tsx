@@ -14,7 +14,7 @@ type Food = {
 
 async function fetchData() {
   const baseurl  = process.env.NEXT_PUBLIC_API_BASE_URL
-  const response = await fetch(`${baseurl}menu-sahurs`, {
+  const response = await fetch(`${baseurl}menu-bukas`, {
     cache: "no-store",
   });
   const result = await response.json();
@@ -31,36 +31,41 @@ async function fetchData() {
 }
 
 
+
 function Menu({ food }: { food: Food }) {
   return (
     <div className="flex items-center space-x-2 mt-4 mx-auto">
       <img
         alt={food.menu}
-        className="size-28 sm:size-36 xl:size-40 rounded-full border-4 border-black -mt-14 xl:-mt-8 z-10 hover:scale-110 transition duration-500"
+        className="size-28 sm:size-36 xl:size-40 rounded-full border-4 border-black -mt-14 xl:-mt-8 z-10 hover:scale-110 transition duration-500 object-cover"
         height="100"
-        src={food.menu_url}
+        src={food.menu_url || "/images/makanan/placeholder2.png"}
         width="100"
       />
       <div>
-        <div className={`flex items-center justify-center text-white px-2 py-2 pl-14 xl:py-2 -ml-20 xl:mt-14 xl:-ml-20 sm:pl-20 xl:pl-16 xl:px-2 rounded-full border-4 border-black w-70 
+        <div className={`flex items-center justify-center text-white px-2 py-2 pl-14 xl:py-2 -ml-20 xl:mt-14 xl:-ml-20 sm:pl-20 xl:pl-16 xl:px-2 rounded-full border-4 border-black 
           ${food.day % 2 === 1 ? "bg-[#15575B]" : "bg-[#F4AA3D]"}`}>
           <span className="sm:text-2xl xl:text-2xl font-medium text-center italic">
             {food.date_romawi}
           </span>
         </div>
+        <div>
         <p className="text-xs sm:text-sm xl:text-lg italic font-semibold mt-2 -ml-1">
           Day {food.day} Ramadan
         </p>
         <p className="text-xs text-[#F4AA3D] italic font-body font-semibold sm:text-sm xl:text-lg -ml-1 mt-1">
           {food.menu}
         </p>
-        <p className="italic text-xs sm:text-sm -ml-1 mt-1 font-body font-medium xl:text-base max-w-40  md:max-w-56 min-w-40 sm:min-w-52 min-h-14 xl:min-h-[4.5rem] whitespace-pre-wrap ">
-          "{food.quote}"
+        <p className="text-xs sm:text-sm -ml-1 mt-1 font-body font-medium xl:text-base max-w-40  md:max-w-56 min-w-40 sm:min-w-52 min-h-14 xl:min-h-[4.5rem] whitespace-pre-wrap ">
+          {food.quote}
         </p>
+        </div>
+
       </div>
     </div>
   );
 }
+
 
 export default function Food() {
   const [foods, setFoods] = useState<Food[]>([]);
@@ -104,17 +109,37 @@ export default function Food() {
   const closeModal = () => setShowModal(false);
 
   const selectFoodByDate = useCallback(() => {
-    const todayDate = new Date().getDate();
-    const food = foods.find(food => food.day === todayDate);
-    
+    const today = new Date();
+
+    // Ambil tanggal, bulan, dan tahun
+    const day = today.getDate();
+    const monthIndex = today.getMonth(); // 0 = Januari, 1 = Februari, dst.
+    const year = today.getFullYear();
+
+    // Konversi bulan ke format teks sesuai API
+    const monthNames = [
+        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    ];
+    const month = monthNames[monthIndex];
+
+    // Format tanggal agar sesuai dengan API
+    const todayString = `${day} ${month} ${year}`;
+    console.log(todayString); // Contoh output: "22 Maret 2025"
+
+    // Cari makanan yang memiliki date_romawi sama dengan tanggal hari ini
+    const food = foods.find(food => food.date_romawi === todayString);
+
+    // Atur state berdasarkan hasil pencarian
     if (food) {
-      setSelectedFood(food);
-      setShowModal(true);
+        setSelectedFood(food);
+        setShowModal(true);
     } else {
-      setSelectedFood(null);
-      setShowModal(false);
+        setSelectedFood(null);
+        setShowModal(false);
     }
-  }, [foods]);
+}, [foods]);
+
   
 
   useEffect(() => {

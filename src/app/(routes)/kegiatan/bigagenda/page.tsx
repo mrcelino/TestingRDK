@@ -105,7 +105,7 @@ function MIT(){
   return(
     <div data-aos="fade-up" data-aos-duration="500">
       <section className="p-4 xl:p-0 xl:mx-32 xl:gap-20 xl:mt-10 md:flex md:justify-center">
-        <div className="ml-4 relative flex items-center min-h-12 md:h-14 md:w-1/2 xl:h-20 rounded-[50px] bg-[#15575B] pr-4 shadow-xl">
+        <div className="ml-4 relative flex items-center min-h-12 md:h-14 md:w-1/2 xl:h-20 rounded-[50px] bg-[#15575B] pr-4 shadow-xl xl:min-w-[650px]">
           <Image
             src="/images/kegiatan/circle2.png"
             width={500}
@@ -124,7 +124,7 @@ function MIT(){
         </div>
       </section>
 
-      <section className="flex flex-col items-center md:flex-row md:justify-center p-4 xl:p-0 xl:mx-auto xl:gap-20 xl:mt-10">
+      <section className="flex flex-col items-center md:flex-row md:justify-center p-4 xl:p-0 xl:mx-auto md:gap-10 xl:gap-20 xl:mt-10">
         <Image
           src="/images/kegiatan/tablet.svg"
           width={300}
@@ -151,7 +151,7 @@ function RDKFestival(){
   return(
     <div data-aos="fade-up" data-aos-duration="500">
       <section className="relative p-4 xl:p-0 xl:mx-32 xl:gap-20 xl:mt-10 md:flex md:justify-center">
-        <div className="ml-4 relative flex items-center min-h-12 md:h-14 md:w-1/2 xl:h-20 rounded-[50px] bg-[#F4AA3D] pr-4 shadow-xl">
+        <div className="ml-4 relative flex items-center min-h-12 md:h-14 md:w-1/2 xl:h-20 rounded-[50px] bg-[#F4AA3D] pr-4 shadow-xl xl:min-w-[650px]">
           <Image
             src="/images/kegiatan/circle.png"
             width={500}
@@ -171,7 +171,7 @@ function RDKFestival(){
         <div className="hidden md:block absolute rounded-full size-52 lg:size-72 blur-[80px] -top-20 -left-20 bg-[#76D0D5] opacity-50"></div>
       </section>
 
-      <section className="flex flex-col md:flex-row md:justify-center justify-around items-center mt-2 xl:mt-10 xl:items-center p-4 xl:p-0 xl:mx-4 xl:gap-20 xl:mb-28">
+      <section className="flex flex-col md:flex-row md:justify-center justify-around items-center mt-2 xl:mt-10 xl:items-center p-4 xl:p-0 xl:mx-4 md:gap-10 xl:gap-20 xl:mb-20">
         <Image
           src="/images/kegiatan/tv.svg"
           width={300}
@@ -196,9 +196,9 @@ function RDKFestival(){
 
 function GebyarSore(){
   return(
-    <div data-aos="fade-up" data-aos-duration="500">
+    <div data-aos="fade-up" data-aos-duration="500" className="pb-20">
       <section className="p-4 xl:p-0 xl:mx-32 xl:gap-20 md:flex md:justify-center">
-        <div className="ml-4 relative flex items-center min-h-12 md:h-14 md:w-1/2 xl:h-20 rounded-[50px] bg-[#15575B] pr-4 shadow-xl">
+        <div className="ml-4 relative flex items-center min-h-12 md:h-14 md:w-1/2 xl:h-20 rounded-[50px] bg-[#15575B] pr-4 shadow-xl xl:min-w-[650px]">
           <Image
             src="/images/kegiatan/circle2.png"
             width={500}
@@ -217,7 +217,7 @@ function GebyarSore(){
         </div>
       </section>
 
-      <section className="flex flex-col items-center md:flex-row md:justify-center p-4 xl:p-0 xl:mx-16 xl:gap-20 xl:mt-10">
+      <section className="flex flex-col items-center md:flex-row md:justify-center p-4 xl:p-0 xl:mx-16 md:gap-10 xl:gap-20 xl:mt-10">
         <Image
           src="/images/kegiatan/monitor.svg"
           width={300}

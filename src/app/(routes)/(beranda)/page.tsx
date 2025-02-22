@@ -9,10 +9,8 @@ import PhaserGame from "@/app/components/[game]/GameComponent";
 export default function Home() {
 	return (
 		<main>
-			{/* Hero Slider */}
-			<HeroSlider />
 
-			{/* Welcome to RDK */}
+			<HeroSlider />			
 			<Head />
 
 			{/* TTG RDK, Tema, RDK Quest */}

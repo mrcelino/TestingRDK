@@ -33,15 +33,12 @@ export default function RootLayout({
       <body
         className={`${worksans.variable} ${trirong.variable} antialiased font-body`}
       >
-        <AOSInitializer/>
         <Navbar />
+        <AOSInitializer />
         {children}
 
         <Footer />
 
-
-
-				{/* <Footer /> */}
 			</body>
 		</html>
 	);

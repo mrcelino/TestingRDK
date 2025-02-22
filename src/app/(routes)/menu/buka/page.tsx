@@ -24,9 +24,9 @@ function Menu(){
               className="size-10 sm:size-16 md:size-20 lg:size-24"
               src="/images/makanan/fork_knife.svg"
             />
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl  font-bold -mt-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl  font-bold -mt-6 mb-2">
               <span className="text-[#F4AA3D] font-body select-none drop-shadow-[0_2px_0_rgba(0,0,0,0.4)] xl:drop-shadow-[0_4px_0_rgba(0,0,0,0.4)]">
-                SPECIAL
+                IFTAR
               </span>
             </h1>
             <Image
@@ -37,8 +37,8 @@ function Menu(){
               src="/images/makanan/fork_knife.svg"
             />
           </div>
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold text-[#15575B] font-body -mt-6 drop-shadow-[0_2px_0_rgba(0,0,0,0.4)] xl:drop-shadow-[0_4px_0_rgba(0,0,0,0.4)]">
-            RAMADAN SAHUR
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold text-[#15575B] font-body -mt-6 drop-shadow-[0_2px_0_rgba(0,0,0,0.4)] xl:drop-shadow-[0_4px_0_rgba(0,0,0,0.4)]">
+            RAMADAN
           </h1>
           <div className="flex items-center justify-center mt-4">
             <Image
@@ -66,7 +66,7 @@ function Menu(){
 
 function Kupon(){
   return(
-    <>
+    <div className="pb-20">
       {/* Title */}
       <section className="mx-4">
         <section className="flex bg-white rounded-full mt-10 mx-auto sm:mx-auto sm:max-w-xl md:max-w-3xl lg:max-w-3xl w-full max-w-lg">
@@ -88,24 +88,22 @@ function Kupon(){
         </section>
       </section>
       {/* Video */}
-      <section className="flex justify-center items-center p-1 xl:p-2 bg-white border-2 border-black rounded-3xl mt-10 mx-4 sm:mx-auto lg:w-[550px] xl:w-[700px]">
+      <section className="flex justify-center items-center p-1 xl:p-2 bg-white max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-2xl border-2 border-black rounded-3xl mt-10 mx-auto lg:w-[550px] xl:w-[700px]">
         <iframe
-          width="560"
-          height="200"
-          src="https://www.youtube.com/embed/Tq8fxbbNCMU?si=Z3cSZ3Q0HoVOOzuL"
-          className="min-w-24 max-w-2xl rounded-2xl sm:h-64 lg:h-80 xl:w-[750px]"
+          src="https://www.youtube.com/embed/MIo4tGN11j0?si=A8WeFtaJCGQfoE4_" 
+          className="w-96 max-w-2xl rounded-2xl sm:w-[650px] sm:h-52 md:h-64 lg:h-80 xl:w-[750px]"
           title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerPolicy="strict-origin-when-cross-origin"
+					allowFullScreen
         ></iframe>
       </section>
-    </>
+    </div>
   )
 }
 export default function Buka() {
   return (
-    <div className="relative bg-gradient-to-b from-[#ffffff] from-1% to-[#21666A] to-40% xl:max-w-8xl  ">
+    <div className="relative bg-gradient-to-b from-[#ffffff] from-1% to-[#21666A] to-40% xl:max-w-8xl ">
       {/* Pattern pertama untuk area putih (opacity rendah, brightness 50) */}
       <div className="absolute inset-0 h-full bg-[url('/images/pattern-bg-mobile3.svg')] lg:bg-[url('/images/pattern-for-bg.svg')] bg-repeat opacity-20 mix-blend-difference brightness-50"></div>
       {/* Pattern kedua untuk area hijau (opacity lebih tinggi, brightness lebih terang) */}
