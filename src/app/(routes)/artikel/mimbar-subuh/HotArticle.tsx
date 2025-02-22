@@ -94,8 +94,12 @@ export default function HotArticle() {
 											className="z-30"
 										/>
 										<div className="lg:w-[3px] w-[1px] lg:h-6 h-6 bg-white"></div>
-										<p className="font-light italic text-white">
-											March, 12 2025
+										<p className="font-light italic text-white lg:text-lg">
+											{new Date(article.date).toLocaleDateString("id-ID", {
+												day: "numeric",
+												month: "long",
+												year: "numeric",
+											})}
 										</p>
 									</div>
 
