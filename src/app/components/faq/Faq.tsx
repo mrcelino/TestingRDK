@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { FAQHolder } from './FaqHolder';
-import { FaqData, faqData } from './Data';
+import { FaqData } from './Data';
 import FaqTitle from './FaqTitle';
 
 export default function FAQ() {
