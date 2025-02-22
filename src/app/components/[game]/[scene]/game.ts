@@ -686,8 +686,9 @@ export class GameScene extends Scene
                             }, correctAnswer: [1], npcProfile: "panitiaidle1", }, );
 
                             this.scene.get('Textbox').events.once('shutdown', () => {
-                                this.control.setInInteraction(false)});
+                                this.control.setInInteraction(false)
                                 this.setInInteraction(false)
+                            });
                         }else{
                             this.scene.launch("Textbox", { player: this.player, text: [
                                 {

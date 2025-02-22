@@ -257,7 +257,7 @@ export default function BigAgenda({
             {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
             {dataBigAgenda.source_person?.length > 0
               ? dataBigAgenda.source_person[0]?.profile?.name
-              : "Guest will be annouced soon"}
+              : ""}
           </p>
         </div>
         {/* right name container */}
@@ -266,7 +266,7 @@ export default function BigAgenda({
             {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
             {(dataBigAgenda.source_person as any)?.length > 1
               ? (dataBigAgenda.source_person as any)[1]?.profile?.name
-              : "Guest will be annouced soon"}
+              : ""}
           </p>
         </div>
       </div>
