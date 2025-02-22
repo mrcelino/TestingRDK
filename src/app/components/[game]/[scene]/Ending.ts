@@ -37,10 +37,7 @@ export class Ending extends Scene
             this.sys.canvas.classList.remove('block')
             this.sys.canvas.classList.add('hidden')
             this.scene.pause();
-            const musicScene = this.scene.get("MusicScene");
-            if (musicScene && musicScene.bgMusic) {
-                musicScene.bgMusic.pause();
-            }
+
         });
         this.cameras.main.setBackgroundColor('#000000');
 

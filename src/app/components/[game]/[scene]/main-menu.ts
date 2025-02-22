@@ -23,10 +23,7 @@ export class Menu extends Scene
             this.sys.canvas.classList.remove('hidden')
             this.sys.canvas.classList.add('block')
             this.scale.refresh()
-            const musicScene = this.scene.get("MusicScene");
-            if (musicScene && musicScene.bgMusic) {
-                musicScene.bgMusic.resume();
-            }
+
             this.scene.resume();
         });
 
@@ -114,7 +111,7 @@ export class Menu extends Scene
                 return;
             }
 
-            if (!("orientation" in screen && "lock" in screen.orientation)) {
+            if (!("orientation" in screen && "lock" in (screen.orientation as ScreenOrientation & { lock: (orientation: string) => Promise<void> }))) {
                 return;
             }
 
@@ -124,9 +121,9 @@ export class Menu extends Scene
             }
 
             // Lock the orientation to landscape
-            await screen.orientation.lock("landscape");
+            await (screen.orientation as ScreenOrientation & { lock: (orientation: string) => Promise<void> }).lock("landscape");
         } catch (error) {
             console.error("Failed to lock orientation:", error);
-        }
-    }
+        }
+    }
 }

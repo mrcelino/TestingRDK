@@ -1,5 +1,6 @@
 import { Scene } from "phaser";
 import { Control } from "./utils/control";
+import rexVirtualJoystickPlugin from 'phaser3-rex-plugins/plugins/virtualjoystick-plugin';
 
 
 
@@ -44,7 +45,7 @@ export class ControllerScene extends Scene
     {   
 
 
-        const joystickPlugin = (this.plugins.get('rexVirtualJoystickPlugin') as Phaser.Plugins.BasePlugin & {add : Function});
+        const joystickPlugin = (this.plugins.get('rexVirtualJoystickPlugin') as rexVirtualJoystickPlugin);
         const joyStick = joystickPlugin.add(this, {
             x: 200,
             y: 550,

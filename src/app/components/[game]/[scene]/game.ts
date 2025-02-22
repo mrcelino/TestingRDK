@@ -235,7 +235,7 @@ export class GameScene extends Scene
         }
 
         catsData.forEach(cat => {
-            this.cats.push(new Cat(this, this.player, map, cat.tileset, cat.position, navMesh));
+            this.cats.push(new Cat(this, this.player, map, cat.tileset, cat.position, navMesh!));
         })
     }
 

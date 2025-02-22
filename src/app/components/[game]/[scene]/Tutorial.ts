@@ -53,8 +53,8 @@ export class TutorialScene extends Scene
             welcomeTutorialText,
             {
                 font: '28px Arial',
-                fill: '#ffffff',
-                wordWrap: { width: papan.displayWidth - 40 }
+                wordWrap: { width: papan.displayWidth - 40 },
+                color: '#ffffff'
             }
         );
         tutorialText.setOrigin(0.5, 0);
