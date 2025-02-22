@@ -185,9 +185,11 @@ export default function Samudra({ data }: { data: AgendaItem }) {
                   />
                 </div>
 
-                <img
+                <Image
                   src="/images/jadwal/shadow.svg"
-                  alt=""
+                  alt="shadow"
+                  width={221}
+                  height={60}
                   className="absolute -bottom-6 md:-bottom-12 lg:-bottom-24 rotate-[-8deg]"
                 />
               </div>

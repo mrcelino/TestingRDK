@@ -106,10 +106,10 @@ export default function Calendar({
                       : "",
                     isHighlighted ? "bg-[#F4AA3D]" : "",
                     isEqual(day, selectedDay) && isToday(day)
-                      ? "bg-[#fceba5]"
+                      ? "bg-[#15575B]"
                       : "",
                     isEqual(day, selectedDay) && !isToday(day)
-                      ? "bg-[#15575B]"
+                      ? "bg-[#1c7378]"
                       : "",
                     !isEqual(day, selectedDay) ? "hover:bg-gray-200" : "",
                     isEqual(day, selectedDay) || isToday(day)
@@ -131,7 +131,7 @@ export default function Calendar({
   );
 }
 
-let colStartClasses: string[] = [
+const colStartClasses: string[] = [
   "",
   "col-start-2",
   "col-start-3",

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function JadwalGreet({ className, text }: any) {
+export default function JadwalGreet({ className, text }: {className : string; text : string}) {
   return (
     <div
       data-aos="fade-up"

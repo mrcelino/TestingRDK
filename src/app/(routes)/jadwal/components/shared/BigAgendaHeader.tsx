@@ -1,6 +1,6 @@
 "use client";
 
-export default function BigAgendaHeader({ text }: any) {
+export default function BigAgendaHeader({ text }: {text : string}) {
   return (
     <div
       data-aos="fade-up"

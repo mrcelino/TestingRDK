@@ -128,9 +128,11 @@ export default function LayoutBigAgendaGebyarSore({
         <div className="w-fit flex flex-row justify-center items-center md:mx-auto lg:mr-0 lg:ml-0">
           <div className="flex flex-row gap-x-1 md:gap-x-3 lg:gap-x-7 items-center">
             {/* icon location */}
-            <img
+            <Image
               src="images/jadwal/vector_location.svg"
-              alt=""
+              alt="icon_location"
+              width={100}
+              height={100}
               className="w-[8px] md:w-[11px] lg:w-[26px] h-[9px] md:h-[13px] lg:h-[31px]"
             />
             {/* lokasi */}
@@ -144,8 +146,10 @@ export default function LayoutBigAgendaGebyarSore({
           </div>
           <div className="flex flex-row gap-x-1 lg:gap-x-6 items-center ml-auto">
             {/* icon calendar */}
-            <img
+            <Image
               src="images/jadwal/vektor_kalender.svg"
+              width={100}
+              height={100}
               alt=""
               className="w-[10px] md:w-[14px] lg:w-[32px] h-[9px] md:h-[13px] lg:h-[30px]"
             />
