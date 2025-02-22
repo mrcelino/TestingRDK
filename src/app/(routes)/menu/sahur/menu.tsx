@@ -31,6 +31,7 @@ async function fetchData() {
 }
 
 
+
 function Menu({ food }: { food: Food }) {
   return (
     <div className="flex items-center space-x-2 mt-4 mx-auto">
@@ -38,7 +39,7 @@ function Menu({ food }: { food: Food }) {
         alt={food.menu}
         className="size-28 sm:size-36 xl:size-40 rounded-full border-4 border-black -mt-14 xl:-mt-8 z-10 hover:scale-110 transition duration-500 object-cover"
         height="100"
-        src={food.menu_url}
+        src={food.menu_url || "/images/makanan/place.png"}
         width="100"
       />
       <div>
@@ -108,17 +109,37 @@ export default function Food() {
   const closeModal = () => setShowModal(false);
 
   const selectFoodByDate = useCallback(() => {
-    const todayDate = new Date().getDate();
-    const food = foods.find(food => food.day === todayDate);
-    
+    const today = new Date();
+
+    // Ambil tanggal, bulan, dan tahun
+    const day = today.getDate();
+    const monthIndex = today.getMonth(); // 0 = Januari, 1 = Februari, dst.
+    const year = today.getFullYear();
+
+    // Konversi bulan ke format teks sesuai API
+    const monthNames = [
+        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    ];
+    const month = monthNames[monthIndex];
+
+    // Format tanggal agar sesuai dengan API
+    const todayString = `${day} ${month} ${year}`;
+    console.log(todayString); // Contoh output: "22 Maret 2025"
+
+    // Cari makanan yang memiliki date_romawi sama dengan tanggal hari ini
+    const food = foods.find(food => food.date_romawi === todayString);
+
+    // Atur state berdasarkan hasil pencarian
     if (food) {
-      setSelectedFood(food);
-      setShowModal(true);
+        setSelectedFood(food);
+        setShowModal(true);
     } else {
-      setSelectedFood(null);
-      setShowModal(false);
+        setSelectedFood(null);
+        setShowModal(false);
     }
-  }, [foods]);
+}, [foods]);
+
   
 
   useEffect(() => {
