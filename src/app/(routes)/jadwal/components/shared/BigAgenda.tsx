@@ -110,7 +110,7 @@ export default function BigAgenda({
                 width={15}
                 height={13}
                 alt="sign"
-                className="w-[6px] h-[6px] md:w-[9px] md:h-[9px] lg:w-[15px] lg:h-[13px]"
+                className="w-[6.5px] h-[6.5px] md:w-[9.5px] md:h-[9.5px] lg:w-[16px] lg:h-[15px]"
               />
               <Image
                 src="/images/jadwal/icon_comment.svg"
@@ -206,7 +206,7 @@ export default function BigAgenda({
                 width={15}
                 height={13}
                 alt="sign"
-                className="w-[6px] h-[6px] md:w-[9px] md:h-[9px] lg:w-[15px] lg:h-[13px]"
+                className="w-[6.5px] h-[6.5px] md:w-[9.5px] md:h-[9.5px] lg:w-[16px] lg:h-[15px]"
               />
               <Image
                 src="/images/jadwal/icon_comment.svg"
@@ -329,7 +329,7 @@ export default function BigAgenda({
           {/* <p className="text-[#FFC359] font-semibold text-[8px] md:text-[8px] lg:text-base italic font-body">
             Ramadan Berdaya:
           </p> */}
-          <p className="text-[#15575B] font-semibold max-w-[190px] md:max-w-[250px] lg:max-w-[550px] text-[8px] md:text-[8px] lg:text-base italic font-body">
+          <p className="text-[#15575B] font-semibold max-w-[180px] md:max-w-[250px] lg:max-w-[550px] text-[8px] md:text-[8px] lg:text-base italic font-body">
             {/* Upaya Kolaboratif Mewujudkan <br />
             Pembangunan Inklusif dan Berkelanjutan */}
             {dataBigAgenda.theme !== ""
@@ -341,7 +341,7 @@ export default function BigAgenda({
             width={20}
             height={30}
             alt="petik"
-            className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute top-0.5 md:-top-1 lg:-top-2 -left-1 md:-left-4 lg:-left-10"
+            className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute top-0.5 md:-top-1 lg:-top-2 -left-3 md:-left-4 lg:-left-10"
           />
           <Image
             src={"images/jadwal/petik-kuning.svg"}
@@ -351,7 +351,7 @@ export default function BigAgenda({
             className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute bottom-0 md:-bottom-1 lg:-bottom-2 -right-3 md:-right-5 lg:-right-10 rotate-180"
           />
         </div>
-        <hr className="border-b-[0.5px] lg:border-b-2 border-black w-9/12 my-auto" />
+        <hr className="border-b-[0.5px] lg:border-b-2 border-black w-9/12 my-2 lg:my-auto" />
         {/* tempat dan waktu */}
         <div className="w-fit flex flex-row justify-center items-center md:mx-auto lg:mr-0 lg:ml-0">
           <div className="flex flex-row gap-x-1 md:gap-x-3 lg:gap-x-7 items-center">

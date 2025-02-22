@@ -107,7 +107,7 @@ interface bigAgendaItem {
     | "Two_Last_Day"
     | "Gebyar_Sore";
   image_spectacular_shows: [ImageSpectacularShows];
-  source_person: Source_person;
+  source_person: [Source_person];
   moderator: Moderator;
 }
 
@@ -138,37 +138,69 @@ export default function JadwalPage() {
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   // fetching daily agenda & big agenda
-  useEffect(() => {
-    const fetchAgendas = async () => {
-      try {
-        const date = format(selectedDay, "yyyy-MM-dd");
+  // useEffect(() => {
+  //   const fetchAgendas = async () => {
+  //     try {
+  //       const date = format(selectedDay, "yyyy-MM-dd");
 
-        // Jalankan kedua fetch secara paralel dengan Promise.all
-        const [dailyResponse, bigResponse] = await Promise.all([
-          fetch(`${baseUrl}daily-agendas?date=${date}`),
-          fetch(`${baseUrl}big-agenda?date=${date}`),
-        ]);
+  //       // Jalankan kedua fetch secara paralel dengan Promise.all
+  //       const [dailyResponse, bigResponse] = await Promise.all([
+  //         fetch(`${baseUrl}daily-agendas?date=${date}`),
+  //         fetch(`${baseUrl}big-agenda?date=${date}`),
+  //       ]);
 
-        // Parse JSON response
-        const [dailyData, bigData]: [DailyAPIResponse, bigAPIResponse] =
-          await Promise.all([dailyResponse.json(), bigResponse.json()]);
+  //       // Parse JSON response
+  //       const [dailyData, bigData]: [DailyAPIResponse, bigAPIResponse] =
+  //         await Promise.all([dailyResponse.json(), bigResponse.json()]);
 
-        // Set state
-        setDailyAgenda(dailyData.data);
-        setBigAgenda(bigData.data);
+  //       // Set state
+  //       setDailyAgenda(dailyData.data);
+  //       setBigAgenda(bigData.data);
 
-        console.log("Daily Agenda:", dailyData.data);
-        console.log("Big Agenda:", bigData.data);
-      } catch (error) {
-        console.error("Error fetching agendas:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  //       console.log("Daily Agenda:", dailyData.data);
+  //       console.log("Big Agenda:", bigData.data);
+  //     } catch (error) {
+  //       console.error("Error fetching agendas:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchAgendas();
-  }, [selectedDay]);
+  //   fetchAgendas();
+  // }, [selectedDay]);
 
+  // fetching daily agenda & big agenda
+useEffect(() => {
+  const fetchAgendas = async () => {
+    setLoading(true); // Aktifkan loading sebelum fetching data
+    try {
+      const date = format(selectedDay, "yyyy-MM-dd");
+
+      // Jalankan kedua fetch secara paralel dengan Promise.all
+      const [dailyResponse, bigResponse] = await Promise.all([
+        fetch(`${baseUrl}daily-agendas?date=${date}`),
+        fetch(`${baseUrl}big-agenda?date=${date}`),
+      ]);
+
+      // Parse JSON response
+      const [dailyData, bigData]: [DailyAPIResponse, bigAPIResponse] =
+        await Promise.all([dailyResponse.json(), bigResponse.json()]);
+
+      // Set state
+      setDailyAgenda(dailyData.data);
+      setBigAgenda(bigData.data);
+
+      console.log("Daily Agenda:", dailyData.data);
+      console.log("Big Agenda:", bigData.data);
+    } catch (error) {
+      console.error("Error fetching agendas:", error);
+    } finally {
+      setLoading(false); // Matikan loading setelah fetching selesai
+    }
+  };
+
+  fetchAgendas();
+}, [selectedDay]);
   // Menentukan Highlited Dates berdasarkan Tanggal-tanggal big agenda
   useEffect(() => {
     const fetchHighlightDates = async () => {
@@ -181,7 +213,7 @@ export default function JadwalPage() {
             .filter(({ date }: { date: string }) => {
               const formattedDate = format(parseISO(date), "yyyy-MM-dd");
               return (
-                formattedDate !== "2025-03-28" && formattedDate !== "2025-03-29" // ini biar 28 dan 29 ga ikut highlited date karena dia bukan big agenda tapi 2lastday (2lastday nya dimaskin ke big-agenda buat naruh gambar doang)
+                formattedDate !== "2025-03-29" && formattedDate !== "2025-03-30" // ini biar 29 dan 30 ga ikut highlited date karena dia bukan big agenda tapi 2lastday (2lastday nya dimaskin ke big-agenda buat naruh gambar doang)
               );
             })
             .map(({ date }: { date: string }) => parseISO(date));
@@ -201,8 +233,8 @@ export default function JadwalPage() {
     const tanggal = format(selectedDay, "yyyy-MM-dd");
 
     // Tanggal batas
-    const beforeRamadanDate = parseISO("2025-03-01");
-    const afterRamadanDate = parseISO("2025-03-30");
+    // const beforeRamadanDate = parseISO("2025-03-01");
+    const afterRamadanDate = parseISO("2025-03-31");
     console.log(highlightDates[0]);
 
     if (isBefore(selectedDay, highlightDates[0])) {
@@ -412,26 +444,9 @@ export default function JadwalPage() {
           </>
         )}
 
-        {/* event */}
-
-        {/* event (untuk check aja)*/}
-
-        {/* <LayoutBigAgendaGrandOpening /> */}
-        {/* <LayoutBigAgendaRdkFest /> */}
-        {/* <LayoutBigAgendaMIT /> */}
-        {/* <LayoutDailyAgendaOnly /> */}
-        {/* <LayoutDailyAgendaNoMimbarSubuh /> */}
-        {/* <LayoutDailyAgendaRplOnly /> */}
-        {/* <LayoutBeforeRamadan /> */}
-        {/* <LayoutAgendaNotReleased /> */}
-        {/* <LayoutAfterRamadan /> */}
-        {/* <Layout2LastDay /> */}
-        {/* <LayoutIdulFitri /> */}
-
-        {/*  */}
-
         {/* end bagian content event */}
       </div>
     </div>
   );
 }
+
