@@ -137,13 +137,6 @@ function Header(){
   )
 }
 
-function Banner(){
-  return(
-    <>
-      
-    </>
-  )
-}
 
 function Information(){
   return(
@@ -156,7 +149,7 @@ function Information(){
           <div className='flex items-center justify-center font-body text-xs md:text-lg xl:w-[82%] p-2 md:p-4 xl:p-10 text-white lg:text-xl xl:tracking-wider italic leading-normal lg:leading-loose font-medium sm:min-h-16 xl:min-h-36 bg-[#F4AA3D] rounded-2xl xl:rounded-[35px] border-2 xl:border-4 border-black max-w-lg md:max-w-2xl xl:max-w-4xl'>
             <h2>Donasi Langsung melalui COD Sekitar Kampus UGM / Sekretariat Jama’ah Shalahuddin (Sayap Selatan Masjid Kampus UGM)</h2>
           </div>
-          <div className='hidden lg:block relative w-1/2 max-w-28 xl:max-w-40 lg:min-h-28 xl:min-h-40 bg-[#15575B] rounded-2xl xl:rounded-[35px] border-2 xl:border-4 border-black'>
+          <div className={`hidden lg:block relative w-1/2 max-w-28 xl:max-w-40 lg:min-h-28 xl:min-h-40 bg-[#15575B] rounded-2xl xl:rounded-[35px] border-2 xl:border-4 border-black`}>
             <Image
               src="/images/donasi/koin.png"
               alt="Maskot"
