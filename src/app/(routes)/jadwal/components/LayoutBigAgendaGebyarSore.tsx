@@ -1,16 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import BigAgenda from "./shared/BigAgenda";
 import DailyAgendaHeader from "./shared/DailyAgendaHeader";
 import JadwalGreet from "./shared/JadwalGreet";
 import MimbarSubuh from "./shared/MimbarSubuh";
 import RamadanPublicLecture from "./shared/RamadanPublicLecture";
 import Samudra from "./shared/Samudra";
 import BigAgendaHeader from "./shared/BigAgendaHeader";
-// import SpectacularShow from "./shared/SpectacularShow";
-
-// interface untuk dailyAgenda
 
 interface DailyAgendaItem {
   id: number;

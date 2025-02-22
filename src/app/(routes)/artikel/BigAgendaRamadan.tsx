@@ -114,11 +114,8 @@ export default function BigAgendaRamadan() {
 					{articles.length > 0 ? (
 						articles
 							.filter((slide) => slide.category === "Big_Agenda_Ramadhan")
-							.map((slide, index) => {
-								const totalBigAgenda = articles.filter(
-									(slide) => slide.category === "Big_Agenda_Ramadhan"
-								).length;
-
+							.map((slide) => {
+							
 								return (
 									<SwiperSlide key={slide.id}>
 										<div

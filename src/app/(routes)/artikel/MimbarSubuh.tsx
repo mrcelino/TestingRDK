@@ -114,10 +114,8 @@ export default function MimbarSubuh() {
 					{articles.length > 0 ? (
 						articles
 							.filter((slide) => slide.category === "Mimbar_Subuh")
-							.map((slide, index) => {
-								const totalBigAgenda = articles.filter(
-									(slide) => slide.category === "Mimbar_Subuh"
-								).length;
+							.map((slide) => {
+							
 
 								return (
 									<SwiperSlide key={slide.id}>
