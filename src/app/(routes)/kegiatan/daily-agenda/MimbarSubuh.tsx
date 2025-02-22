@@ -33,7 +33,7 @@ export default function MimbarSubuh() {
 				{/* Dokumentasi Samudra */}
 				<Image
 					data-aos="fade-up" data-aos-duration="1000"
-					src="/svg/kajian-samudra.svg"
+					src="/images/kegiatan/daily-agenda/misu.png"
 					alt="kajian samudra"
 					height={423}
 					width={859}

@@ -40,8 +40,8 @@ interface AgendaItem {
   date: string;
   time: string;
   big_agenda_type: string;
-  image_spectacular_shows: [ImageSpectacularShows];
-  source_person: [Source_person];
+  image_spectacular_shows: ImageSpectacularShows[];
+  source_person: Source_person[];
   moderator: Moderator;
 }
 
@@ -95,9 +95,8 @@ export default function BigAgenda({
               <div
                 style={{
                   backgroundImage:
-                    dataBigAgenda.source_person?.length > 0
-                      ? `url("${dataBigAgenda.source_person[0]?.profile?.publicUrl}")`
-                      : "none",
+                    `url("${dataBigAgenda?.source_person?.[0]?.profile?.publicUrl}")` ||
+                    "none",
                 }}
                 className="bg-cover bg-center w-full h-full"
               ></div>
@@ -128,9 +127,11 @@ export default function BigAgenda({
               />
             </div>
 
-            <img
+            <Image
               src="/images/jadwal/shadow.svg"
-              alt=""
+              alt="shadow"
+              width={221}
+              height={60}
               className="absolute -bottom-6 md:-bottom-12 lg:-bottom-24 rotate-[7deg]"
             />
 
@@ -138,9 +139,8 @@ export default function BigAgenda({
             <div className="absolute md:hidden top-1/2 left-24 w-[193px] h-[36px] bg-[#FBFBFB] border border-black rounded-tr-[100px] rounded-bl-[100px] rotate-[7deg] flex items-center justify-center px-2 shadow-md">
               <h2 className="font-bold text-[8px] text-[#F4AA3D] text-center italic font-body">
                 {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
-                {dataBigAgenda.source_person?.length > 0
-                  ? dataBigAgenda.source_person[0]?.profile?.name
-                  : "Guest will be annouced soon"}
+                {dataBigAgenda?.source_person?.[0]?.profile?.name ||
+                  "Guest will be annouced soon"}
               </h2>
             </div>
           </div>
@@ -188,12 +188,8 @@ export default function BigAgenda({
               <div
                 style={{
                   backgroundImage:
-                    (dataBigAgenda.source_person as any)?.length > 1
-                      ? `url("${
-                          (dataBigAgenda.source_person as any)[1]?.profile
-                            ?.publicUrl
-                        }")`
-                      : "none",
+                    `url("${dataBigAgenda?.source_person?.[1]?.profile?.publicUrl}")` ||
+                    "none",
                 }}
                 className="bg-cover bg-center w-full h-full"
               ></div>
@@ -224,9 +220,11 @@ export default function BigAgenda({
               />
             </div>
 
-            <img
+            <Image
               src="/images/jadwal/shadow.svg"
-              alt=""
+              alt="shadow"
+              width={221}
+              height={60}
               className="absolute -bottom-6 md:-bottom-12 lg:-bottom-24 rotate-[-8deg]"
             />
 
@@ -234,9 +232,8 @@ export default function BigAgenda({
             <div className="absolute md:hidden top-1/2 right-24 w-[193px] h-[36px] bg-[#F4AA3D] border border-black rounded-tr-[100px] rounded-bl-[100px] rotate-[-8deg] flex items-center justify-center px-2 shadow-md">
               <h2 className="font-bold text-[8px] text-[#15575B] text-center italic font-body">
                 {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
-                {(dataBigAgenda.source_person as any)?.length > 1
-                  ? (dataBigAgenda.source_person as any)[1]?.profile?.name
-                  : "Guest will be annouced soon"}
+                {dataBigAgenda?.source_person?.[1]?.profile?.name ||
+                  "Guest will be annouced soon"}
               </h2>
             </div>
           </div>
@@ -255,18 +252,14 @@ export default function BigAgenda({
         <div className="w-1/2 h-full border lg:border-[3px] border-black rounded-l-[100px] flex justify-center items-center">
           <p className="md:w-[219px] lg:w-[289px] text-[#F4AA3D] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-center font-body">
             {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
-            {dataBigAgenda.source_person?.length > 0
-              ? dataBigAgenda.source_person[0]?.profile?.name
-              : ""}
+            {dataBigAgenda?.source_person?.[0]?.profile?.name || ""}
           </p>
         </div>
         {/* right name container */}
         <div className="w-1/2 h-full bg-[#F4AA3D] border lg:border-[3px] border-black rounded-r-[100px] flex justify-center items-center">
           <p className="md:w-[219px] lg:w-[289px] text-[#15575B] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-center font-body">
             {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
-            {(dataBigAgenda.source_person as any)?.length > 1
-              ? (dataBigAgenda.source_person as any)[1]?.profile?.name
-              : ""}
+            {dataBigAgenda?.source_person?.[1]?.profile?.name || ""}
           </p>
         </div>
       </div>
@@ -356,9 +349,11 @@ export default function BigAgenda({
         <div className="w-fit flex flex-row justify-center items-center md:mx-auto lg:mr-0 lg:ml-0">
           <div className="flex flex-row gap-x-1 md:gap-x-3 lg:gap-x-7 items-center">
             {/* icon location */}
-            <img
+            <Image
               src="images/jadwal/vector_location.svg"
               alt=""
+              width={500}
+              height={500}
               className="w-[8px] md:w-[11px] lg:w-[26px] h-[9px] md:h-[13px] lg:h-[31px]"
             />
             {/* lokasi */}
@@ -372,9 +367,11 @@ export default function BigAgenda({
           </div>
           <div className="flex flex-row gap-x-1 lg:gap-x-6 items-center ml-auto">
             {/* icon calendar */}
-            <img
+            <Image
               src="images/jadwal/vektor_kalender.svg"
-              alt=""
+              alt="kalender"
+              width={500}
+              height={500}
               className="w-[10px] md:w-[14px] lg:w-[32px] h-[9px] md:h-[13px] lg:h-[30px]"
             />
             {/* waktu */}

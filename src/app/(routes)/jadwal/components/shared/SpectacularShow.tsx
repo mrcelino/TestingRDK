@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 // import Image from "next/image";
 
 interface ImageSpectacularShows {
@@ -40,7 +42,7 @@ interface AgendaItem {
   date: string;
   time: string;
   big_agenda_type: string;
-  image_spectacular_shows: [ImageSpectacularShows];
+  image_spectacular_shows: ImageSpectacularShows[];
   source_person: [Source_person];
   moderator: Moderator;
 }
@@ -74,7 +76,7 @@ export default function SpectacularShow({
           {/* photo container */}
           <div className="w-[103px] md:w-[104px] lg:w-[207px] h-[109px] md:h-[110px] lg:h-[219px] bg-gray-300 mx-auto lg:mb-auto">
             {/* <div className="w-full h-full bg-[url('/images/jadwal/polaroid_photo_example.png')] bg-cover bg-no-repeat bg-center"></div> */}
-            <div
+            {/* <div
               style={{
                 backgroundImage:
                   (dataBigAgenda[0].image_spectacular_shows as any)?.length > 1
@@ -85,15 +87,24 @@ export default function SpectacularShow({
                     : "none",
               }}
               className="bg-cover bg-no-repeat bg-center w-full h-full"
+            ></div> */}
+            <div
+              style={{
+                backgroundImage:
+                  `url("${dataBigAgenda[0]?.image_spectacular_shows?.[1]?.publicUrl}")` ||
+                  "??",
+              }}
+              className="bg-cover bg-no-repeat bg-center w-full h-full"
             ></div>
           </div>
           {/* photo title container */}
           <div className="m-auto">
             <h2 className="text-[#15575B] font-bold text-[8px] md:text-[6px] lg:text-[10px] italic w-20 md:w-12 lg:w-20 text-center font-body">
               {/* Aceh Dance By Rampoe UGM */}
-              {(dataBigAgenda[0].image_spectacular_shows as any)?.length > 1
+              {/* {(dataBigAgenda[0].image_spectacular_shows as any)?.length > 1
                 ? (dataBigAgenda[0].image_spectacular_shows as any)[1].title
-                : "???"}
+                : "???"} */}
+              {dataBigAgenda?.[0]?.image_spectacular_shows?.[1]?.title || "??"}
             </h2>
           </div>
         </div>
@@ -107,9 +118,8 @@ export default function SpectacularShow({
             <div
               style={{
                 backgroundImage:
-                  dataBigAgenda[0].image_spectacular_shows?.length > 0
-                    ? `url("${dataBigAgenda[0].image_spectacular_shows[0].publicUrl}")`
-                    : "none",
+                  `url("${dataBigAgenda?.[0]?.image_spectacular_shows?.[0]?.publicUrl}")` ||
+                  "none",
               }}
               className="bg-cover bg-no-repeat bg-center w-full h-full"
             ></div>
@@ -117,26 +127,24 @@ export default function SpectacularShow({
           {/* photo title container */}
           <div className="m-auto">
             <h2 className="text-[#15575B] font-bold text-[8px] md:text-[6px] lg:text-[10px] italic w-20 md:w-12 lg:w-20 text-center font-body">
-              {/* Aceh Dance By Rampoe UGM */}
-              {dataBigAgenda[0].image_spectacular_shows?.length > 0
-                ? dataBigAgenda[0].image_spectacular_shows[0].title
-                : "???"}
+              {/* Aceh Dance By Rampoe UGM */}?
+              {dataBigAgenda?.[0]?.image_spectacular_shows?.[0]?.title || "???"}
             </h2>
           </div>
 
           {/* pin top left*/}
-          <img
+          <Image
             src="/images/jadwal/vector_pin.png"
-            // width={47}
-            // height={48}
+            width={500}
+            height={500}
             alt="icon pin"
             className="absolute w-[24px] md:w-6 lg:w-[47px] h-[24px] md:h-6 lg:h-[48px] -top-3 md:-top-3 lg:-top-5 -left-0"
           />
           {/* pin bottom right */}
-          <img
+          <Image
             src="/images/jadwal/vector_pin.png"
-            // width={47}
-            // height={48}
+            width={500}
+            height={500}
             alt="icon pin"
             className="absolute w-[24px] md:w-6 lg:w-[47px] h-[24px] md:h-6 lg:h-[48px] bottom-6 md:bottom-6 lg:bottom-11 -right-2 lg:-right-3"
           />
@@ -151,12 +159,8 @@ export default function SpectacularShow({
             <div
               style={{
                 backgroundImage:
-                  (dataBigAgenda[0].image_spectacular_shows as any)?.length > 2
-                    ? `url("${
-                        (dataBigAgenda[0].image_spectacular_shows as any)[2]
-                          .publicUrl
-                      }")`
-                    : "none",
+                  `url("${dataBigAgenda?.[0]?.image_spectacular_shows?.[2]?.publicUrl}")` ||
+                  "none",
               }}
               className="bg-cover bg-no-repeat bg-center w-full h-full"
             ></div>
@@ -165,9 +169,8 @@ export default function SpectacularShow({
           <div className="m-auto">
             <h2 className="text-[#15575B] font-bold text-[8px] md:text-[6px] lg:text-[10px] italic w-20 md:w-12 lg:w-20 text-center font-body">
               {/* Aceh Dance By Rampoe UGM */}
-              {(dataBigAgenda[0].image_spectacular_shows as any)?.length > 2
-                ? (dataBigAgenda[0].image_spectacular_shows as any)[2].title
-                : "???"}
+              {dataBigAgenda?.[0]?.image_spectacular_shows?.[2]?.title ||
+                "none"}
             </h2>
           </div>
         </div>
