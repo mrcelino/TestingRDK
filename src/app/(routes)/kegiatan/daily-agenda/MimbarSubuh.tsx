@@ -5,21 +5,21 @@ export default function MimbarSubuh() {
 		<>
 			<div className="flex flex-col justify-center items-center mt-12" id="mimbar-subuh">
 				{/* Title */}
-				<div className="text-white bg-orangeCS border-2 lg:border-[3px] border-b-0 lg:border-b-0 border-black lg:p-4 lg:w-[40%] md:w-[50%] w-[60%] ml-16 md:ml-10 md:py-2 lg:py-4 lg:ml-0  rounded-t-[3rem]">
+				<div data-aos="fade-up" data-aos-duration="1000" className="text-white bg-orangeCS border-2 lg:border-[3px] border-b-0 lg:border-b-0 border-black lg:p-4 lg:w-[40%] md:w-[50%] w-[60%] ml-16 md:ml-10 md:py-2 lg:py-4 lg:ml-0  rounded-t-[3rem]">
 					<h1 className="text-center font-heading lg:text-4xl text-xl text-shadow-lg">
 						Mimbar Subuh
 					</h1>
 				</div>
 
 				{/* Date & Information */}
-				<div className="flex md:justify-center mx-auto justify-end w-full relative ">
+				<div data-aos="fade-right" data-aos-duration="1000" className="flex md:justify-center mx-auto justify-end w-full relative ">
 					{/* Date */}
 					<Image
 						src="/svg/misu-time.svg"
 						alt="date"
 						height={176}
 						width={176}
-						className="lg:h-[176px] w-[115px] h-[115px] lg:w-[176px] transform lg:translate-x-[10%] lg:-translate-y-[12%] absolute lg:static -left-2 -top-2 md:left-16 md:top-[-0.7rem] animate-slideInLeft"
+						className="lg:h-[176px] w-[115px] h-[115px] lg:w-[176px] transform lg:translate-x-[10%] lg:-translate-y-[12%] absolute lg:static -left-2 -top-2 md:left-16 md:top-[-0.7rem]"
 					/>
 
 					{/* Information */}
@@ -32,6 +32,7 @@ export default function MimbarSubuh() {
 
 				{/* Dokumentasi Samudra */}
 				<Image
+					data-aos="fade-up" data-aos-duration="1000"
 					src="/svg/kajian-samudra.svg"
 					alt="kajian samudra"
 					height={423}

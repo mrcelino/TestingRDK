@@ -9,11 +9,11 @@ export default function RdkQuest() {
 
 	return (
 		<div className="mx-auto max-w-5xl" id="rdk-quest">
-			<h1 className="lg:text-5xl text-2xl text-greenCS lg:w-[50%] md:w-[55%] w-3/4 bg-orangeCS border-black lg:border-4 border-2 rounded-tr-[50px] rounded-bl-[50px] lg:rounded-tr-[30px] lg:rounded-bl-[30px]  lg:py-3 lg:px-10 text-center mx-auto font-heading md:mt-20 mt-10 py-2 text-shadow-md">
+			<h1 data-aos="fade-up" data-aos-duration="1000" className="lg:text-5xl text-2xl text-greenCS lg:w-[50%] md:w-[55%] w-3/4 bg-orangeCS border-black lg:border-4 border-2 rounded-tr-[50px] rounded-bl-[50px] lg:rounded-tr-[30px] lg:rounded-bl-[30px]  lg:py-3 lg:px-10 text-center mx-auto font-heading md:mt-20 mt-10 py-2 text-shadow-md">
 				RDK Quest
 			</h1>
 
-			<div className="text-greenCS text-center lg:text-xl  mx-auto mt-10 lg:mt-10 md:mt-4 font-body ">
+			<div data-aos="fade-up" data-aos-duration="1000" className="text-greenCS text-center lg:text-xl  mx-auto mt-10 lg:mt-10 md:mt-4 font-body ">
 				<p className="font-bold">
 					RDK Quest: Petualangan Ramadan di Masjid Kampus UGM!
 				</p>
@@ -33,12 +33,13 @@ export default function RdkQuest() {
 
 			{/* Game */}
 
-			<div className="md:border-[3px] lg:border-4 border-2 border-black lg:w-[75%] md:h-[22rem] lg:h-[500px] mx-auto md:p-4 p-3 rounded-3xl mt-10 h-[14rem] flex justify-center items-center overflow-hidden">
+			<div data-aos="zoom-in" data-aos-duration="1000" className="md:border-[3px] lg:border-4 border-2 border-black lg:w-[75%] md:h-[22rem] lg:h-[500px] mx-auto md:p-4 p-3 rounded-3xl mt-10 h-[14rem] flex justify-center items-center overflow-hidden">
 				<PhaserGame/>
 
 			</div>
 
 			<button
+				data-aos="fade-up" data-aos-duration="1000"
 				onClick={() => {
 					document.getElementById('game-container')?.classList.add('block');
 					document.getElementById('game-container')?.requestFullscreen();
