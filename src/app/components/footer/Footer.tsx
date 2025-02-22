@@ -11,15 +11,15 @@ export default function Footer() {
 		<div className="right-0 bottom-100 left-0 absolute">
 			<div className="flex grid grid-cols-2 items-center text-white w-full bg-greenCS border-black md:border-y-[3px] lg:border-y-4 border-y-2 relative">
 				{/* Ramadhan penuh berkah */}
-				<div className="italic text-center lg:p-10 lg:text-3xl md:text-xl font-light text-xs ">
-					<p>
-						“Ramadan Penuh <span className="font-bold">Berkah,</span>
+				<div className="italic text-center lg:p-10 lg:text-3xl md:text-xl font-light text-xs 2xl:text-end 2xl:mr-10 font-title font-thin">
+					<p >
+						“Ramadan Penuh <span className="font-black">Berkah,</span>
 					</p>
 					<p>
-						Mari Raih <span className="font-bold">Pahala Jariyah</span>
+						Mari Raih <span className="font-black">Pahala Jariyah</span>
 					</p>
 					<p>
-						Mulai dari <span className="font-bold">Satu Rupiah”</span>
+						Mulai dari <span className="font-black">Satu Rupiah”</span>
 					</p>
 				</div>
 
@@ -29,7 +29,7 @@ export default function Footer() {
 					alt="Logo"
 					width={225}
 					height={225}
-					className="absolute hidden top md:block lg:left-[40%] xl:left-[45%] 2xl:left-[48%] lg:bottom-[-5rem] left-[37%] bottom-[-2rem] h-[160px] lg:h-full"
+					className="absolute hidden top md:block lg:left-[40%] xl:left-[45%] 2xl:left-[48%] lg:bottom-[-5rem] left-[37%] bottom-[-2rem] h-[160px] lg:h-full "
 				/>
 
 				{/* Mobile */}
@@ -42,13 +42,13 @@ export default function Footer() {
 				/>
 
 				{/* Titipkan Kebaikan */}
-				<div className="text-white bg-orangeCS border-black rounded-s-full md:border-l-[3px]  border-l-2 md:p-10 p-3 pl-10 font-bold md:flex md:justify-center">
+				<div className="text-white bg-orangeCS border-black rounded-s-full md:border-l-[3px]  border-l-2 md:p-10 p-3 pl-10  md:flex md:justify-center ">
 					<div>
-						<p className="lg:text-3xl md:text-xl text-greenCS text-xs">
+						<p className="lg:text-3xl md:text-xl text-greenCS text-xs font-bold">
 							Titipkan Kebaikan,
 						</p>
-						<p className="lg:text-5xl md:text-2xl text-sm">Tebarkan</p>
-						<p className="lg:text-5xl text-sm md:text-2xl">Keberkahan</p>
+						<p className="lg:text-5xl md:text-2xl text-sm font-heading">Tebarkan</p>
+						<p className="lg:text-5xl text-sm md:text-2xl font-heading">Keberkahan</p>
 					</div>
 
 					<div />
@@ -136,14 +136,19 @@ export default function Footer() {
 
 						<div className="flex justify-evenly items-center text-greenCS font-bold mt-6 text-sm gap-2 text-center ">
 							{/* Narahubung Donasi Kegiatan */}
-							<p className="rounded-2xl border-2 md:border-[3px] lg:border-4 border-[#15575B] py-2 px-4 md:px-0 lg:px-3 md:text-xs lg:text-sm">
-								0895332785320 (Salma Arsepti)
-							</p>
+							<Link href="https://wa.me/62895332785320" target="_blank">
+								<p className="rounded-2xl border-2 md:border-[3px] lg:border-4 border-[#15575B] py-2 px-4 md:px-0 lg:px-3 md:text-xs lg:text-sm">
+									0895332785320 (Salma Arsepti)
+								</p>
+							</Link>
 
 							{/* Narahubung Donasi Buka & Sahur */}
-							<p className="rounded-2xl border-2 md:border-[3px] lg:border-4 border-[#15575B] py-2 px-4 md:px-0 lg:px-3 md:text-xs  lg:text-sm ">
-								081377660189 (Rofi’ Khoirullah)
-							</p>
+
+							<Link target="_blank" href="https://wa.me/6281377660189">
+								<p className="rounded-2xl border-2 md:border-[3px] lg:border-4 border-[#15575B] py-2 px-4 md:px-0 lg:px-3 md:text-xs  lg:text-sm ">
+									081377660189 (Rofi’ Khoirullah)
+								</p>
+							</Link>
 						</div>
 					</div>
 
@@ -152,7 +157,9 @@ export default function Footer() {
 						{/* Konfirmasi Donasi Operasional */}
 						<div className="mt-6 w-fit mx-auto rounded-lg border-2 lg:border-4 border-[#15575B] transform -translate-x-2 md:translate-x-0 ">
 							<div className="text-xs bg-greenCS text-white p-1 text-center md:py-1 lg:p-1 ">
-								<p className="w-[120px] lg:w-full mx-auto">Konfirmasi Donasi Kegiatan</p>
+								<p className="w-[120px] lg:w-full mx-auto">
+									Konfirmasi Donasi Kegiatan
+								</p>
 							</div>
 							<Link
 								href="https://bit.ly/DonasiOperasionalRDK46H"
@@ -170,8 +177,10 @@ export default function Footer() {
 
 						{/* Konfirmasi Donasi sahur Buka */}
 						<div className="mt-6 w-fit mx-auto rounded-lg border-2 lg:border-4 border-[#15575B] ml-2 md:ml-4">
-						<div className="text-xs bg-greenCS text-white p-1 text-center md:py-1 lg:p-1 ">
-								<p className="w-[120px] lg:w-full mx-auto">Konfirmasi Donasi Sahur & Buka</p>
+							<div className="text-xs bg-greenCS text-white p-1 text-center md:py-1 lg:p-1 ">
+								<p className="w-[120px] lg:w-full mx-auto">
+									Konfirmasi Donasi Sahur & Buka
+								</p>
 							</div>
 							<Link href="https://bit.ly/DonasiSahurBukaRDK46H" target="_blank">
 								<p className="text-greenCS font-semibold p-2 lg:text-base xl:hidden text-center">
@@ -191,7 +200,7 @@ export default function Footer() {
 					{/* Donasi Iftar dan Sahur */}
 					<div className="border-2 md:border-0 border-black lg:mb-0 bg-green-400">
 						{/* Title */}
-						<div className="text-center bg-orangeCS font-bold lg:text-xl py-2 lg:border-b-4 border-b-2 border-black ">
+						<div className="text-center bg-orangeCS lg:text-xl py-2 lg:border-b-4 border-b-2 border-black font-heading">
 							<p>Donasi</p>
 							<p>Iftar dan Sahur</p>
 						</div>
@@ -263,7 +272,7 @@ export default function Footer() {
 					{/* Donasi Kegiatan */}
 					<div className="border-2 border-black lg:mb-0 md:border-l-[3px] lg:border-l-4 md:border-0 bg-green-400 mt-10 md:mt-0">
 						{/* Title */}
-						<div className="text-center bg-orangeCS font-bold lg:text-xl py-[1.37rem] md:py-[1.235rem] lg:py-[1.37rem] md:h-fit border-black  lg:border-b-4 border-b-2  md:border-b-[3px] lg:border-0">
+						<div className="text-center bg-orangeCS  lg:text-xl py-[1.37rem] md:py-[1.235rem] lg:py-[1.37rem] md:h-fit border-black  lg:border-b-4 border-b-2  md:border-b-[3px] lg:border-0 font-heading">
 							<p>Donasi Kegiatan</p>
 						</div>
 
@@ -316,10 +325,12 @@ export default function Footer() {
 			{/* Quotes RDK */}
 			<div className="relative">
 				<div className="bg-greenCS mt-10 flex justify-center items-center z-10 border-y-2 md:border-y-[3px] lg:border-y-4 border-black p-4 px-10 lg:p-10">
-					<div className="bg-white border-black lg:border-4 p-4 border-2 rounded-3xl text-center italic text-greenCS font-medium text-xs lg:text-base lg:py-8 md:w-2/3 lg:w-[75%] lg:max-w-3xl">
+					<div className="bg-white border-black lg:border-4 p-5 border-2 rounded-3xl text-center italic text-greenCS font-medium text-xs lg:text-base lg:py-8 md:w-2/3 lg:w-[75%] lg:max-w-3xl">
 						<p>
 							"Kamu sekali-kali tidak akan memperoleh kebajikan (yang sempurna)
-							sebelum kamu menginfakkan sebagian harta yang kamu cintai. Apa pun{" "}
+							sebelum kamu menginfakkan sebagian harta yang kamu cintai. Apa pun
+							yang kamu infakkan, sesungguhnya Allah Maha Mengetahui
+							tentangnya." <br />
 							<span className="font-bold">(QS. Ali Imran : 92)</span>
 						</p>
 					</div>
@@ -331,7 +342,7 @@ export default function Footer() {
 					alt="Logo"
 					width={200}
 					height={200}
-					className="absolute top-[-0.5rem] left-[10%] lg:top-[-2rem] lg:left-[-1%] xl:left-[8%] hidden md:block lg:w-[200px] md:w-[100px] "
+					className="absolute top-[-0.5rem] left-[10%] lg:top-[-2rem] lg:left-[-1%] xl:left-[5rem] hidden md:block lg:w-[200px] md:w-[100px] "
 				/>
 
 				{/* Maskot Mobile*/}
@@ -346,7 +357,7 @@ export default function Footer() {
 
 			{/* Footer Bawah */}
 			<div className="bg-greenCS mt-10 text-white text-xs lg:text-base relative">
-				<div className="lg:py-7 lg:px-14 p-4 lg:flex ">
+				<div className="lg:py-7 lg:px-14 p-4 lg:flex  max-w-7xl mx-auto ">
 					{/* Kiri */}
 					<div className="">
 						<p className="font-heading lg:text-3xl text-base ">
@@ -361,7 +372,9 @@ export default function Footer() {
 						</p>
 						<p className="font-semibold">Universitas Gadjah Mada</p>
 
-						<div className="flex mt-7">
+						{/* Address */}
+						{/* Belum bisa diklik karena z-index di bawah */}
+						<div className="flex mt-7 z-50">
 							<Image
 								src="/images/footer/location.png"
 								alt="logo"
@@ -371,14 +384,17 @@ export default function Footer() {
 							/>
 
 							<div className="ml-2">
-								<p>
-									Sekretariat Jama’ah Shalahuddin, Sayap Selatan Masjid Kampus
-									UGM
-								</p>
-								<p>Jl. Tevesia No. 1 Bulaksumur, UGM, Yogyakarta 55281</p>
+								<Link href="https://g.co/kgs/h3kBLMV">
+									<p>
+										Sekretariat Jama’ah Shalahuddin, Sayap Selatan Masjid Kampus
+										UGM
+									</p>
+									<p>Jl. Tevesia No. 1 Bulaksumur, UGM, Yogyakarta 55281</p>
+								</Link>
 							</div>
 						</div>
 
+						{/* Mail */}
 						<div className="flex mt-4">
 							<Image
 								src="/images/footer/mail.png"
@@ -388,12 +404,14 @@ export default function Footer() {
 								className="object-contain"
 							/>
 
-							<p className="ml-2">rdk@ugm.ac.id</p>
+							<Link href="mailto:rdk@ugm.ac.id">
+								<p className="ml-2">rdk@ugm.ac.id</p>
+							</Link>
 						</div>
 
 						<p className="mt-7">#PembangunanInklusif</p>
 						<p>#UpayaKolaboratif</p>
-						<p>#Ramadan Berdaya</p>
+						<p>#RamadanBerdaya</p>
 					</div>
 
 					{/* Kanan */}
@@ -441,7 +459,7 @@ export default function Footer() {
 						<div className="flex justify-around items-start">
 							{/* Eksplorasi */}
 							<ul className="w-1/3">
-								<h3 className="font-heading">Explorasi</h3>
+								<h3 className="font-heading">Eksplorasi</h3>
 
 								<ul className="leading-7">
 									<li className="hover:text-[#F4AA3D] mt-3">
@@ -473,21 +491,20 @@ export default function Footer() {
 							</ul>
 
 							{/* Kegiatan */}
-							{/* Konfirmasi ke Azky, ini penamaanya soalnya beda */}
 							<ul className="w-1/3">
 								<h3 className="font-heading">Kegiatan</h3>
 								<ul className="leading-7">
 									<li className="hover:text-[#F4AA3D] mt-3">
-										<Link href="/kegiatan/daily-agenda">
-											Kajian Buka Bersama
+										<Link href="/kegiatan/daily-agenda/#samudra">
+											Samudra
 										</Link>
 									</li>
 									<li className="hover:text-[#F4AA3D]">
-										<Link href="/kegiatan/daily-agenda">Mimbar Subuh</Link>
+										<Link href="/kegiatan/daily-agenda/#mimbar-subuh">Mimbar Subuh</Link>
 									</li>
 									<li className="hover:text-[#F4AA3D]">
-										<Link href="/kegiatan/daily-agenda">
-											Ramadan Public Lecture
+										<Link href="/kegiatan/daily-agenda/#rpl">
+											RPL
 										</Link>
 									</li>
 									<li className="hover:text-[#F4AA3D]">
@@ -504,7 +521,7 @@ export default function Footer() {
 										<Link href="/donasi">Donasi</Link>
 									</li>
 									<li className="hover:text-[#F4AA3D]">
-										<Link href="/">Game RDK-Quest</Link>
+										<Link href="//#rdk-quest">Game RDK-Quest</Link>
 									</li>
 								</ul>
 							</ul>
@@ -520,7 +537,7 @@ export default function Footer() {
 										alt="logo"
 										width={24}
 										height={24}
-										className={`object-cover mr-2 transition-transform duration-1000 hover:scale-125 hover:rotate-180 `}
+										className={`object-cover mr-2 transition-transform  duration-1000 hover:scale-125 hover:rotate-180 hover:shadow-xl `}
 									/>
 								</Link>
 
@@ -638,7 +655,9 @@ export default function Footer() {
 				</div>
 
 				<div className="flex justify-center items-center p-6  bg-gradient-to-r from-[#22979E] from-[-100%] to-[#155458] ">
-					<p className="italic text-lg">RDK UGM 1446H. All Rights Reserved</p>
+					<p className="italic text-lg">
+						&copy; RDK UGM 1446 H. All Rights Reserved
+					</p>
 				</div>
 
 				<div className="absolute top-10 left-[-5rem] w-[25rem] h-[25rem] bg-[#76D0D5] rounded-full blur-[10rem] opacity-70"></div>

@@ -25,12 +25,12 @@ export default function TemaRdk() {
 					className="mt-10 ml-4"
 				/>
 
-				<div className="mx-auto text-center">
-					<h3 className="text-3xl font-bold text-orangeCS">Ramadan Berdaya:</h3>
-					<h3 className="text-2xl font-bold text-greenCS">
+				<div className="mx-auto text-center font-title">
+					<h3 className="text-3xl font-black text-orangeCS">Ramadan Berdaya:</h3>
+					<h3 className="text-2xl font-black text-greenCS">
 						Upaya Kolaboratif Mewujudkan
 					</h3>
-					<h3 className="text-2xl font-bold text-greenCS">
+					<h3 className="text-2xl font-black text-greenCS">
 						Pembangunan Inklusif dan Berkelanjutan
 					</h3>
 				</div>

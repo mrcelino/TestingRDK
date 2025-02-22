@@ -28,7 +28,7 @@ export default function Navbar() {
 	};
 
 	return (
-		<nav className="bg-gradient-to-r from-[#155458] from-30% to-[#51B2B8] text-white sticky lg:top-10 lg:mt-[-4rem] z-50 shadow-md lg:w-11/12 lg:mx-auto lg:rounded-full">
+		<nav className="bg-gradient-to-r from-[#155458] from-30% to-[#51B2B8] text-white sticky lg:top-10 z-50 lg:mt-[-4rem] shadow-md lg:w-11/12 lg:mx-auto lg:rounded-full ">
 			<div className="flex items-center lg:justify-between px-4 py-2">
 				{/* Hamburger Icon */}
 				<button
@@ -84,7 +84,7 @@ function menuItems(
 		{ href: "/", label: "Beranda" },
 		{ href: "/jadwal", label: "Jadwal" },
 		{
-			href: "#",
+			href: "/artikel",
 			label: "Artikel",
 			submenu: [
 				{ href: "/artikel", label: "Beranda" },
@@ -95,7 +95,7 @@ function menuItems(
 			],
 		},
 		{
-			href: "#",
+			href: "/makanan/buka",
 			label: "Menu Hidangan",
 			submenu: [
 				{ href: "/makanan/buka", label: "Buka" },
@@ -103,7 +103,7 @@ function menuItems(
 			],
 		},
 		{
-			href: "#",
+			href: "/kegiatan/bigagenda",
 			label: "Kegiatan",
 			submenu: [
 				{ href: "/kegiatan/bigagenda", label: "Big Events" },
