@@ -16,7 +16,7 @@ function UpdateDonasiIftar() {
     const fetchDonasiData = async () => {
       try {
         const base = process.env.NEXT_PUBLIC_API_BASE_URL;
-        const response = await fetch(`${base}/api/donasis`, {
+        const response = await fetch(`${base}donasis`, {
           cache: "no-store",
         });
         const data = await response.json();
@@ -41,8 +41,9 @@ function UpdateDonasiIftar() {
       style: 'currency',
       currency: 'IDR',
       minimumFractionDigits: 0
-    }).format(number);
+    }).format(number).replace(/\s/g, '');
   };
+  
 
   return (
     <div data-aos="fade-up" data-aos-duration="500">
@@ -61,9 +62,6 @@ function UpdateDonasiIftar() {
     </div>
   );
 }
-
-
-
 
 function UpdateDonasiKegiatan(){
   const [donasiKegiatan, setDonasiKegiatan] = useState(0);
@@ -98,8 +96,9 @@ function UpdateDonasiKegiatan(){
       style: 'currency',
       currency: 'IDR',
       minimumFractionDigits: 0
-    }).format(number);
+    }).format(number).replace(/\s/g, '');
   };
+  
   return(
     <div data-aos="fade-up" data-aos-duration="500">
       <section className="relative flex min-h-12 md:min-h-16 xl:min-h-24 mb-10  bg-white border-black border-2 lg:border-4 rounded-full mt-10 md:mt-20 xl:mx-auto mx-4 max-w-xl md:max-w-2xl xl:max-w-4xl sm:mx-auto">
@@ -249,10 +248,15 @@ function JenisDonasi(){
 }
 
 function KonfirmasiDonasi({ nama, linkKonfirmasi }: KonfirmasiDonasiProps) {
-  const waNumber = nama.split(" ")[0]; // Misal: "wa.me/6281377660189"
-  return(
+  // Ambil hanya nomor telepon (angka pertama dalam string)
+  const waNumber = nama.split(" ")[0];
+
+  // Ambil nama setelah nomor telepon
+  const contactName = nama.replace(waNumber, "").trim();
+
+  return (
     <>
-      <section  className='flex flex-col lg:flex-row mt-10 gap-10 items-center justify-center mx-4 md:mx-auto lg:p-4'>
+      <section className='flex flex-col lg:flex-row mt-10 gap-10 items-center justify-center mx-4 md:mx-auto lg:p-4'>
         <div data-aos="fade-right" data-aos-duration="1000" className='relative min-h-14 w-full bg-[#15575B] border-[3px] border-black max-w-sm md:max-w-lg'>
           <div className='absolute flex items-center justify-center bg-white min-h-10 rounded-b-full w-20 -top-4 left-4 border-2 border-black'>
             <Image
@@ -266,7 +270,9 @@ function KonfirmasiDonasi({ nama, linkKonfirmasi }: KonfirmasiDonasiProps) {
           <div className='flex flex-col text-right'>
             <h2 className='font-body text-xs md:text-base italic px-4 py-2 font-semibold text-white '>Konfirmasi Donasi</h2>
             <hr className='border-black border-[1.5px] w-[80%] ml-auto'/>
-            <Link href={linkKonfirmasi} className='font-body text-xs md:text-base italic px-4 py-2 font-semibold text-white'>{linkKonfirmasi}</Link>
+            <Link href={linkKonfirmasi} className='font-body text-xs md:text-base italic px-4 py-2 font-semibold text-white'>
+              {linkKonfirmasi}
+            </Link>
           </div>
         </div>
         <div data-aos="fade-left" data-aos-duration="1000" className='relative min-h-14 w-full bg-[#CCB087] border-[3px] border-black max-w-sm md:max-w-lg'>
@@ -282,16 +288,15 @@ function KonfirmasiDonasi({ nama, linkKonfirmasi }: KonfirmasiDonasiProps) {
           <div className='flex flex-col text-left'>
             <h2 className='font-body text-xs md:text-base italic px-4 py-2 font-semibold '>Contact Person</h2>
             <hr className='border-black border-[1.5px] w-[80%]'/>
-            <Link href={`https://${waNumber}`} className="font-body text-xs md:text-base italic px-4 py-2 font-semibold">
-              {waNumber} {nama.replace(waNumber, "").trim()}
+            <Link href={`https://wa.me/${waNumber}`} className="font-body text-xs md:text-base italic px-4 py-2 font-semibold">
+              {waNumber} {contactName}
             </Link>
           </div>
         </div>
       </section>
     </>
-  )
+  );
 }
-
 
 
 function DonasiIftarSahur(){
@@ -330,7 +335,7 @@ function DonasiIftarSahur(){
                 alt="QRIS Maskam"
                 width={250}
                 height={250}
-                className='w-40 xl:w-auto'
+                className='w-40 xl:w-72'
               />
               <h2 className='text-sm md:text-lg xl:text-xl font-body italic text-white mt-4'>a.n Masjid Kampus UGM</h2>
           </div>
@@ -364,16 +369,14 @@ function DonasiIftarSahur(){
           </div>
       </section>
 
-      <KonfirmasiDonasi nama="wa.me/6281377660189 (Rofi’ Khoirullah)" linkKonfirmasi='bit.ly/DonasiSahurBukaRDK46H'/>
+      <KonfirmasiDonasi nama="6281377660189 (Rofi’ Khoirullah)" linkKonfirmasi='bit.ly/DonasiSahurBukaRDK46H'/>
     </>
   )
 }
 
-
-
 function DonasiKegiatan(){
   return(
-    <>
+    <div className='pb-20'>
       <section data-aos="fade-up" data-aos-duration="500" className='flex items-center justify-center mx-4 xl:mx-auto mt-4 md:mt-20'>
           <div className='flex items-center justify-center bg-[#15575B] p-4 md:p-8 xl:p-12 w-full mt-20 rounded-full border-2 xl:border-4 border-black max-w-md md:max-w-2xl lg:max-w-3xl xl:max-w-4xl'>
             <p className='text-lg md:text-2xl xl:text-5xl italic font-body text-white '>Donasi Kegiatan dan Kajian</p>
@@ -423,8 +426,8 @@ function DonasiKegiatan(){
               </div>
           </div>
       </section>
-      <KonfirmasiDonasi nama="wa.me/62895332785320 (Salma Arsepti)" linkKonfirmasi='bit.ly/DonasiOperasionalRDK46H'/>
-    </>
+      <KonfirmasiDonasi nama="62895332785320 (Salma Arsepti)" linkKonfirmasi='bit.ly/DonasiOperasionalRDK46H'/>
+    </div>
   )
 }
 
