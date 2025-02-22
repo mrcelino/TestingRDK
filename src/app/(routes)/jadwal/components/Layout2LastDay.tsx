@@ -69,6 +69,9 @@ export default function Layout2LastDay({
           height={405}
           alt="sign"
           className="absolute w-[84px] h-[84px] md:w-[163px] md:h-[163px] lg:w-[405px] lg:h-[405px] -left-6 md:-left-16 lg:-left-36"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          data-aos-delay="1000"
         />
       </div>
 
@@ -78,7 +81,8 @@ export default function Layout2LastDay({
           data-aos-duration="600"
           className="text-white font-bold text-sm md:text-2xl lg:text-2xl italic"
         >
-          DON’T WORRY!
+          {/* DON’T WORRY! */}
+          Jangan Khawatir!
         </h1>
         <Image
           src="/images/jadwal/Warning.svg"
@@ -97,9 +101,12 @@ export default function Layout2LastDay({
           data-aos="zoom-in"
           data-aos-duration="600"
           data-aos-delay="450"
-          className="text-[#15575B] font-bold text-xs md:text-base lg:text-2xl italic"
+          className="text-[#15575B] font-bold text-xs md:text-base lg:text-2xl italic text-center"
         >
-          You Can Have Iftar at the Mosque!
+          {/* You Can Have Iftar at the Mosque! */}
+          {/* Disediakan buka puasa di masjid! */}
+          Kami tetap menyediakan buka puasa <br /> di masjid kampus !
+          {/* BUKA PUASA GRATISS!!! */}
         </h1>
 
         <Image

@@ -5,6 +5,14 @@
 import Image from "next/image";
 // import BigAgenda from "./shared/BigAgenda";
 
+// interface untuk big agenda
+interface ImageSpectacularShows {
+  id: number;
+  documentId: string;
+  publicUrl: string;
+  title: string;
+}
+
 interface Profile {
   id: number;
   documentId: string;
@@ -28,7 +36,7 @@ interface Source_person {
   profile: Profile;
 }
 
-interface AgendaItem {
+interface BigAgendaItem {
   id: number;
   documentId: string;
   theme: string;
@@ -36,15 +44,16 @@ interface AgendaItem {
   date: string;
   time: string;
   big_agenda_type: string;
-  image_spectacular_shows: [];
+  image_spectacular_shows: [ImageSpectacularShows];
   source_person: [Source_person];
   moderator: Moderator;
 }
 
+
 export default function LayoutIdulFitri({
   dataBigAgenda,
 }: {
-  dataBigAgenda: AgendaItem[];
+  dataBigAgenda: BigAgendaItem[];
 }) {
   // console.log(
   //   "chechk source person",
@@ -65,7 +74,7 @@ export default function LayoutIdulFitri({
       </div>
 
       <div className="flex relative z-20 w-[253px] h-[53px] md:w-[464px] md:h-[95px] lg:w-[942px] lg:h-[247px] bg-white border lg:border-[3px] border-black rounded-[100px] justify-center items-center translate-y-8 md:translate-y-14 lg:translate-y-28">
-        <div className="flex flex-col justify-center items-end font-black text-xs md:text-lg lg:text-[38px] text-[#15575B] translate-x-1 md:translate-x-6 lg:-translate-x-20 gap-y-0.5 md:gap-y-2 lg:gap-y-10 font-body">
+        <div className="flex flex-col justify-center items-end font-black text-xs md:text-lg lg:text-[38px] text-[#15575B] translate-x-1 md:translate-x-6 lg:-translate-x-20 gap-y-0.5 md:gap-y-2 lg:gap-y-10 font-heading">
           <h2>تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ وَ تَقَبَّلْ ياَ كَرِيْمُ</h2>
           <h2>كُلُّ عَامٍ وَأَنْتُمْ بِخَيْرٍ</h2>
         </div>
@@ -95,7 +104,8 @@ export default function LayoutIdulFitri({
           className="w-[221px] h-[21px] md:w-[407px] md:h-[41px] lg:w-[641px] lg:h-[90px] bg-[#F4AA3D] border lg:border-[3px] border-black shadow-[rgba(21,87,91,1)_-2px_2px_0px] md:shadow-[rgba(21,87,91,1)_-4px_4px_0px] lg:shadow-[rgba(21,87,91,1)_-8px_8px_0px] rounded-tl-[100px] rounded-br-[100px] flex justify-center items-center mt-8 md:mt-20 lg:mt-56 mb-2"
         >
           <h1 className="text-[#fbfbfb] font-normal text-[10px] md:text-[12px] lg:text-2xl font-heading">
-            Special Eid al-Fitr Prayer
+            {/* Special Eid al-Fitr Prayer */}
+            Salat Idul Fitri
           </h1>
         </div>
         {/* end of special eid mubarak header */}
@@ -188,7 +198,7 @@ export default function LayoutIdulFitri({
                   {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
                   {dataBigAgenda[0].moderator !== null
                     ? dataBigAgenda[0].moderator.profile.name
-                    : "???"}
+                    : "(Segera hadir)"}
                 </h2>
               </div>
               {/* label imam */}
@@ -289,7 +299,7 @@ export default function LayoutIdulFitri({
                   {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
                   {dataBigAgenda[0]?.source_person.length > 0
                     ? dataBigAgenda[0].source_person[0].profile.name
-                    : "???"}
+                    : "(segera hadir)"}
                 </h2>
               </div>
               {/* label khatib */}
@@ -315,14 +325,14 @@ export default function LayoutIdulFitri({
           <div className="w-1/2 h-full border lg:border-[3px] border-black rounded-l-[100px] flex justify-center items-center">
             <p className="md:w-[219px] lg:w-[289px] text-[#F4AA3D] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-center font-body">
               {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
-              {dataBigAgenda[0].moderator?.profile?.name || "???"}
+              {dataBigAgenda[0].moderator?.profile?.name || "(Segera hadir)"}
             </p>
           </div>
           {/* right name container */}
           <div className="w-1/2 h-full bg-[#F4AA3D] border lg:border-[3px] border-black rounded-r-[100px] flex justify-center items-center">
             <p className="md:w-[219px] lg:w-[289px] text-[#15575B] font-bold italic text-[4px] md:text-[10px] lg:text-[14px] text-center font-body">
               {/* Al-Ustadz Prof.Dr. Hamid Fahmy Zarkasyi, M.Phil., M.A.Ed. */}
-              {dataBigAgenda[0].source_person[0]?.profile?.name || "???"}
+              {dataBigAgenda[0].source_person[0]?.profile?.name || "(Segera hadir)"}
             </p>
           </div>
 
@@ -355,7 +365,7 @@ export default function LayoutIdulFitri({
               width={20}
               height={30}
               alt="petik"
-              className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute top-0.5 md:-top-2 lg:-top-2 -left-1 md:-left-4 lg:-left-10"
+              className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute top-0.5 md:-top-2 lg:-top-2 -left-3 md:-left-4 lg:-left-10"
             />
             <Image
               src={"images/jadwal/petik-kuning.svg"}
@@ -365,7 +375,7 @@ export default function LayoutIdulFitri({
               className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute bottom-0 md:-bottom-2 lg:-bottom-2 -right-3 md:-right-5 lg:-right-10 rotate-180"
             />
           </div>
-          <hr className="border-b-[0.5px] lg:border-b-2 border-black w-9/12 my-auto" />
+          <hr className="border-b-[0.5px] lg:border-b-2 border-black w-9/12 my-2 md:my-3 lg:my-auto" />
           {/* tempat dan waktu */}
           <div className="w-fit flex flex-row justify-center items-center md:mx-auto lg:mr-0 lg:ml-0">
             <div className="flex flex-row gap-x-1 md:gap-x-3 lg:gap-x-7 items-center">
@@ -399,7 +409,7 @@ export default function LayoutIdulFitri({
                   : "Null"} */}
                 {dataBigAgenda[0]?.time
                   ? dataBigAgenda[0].time.slice(0, 5) + " WIB"
-                  : "Null"}
+                  : "?"}
               </p>
             </div>
           </div>

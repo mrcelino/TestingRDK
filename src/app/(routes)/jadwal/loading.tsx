@@ -2,7 +2,7 @@
 
 export default function Loading() {
   return (
-    <div className="flex items-center justify-center h-96 md:h-[500px] lg:h-[800px] mt-5 md:mt-8 lg:mt-10 scale-50 md:scale-75 lg:scale-100">
+    <div className="flex items-center justify-center h-[500px] md:h-[600px] lg:h-[800px] mt-5 md:mt-8 lg:mt-10 scale-50 md:scale-75 lg:scale-100">
       <div className="loader"></div>
       <style jsx>{`
         .loader {

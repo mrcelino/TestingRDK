@@ -127,7 +127,7 @@ export default function LayoutBigAgendaGebyarSore({
             className="w-[5px] h-[7px] md:w-[10px] md:h-[15px] lg:w-[20px] lg:h-[30px] absolute bottom-0 md:-bottom-1 lg:-bottom-2 -right-3 md:-right-5 lg:-right-10 rotate-180"
           />
         </div>
-        <hr className="border-b-[0.5px] lg:border-b-2 border-black w-9/12 my-auto" />
+        <hr className="border-b-[0.5px] lg:border-b-2 border-black w-9/12 my-2 md:my-3 lg:my-auto" />
         {/* tempat dan waktu */}
         <div className="w-fit flex flex-row justify-center items-center md:mx-auto lg:mr-0 lg:ml-0">
           <div className="flex flex-row gap-x-1 md:gap-x-3 lg:gap-x-7 items-center">
