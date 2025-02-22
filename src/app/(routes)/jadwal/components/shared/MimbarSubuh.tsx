@@ -112,9 +112,11 @@ export default function MimbarSubuh({ data }: { data: AgendaItem }) {
                   />
                 </div>
 
-                <img
+                <Image
                   src="/images/jadwal/shadow.svg"
-                  alt=""
+                  alt="shad0w"
+                  width={221}
+                  height={60}
                   className="absolute -bottom-6 md:-bottom-12 lg:-bottom-24 rotate-[7deg]"
                 />
               </div>
@@ -161,10 +163,10 @@ export default function MimbarSubuh({ data }: { data: AgendaItem }) {
             </div>
             {/* place */}
             <div className="flex flex-row gap-x-2.5 md:gap-x-8 lg:gap-x-12 items-center pl-3">
-              <img
+              <Image
                 src="/images/jadwal/icon_note.svg"
-                // width={67}
-                // height={67}
+                width={500}
+                height={500}
                 alt="icon_clock"
                 className="w-[17px] h-[17px] md:w-[24px] md:h-[24px] lg:w-[91px] lg:h-[91px]"
               />

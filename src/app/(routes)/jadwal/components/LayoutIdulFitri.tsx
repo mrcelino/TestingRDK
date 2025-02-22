@@ -186,8 +186,10 @@ export default function LayoutIdulFitri({
                 />
               </div>
 
-              <img
+              <Image
                 src="/images/jadwal/shadow.svg"
+                width={221}
+                height={60}
                 alt=""
                 className="absolute -bottom-6 md:-bottom-12 lg:-bottom-24 rotate-[7deg]"
               />
@@ -287,9 +289,11 @@ export default function LayoutIdulFitri({
                 />
               </div>
 
-              <img
+              <Image
                 src="/images/jadwal/shadow.svg"
-                alt=""
+                alt="shadow cik"
+                width={221}
+                height={60}
                 className="absolute -bottom-6 md:-bottom-12 lg:-bottom-24 rotate-[-8deg]"
               />
 
@@ -380,9 +384,11 @@ export default function LayoutIdulFitri({
           <div className="w-fit flex flex-row justify-center items-center md:mx-auto lg:mr-0 lg:ml-0">
             <div className="flex flex-row gap-x-1 md:gap-x-3 lg:gap-x-7 items-center">
               {/* icon location */}
-              <img
+              <Image
                 src="images/jadwal/vector_location.svg"
                 alt=""
+                width={500}
+                height={500}
                 className="w-[8px] md:w-[11px] lg:w-[26px] h-[9px] md:h-[13px] lg:h-[31px]"
               />
               {/* lokasi */}
@@ -396,9 +402,11 @@ export default function LayoutIdulFitri({
             </div>
             <div className="flex flex-row gap-x-1 lg:gap-x-6 items-center ml-auto">
               {/* icon calendar */}
-              <img
+              <Image
                 src="images/jadwal/vektor_kalender.svg"
                 alt=""
+                width={500}
+                height={500}
                 className="w-[10px] md:w-[14px] lg:w-[32px] h-[9px] md:h-[13px] lg:h-[30px]"
               />
               {/* waktu */}

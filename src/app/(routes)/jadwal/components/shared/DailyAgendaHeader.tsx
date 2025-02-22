@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function DailyAgendaHeader() {
   return (
     <>
@@ -10,10 +12,10 @@ export default function DailyAgendaHeader() {
         <h1 className="text-[#15575B] text-xs md:text-base lg:text-3xl font-bold italic font-body">
           Daily Agenda Today
         </h1>
-        <img
+        <Image
           src="/images/jadwal/maskot_wave.svg"
-          width={318}
-          height={318}
+          width={500}
+          height={500}
           alt="sign"
           className="absolute w-[83px] h-[83px] md:w-[123px] md:h-[123px] lg:w-[318px] lg:h-[318px] -right-9 md:-right-8 lg:-right-36 scale-x-[-1]"
         />
