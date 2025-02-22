@@ -5,7 +5,7 @@ export default function RPL() {
         <>
             <div className="flex flex-col justify-center items-center mt-12" id="rpl">
                 {/* Title */}
-                <div className="text-white flex items-center justify-center gap-3 md:justify-evenly bg-orangeCS border-2 lg:border-[3px] lg:border-b-0 border-b-0 border-black lg:p-4 w-[63%] md:w-[50%] md:ml-10 ml-14 lg:w-[40%] rounded-t-[3rem] py-1 md:py-2 animate-fadeIn">
+                <div data-aos="fade-up" data-aos-duration="1000" className="text-white flex items-center justify-center gap-3 md:justify-evenly bg-orangeCS border-2 lg:border-[3px] lg:border-b-0 border-b-0 border-black lg:p-4 w-[63%] md:w-[50%] md:ml-10 ml-14 lg:w-[40%] rounded-t-[3rem] py-1 md:py-2 animate-fadeIn">
                     <h1 className="font-bold text-center font-titania font-bold lg:text-4xl text-xl text-shadow-lg animate-fadeInScale">
                         RPL
                     </h1>
@@ -26,7 +26,7 @@ export default function RPL() {
                         alt="date"
                         height={176}
                         width={176}
-                        className="lg:h-[176px] w-[115px] h-[115px] lg:w-[176px] transform lg:translate-x-[10%] lg:-translate-y-[12%] absolute lg:static -left-2 -top-2 md:left-16 md:top-[-0.7rem] animate-slideInLeft"
+                        className="lg:h-[176px] w-[115px] h-[115px] lg:w-[176px] transform lg:translate-x-[10%] lg:-translate-y-[12%] absolute lg:static -left-2 -top-2 md:left-16 md:top-[-0.7rem]"
                     />
 
                     {/* Information */}
@@ -39,6 +39,7 @@ export default function RPL() {
 
                 {/* Dokumentasi Samudra */}
                 <Image
+                    data-aos="fade-up" data-aos-duration="1000"
                     src="/svg/kajian-samudra.svg"
                     alt="kajian samudra"
                     height={423}

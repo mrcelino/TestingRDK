@@ -14,11 +14,13 @@ export default function MimbarSubuh() {
 	const [likedArticles, setLikedArticles] = useState<Record<number, boolean>>(
 		{}
 	);
+	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
 		const getArticles = async () => {
 			const data = await fetchArticles();
 			setArticles(data);
+			setIsLoading(false);
 		};
 		getArticles();
 	}, []);
@@ -80,89 +82,101 @@ export default function MimbarSubuh() {
 				</Link>
 			</div>
 
-			<Swiper
-				spaceBetween={20}
-				navigation={{
-					nextEl: ".custom-swiper-button-next",
-					prevEl: ".custom-swiper-button-prev",
-				}}
-				autoplay={{
-					delay: 5000,
-					disableOnInteraction: false,
-				}}
-				loop={true}
-				modules={[Navigation, Autoplay]}
-				slidesPerView={1}
-				breakpoints={{
-					640: { slidesPerView: 1 },
-					768: { slidesPerView: 2 },
-					1024: { slidesPerView: 3 },
-				}}
-			>
-				{articles.length > 0 ? (
-					articles
-						.filter((slide) => slide.category === "Mimbar_Subuh")
-						.map((slide, index) => {
-							const totalBigAgenda = articles.filter(
-								(slide) => slide.category === "Mimbar_Subuh"
-							).length;
+			{isLoading ? (
+				<div className="flex space-x-4 mt-6">
+					{[...Array(3)].map((_, index) => (
+						<div
+							key={index}
+							className="bg-gray-200 animate-pulse w-[90%] lg:w-[25rem] h-[15rem] rounded-3xl"
+						></div>
+					))}
+				</div>
+			) : (
+				<Swiper
+					spaceBetween={20}
+					navigation={{
+						nextEl: ".custom-swiper-button-next",
+						prevEl: ".custom-swiper-button-prev",
+					}}
+					autoplay={{
+						delay: 5000,
+						disableOnInteraction: false,
+					}}
+					loop={true}
+					modules={[Navigation, Autoplay]}
+					slidesPerView={1}
+					breakpoints={{
+						640: { slidesPerView: 1 },
+						768: { slidesPerView: 2 },
+						1024: { slidesPerView: 3 },
+					}}
+				>
+					{articles.length > 0 ? (
+						articles
+							.filter((slide) => slide.category === "Mimbar_Subuh")
+							.map((slide, index) => {
+								const totalBigAgenda = articles.filter(
+									(slide) => slide.category === "Mimbar_Subuh"
+								).length;
 
-							return (
-								<SwiperSlide key={slide.id}>
-									<div
-										className={`my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[17rem] max-w-lg mx-auto`}
-									>
-										<Link
-											href={`/artikel/${slide.id}`}
-											passHref
-											className="max-w-7xl"
+								return (
+									<SwiperSlide key={slide.id}>
+										<div
+											className={`my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[17rem] max-w-lg mx-auto`}
 										>
-											<Image
-												alt={slide.title}
-												src={
-													slide.article_images?.[0]?.publicUrl || "/default.jpg"
-												}
-												width={1000}
-												height={300}
-												className="rounded-t-3xl bg-black h-44 w-[500px] xl:w-full object-cover rounded-t-3xl "
-											/>
-										</Link>
-										<div className="flex bg-white rounded-b-3xl border-2 relative">
-											<div
-												className="absolute left-2 top-6 cursor-pointer"
-												onClick={() => handleLike(slide.id)}
+											<Link
+												href={`/artikel/${slide.id}`}
+												passHref
+												className="max-w-7xl"
 											>
 												<Image
-													alt="like"
+													alt={slide.title}
 													src={
-														likedArticles[slide.id]
-															? "/svg/like-filled.svg"
-															: "/svg/like.svg"
+														slide.article_images?.[0]?.publicUrl ||
+														"/default.jpg"
 													}
-													width={36}
-													height={36}
-													className="transition-transform scale-x-100 hover:scale-110 transition-transform duration-300 ease-in-out"
+													width={1000}
+													height={300}
+													className="rounded-t-3xl bg-black h-44 w-[500px] xl:w-full object-cover rounded-t-3xl "
 												/>
+											</Link>
+											<div className="flex bg-white rounded-b-3xl border-2 relative">
+												<div
+													className="absolute left-2 top-6 cursor-pointer"
+													onClick={() => handleLike(slide.id)}
+												>
+													<Image
+														alt="like"
+														src={
+															likedArticles[slide.id]
+																? "/svg/like-filled.svg"
+																: "/svg/like.svg"
+														}
+														width={36}
+														height={36}
+														className="transition-transform scale-x-100 hover:scale-110 transition-transform duration-300 ease-in-out"
+													/>
 
-												<p className="text-greenCS text-center font-heading text-sm">
-													{slide.like}
-												</p>
+													<p className="text-greenCS text-center font-heading text-sm">
+														{slide.like}
+													</p>
+												</div>
+
+												<h3 className="p-5 text-center font-bold italic text-greenCS text-sm ml-8">
+													{slide.title}
+												</h3>
 											</div>
-
-											<h3 className="p-5 text-center font-bold italic text-greenCS text-sm ml-8">
-												{slide.title}
-											</h3>
 										</div>
-									</div>
-								</SwiperSlide>
-							);
-						})
-				) : (
-					<div className="text-center py-4 text-gray-500">
-						<p className="font-heading text-lg">Kajian Belum tersedia</p>
-					</div>
-				)}
-			</Swiper>
+									</SwiperSlide>
+								);
+							})
+					) : (
+						<div className="text-center py-4 text-gray-500">
+							<p className="font-heading text-lg">Kajian Belum tersedia</p>
+						</div>
+					)}
+				</Swiper>
+			)}
 		</li>
 	);
 }

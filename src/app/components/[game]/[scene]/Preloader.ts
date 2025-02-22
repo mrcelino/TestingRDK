@@ -208,7 +208,10 @@ export class Preloader extends Scene {
         this.load.image("Btn-perempuan-On", 'assets/game/Menu/pr2.png');
 
         // Music
-        this.load.audio('bgMusic', 'assets/game/Music/RDK Piano 80bpm.mp3');
+        this.load.audio('bgMusic', 'assets/game/Music/Mix Buat Game.wav');
+
+        // Escape
+        this.load.image("Escape", 'assets/game/pause/Escape.png');
     }
 
     create() {

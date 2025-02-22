@@ -65,10 +65,7 @@ export class GameScene extends Scene
             this.sys.canvas.classList.remove('hidden')
             this.sys.canvas.classList.add('block')
             this.scale.refresh()
-            const musicScene = this.scene.get("MusicScene");
-            if (musicScene && musicScene.bgMusic) {
-                musicScene.bgMusic.resume();
-            }
+
             this.scene.resume();
         });
 
@@ -76,10 +73,7 @@ export class GameScene extends Scene
             this.sys.canvas.classList.remove('block')
             this.sys.canvas.classList.add('hidden')
             this.scene.pause();
-            const musicScene = this.scene.get("MusicScene");
-            if (musicScene && musicScene.bgMusic) {
-                musicScene.bgMusic.pause();
-            }
+
         });
 
         
@@ -113,6 +107,7 @@ export class GameScene extends Scene
         this.scene.get("TutorialScene").events.once('shutdown', () => {
             this.scene.launch("ControllerScene", { control: this.control });
             this.scene.launch('Pause', { player: this.player });
+            this.scene.launch("Escape");
         });
 
         
@@ -126,7 +121,6 @@ export class GameScene extends Scene
 
     loadMap(){
        
-        console.log(this.make.tilemap({ key: 'GameRDKVTWO' }));
         let map = this.make.tilemap({ key: 'GameRDKVTWO' });
         const tilesetNames = ['Maskam', 'Tangga', 'Papan', 'brikbaibrik', 'Grass', 'Rumput', 'ALA-14', 'ALA-14-14'];
         const tilesetNames2 = ["Basic_Grass_Biom_things", "Basic_Plants", "Wood_Bridge", "TEMPAT KUPON pria", "arumput", "brikbaibrik-08", "bunga love ", "Hills", "Kocheng-28", "kursi (3)", "Maskam Fixed-07-07", "Papan Fixed-11", "pohon", "rumput", "rumput (1)", "rumput (2)", "rumput (3)", "rumput (4)", "rumput (5)", "rumput (6)", "Rumput aw aw-13", "Tangga Fixed-09", "TEMPAT KUPON cewe"];
@@ -724,7 +718,7 @@ export class GameScene extends Scene
 
             this.cats.forEach(cat => {
                 const catRect = cat.sprite.getBounds();
-                if (Phaser.Geom.Intersects.RectangleToRectangle(playerRect, catRect)){
+                if (Phaser.Geom.Intersects.RectangleToRectangle(playerRect, catRect) && !this.isInInteraction){
                     this.setInInteraction(true)
                     this.control.setInInteraction(true);
                     cat.interact()

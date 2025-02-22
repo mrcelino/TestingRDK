@@ -39,10 +39,7 @@ init(data:{player: Player, text: DIALOG[], order: number[][][], callback: Functi
             this.sys.canvas.classList.remove('hidden')
             this.sys.canvas.classList.add('block')
             this.scale.refresh()
-            const musicScene = this.scene.get("MusicScene");
-            if (musicScene && musicScene.bgMusic) {
-                musicScene.bgMusic.resume();
-            }
+
             this.scene.resume();
         });
 
@@ -50,10 +47,7 @@ init(data:{player: Player, text: DIALOG[], order: number[][][], callback: Functi
             this.sys.canvas.classList.remove('block')
             this.sys.canvas.classList.add('hidden')
             this.scene.pause();
-            const musicScene = this.scene.get("MusicScene");
-            if (musicScene && musicScene.bgMusic) {
-                musicScene.bgMusic.pause();
-            }
+
         });
 
 
@@ -83,7 +77,6 @@ init(data:{player: Player, text: DIALOG[], order: number[][][], callback: Functi
         });
 
         name.setPosition(180/2 - name.width/4, 0);
-        console.log(name.width/2)
         const nameContainer = this.add.container(660 - 100, -80, [name]);
         nameContainer.setSize(260, 200);
         name.setPosition(nameContainer.width/2 - name.width/2, 0);

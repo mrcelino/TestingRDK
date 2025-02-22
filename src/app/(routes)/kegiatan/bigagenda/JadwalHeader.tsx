@@ -25,8 +25,8 @@ export default function JadwalHeader() {
       <div className="flex flex-col text-center">
       {/* <h1 className="bg-clip-text bg-gradient-to-b from-[0.001%] from-black/65 to-white text-transparent text-sm md:text-lg lg:text-4xl font-semibold font-heading">Agenda</h1> */}
         <h1 className="text-white text-sm md:text-lg lg:text-4xl font-medium font-heading">Big Events</h1>
-        <h1 className="text-[#EFC828] text-xs md:text-lg lg:text-3xl font-semibold font-heading">Ramadhan Di Kampus</h1>
-        <h1 className="text-white text-[10px] md:text-base lg:text-2xl font-semibold font-body italic">Universitas Gadjah Mada</h1>
+        <h1 className="text-[#EFC828] text-xs md:text-lg lg:text-3xl font-medium font-heading">Ramadhan Di Kampus</h1>
+        <h1 className="text-white text-[10px] md:text-base lg:text-2xl font-medium font-body italic">Universitas Gadjah Mada</h1>
       </div>
     </div>
   );

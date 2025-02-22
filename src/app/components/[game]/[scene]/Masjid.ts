@@ -99,7 +99,6 @@ export class Masjid extends Scene
         const jsonData = this.cache.json.get('masjidData');
 
         if (!jsonData || !jsonData.data || jsonData.data.length === 0) {
-            console.log(jsonData)
             this.datalogs = dataMasjid;
         }else{
             const rawData = jsonData.data[0];
@@ -109,7 +108,6 @@ export class Masjid extends Scene
                 callback: rawData.callback || null,
                 correctAnswer: rawData.correctAnswer
             };
-            console.log(parsedData)
             this.datalogs = parsedData;
         }
 
@@ -121,10 +119,7 @@ export class Masjid extends Scene
             this.sys.canvas.classList.remove('hidden')
             this.sys.canvas.classList.add('block')
             this.scale.refresh()
-            const musicScene = this.scene.get("MusicScene");
-            if (musicScene && musicScene.bgMusic) {
-                musicScene.bgMusic.resume();
-            }
+            
             this.scene.resume();
         });
 
@@ -132,10 +127,7 @@ export class Masjid extends Scene
             this.sys.canvas.classList.remove('block')
             this.sys.canvas.classList.add('hidden')
             this.scene.pause();
-            const musicScene = this.scene.get("MusicScene");
-            if (musicScene && musicScene.bgMusic) {
-                musicScene.bgMusic.pause();
-            }
+
         });
 
         const { width, height } = this.scale;

@@ -16,6 +16,8 @@ export class Cat {
     currentTargetPosition?: Phaser.Math.Vector2|null;
     lastAnimation: string = '';
     getFood: boolean = false;
+    inInteraction: boolean = false;
+    needReset: boolean = false;
 
     constructor(scene: Phaser.Scene, player: Player, map: Tilemaps.Tilemap, tileset:string, position: {x: number, y: number}, navMesh: NavMesh) {
         this.scene = scene;
@@ -54,10 +56,8 @@ export class Cat {
     
         // ✅ Find the path
         const pathPoints = this.navMesh.findPath(start, end);
-        console.log(pathPoints);    
         if (!pathPoints || pathPoints.length === 0) {   
             this.moving()
-            console.log('No path found');
             return;
         }
     
@@ -76,6 +76,9 @@ export class Cat {
                 this.sprite.play({ key: `${this.tileset}LookingAroundDown`, repeat: -1 });
                 this.currentTargetPosition = null;
                 this.scene.time.delayedCall(10000, () => {
+                    if(this.inInteraction) {
+                        this.needReset = true;
+                        return;}
                     this.moving();``
                 });
             });
@@ -277,6 +280,8 @@ export class Cat {
 
     interact() {
         const tweens = this.scene.tweens.getTweensOf(this.sprite);
+        this.inInteraction = this.inInteraction? false : true;
+
         if (tweens.length > 0) {
             if (tweens[0].isPlaying()) { 
                 tweens.forEach(tween => tween.pause());
@@ -286,10 +291,21 @@ export class Cat {
                 this.sprite.once('animationcomplete', () => {
                     this.sprite.play({ key: `${this.tileset}LookingAroundDown`, repeat: -1 });
                 });
+                this.inInteraction = true;
             } else {
                 this.sprite.play(this.lastAnimation);
                 tweens.forEach(tween => tween.resume()); 
+
+                if(this.sprite.body!.velocity.x !== 0 || this.sprite.body!.velocity.y !== 0){
+                    this.moving();
+                }
             }
+        } 
+
+        if(this.needReset){
+            this.needReset = false;
+            this.inInteraction = false;
+            this.moving();
         }
     }
 

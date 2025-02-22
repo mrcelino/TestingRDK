@@ -5,9 +5,9 @@ import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
 import TopArticle from "./TopArticle";
+import RegularArticles1 from "./RegularArticle1";
+import RegularArticles2 from "./RegularArticle2";
 import HotArticle from "./HotArticle";
-import RegularArticle from "./RegularArticle";
-import PrevioustopArticle from "./PreviousTopArticle";
 
 
 
@@ -19,7 +19,7 @@ export default function BigAgendaRamadan() {
 			<TopArticle />
 
 			<main className="p-4 mb-10 w-11/12 mx-auto">
-				<div className="relative z-20 lg:mx-auto bg-gradient-to-r from-white via-[#15575B] to-white lg:bg-transparent lg:p-0 h-10 lg:h-20">
+				<div className="relative z-20 lg:mx-auto bg-gradient-to-r from-white via-[#15575B] to-white lg:bg-transparent lg:p-0 h-10 lg:h-20 max-w-7xl mx-auto">
 					<p className="lg:text-3xl text-xl font-semibold text-white text-center mx-auto absolute top-1 lg:top-5 w-full italic">
 						Ramadan Public Lecture
 					</p>
@@ -27,15 +27,15 @@ export default function BigAgendaRamadan() {
 
 				<ul>
 				
+					<RegularArticles1 />
+					<RegularArticles2 />
 					<HotArticle />
-					<RegularArticle />
-					<PrevioustopArticle />
 				
 				</ul>
 
 				{/* Back to Home Article */}
 				<Link href="/artikel">
-					<button className="py-2 px-4 border-4 border-black bg-orangeCS rounded-full flex font-medium items-center italic mt-10 active:bg-orange-500 hover:bg-orange-500">
+					<button className="py-2 px-4 border-4 border-black bg-orangeCS rounded-full flex font-medium items-center italic mt-10 active:bg-orange-500 hover:bg-orange-500 ">
 						<svg
 							width="26"
 							height="26"
@@ -50,7 +50,7 @@ export default function BigAgendaRamadan() {
 							/>
 						</svg>
 
-						<p className="ml-2">Back to Home</p>
+						<p className="ml-2 ">Back to Home</p>
 					</button>
 				</Link>
 
