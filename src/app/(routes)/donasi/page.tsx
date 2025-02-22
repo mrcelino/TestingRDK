@@ -142,7 +142,10 @@ function Information(){
   return(
     <>
       <section data-aos="fade-up" data-aos-duration="1000" className='flex bg-white font-body mx-3 sm:mx-auto md:mx-auto text-xs p-4 items-center xl:min-h-32 border-black border-2 xl:border-4 mt-36 xl:mx-auto rounded-2xl xl:rounded-[70px] xl:p-10 md:text-lg lg:text-xl lg:leading-loose lg:tracking-widest text-[#15575B] italic max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl'>
-        <h2>"Kamu sekali-kali tidak akan memperoleh kebajikan (yang sempurna) sebelum kamu menginfakkan sebagian harta yang kamu cintai. Apa pun yang kamu infakkan, sesungguhnya Allah Maha Mengetahui tentangnya." <span className='font-bold text-[#15575B]'>(QS. Ali Imran : 92)</span></h2>
+        <h2>
+          &ldquo;Kamu sekali-kali tidak akan memperoleh kebajikan (yang sempurna) sebelum kamu menginfakkan sebagian harta yang kamu cintai. Apa pun yang kamu infakkan, sesungguhnya Allah Maha Mengetahui tentangnya.&rdquo; 
+          <span className='font-bold text-[#15575B]'>(QS. Ali Imran : 92)</span>
+        </h2>
       </section>
 
       <section data-aos="fade-up" data-aos-duration="1000" className='flex flex-col lg:flex-row justify-center items-center xl:flex-row lg:mx-24 xl:mx-auto gap-x-4 p-4 mt-4 md:mx-4'>

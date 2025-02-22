@@ -2,6 +2,16 @@
 import Image from "next/image";
 import { useState, useEffect, useCallback } from 'react';
 
+interface MenuItem {
+  id: number;
+  menu: string;
+  date_romawi: string;
+  day: string;
+  quote: string;
+  date_hijriyah: string;
+  menu_url: string;
+}
+
 type Food = {
   id: number;
   menu: string;
@@ -19,7 +29,7 @@ async function fetchData() {
   });
   const result = await response.json();
   
-  return result.data.map((item: any) => ({
+  return result.data.map((item: MenuItem) => ({
     id: item.id,
     menu: item.menu,
     date_romawi: item.date_romawi,
@@ -35,7 +45,7 @@ async function fetchData() {
 function Menu({ food }: { food: Food }) {
   return (
     <div className="flex items-center space-x-2 mt-4 mx-auto">
-      <img
+      <Image
         alt={food.menu}
         className="size-28 sm:size-36 xl:size-40 rounded-full border-4 border-black -mt-14 xl:-mt-8 z-10 hover:scale-110 transition duration-500 object-cover"
         height="100"
@@ -76,14 +86,16 @@ export default function Food() {
   const perPage = 6;
   const currentFoods = foods.slice((currentPage - 1) * perPage, currentPage * perPage);
 
-  const loadData = useCallback(async () => {
-    const data = await fetchData();
-    setFoods(data);
-  }, [fetchData]);
-
   useEffect(() => {
+    const loadData = async () => {
+      const data = await fetchData();
+      setFoods(data);
+    };
+  
     loadData();
-  }, [loadData]);
+  }, []);
+  
+  
 
   useEffect(() => {
     document.body.style.overflow = showModal ? 'hidden' : 'auto';
@@ -153,7 +165,7 @@ export default function Food() {
       {showModal && selectedFood && (
         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
           <div className="relative p-8 bg-white rounded-[35px] lg:rounded-[50px] shadow-lg w-80 mt-14 sm:size-[350px]">
-            <img
+            <Image
               alt="A plate of Sate Betawi with dipping sauce and garnish"
               className="p-4 rounded-[50px] size-[350px] object-cover absolute top-0 left-0 z-0"
               src={selectedFood.menu_url}

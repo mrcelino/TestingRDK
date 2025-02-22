@@ -2,30 +2,6 @@ import Image from "next/image"
 import JadwalHeader from "./JadwalHeader"
 
 
-function Banner(){
-  return(
-    <>
-      <section className="relative sm:min-h-[250px] flex flex-col sm:flex-row bg-[#15575B] mt-16 border-y-4 border-black ">
-        <div className="flex items-center justify-center sm:w-[45%]">
-          <h2 className='font-title font-normal p-2 text-xs sm:text-3xl text-white max-w-48 sm:max-w-[450px] italic leading-loose'>"Ramadhan Penuh <span className='font-bold'>Berkah</span>,  Mari Raih <span className='font-bold'>Pahala Jariyah,</span> Mulai dari <span className='font-bold'>Satu Rupiah</span>"</h2>
-        </div>
-        <div className="relative sm:w-[55%] mt-2 sm:mt-0">
-          <div className="flex flex-col justify-center p-12 absolute inset-0 bg-[#F4AA3D] border-2 sm:border-[7px] sm:border-y-0 border-black sm:rounded-l-[100px]">
-            <h2 className='font-body text-base sm:text-3xl text-[#15575B] font-semibold text-center sm:text-left sm:mb-2'>Titipkan Kebaikan,</h2>
-            <h2 className='font-heading text-base sm:text-lg xl:text-5xl text-white text-center sm:text-left'>Tebarkan <br/>Keberkahan</h2>
-          </div>
-        </div>
-        <Image
-            src="/images/makanan/speaker.png"
-            alt="Maskot"
-            width={300}
-            height={300}
-            className="size-20 sm:size-44 -mr-10 lg:left-[500px] lg:mr-0 top-28 lg:size-72 lg:top-20 absolute z-0 overflow-hidden"
-          />
-      </section>
-    </>
-  )
-}
 
 function GrandOpening(){
   return(

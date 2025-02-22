@@ -11,7 +11,7 @@ function Menu(){
           </h1>
           <p className="text-xs mt-4 text-white font-body italic max-w-3xl mx-auto sm:text-base leading-loose">
             “Makan dan minumlah, tetapi jangan berlebihan. Sungguh Allah tidak
-            menyukai orang yang berlebih-lebihan.” (QS. Al-A'raf, Ayat: 31)
+            menyukai orang yang berlebih-lebihan.” (QS. Al-A&apos;raf, Ayat: 31)
           </p>
         </div>
 
