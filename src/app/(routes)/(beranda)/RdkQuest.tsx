@@ -42,7 +42,21 @@ export default function RdkQuest() {
 				data-aos="fade-up" data-aos-duration="1000"
 				onClick={() => {
 					document.getElementById('game-container')?.classList.add('block');
-					document.getElementById('game-container')?.requestFullscreen();
+					const gameContainer = document.getElementById('game-container');
+					if (gameContainer) {
+						const requestFullscreen = gameContainer.requestFullscreen;
+						if (requestFullscreen) {
+							requestFullscreen.call(gameContainer).then(() => {
+								if ("orientation" in screen && "lock" in (screen.orientation as ScreenOrientation & { lock: (orientation: string) => Promise<void> })) {
+									(screen.orientation as ScreenOrientation & { lock: (orientation: string) => Promise<void> }).lock('landscape').catch((err: Error) => {
+										console.error('Error attempting to lock screen orientation:', err);
+									});
+								}
+							}).catch((err) => {
+								console.error('Error attempting to enter fullscreen mode:', err);
+							});
+						}
+					}
 				}}
 				type="button"
 				className="bg-orangeCS text-greenCS py-1 px-6 rounded-full border-2 md:border-[3px] lg:border-4 border-black lg:text-5xl md:text-3xl text-xl mx-auto w-fit font-heading grid grid-cols-1 mt-10"
