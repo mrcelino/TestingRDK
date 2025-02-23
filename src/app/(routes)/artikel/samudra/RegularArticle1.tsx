@@ -17,9 +17,7 @@ export default function RegularArticles1() {
 	const [isLoading, setIsLoading] = useState(true);
 	const regularArticles = articles.filter(
 		(slide) =>
-			slide.category === "Samudera" &&
-			slide.like >= 0 &&
-			slide.like <= 50
+			slide.category === "Samudera" && slide.like >= 0 && slide.like <= 50
 	);
 
 	// Jika regularArticles kosong, menggunakan semua artikel dengan kategori "Samudera"
@@ -45,6 +43,7 @@ export default function RegularArticles1() {
 					? {
 							...article,
 							like: article.like + (likedArticles[articleId] ? -1 : 1),
+							hasLiked: !likedArticles[articleId], // Perubahan hasLiked
 					  }
 					: article
 			)
@@ -64,6 +63,7 @@ export default function RegularArticles1() {
 								? {
 										...article,
 										like: article.like + (newLikedArticles[articleId] ? -1 : 1),
+										hasLiked: newLikedArticles[articleId], // Rollback hasLiked
 								  }
 								: article
 						)
