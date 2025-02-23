@@ -11,7 +11,7 @@ export function FAQHolder(item: FaqData) {
 
   return (
     <div
-      className="accordion border-solid border-black border-[3px] md:p-2 rounded-xl mb-4 lg:p-4 p-2"
+      className="accordion border-solid border-black border-[3px] md:p-2 rounded-xl mb-4 lg:p-4 p-2 w-10/12"
       id="basic-heading-two-with-icon"
     >
       <button
