@@ -99,7 +99,7 @@ export default function SpectacularShow({
           </div>
           {/* photo title container */}
           <div className="m-auto">
-            <h2 className="text-[#15575B] font-bold text-[8px] md:text-[6px] lg:text-[10px] italic w-20 md:w-12 lg:w-20 text-center font-body">
+            <h2 className="text-[#15575B] font-bold text-[8px] md:text-[6px] lg:text-[10px] italic w-16 md:w-12 lg:w-20 text-left md:text-center font-body">
               {/* Aceh Dance By Rampoe UGM */}
               {/* {(dataBigAgenda[0].image_spectacular_shows as any)?.length > 1
                 ? (dataBigAgenda[0].image_spectacular_shows as any)[1].title
@@ -127,7 +127,7 @@ export default function SpectacularShow({
           {/* photo title container */}
           <div className="m-auto">
             <h2 className="text-[#15575B] font-bold text-[8px] md:text-[6px] lg:text-[10px] italic w-20 md:w-12 lg:w-20 text-center font-body">
-              {/* Aceh Dance By Rampoe UGM */}?
+              {/* Aceh Dance By Rampoe UGM */}
               {dataBigAgenda?.[0]?.image_spectacular_shows?.[0]?.title || "???"}
             </h2>
           </div>
@@ -167,10 +167,10 @@ export default function SpectacularShow({
           </div>
           {/* photo title container */}
           <div className="m-auto">
-            <h2 className="text-[#15575B] font-bold text-[8px] md:text-[6px] lg:text-[10px] italic w-20 md:w-12 lg:w-20 text-center font-body">
+            <h2 className="text-[#15575B] font-bold text-[8px] md:text-[6px] lg:text-[10px] italic w-20 md:w-12 lg:w-20 text-right md:text-center font-body">
               {/* Aceh Dance By Rampoe UGM */}
               {dataBigAgenda?.[0]?.image_spectacular_shows?.[2]?.title ||
-                "none"}
+                ""}
             </h2>
           </div>
         </div>

@@ -3,11 +3,10 @@ import { EventBus } from "../EventBus";
 import { Player } from "./utils/Player";
 import { Control } from "./utils/control";
 import { npcsAnims } from "./utils/anims";
-import direction, { catsData, npcs, tilesize } from "./utils/const";
+import{ catsData, npcs} from "./utils/const";
 import { Npc } from "./utils/Npc";
 import { Panitia } from "./utils/Spesial NPC/Panitia";
 import { Cat} from "./utils/Cat";
-import GlobalFullscreenPlugin from "./utils/globalInitialize";
 import { NPCMakan } from "./utils/Spesial NPC/NPCMakan";
 import { NPCPemberiMakan } from "./utils/Spesial NPC/NPCPemberiMakan";
 import NavMesh from "navmesh";
@@ -121,9 +120,7 @@ export class GameScene extends Scene
 
     loadMap(){
        
-        let map = this.make.tilemap({ key: 'GameRDKVTWO' });
-        const tilesetNames = ['Maskam', 'Tangga', 'Papan', 'brikbaibrik', 'Grass', 'Rumput', 'ALA-14', 'ALA-14-14'];
-        const tilesetNames2 = ["Basic_Grass_Biom_things", "Basic_Plants", "Wood_Bridge", "TEMPAT KUPON pria", "arumput", "brikbaibrik-08", "bunga love ", "Hills", "Kocheng-28", "kursi (3)", "Maskam Fixed-07-07", "Papan Fixed-11", "pohon", "rumput", "rumput (1)", "rumput (2)", "rumput (3)", "rumput (4)", "rumput (5)", "rumput (6)", "Rumput aw aw-13", "Tangga Fixed-09", "TEMPAT KUPON cewe"];
+        const map = this.make.tilemap({ key: 'GameRDKVTWO' });
         const tilesetNames3 =["Maskam Fixed-07-07", "Tangga Fixed-09", "Papan Fixed-11", "brikbaibrik-08", "Basic_Grass_Biom_things", "Rumput aw aw-13", "Basic_Plants", "Kocheng-28", "kursi (3)", "TEMPAT KUPON cewe", "TEMPAT KUPON pria", "pohon", "bunga love ", "rumput (2)", "rumput (1)", "rumput (3)", "rumput (4)", "rumput (6)", "rumput (5)", "arumput", "Tilled_Dirt_v2", "Grass", "Hills", "Water", "rumput", "Wood_Bridge"];
         tilesetNames3.forEach(name => {
             map.addTilesetImage(name, name);
@@ -165,11 +162,11 @@ export class GameScene extends Scene
 
     update()
     {
-        let directionPlayer:number[] = this.control.getDirectionKeysPressDown()!;
+        const directionPlayer:number[] = this.control.getDirectionKeysPressDown()!;
         this.player.move(directionPlayer);
         this.player.animate()
 
-        let keys:string = this.control.getKeysPressDown();
+        const keys:string = this.control.getKeysPressDown();
 
         this.GameEvent(keys)
         this.player.PlayerInteraction();
@@ -238,7 +235,7 @@ export class GameScene extends Scene
         }
 
         catsData.forEach(cat => {
-            this.cats.push(new Cat(this, this.player, map, cat.tileset, cat.position, navMesh));
+            this.cats.push(new Cat(this, this.player, map, cat.tileset, cat.position, navMesh!));
         })
     }
 
@@ -272,12 +269,15 @@ export class GameScene extends Scene
         });
 
         // Play the animations on the scene
-        for(let key in npcsAnims){
-            for(let anim in npcsAnims[key]){
-                const animConfig: any = npcsAnims[key][anim];
-                animConfig.frames = animConfig.frames.map((frame: string) => ({ key: frame }));
-                animConfig.duration = animConfig.duration || 1000;
-                animConfig.duration += Math.random() * 200 - 100;
+        for(const key in npcsAnims){
+            for(const anim in npcsAnims[key]){
+                const animConfig: Phaser.Types.Animations.Animation = {
+                    key: npcsAnims[key][anim].key,
+                    frames: npcsAnims[key][anim].frames.map((frame: string) => ({ key: frame, frame: 0 })),
+                    frameRate: 2,
+                    repeat: npcsAnims[key][anim].repeat,
+                    duration: (npcsAnims[key][anim].duration || 1000) + Math.random() * 200 - 100
+                };
                 this.anims.create(animConfig);
             }
         }

@@ -1,7 +1,6 @@
 import { Scene } from "phaser";
 import { Player } from "./utils/Player";
 import { Achievement, Item } from "./utils/PlayerData";
-import GlobalFullscreenPlugin from "./utils/globalInitialize";
 
 
 

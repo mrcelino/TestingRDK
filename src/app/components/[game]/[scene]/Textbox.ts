@@ -1,7 +1,6 @@
 import { Scene } from "phaser";
 import { Player } from "./utils/Player";
 import { DIALOG } from "./utils/const";
-import { images } from "./utils/PlayerData";
 
 
 
@@ -16,7 +15,7 @@ export class Textbox extends Scene
     order: number[][][] = [];
     currentOrder: number[][] = [];
     onAsking: boolean = false;
-    callback: Function | null = null;
+    callback: ((...args: unknown[]) => void) | null = null;
     correctAnswer:number[]= [];
     isCorrect: boolean = true;
     npcProfile: string = "";
@@ -25,7 +24,7 @@ export class Textbox extends Scene
         super('Textbox');
     }
 
-init(data:{player: Player, text: DIALOG[], order: number[][][], callback: Function|null, correctAnswer: number[], npcProfile: string}){
+init(data:{player: Player, text: DIALOG[], order: number[][][], callback: ((...args: unknown[]) => void) | null, correctAnswer: number[], npcProfile: string}){
         this.player = data.player;
         this.text = data.text;
         this.order = data.order;

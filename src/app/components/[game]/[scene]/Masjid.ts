@@ -1,15 +1,14 @@
-import { Data, Scene } from "phaser";
+import { Scene } from "phaser";
 import { EventBus } from "../EventBus";
 import { Player } from "./utils/Player";
 import { DIALOG } from "./utils/const";
-import { es } from "date-fns/locale";
 
     
 
 interface DataMasjid {
     text: DIALOG[];
     order: number[][][];
-    callback: Function | null;
+    callback: (() => void) | null;
     correctAnswer: number[];
 }
 

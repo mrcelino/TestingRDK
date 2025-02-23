@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <div data-aos="fade-down" data-aos-duration="1000" className="relative flex w-[216px] h-[63px] md:w-[335px] md:h-[98px] lg:w-[635px] lg:h-[185px] bg-[#15575B] rounded-[50px] border lg:border-[3px] border-black mx-auto mt-12 md:mt-16 lg:mt-0 justify-center items-center mb-10">
+    <div data-aos="fade-down" data-aos-duration="1000" className="relative flex w-[216px] h-[63px] md:w-[335px] md:h-[98px] lg:w-[635px] lg:h-[185px] bg-[#15575B] rounded-[50px] border lg:border-[3px] border-black mx-auto mt-12 md:mt-16 lg:mt-0 justify-center items-center mb-10 mt-20">
       {/* left cross thing (i dunno the name bruh) */}
       <Image
         src="/images/kegiatan/headerJadwalPlus.svg"

@@ -14,8 +14,8 @@ export default function HotArticle() {
 		(slide) =>
 			slide.category === "Big_Agenda_Ramadhan" &&
 			slide.like >= 50 &&
-			slide.like <= 100
-	);
+			slide.like < 100
+	).slice(0, 5);
 
 	// Jika Hot Articles kosong, menggunakan semua artikel dengan kategori "Big_Agenda_Ramadhan"
 	const displayedArticles =

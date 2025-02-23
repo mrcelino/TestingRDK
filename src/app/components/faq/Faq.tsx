@@ -1,18 +1,11 @@
 'use client'
 import React, { useState } from 'react';
 import { FAQHolder } from './FaqHolder';
-import { FaqData, faqData } from './Data';
+import { FaqData } from './Data';
 import FaqTitle from './FaqTitle';
 
 export default function FAQ() {
 
-    const fetchFaqData = async () => {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(faqData);
-            }, 1000);
-        });
-    };
 
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);

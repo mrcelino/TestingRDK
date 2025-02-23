@@ -2,10 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { use, useState } from "react";
 
 export default function Footer() {
-	const [isHovered, setIsHovered] = useState(false);
 
 	return (
 		<div className="right-0 bottom-100 left-0 absolute">
@@ -291,7 +289,7 @@ export default function Footer() {
 							/>
 
 							<Image
-								src="/images/footer/qrisMK.png"
+								src="/images/donasi/qrisjss.png"
 								alt="Logo"
 								width={150}
 								height={150}
@@ -299,7 +297,7 @@ export default function Footer() {
 							/>
 
 							<p className="italic text-white text-center text-xs mt-2 md:w-[130px] lg:w-full">
-								a.n. Jama'ah Shalahuddin
+								a.n. Jama&apos;ah Shalahuddin
 							</p>
 						</div>
 
@@ -319,7 +317,7 @@ export default function Footer() {
 									801241004070
 								</p>
 								<p className="italic text-xs lg:text-[xs] lg:w-[100px] xl:w-full">
-									a.n Jama'ah Shalahuddin
+									a.n Jama&apos;ah Shalahuddin
 								</p>
 							</div>
 						</div>
@@ -330,12 +328,12 @@ export default function Footer() {
 			{/* Quotes RDK */}
 			<div className="relative">
 				<div className="bg-greenCS mt-10 flex justify-center items-center z-10 border-y-2 md:border-y-[3px] lg:border-y-4 border-black p-4 px-10 lg:p-10">
-					<div className="bg-white border-black lg:border-4 p-5 border-2 rounded-3xl text-center italic text-greenCS font-medium text-xs lg:text-base lg:py-8 md:w-2/3 lg:w-[75%] lg:max-w-3xl">
+					<div className="bg-white border-black lg:border-4 p-5 border-2 rounded-3xl text-center italic text-greenCS font-medium text-[10px] md:text-xs lg:text-base lg:py-8 md:w-2/3 lg:w-[75%] lg:max-w-3xl">
 						<p>
-							"Kamu sekali-kali tidak akan memperoleh kebajikan (yang sempurna)
+						&quot;Kamu sekali-kali tidak akan memperoleh kebajikan (yang sempurna)
 							sebelum kamu menginfakkan sebagian harta yang kamu cintai. Apa pun
 							yang kamu infakkan, sesungguhnya Allah Maha Mengetahui
-							tentangnya." <br />
+							tentangnya.&quot; <br />
 							<span className="font-bold">(QS. Ali Imran : 92)</span>
 						</p>
 					</div>
@@ -356,7 +354,7 @@ export default function Footer() {
 					alt="Logo"
 					width={80}
 					height={80}
-					className="absolute top-[10px] md:hidden"
+					className="absolute top-1/2 left-[-0.56rem] transform  -translate-y-1/2 md:hidden"
 				/>
 			</div>
 
@@ -375,7 +373,7 @@ export default function Footer() {
 						</p>
 
 						<p className="mt-7 font-heading">
-							Unit Kegiatan Mahasiswa Kerohanian Islam Jama'ah Shalahuddin
+							Unit Kegiatan Mahasiswa Kerohanian Islam Jama&apos;ah Shalahuddin
 						</p>
 						<p className="font-semibold">Universitas Gadjah Mada</p>
 
@@ -489,7 +487,7 @@ export default function Footer() {
 										</Link>
 									</li>
 									<li className="hover:text-[#F4AA3D]">
-										<Link className="" href="/makanan/buka">
+										<Link className="" href="/menu/buka">
 											Menu
 										</Link>
 									</li>
@@ -687,7 +685,7 @@ export default function Footer() {
 				<div className="absolute top-10 left-[-5rem] w-[25rem] h-[25rem] bg-[#76D0D5] rounded-full blur-[10rem] opacity-70 z-20"></div>
 
 				<div className="flex justify-center items-center p-6  bg-gradient-to-r from-[#22979E] from-[-100%] to-[#155458] ">
-					<p className="italic text-lg">
+					<p className="italic text-xs md:text-lg">
 						&copy; RDK UGM 1446 H. All Rights Reserved
 					</p>
 				</div>

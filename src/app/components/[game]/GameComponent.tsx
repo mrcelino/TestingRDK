@@ -36,7 +36,7 @@ const PhaserGameComponent = forwardRef<IRefPhaserGame, IProps>(function PhaserGa
                 game.current = null;
             }
         };
-    }, []); // ✅ Run only once on mount
+    }, [ref]); // ✅ Run only once on mount
 
     useEffect(() => {
         const handleSceneReady = (scene_instance: Phaser.Scene) => {

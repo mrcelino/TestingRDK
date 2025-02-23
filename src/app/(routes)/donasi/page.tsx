@@ -71,7 +71,7 @@ function UpdateDonasiKegiatan(){
     const fetchDonasiData = async () => {
       try {
         const base = process.env.NEXT_PUBLIC_API_BASE_URL;
-        const response = await fetch(`${base}/api/donasis`, {
+        const response = await fetch(`${base}donasis`, {
           cache: "no-store",
         });
         const data = await response.json();
@@ -120,8 +120,8 @@ function UpdateDonasiKegiatan(){
 function Header(){
   return(
     <div data-aos="fade-down" data-aos-duration="1000">
-      <section className="relative bg-[#15575B]  h-24 lg:h-32 border-y-4 border-black flex justify-center">
-        <div className="bg-[#F4AA3D] border-4 rounded-[50px] lg:rounded-[70px] border-black h-28 p-2 lg:h-40 -top-3 lg:-top-4 w-[85%] lg:w-[65%] absolute flex flex-col items-center justify-center max-w-xl md:max-w-2xl lg:max-w-7xl">
+      <section className="relative bg-[#15575B]  h-24 lg:h-32 border-y-2 md:border-y-4 border-black flex justify-center">
+        <div className="bg-[#F4AA3D] border-2 md:border-4 rounded-[50px] lg:rounded-[70px] border-black h-28 p-2 lg:h-40 -top-3 lg:-top-4 w-[85%] lg:w-[65%] absolute flex flex-col items-center justify-center max-w-xl md:max-w-2xl lg:max-w-7xl">
           <h2 className="font-heading text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white font-medium z-20 xl:mb-4">Hadirkan senyuman,</h2>
           <h2 className="font-heading text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white font-medium z-20 md:max-w-2xl text-center lg:max-w-full">wujudkan cinta di bulan suci Ramadan</h2>
         </div>
@@ -141,8 +141,11 @@ function Header(){
 function Information(){
   return(
     <>
-      <section data-aos="fade-up" data-aos-duration="1000" className='flex bg-white font-body mx-3 sm:mx-auto md:mx-auto text-xs p-4 items-center xl:min-h-32 border-black border-2 xl:border-4 mt-36 xl:mx-auto rounded-2xl xl:rounded-[70px] xl:p-10 md:text-lg lg:text-xl lg:leading-loose lg:tracking-widest text-[#15575B] italic max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl'>
-        <h2>"Kamu sekali-kali tidak akan memperoleh kebajikan (yang sempurna) sebelum kamu menginfakkan sebagian harta yang kamu cintai. Apa pun yang kamu infakkan, sesungguhnya Allah Maha Mengetahui tentangnya." <span className='font-bold text-[#15575B]'>(QS. Ali Imran : 92)</span></h2>
+      <section data-aos="fade-up" data-aos-duration="1000" className='flex bg-white font-body mx-3 sm:mx-auto md:mx-auto text-xs p-4 items-center xl:min-h-32 border-black border-2 xl:border-4 mt-16 xl:mt-36 xl:mx-auto rounded-2xl xl:rounded-[70px] xl:p-10 md:text-lg lg:text-xl lg:leading-loose lg:tracking-widest text-[#15575B] italic max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl'>
+        <h2>
+          &ldquo;Kamu sekali-kali tidak akan memperoleh kebajikan (yang sempurna) sebelum kamu menginfakkan sebagian harta yang kamu cintai. Apa pun yang kamu infakkan, sesungguhnya Allah Maha Mengetahui tentangnya.&rdquo; 
+          <span className='font-bold text-[#15575B]'>(QS. Ali Imran : 92)</span>
+        </h2>
       </section>
 
       <section data-aos="fade-up" data-aos-duration="1000" className='flex flex-col lg:flex-row justify-center items-center xl:flex-row lg:mx-24 xl:mx-auto gap-x-4 p-4 mt-4 md:mx-4'>
@@ -250,7 +253,7 @@ function KonfirmasiDonasi({ nama, linkKonfirmasi }: KonfirmasiDonasiProps) {
   return (
     <>
       <section className='flex flex-col lg:flex-row mt-10 gap-10 items-center justify-center mx-4 md:mx-auto lg:p-4'>
-        <div data-aos="fade-right" data-aos-duration="1000" className='relative min-h-14 w-full bg-[#15575B] border-[3px] border-black max-w-sm md:max-w-lg'>
+        <div data-aos="fade-right" data-aos-duration="1000" className='relative min-h-14 w-full bg-[#15575B] border-2 md:border-[3px] border-black max-w-sm md:max-w-lg'>
           <div className='absolute flex items-center justify-center bg-white min-h-10 rounded-b-full w-20 -top-4 left-4 border-2 border-black'>
             <Image
               src="/images/donasi/ic_cp.svg"
@@ -262,13 +265,13 @@ function KonfirmasiDonasi({ nama, linkKonfirmasi }: KonfirmasiDonasiProps) {
           </div>
           <div className='flex flex-col text-right'>
             <h2 className='font-body text-xs md:text-base italic px-4 py-2 font-semibold text-white '>Konfirmasi Donasi</h2>
-            <hr className='border-black border-[1.5px] w-[80%] ml-auto'/>
-            <Link href={linkKonfirmasi} className='font-body text-xs md:text-base italic px-4 py-2 font-semibold text-white'>
+            <hr className='border-black border md:border-[1.5px] w-[80%] ml-auto'/>
+            <Link href={`https://${linkKonfirmasi}`} className='font-body text-xs md:text-base italic px-4 py-2 font-semibold text-white'>
               {linkKonfirmasi}
             </Link>
           </div>
         </div>
-        <div data-aos="fade-left" data-aos-duration="1000" className='relative min-h-14 w-full bg-[#CCB087] border-[3px] border-black max-w-sm md:max-w-lg'>
+        <div data-aos="fade-left" data-aos-duration="1000" className='relative min-h-14 w-full bg-[#CCB087] border-2 md:border-[3px] border-black max-w-sm md:max-w-lg'>
           <div className='absolute flex items-center justify-center bg-white min-h-10 rounded-b-full w-20 -top-4 right-4 border-2 border-black'>
             <Image
               src="/images/donasi/ic_cp2.svg"
@@ -280,7 +283,7 @@ function KonfirmasiDonasi({ nama, linkKonfirmasi }: KonfirmasiDonasiProps) {
           </div>
           <div className='flex flex-col text-left'>
             <h2 className='font-body text-xs md:text-base italic px-4 py-2 font-semibold '>Contact Person</h2>
-            <hr className='border-black border-[1.5px] w-[80%]'/>
+            <hr className='border-black border md:border-[1.5px] w-[80%]'/>
             <Link href={`https://wa.me/${waNumber}`} className="font-body text-xs md:text-base italic px-4 py-2 font-semibold">
               {waNumber} {contactName}
             </Link>

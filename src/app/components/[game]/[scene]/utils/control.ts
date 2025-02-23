@@ -1,4 +1,4 @@
-import direction, { npcs } from "./const";
+import direction from "./const";
 
 export class Control {
   scene: Phaser.Scene;
@@ -11,7 +11,7 @@ export class Control {
   keysSpace: Phaser.Input.Keyboard.Key;
   C: Phaser.Input.Keyboard.Key;
   mouse: Phaser.Input.Pointer;
-  joystick!: any;
+  joystick!: { force: number; angle: number; on: (event: string, callback: () => void) => void };
   action = false;
 
   inInteraction: boolean = false;
@@ -46,7 +46,7 @@ export class Control {
   }
 
   getDirectionKeysPressDown(): number[] {
-    let directionPlayer: number[] = [];
+    const directionPlayer: number[] = [];
 
     if (this.joystick && this.joystick.force > 0.1) {
       if (this.joystick.angle < 45 && this.joystick.angle > -45) {
@@ -93,8 +93,8 @@ export class Control {
   }
 
   getKeysPressDown() {
-    if (this.keysSpace.isDown && !this.inInteraction || this.action) {
-        this.action = false;
+    if ((this.keysSpace.isDown && !this.inInteraction) || this.action) {
+      this.action = false;
       return "space";
     }
 
@@ -105,7 +105,7 @@ export class Control {
     if (this.C.isDown) {
       return "C";
     }
-    
+
     return "none";
   }
 
@@ -113,11 +113,11 @@ export class Control {
     this.inInteraction = value;
   }
 
-  public setJoystick(joystick: any) {
+  public setJoystick(joystick: { force: number; angle: number; on: (event: string, callback: () => void) => void }) {
     this.joystick = joystick;
   }
 
   public actionButtonPressed() {
     this.action = true;
-}
+  }
 }

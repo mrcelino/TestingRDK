@@ -2,30 +2,6 @@ import Image from "next/image"
 import JadwalHeader from "./JadwalHeader"
 
 
-function Banner(){
-  return(
-    <>
-      <section className="relative sm:min-h-[250px] flex flex-col sm:flex-row bg-[#15575B] mt-16 border-y-4 border-black ">
-        <div className="flex items-center justify-center sm:w-[45%]">
-          <h2 className='font-title font-normal p-2 text-xs sm:text-3xl text-white max-w-48 sm:max-w-[450px] italic leading-loose'>"Ramadhan Penuh <span className='font-bold'>Berkah</span>,  Mari Raih <span className='font-bold'>Pahala Jariyah,</span> Mulai dari <span className='font-bold'>Satu Rupiah</span>"</h2>
-        </div>
-        <div className="relative sm:w-[55%] mt-2 sm:mt-0">
-          <div className="flex flex-col justify-center p-12 absolute inset-0 bg-[#F4AA3D] border-2 sm:border-[7px] sm:border-y-0 border-black sm:rounded-l-[100px]">
-            <h2 className='font-body text-base sm:text-3xl text-[#15575B] font-semibold text-center sm:text-left sm:mb-2'>Titipkan Kebaikan,</h2>
-            <h2 className='font-heading text-base sm:text-lg xl:text-5xl text-white text-center sm:text-left'>Tebarkan <br/>Keberkahan</h2>
-          </div>
-        </div>
-        <Image
-            src="/images/makanan/speaker.png"
-            alt="Maskot"
-            width={300}
-            height={300}
-            className="size-20 sm:size-44 -mr-10 lg:left-[500px] lg:mr-0 top-28 lg:size-72 lg:top-20 absolute z-0 overflow-hidden"
-          />
-      </section>
-    </>
-  )
-}
 
 function GrandOpening(){
   return(
@@ -80,7 +56,7 @@ function GrandOpening(){
 
       <section data-aos="fade-up" data-aos-duration="500" className="flex flex-col md:flex-row items-center md:justify-center p-4 xl:p-0 xl:mx-16 xl:gap-20 xl:mt-10">
         <Image
-          src="/images/kegiatan/laptop.svg"
+          src="/images/kegiatan/go.svg"
           width={300}
           height={300}
           className="w-96 xl:w-[500px] mb-5 xl:mb-10 md:order-2"
@@ -126,7 +102,7 @@ function MIT(){
 
       <section className="flex flex-col items-center md:flex-row md:justify-center p-4 xl:p-0 xl:mx-auto md:gap-10 xl:gap-20 xl:mt-10">
         <Image
-          src="/images/kegiatan/tablet.svg"
+          src="/images/kegiatan/mit.svg"
           width={300}
           height={300}
           className="w-72 md:w-80 xl:w-[550px] mb-4 xl:mb-10"
@@ -171,7 +147,7 @@ function RDKFestival(){
         <div className="hidden md:block absolute rounded-full size-52 lg:size-72 blur-[80px] -top-20 -left-20 bg-[#76D0D5] opacity-50"></div>
       </section>
 
-      <section className="flex flex-col md:flex-row md:justify-center justify-around items-center mt-2 xl:mt-10 xl:items-center p-4 xl:p-0 xl:mx-4 md:gap-10 xl:gap-20 xl:mb-20">
+      <section className="flex flex-col md:flex-row md:justify-center justify-around items-center mt-2 xl:mt-10 xl:items-center p-4 xl:p-0 xl:mx-4 md:gap-10 xl:gap-20 xl:mb-16">
         <Image
           src="/images/kegiatan/tv.svg"
           width={300}
@@ -219,7 +195,7 @@ function GebyarSore(){
 
       <section className="flex flex-col items-center md:flex-row md:justify-center p-4 xl:p-0 xl:mx-16 md:gap-10 xl:gap-20 xl:mt-10">
         <Image
-          src="/images/kegiatan/monitor.svg"
+          src="/images/kegiatan/gebsor.svg"
           width={300}
           height={300}
           className="w-72 xl:w-[550px] mb-10 my-5 xl:mb-10"

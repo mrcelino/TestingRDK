@@ -77,8 +77,8 @@ export class Player  {
             return;
         }
 
-        let positionX = this.object.x + velocityX;
-        let positionY = this.object.y + velocityY;
+        const positionX = this.object.x + velocityX;
+        const positionY = this.object.y + velocityY;
         this.scene.physics.moveTo(this.object, positionX, positionY, 70);
         this.position = {x: positionX, y: positionY};
 

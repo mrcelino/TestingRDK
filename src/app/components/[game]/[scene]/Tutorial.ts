@@ -12,7 +12,6 @@ export class TutorialScene extends Scene
             this.sys.canvas.classList.remove('hidden')
             this.sys.canvas.classList.add('block')
             this.scale.refresh()
-            const musicScene = this.scene.get("MusicScene");
 
             this.scene.resume();
         });
@@ -54,8 +53,8 @@ export class TutorialScene extends Scene
             welcomeTutorialText,
             {
                 font: '28px Arial',
-                fill: '#ffffff',
-                wordWrap: { width: papan.displayWidth - 40 }
+                wordWrap: { width: papan.displayWidth - 40 },
+                color: '#ffffff'
             }
         );
         tutorialText.setOrigin(0.5, 0);

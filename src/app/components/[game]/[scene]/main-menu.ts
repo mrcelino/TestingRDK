@@ -1,7 +1,5 @@
-import { Scene, Tilemaps } from "phaser";
+import { Scene } from "phaser";
 import { EventBus } from "../EventBus";
-import { Player } from "./utils/Player";
-import GlobalFullscreenPlugin from "./utils/globalInitialize";
 
 
 
@@ -25,10 +23,7 @@ export class Menu extends Scene
             this.sys.canvas.classList.remove('hidden')
             this.sys.canvas.classList.add('block')
             this.scale.refresh()
-            const musicScene = this.scene.get("MusicScene");
-            if (musicScene && musicScene.bgMusic) {
-                musicScene.bgMusic.resume();
-            }
+
             this.scene.resume();
         });
 
@@ -48,7 +43,7 @@ export class Menu extends Scene
 
         let selectedValue: 'Pria' | 'Wanita'  = 'Pria';
 
-        let player = this.add.sprite(this.sys.canvas.width / 2, 250, "lkdepan1").setScale(10);
+        const player = this.add.sprite(this.sys.canvas.width / 2, 250, "lkdepan1").setScale(10);
 
         const priaBox = this.add.image(-150, 100, "Btn-laki-On").setOrigin(0.5);
         priaBox.setDisplaySize(100, 150)
@@ -116,7 +111,7 @@ export class Menu extends Scene
                 return;
             }
 
-            if (!("orientation" in screen && "lock" in screen.orientation)) {
+            if (!("orientation" in screen && "lock" in (screen.orientation as ScreenOrientation & { lock: (orientation: string) => Promise<void> }))) {
                 return;
             }
 
@@ -126,9 +121,9 @@ export class Menu extends Scene
             }
 
             // Lock the orientation to landscape
-            await screen.orientation.lock("landscape");
+            await (screen.orientation as ScreenOrientation & { lock: (orientation: string) => Promise<void> }).lock("landscape");
         } catch (error) {
             console.error("Failed to lock orientation:", error);
-        }
-    }
+        }
+    }
 }

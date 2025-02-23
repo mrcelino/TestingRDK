@@ -1,5 +1,4 @@
 import { Scene } from "phaser";
-import GlobalFullscreenPlugin from "./utils/globalInitialize";
 
 
 export class papan extends Scene

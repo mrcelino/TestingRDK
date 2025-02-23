@@ -316,7 +316,7 @@ export default function BigAgenda({
       <div
         data-aos="fade-up"
         data-aos-duration="1000"
-        className="w-[282px] md:w-[388px] lg:w-[893px] h-[69px] md:h-[81px] lg:h-[187px] bg-[#FBFBFB] border lg:border-[3px] border-black flex flex-col rounded-[50px] items-center justify-center mt-5 md:mt-8 lg:mt-10 py-1 md:py-2 lg:py-5"
+        className="w-[282px] md:w-[388px] lg:w-[893px] h-[69px] md:h-[81px] lg:h-[187px] bg-[#FBFBFB] border lg:border-[3px] border-black flex flex-col rounded-[25px] lg:rounded-[50px] items-center justify-center mt-5 md:mt-8 lg:mt-10 py-1 md:py-2 lg:py-5"
       >
         <div className="relative flex flex-col text-center">
           {/* <p className="text-[#FFC359] font-semibold text-[8px] md:text-[8px] lg:text-base italic font-body">
