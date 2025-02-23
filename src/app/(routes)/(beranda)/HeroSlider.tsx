@@ -3,21 +3,23 @@ import Image from "next/image";
 export default function HeroSlider() {
 	return (
 		<div className="relative ">
-			<Image
-				src="/images/home/hero_slider.png"
-				alt="Hero Slider"
-				height={805}
-				width={1507}
-				className="h-full w-full"
-			/>
+			<div>
+				<Image
+					src="/images/home/hero_slider.png"
+					alt="Hero Slider"
+					height={805}
+					width={1507}
+					className="h-[350px] md:h-full w-full object-cover object-center"
+				/>
 
-			<Image
-				src="/images/home/box_shadow.png"
-				alt="Box Shadow"
-				height={805}
-				width={1507}
-				className="absolute top-0 right-0 left-0 h-full w-full"
-			/>
+				<Image
+					src="/images/home/box_shadow.png"
+					alt="Box Shadow"
+					height={805}
+					width={1507}
+					className="absolute top-0 right-0 left-0 h-full w-full"
+				/>
+			</div>
 
 			<div className="">
 				{/* Hidden mobile */}
@@ -26,7 +28,7 @@ export default function HeroSlider() {
 					alt="Hero Slider"
 					height={42}
 					width={160}
-					className="absolute lg:top-52 top-16 md:left-10 md:block hidden lg:w-[20%] 2xl:h-[200px] 2xl:w-[30rem] 2xl:top-40 2xl:left-[0rem] max-w-7xl"
+					className="absolute lg:top-52 top-[12rem] md:left-10 md:block hidden lg:w-[20%] 2xl:h-[200px] 2xl:w-[30rem] 2xl:top-40 2xl:left-[0rem] max-w-7xl"
 				/>
 
 				{/* Hidden desktop */}
@@ -35,10 +37,10 @@ export default function HeroSlider() {
 					alt="Hero Slider"
 					height={42}
 					width={64}
-					className="z-20 absolute top-8 left-5 w-[20%] md:hidden max-w-7xl"
+					className="z-20 absolute top-28 left-5 w-[20%] md:hidden max-w-7xl"
 				/>
 
-				<div className="md:top-40 lg:top-[20rem] xl:top-[22rem] z-20 absolute md:left-10 font-semibold text-white italic left-5 top-20 max-w-7xl 5xl:top-[25rem]">
+				<div className="md:top-[18rem] lg:top-[20rem] xl:top-[22rem] z-20 absolute md:left-10 font-semibold text-white italic left-5 top-40 max-w-7xl 5xl:top-[25rem]">
 					<p className=" xl:text-[6rem] lg:text-[4rem] md:text-5xl text-3xl ">
 						Ramadhan Di
 					</p>
