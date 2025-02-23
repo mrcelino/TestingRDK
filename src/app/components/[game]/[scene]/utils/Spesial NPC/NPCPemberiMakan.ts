@@ -46,7 +46,7 @@ export class NPCPemberiMakan extends Npc
                       "Sudah selesai pak, semoga amal bapak diterima oleh Allah",
                   },
                   {
-                    name: "Pak joko",
+                    name: "Syahdan",
                     dialogs:
                       "Terima kasih juga mas atas bantuannya",
                   },
@@ -63,7 +63,7 @@ export class NPCPemberiMakan extends Npc
         if(this.player.makananQuest === 1){
             this.scene.scene.launch("Textbox", { player: this.player, text: [
                 {
-                    name: "Pak joko",
+                    name: "Syahdan",
                     dialogs:
                       "Mohon bantuannya ya mas",
                   },
@@ -73,7 +73,7 @@ export class NPCPemberiMakan extends Npc
                       "Baik pak",
                   },
                   { 
-                    name: "Pak joko", 
+                    name: "Syahdan", 
                     dialogs: "Terima kasih mas"
                   }
             ], order:  JSON.parse(JSON.stringify(this.data.order)), callback: ()=>{

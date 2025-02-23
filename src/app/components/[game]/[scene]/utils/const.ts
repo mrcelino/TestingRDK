@@ -274,7 +274,7 @@ export const npcs: NPC[] = [
     position: { x: 346.50, y: 215.60 },
   },
   {
-    name: "Naila",
+    name: "Azki",
     dialogs: [
       {
         name: "Player",
@@ -282,7 +282,7 @@ export const npcs: NPC[] = [
           "Eh, Kak! Aku lihat ada banyak lomba di sini. Bisa ikut daftar sekarang nggak?",
       },
       {
-        name: "Naila",
+        name: "Azki",
         dialogs:
           "Hmm, sayang banget sih, pendaftarannya udah ditutup. Tapi kalau mau tau info lengkap, cek aja sosial media kita di @rdkugm. Ada di TikTok, Instagram, sama Twitter (X).",
       },
@@ -291,7 +291,7 @@ export const npcs: NPC[] = [
         dialogs: "Wah, telat dong ya… Tapi ini lombanya keren-keren deh! Ada apa aja sih?"
     },
       {
-        name: "Naila",
+        name: "Azki",
         dialogs:
           "Banyak! Ada Da’i Nasional, Karya Tulis Ilmiah Al-Qur’an, Business Plan, Adzan, Poster, Fotografi, sama Ramadan Content Campaign. Oh iya, lomba-lombanya ini skala nasional loh, jadi pesertanya dari mana-mana!",
       },
@@ -301,7 +301,7 @@ export const npcs: NPC[] = [
           "Wah, keren! Boleh nonton lombanya aja nggak?",
       },
       {
-        name: "Naila",
+        name: "Azki",
         dialogs: "Boleh banget! Datang aja ke area kompetisi. Siapa tahu lo jadi terinspirasi buat ikut tahun depan!"
       }
     ],
@@ -314,7 +314,7 @@ export const npcs: NPC[] = [
     position: { x: 86.40, y: 19.20 },
   },
   {
-    name: "Hanif",
+    name: "Akhdan",
     dialogs: [
       {
         name: "Player",
@@ -322,7 +322,7 @@ export const npcs: NPC[] = [
           "Kak, kalau mau ikut kajian di RDK, gimana caranya? Harus daftar dulu atau gimana?",
       },
       {
-        name: "Hanif",
+        name: "Akhdan",
         dialogs:
           "Nggak perlu daftar, langsung datang aja ke masjid. Kajian kita dibuka untuk umum!",
       },
@@ -331,7 +331,7 @@ export const npcs: NPC[] = [
         dialogs: "Wah, fleksibel ya! Tapi di sini kajiannya bahas apa aja sih?"
     },
       {
-        name: "Hanif",
+        name: "Akhdan",
         dialogs:
           "Macem-macem! Ada soal pendidikan, keuangan, pemerintahan, kesehatan mental, pokoknya luas banget!",
       },
@@ -341,7 +341,7 @@ export const npcs: NPC[] = [
           "Trus kalau aku mau dapet gambaran besar kajian ini di game gimana?",
       },
       {
-        name: "Hanif",
+        name: "Akhdan",
         dialogs: "Gampang! Coba masuk ke masjid di dalam game ini. Nanti bakal ada simulasi yang kasih lo experience seolah-olah lagi ikut kajian langsung!"
       },
       {
@@ -350,7 +350,7 @@ export const npcs: NPC[] = [
           "Wih, keren idenya!", 
       },
       {
-        name:"Hanif",
+        name:"Akhdan",
         dialogs:"Jelas dong! Apalagi pembicaranya bukan orang sembarangan. Ada tokoh terkemuka, menteri, praktisi, pokoknya yang jago di bidangnya!"
       }
     ],
@@ -363,7 +363,7 @@ export const npcs: NPC[] = [
     position: { x: 281.60, y: 102.40},
   },
   {
-    name: "Fahri",
+    name: "Eka",
     dialogs: [
       {
         name: "Player",
@@ -371,7 +371,7 @@ export const npcs: NPC[] = [
           "Kak, ini aku lihat orang-orang pada sibuk di RDK. Kok semangat banget ya?",
       },
       {
-        name: "Fahri",
+        name: "Eka",
         dialogs:
           "Ya iyalah! RDK itu bukan cuma sekadar acara, tapi tempat kita buat belajar, berbagi, dan nambah pengalaman.",
       },
@@ -380,7 +380,7 @@ export const npcs: NPC[] = [
         dialogs: "Tapi serius, kenapa banyak banget yang tertarik datang?"
     },
       {
-        name: "Fahri",
+        name: "Eka",
         dialogs:
           "Selain acaranya yang seru, ada banyak hal yang bikin lo betah. Mulai dari kajian inspiratif, ngabuburit sambil nunggu buka, sampe kesempatan buat ketemu orang-orang hebat.",
       },
@@ -390,7 +390,7 @@ export const npcs: NPC[] = [
           "Wah, kalau gitu aku harus manfaatin waktu sebaik mungkin di sini!",
       },
       {
-        name: "Fahri",
+        name: "Eka",
         dialogs: "Nah, itu baru mindset mahasiswa berkelas!"
       }
     ],
@@ -403,7 +403,7 @@ export const npcs: NPC[] = [
     position: { x: 249.60, y: 201.60},
   },
   {
-    name: "Rizky",
+    name: "Marcelino",
     dialogs: [
       {
         name: "Player",
@@ -411,7 +411,7 @@ export const npcs: NPC[] = [
           "Kak, aku liat banyak yang mampir ke kajian, tapi ada juga yang lebih milih nongkrong di luar.",
       },
       {
-        name: "Rizky",
+        name: "Marcelino",
         dialogs:
           "Nah, itu dia! Kadang kita lupa kalau momen Ramadhan itu harus dimanfaatin sebaik mungkin.",
       },
@@ -420,7 +420,7 @@ export const npcs: NPC[] = [
         dialogs: "Maksudnya?"
     },
       {
-        name: "Rizky",
+        name: "Marcelino",
         dialogs:
           "Gini deh… Lo mending denger kajian dari orang-orang hebat atau buang waktu tanpa dapet insight apa-apa?",
       },
@@ -430,7 +430,7 @@ export const npcs: NPC[] = [
           "Hmm, kena banget sih…",
       },
       {
-        name: "Rizky",
+        name: "Marcelino",
         dialogs: "Yaudah, yuk gas ikut kajian! Sekali lo cobain, bakal ketagihan. Apalagi kalau dapet ilmu yang bisa ngebantu lo di masa depan!"
       },
       {
@@ -448,7 +448,7 @@ export const npcs: NPC[] = [
     position: { x: 208.00, y: 393.60},
   },
   {
-    name: "Bagas",
+    name: "Fahrul",
     dialogs: [
       {
         name: "Player",
@@ -456,7 +456,7 @@ export const npcs: NPC[] = [
           "Bang, Nggak masuk ke masjid buat ngikutin kajian?",
       },
       {
-        name: "Dani",
+        name: "Fahrul",
         dialogs:
           "Belum, tadi aku lagi ngobrol sama temen-temen di luar.",
       },
@@ -465,7 +465,7 @@ export const npcs: NPC[] = [
         dialogs: "Oalah, aku duluan ya"
       },
       {
-        name: "Dani",
+        name: "Fahrul",
         dialogs:
           "Iya, iya, nggak apa-apa. Aku juga mau masuk nih, biar nggak ketinggalan kajian.",
       }
@@ -479,7 +479,7 @@ export const npcs: NPC[] = [
     position: { x: 89.60, y: 406.40},
   },
   {
-    name: "Fikri",
+    name: "Emilio",
     dialogs: [
       {
         name: "Player",
@@ -487,7 +487,7 @@ export const npcs: NPC[] = [
           "Assalamu’alaikum, Kak! Lagi nunggu buka di sini ya?",
       },
       {
-        name: "Fikri",
+        name: "Emilio",
         dialogs:
           "Wa’alaikumussalam! Iya, suasanya enak banget apalagi ada kajiannya",
       },
@@ -496,7 +496,7 @@ export const npcs: NPC[] = [
         dialogs: "Oh, tiap hari ada kajian ya?"
       },
       {
-        name: "Fikri",
+        name: "Emilio",
         dialogs:
           "Iya, sebelum buka selalu ada kajian singkat.",
       },
@@ -515,7 +515,7 @@ export const npcs: NPC[] = [
     position: { x: 448.00, y: 396.80},
   },
   {
-    name: "Rizal",
+    name: "Wahhab",
     dialogs: [
       {
         name: "Player",
@@ -523,7 +523,7 @@ export const npcs: NPC[] = [
           "Bang, udah lama nunggu buka di sini?",
       },
       {
-        name: "Rizal",
+        name: "Wahhab",
         dialogs:
           "Belum lama, ini baru dateng.",
       },
@@ -532,7 +532,7 @@ export const npcs: NPC[] = [
         dialogs: "Oh, aku duluan ya, takut ketinggalan kajian"
       },
       {
-        name: "Rizal",
+        name: "Wahhab",
         dialogs:
           "Iya, iya, nggak apa-apa. Aku juga mau masuk nih, biar nggak ketinggalan kajian.",
       }
@@ -547,7 +547,7 @@ export const npcs: NPC[] = [
     position: { x: 486.40, y: 259.20},
   },
   {
-    name: "Asih",
+    name: "Nadya",
     dialogs: [
       {
         name: "Player",
@@ -555,7 +555,7 @@ export const npcs: NPC[] = [
           "Assalamu’alaikum! Kajian di dalam masih berlangsung ya?",
       },
       {
-        name: "Asih",
+        name: "Nadya",
         dialogs:
           "Wa’alaikumussalam! Iya, masih",
       },
@@ -564,7 +564,7 @@ export const npcs: NPC[] = [
         dialogs: "Wah, masih sempet nih! Aku boleh ikut gabungkan?"
       },
       {
-        name: "Asih",
+        name: "Nadya",
         dialogs:
           "Tentu! Semua orang boleh ikut. Kajian sebelum buka memang selalu ada di sini.",
       },
@@ -583,10 +583,10 @@ export const npcs: NPC[] = [
     position: { x: 54.40, y: 163.20},
   },
   {
-    name: "Pak joko",
+    name: "Syahdan",
     dialogs: [
       {
-        name: "Pak joko",
+        name: "Syahdan",
         dialogs:
           "Assalamu’alaikum mas, Maaf menggannggu boleh minta tolong?",
       },
@@ -596,7 +596,7 @@ export const npcs: NPC[] = [
           "Wa’alaikumussalam pak boleh, Kenapa pak",
       },
       { 
-        name: "Pak joko", 
+        name: "Syahdan", 
         dialogs: "Ini mas saya sebelumnya sedang ada rezeki lebih jadi saya membagikan iftar tetapi ada iftar yang belum abis mas. boleh minta tolong dibagiin nggak mas?"
       },
       {
@@ -605,7 +605,7 @@ export const npcs: NPC[] = [
           "Boleh pak, saya bantu ya",
       },
       {
-        name: "Pak joko",
+        name: "Syahdan",
         dialogs:
           "Terima kasih mas",
       }

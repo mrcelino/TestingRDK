@@ -167,8 +167,8 @@ export const npcsAnims: Dictinary<Dictinary<animation>> = {
             repeat: -1
         }
     },
-    "Naila": {
-        "Naila_idle":
+    "Azki": {
+        "Azki_idle":
         {
             key: 'Naila_idle',
             frames:
@@ -180,8 +180,8 @@ export const npcsAnims: Dictinary<Dictinary<animation>> = {
             repeat: -1
         }
     },
-    "Hanif": {
-        "Hanif_idle":
+    "Akhdan": {
+        "Akhdan_idle":
         {
             key: 'Hanif_idle',
             frames:
@@ -193,8 +193,8 @@ export const npcsAnims: Dictinary<Dictinary<animation>> = {
             repeat: -1
         }
     },
-    "Fahri": {
-        "Fahri_idle":
+    "Eka": {
+        "Eka_idle":
         {
             key: 'Fahri_idle',
             frames:
@@ -206,8 +206,8 @@ export const npcsAnims: Dictinary<Dictinary<animation>> = {
             repeat: -1
         }
     },
-    "Risky": {
-        "Rizky_idle":
+    "Marcelino": {
+        "Marcelino_idle":
         {
             key: 'Rizky_idle',
             frames:
@@ -219,8 +219,8 @@ export const npcsAnims: Dictinary<Dictinary<animation>> = {
             repeat: -1
         }
     },
-    "Bagas": {
-        "Bagas_idle":
+    "Fahrul": {
+        "Fahrul_idle":
         {
             key: 'Bagas_idle',
             frames:
@@ -233,8 +233,8 @@ export const npcsAnims: Dictinary<Dictinary<animation>> = {
         }
     },
 
-    "Fikri":{
-        "Fikri_idle":
+    "Emilio":{
+        "Emilio_idle":
         {
             key: 'Fikri_idle',
             frames:
@@ -246,8 +246,8 @@ export const npcsAnims: Dictinary<Dictinary<animation>> = {
             repeat: -1
         }
     },
-    "Rizal":{
-        "Rizal_idle":
+    "Wahhab":{
+        "Wahhab_idle":
         {
             key: 'Rizal_idle',
             frames:
@@ -259,8 +259,8 @@ export const npcsAnims: Dictinary<Dictinary<animation>> = {
             repeat: -1
         }
     },
-    "Asih":{
-        "Asih_idle":
+    "Nadya":{
+        "Nadya_idle":
         {
             key: 'Asih_idle',
             frames:
@@ -285,8 +285,8 @@ export const npcsAnims: Dictinary<Dictinary<animation>> = {
             repeat: -1
         }
     },
-    "Pak joko":{
-        "Pak joko_idle":
+    "Syahdan":{
+        "Syahdan_idle":
         {
             key: 'Pak joko_idle',
             frames:
