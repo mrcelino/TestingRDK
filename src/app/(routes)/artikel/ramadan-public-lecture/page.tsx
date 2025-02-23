@@ -11,7 +11,7 @@ import HotArticle from "../../../components/artikel/ramadan-public-lecture/HotAr
 
 
 
-export default function BigAgendaRamadan() {
+export default function RamadanPublicLecture() {
 
 	return (
 		<section className="font-body">
