@@ -14,8 +14,8 @@ export default function FaqTitle() {
                         className="absolute lg:mr-20 -scale-x-100 lg:-mt-12 md:w-[200px] md:h-[200px] lg:w-[230px] lg:h-[230px] md:-mt-8 right-0 sm:w-[130px] sm:h-[130px] -mt-4 w-[100px] h-[100px] -mt-4"
                     />
                 <div>
-                    <h1 className=" text-white lg:p-4 md:p-4 p-2 text-center lg:text-4xl font-titania md:text-3xl sm:text-lg ">Hello Sobat RDK!
-                    <br/> Is there anything we can help with?</h1>
+                    <h1 className=" text-white lg:p-4 md:p-4 p-2 text-center lg:text-4xl font-titania md:text-3xl sm:text-lg ">Halo Sobat RDK!
+                    <br/> Apakah ada yang kami bantu?</h1>
                 </div >
 
             </div>
