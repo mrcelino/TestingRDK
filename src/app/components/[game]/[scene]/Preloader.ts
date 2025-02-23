@@ -210,7 +210,7 @@ export class Preloader extends Scene {
         this.load.audio('bgMusic', 'assets/game/Music/Mix Buat Game.wav');
 
         // Escape
-        this.load.image("Escape", 'assets/game/pause/Escape.png');
+        this.load.image("Escape", 'assets/game/Pause/Escape.png');
     }
 
     create() {
