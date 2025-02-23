@@ -7,6 +7,7 @@ import { Achievement, Item } from "./utils/PlayerData";
 
 export class Ending extends Scene
 {
+    note!: Phaser.GameObjects.Text;
     player!: Player;
     constructor()
     {
@@ -73,5 +74,79 @@ export class Ending extends Scene
         });
         const container = this.add.container(0, -70);
         container.add([ending, AchivementText, ItemText, close]);
+
+        this.note = this.add.text(60, 150, 'Kumpulkan seluruh achivement dan item untuk mendapatkan hadiah', {
+            fontSize: '17px',
+            color: '#664032',
+            fontFamily: 'Arial',
+            fontStyle: 'bold'
+        }).setOrigin(0,0);
+
+        this.note.setPosition(60, 520);
+        container.add(this.note);
+        
+
+        
+        if(AchivementQuantity === sumAchievement && ItemQuantity === sumItem ){
+            this.hadiah().then((hadiah) => {
+                const base = process.env.NEXT_PUBLIC_API_BASE_URL
+                fetch(`${base}hadiahs/${(hadiah[0] as Hadiah).id}/decrease`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.status === 200) {
+                        if(hadiah.length > 0){
+                            const hadiahText = this.add.text(100, 200, `Kupon : ${hadiah[0].hadiah}${hadiah[0].quantity}`, {
+                                fontSize: '27px',
+                                color: '#664032',
+                                fontFamily: 'Arial',
+                                fontStyle: 'bold'
+                            }).setOrigin(0,0);
+        
+                            hadiahText.setPosition(100, 350);
+                            container.add(hadiahText);
+                            this.note.setText('Kamu dapat menukarkan Voucher ini menjadi iftar gratis di Masjid Kampus UGM dengan menunjukkan screenshot ini');
+                        }else{
+                            const hadiahText = this.add.text(100, 200, `Kupon : Maaf kupon sudah habis`, {
+                                fontSize: '27px',
+                                color: '#664032',
+                                fontFamily: 'Arial',
+                                fontStyle: 'bold'
+                            }).setOrigin(0,0);
+        
+                            hadiahText.setPosition(100, 350);
+                            container.add(hadiahText);
+                        }
+                    }
+                });
+                
+            });
+        }
+
     }
+
+    async hadiah(){
+        const base = process.env.NEXT_PUBLIC_API_BASE_URL
+        const response = await fetch(base+`hadiahs`);
+        const data = await response.json();
+        
+        const hadiah= data.data as Hadiah[];
+        const Today = new Date();
+        const date = Today.getFullYear()+'-'+(Today.getMonth()+1)+'-'+Today.getDate();
+        hadiah.filter((hadiah) => hadiah.date ===date);
+        return hadiah;
+    }
+
+
+}
+
+interface Hadiah {
+    id: number;
+    documentId: string;
+    hadiah: string;
+    date: string;
+    quantity: number;
 }

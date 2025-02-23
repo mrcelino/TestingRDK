@@ -1,5 +1,6 @@
 'use client'
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 export default function RdkQuest() {
 
@@ -33,9 +34,16 @@ export default function RdkQuest() {
 
 			{/* Game */}
 
-			<div data-aos="zoom-in" data-aos-duration="1000" className="md:border-[3px] lg:border-4 border-2 border-black lg:w-[75%] md:h-[22rem] lg:h-[500px] mx-auto md:p-4 p-3 rounded-3xl mt-10 h-[14rem] flex justify-center items-center overflow-hidden">
+			<div data-aos="zoom-in" data-aos-duration="1000" className="md:border-[3px] lg:border-4 border-2 border-black lg:w-[75%] md:h-[22rem] lg:h-[500px] mx-auto md:p-4 p-3 rounded-3xl mt-10 h-[14rem] flex justify-center items-center overflow-hidden  ">
 				<PhaserGame/>
-
+				<Image 
+					src="/assets/game/Thumbnail/Thumbnail game.png"
+					alt="RDK Quest"
+					layout="fill"
+					objectFit="cover"
+					objectPosition="top"
+					className="absolute"
+				/>
 			</div>
 
 			<button
