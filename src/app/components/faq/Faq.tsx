@@ -52,11 +52,11 @@ export default function FAQ() {
                     `}</style>
                     </div>
                 ) : (
-[                    <div className="accordion-group flex flex-col items-center" data-accordion="default-accordion">
+                    <div className="accordion-group flex flex-col items-center" data-accordion="default-accordion">
                         {data.map((item:FaqData, index) => (
                             <FAQHolder key={index} answer={item.answer} question={item.question} />
                         ))}
-                    </div>]
+                    </div>
                 )}
             </div>
         </section>
