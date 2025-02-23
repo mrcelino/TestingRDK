@@ -211,6 +211,9 @@ export class Preloader extends Scene {
 
         // Escape
         this.load.image("Escape", 'assets/game/Pause/Escape.png');
+
+        // Tutorial
+        this.load.image("TutorialBox", 'assets/game/Tutorial/TutorialBox.png');
     }
 
     create() {
