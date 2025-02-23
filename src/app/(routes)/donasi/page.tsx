@@ -266,7 +266,7 @@ function KonfirmasiDonasi({ nama, linkKonfirmasi }: KonfirmasiDonasiProps) {
           <div className='flex flex-col text-right'>
             <h2 className='font-body text-xs md:text-base italic px-4 py-2 font-semibold text-white '>Konfirmasi Donasi</h2>
             <hr className='border-black border md:border-[1.5px] w-[80%] ml-auto'/>
-            <Link href={`https://${linkKonfirmasi}`} className='font-body text-xs md:text-base italic px-4 py-2 font-semibold text-white'>
+            <Link href={`https://${linkKonfirmasi}`} className='hover:text-[#F4AA3D] duration-300 font-body text-xs md:text-base italic px-4 py-2 font-semibold text-white'>
               {linkKonfirmasi}
             </Link>
           </div>
@@ -284,7 +284,7 @@ function KonfirmasiDonasi({ nama, linkKonfirmasi }: KonfirmasiDonasiProps) {
           <div className='flex flex-col text-left'>
             <h2 className='font-body text-xs md:text-base italic px-4 py-2 font-semibold '>Contact Person</h2>
             <hr className='border-black border md:border-[1.5px] w-[80%]'/>
-            <Link href={`https://wa.me/${waNumber}`} className="font-body text-xs md:text-base italic px-4 py-2 font-semibold">
+            <Link href={`https://wa.me/${waNumber}`} className="hover:opacity-50 duration-300 font-body text-xs md:text-base italic px-4 py-2 font-semibold">
               {waNumber} {contactName}
             </Link>
           </div>
