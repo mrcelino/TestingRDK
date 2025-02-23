@@ -28,7 +28,7 @@ export default function Navbar() {
 	};
 
 	return (
-		<nav className="bg-gradient-to-r from-[#155458] from-30% to-[#51B2B8] text-white fixed lg:top-32 lg:left-1/2 lg:transform lg:-translate-x-1/2 z-50 lg:mt-[-4rem] shadow-md lg:w-[75%] lg:mx-auto lg:rounded-full ">
+		<nav className="bg-gradient-to-r from-[#155458] from-30% to-[#51B2B8] text-white fixed lg:top-10 left-1/2 transform -translate-x-1/2 z-[100]  shadow-md lg:w-[90%] xl:w-[75%] w-full lg:mx-auto lg:rounded-full ">
 			<div className="flex items-center lg:justify-between px-4 py-2">
 				{/* Hamburger Icon */}
 				<button
@@ -87,7 +87,6 @@ function menuItems(
 			href: "/artikel",
 			label: "Artikel",
 			submenu: [
-				{ href: "/artikel", label: "Beranda" },
 				{ href: "/artikel/big-agenda-ramadan", label: "Big Agenda" },
 				{ href: "/artikel/samudra", label: "Samudra" },
 				{ href: "/artikel/ramadan-public-lecture", label: "RPL" },

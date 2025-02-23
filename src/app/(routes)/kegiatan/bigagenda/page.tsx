@@ -147,7 +147,7 @@ function RDKFestival(){
         <div className="hidden md:block absolute rounded-full size-52 lg:size-72 blur-[80px] -top-20 -left-20 bg-[#76D0D5] opacity-50"></div>
       </section>
 
-      <section className="flex flex-col md:flex-row md:justify-center justify-around items-center mt-2 xl:mt-10 xl:items-center p-4 xl:p-0 xl:mx-4 md:gap-10 xl:gap-20 xl:mb-20">
+      <section className="flex flex-col md:flex-row md:justify-center justify-around items-center mt-2 xl:mt-10 xl:items-center p-4 xl:p-0 xl:mx-4 md:gap-10 xl:gap-20 xl:mb-16">
         <Image
           src="/images/kegiatan/tv.svg"
           width={300}

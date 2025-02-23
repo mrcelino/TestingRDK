@@ -11,7 +11,7 @@ export default function DailyAgenda() {
 			<Pattern />
 
 			{/* Content */}
-			<div className="lg:my-36 my-10 z-10 relative">
+			<div className="lg:my-36 my-10 z-10 relative ">
 				{/* // Head */}
 				<Header />
 

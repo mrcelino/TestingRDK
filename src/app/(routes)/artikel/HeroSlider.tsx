@@ -13,19 +13,19 @@ export default function HeroSlider() {
 	const [articles, setArticles] = useState<Article[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
 
-	const regularArticles = articles.filter(
-		(slide) => slide.category === "Big_Agenda_Ramadhan" && slide.like >= 100
-	);
-
-	const displayedArticles =
-		regularArticles.length > 0
-			? regularArticles
-			: articles.filter((slide) => slide.category === "Big_Agenda_Ramadhan");
-
 	useEffect(() => {
 		const getArticles = async () => {
 			const data = await fetchArticles();
-			setArticles(data);
+			let topArticles = data
+				.filter((article) => article.like >= 100)
+				.slice(0, 4);
+
+
+			if (topArticles.length === 0) {
+				topArticles = data.filter((article) => article.like >= 0).slice(0, 4);
+			}
+
+			setArticles(topArticles);
 			setIsLoading(false);
 		};
 
@@ -33,7 +33,7 @@ export default function HeroSlider() {
 	}, []);
 
 	return (
-		<div className="relative w-full  lg:h-screen">
+		<div className="relative w-full lg:h-screen">
 			{isLoading ? (
 				<div className="flex items-center justify-center h-96 md:h-[500px] mt-5 md:mt-8 lg:mt-10 scale-50 md:scale-75 lg:scale-100">
 					<div className="loader"></div>
@@ -46,7 +46,6 @@ export default function HeroSlider() {
 							height: 50px;
 							animation: spin 1s linear infinite;
 						}
-
 						@keyframes spin {
 							0% {
 								transform: rotate(0deg);
@@ -57,7 +56,7 @@ export default function HeroSlider() {
 						}
 					`}</style>
 				</div>
-			) : displayedArticles.length > 0 ? (
+			) : articles.length > 0 ? (
 				<Swiper
 					navigation={{
 						nextEl: ".custom-swiper-button-next",
@@ -73,9 +72,8 @@ export default function HeroSlider() {
 				>
 					{articles.map((article) => (
 						<SwiperSlide key={article.id}>
-							<div className="relative w-full h-full ">
+							<div className="relative w-full h-full">
 								<Link href={`/artikel/${article.id}`}>
-									{/* Menampilkan gambar dari article_images */}
 									{article.article_images.length > 0 ? (
 										<Image
 											src={
@@ -85,7 +83,7 @@ export default function HeroSlider() {
 											alt={article.title}
 											width={1507}
 											height={805}
-											className="w-full md:h-[520px]  md:h-[520px]  object-cover lg:h-full"
+											className="w-full md:h-[520px] object-cover lg:h-full"
 										/>
 									) : (
 										<div className="w-full h-full bg-gray-500 flex items-center justify-center">
@@ -139,14 +137,12 @@ export default function HeroSlider() {
 					))}
 				</Swiper>
 			) : (
-				<p className="text-center text-white">Memuat artikel...</p>
+				<p className="text-center text-white">Tidak ada artikel tersedia</p>
 			)}
 
-			{/* Tombol Navigasi */}
 			<div className="custom-swiper-button-prev absolute top-1/2 left-5 transform -translate-y-1/2 z-10 cursor-pointer hover:text-gray-200 text-white lg:text-6xl hidden lg:block">
 				❮
 			</div>
-
 			<div className="custom-swiper-button-next absolute top-1/2 right-5 transform -translate-y-1/2 z-10 cursor-pointer hover:text-gray-200 text-white lg:text-6xl hidden lg:block">
 				❯
 			</div>

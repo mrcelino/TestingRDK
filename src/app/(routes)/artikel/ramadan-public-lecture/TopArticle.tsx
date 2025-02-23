@@ -13,19 +13,24 @@ export default function TopArticle() {
 	const [articles, setArticles] = useState<Article[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
 
-	const regularArticles = articles.filter(
-		(slide) => slide.category === "RPL" && slide.like >= 100
-	);
-
-	const displayedArticles =
-		regularArticles.length > 0
-			? regularArticles
-			: articles.filter((slide) => slide.category === "RPL");
-
 	useEffect(() => {
 		const getArticles = async () => {
 			const data = await fetchArticles();
-			setArticles(data);
+
+			let topArticles = data
+				.filter(
+					(slide) =>
+						slide.category === "RPL" && slide.like >= 100
+				)
+				.slice(0, 3);
+
+			if (topArticles.length === 0) {
+				topArticles = data
+					.filter((slide) => slide.category === "RPL")
+					.slice(0, 3);
+			}
+
+			setArticles(topArticles);
 			setIsLoading(false);
 		};
 
@@ -57,7 +62,7 @@ export default function TopArticle() {
 						}
 					`}</style>
 				</div>
-			) : displayedArticles.length > 0 ? (
+			) : articles.length > 0 ? (
 				<Swiper
 					navigation={{
 						nextEl: ".custom-swiper-button-next",

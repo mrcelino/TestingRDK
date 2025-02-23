@@ -2,13 +2,13 @@
 
 import { Article, fetchArticleById } from "@/app/lib/article";
 import Image from "next/image";
-import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function DetailArtikel() {
 	const [article, setArticle] = useState<Article | null>(null);
 	const { id } = useParams(); // Destructuring langsung dari useParams
+	const router = useRouter();
 
 	useEffect(() => {
 		const getArticle = async () => {
@@ -53,24 +53,18 @@ export default function DetailArtikel() {
 	return (
 		<section className="p-6 max-w-screen-2xl mx-auto">
 			<main className="p-2 lg:w-11/12 lg:mx-auto lg:mt-32 font-body">
-				<h1 className="lg:text-4xl md:text-2xl text-xl font-semibold lg:w-11/12 lg:mx-auto ">
+				<h1 className="lg:text-4xl md:text-2xl text-xl font-semibold lg:w-11/12 lg:mx-auto mt-16 lg:mt-0 ">
 					{article.title}
 				</h1>
 
 				<div className="flex items-center gap-5 lg:text-2xl mt-6 lg:ml-11">
-					<p className="text-orangeCS italic font-semibold">
+					<p className="text-sm text-orangeCS italic font-semibold">
 						RDK <span className="text-greenCS">News</span>
 					</p>
-					<Image
-						src="/logo.png"
-						alt="Logo RDK"
-						width={30}
-						height={30}
-						className="z-30"
-					/>
-					<div className="w-[3px] h-8 bg-greenCS"></div>
+					<Image src="/logo.png" alt="Logo RDK" width={20} height={20} />
+					<div className="w-[2px] h-8 bg-greenCS"></div>
 					{/* Ini diganti jg JANGAN LUPA FORMAT */}
-					<p className="font-light italic text-greenCS ">
+					<p className="font-light italic text-greenCS text-sm ">
 						{new Date(article.date).toLocaleDateString("id-ID", {
 							day: "numeric",
 							month: "long",
@@ -113,25 +107,25 @@ export default function DetailArtikel() {
 						)}
 				</article>
 
-				<Link href={`/artikel`}>
-					<button className="py-2 px-4 border-2 md:border-[3px] lg:border-4 border-black bg-orangeCS rounded-full flex font-medium items-center italic mt-10 active:bg-orange-500 hover:bg-orange-500 ">
-						<svg
-							width="26"
-							height="26"
-							viewBox="0 0 26 25"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M24 12.5H4M2 14.5L13 3.5M2 12.5L13 21.5"
-								stroke="black"
-								strokeWidth="3"
-							/>
-						</svg>
-
-						<p className="ml-2">Back</p>
-					</button>
-				</Link>
+				<button
+					onClick={() => router.back()} // Navigasi ke halaman sebelumnya
+					className="py-2 px-4 border-2 md:border-[3px] lg:border-4 border-black bg-orangeCS rounded-full flex font-medium items-center italic mt-10 active:bg-orange-500 hover:bg-orange-500 "
+				>
+					<svg
+						width="26"
+						height="26"
+						viewBox="0 0 26 25"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M24 12.5H4M2 14.5L13 3.5M2 12.5L13 21.5"
+							stroke="black"
+							strokeWidth="3"
+						/>
+					</svg>
+					<p className="ml-2">Back</p>
+				</button>
 			</main>
 		</section>
 	);
