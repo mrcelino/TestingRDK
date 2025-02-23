@@ -11,52 +11,17 @@ import Link from "next/link";
 interface Props {
 	articles: Article[];
 	isLoading: boolean;
-  }
+}
 
 export default function TopArticle({ articles, isLoading }: Props) {
-	// const [articles, setArticles] = useState<Article[]>([]);
-	// const [isLoading, setIsLoading] = useState(true);
-
-<<<<<<< HEAD:src/app/components/artikel/ramadan-public-lecture/TopArticle.tsx
-	useEffect(() => {
-		const getArticles = async () => {
-			const data = await fetchArticles();
-
-			let topArticles = data
-				.filter(
-					(slide) =>
-						slide.category === "RPL" && slide.like >= 100
-				)
-				.slice(0, 3);
-
-		
-			if(topArticles.length === 0){
-				topArticles = data.filter((slide) => slide.category === "RPL").slice(0, 3);
-			}
-
-			setArticles(topArticles);
-			setIsLoading(false);
-		};
-=======
-	const regularArticles = articles.filter(
+	const topArticles = articles.filter(
 		(slide) => slide.category === "RPL" && slide.like >= 100
 	);
 
 	const displayedArticles =
-		regularArticles.length > 0
-			? regularArticles
+		topArticles.length > 0
+			? topArticles
 			: articles.filter((slide) => slide.category === "RPL");
-
-	// useEffect(() => {
-	// 	const getArticles = async () => {
-	// 		const data = await fetchArticles();
-	// 		setArticles(data);
-	// 		setIsLoading(false);
-	// 	};
->>>>>>> 7e356a584f05ce2bcead4b15596178d4027896c3:src/app/(routes)/artikel/ramadan-public-lecture/TopArticle.tsx
-
-	// 	getArticles();
-	// }, []);
 
 	return (
 		<div className="relative w-full  lg:h-screen">
@@ -83,7 +48,7 @@ export default function TopArticle({ articles, isLoading }: Props) {
 						}
 					`}</style>
 				</div>
-			) : articles.length > 0 ? (
+			) : displayedArticles.length > 0 ? (
 				<Swiper
 					navigation={{
 						nextEl: ".custom-swiper-button-next",
@@ -97,7 +62,7 @@ export default function TopArticle({ articles, isLoading }: Props) {
 					modules={[Navigation, Autoplay]}
 					className="w-full h-full"
 				>
-					{articles.map((article) => (
+					{displayedArticles.map((article) => (
 						<SwiperSlide key={article.id}>
 							<div className="relative w-full h-full ">
 								<Link href={`/artikel/${article.id}`}>

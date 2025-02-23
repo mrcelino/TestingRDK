@@ -5,7 +5,7 @@ export default function HeroSlider() {
 		<div className="relative ">
 			<div>
 				<Image
-					src="/images/home/hero_slider.png"
+					src="/images/home/hero-slider.jpg"
 					alt="Hero Slider"
 					height={805}
 					width={1507}

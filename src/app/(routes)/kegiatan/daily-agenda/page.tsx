@@ -1,4 +1,4 @@
-import Pattern from "./Pattern";
+
 import Samudra from "./Samudra";
 import MimbarSubuh from "./MimbarSubuh";
 import RPL from "./Rpl";
