@@ -90,7 +90,7 @@ function Kupon(){
       {/* Video */}
       <section className="flex justify-center items-center p-1 xl:p-2 bg-white max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-2xl border-2 border-black rounded-3xl mt-10 mx-auto lg:w-[550px] xl:w-[700px]">
         <iframe
-          src="https://www.youtube.com/embed/MIo4tGN11j0?si=A8WeFtaJCGQfoE4_" 
+          src="https://www.youtube.com/embed/Tq8fxbbNCMU?si=WtGsl4wme2EoS2MJ" 
           className="w-96 max-w-2xl rounded-2xl sm:w-[650px] sm:h-52 md:h-64 lg:h-80 xl:w-[750px]"
           title="YouTube video player"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
