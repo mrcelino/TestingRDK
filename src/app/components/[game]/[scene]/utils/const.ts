@@ -238,7 +238,7 @@ export interface DIALOG {
 
 export const npcs: NPC[] = [
   {
-    name: "Rafi",
+    name: "Daffa",
     dialogs: [
       {
         name: "Player",
@@ -246,7 +246,7 @@ export const npcs: NPC[] = [
           "Halo, Kak! Aku baru pertama kali ke RDK. Bisa kasih tahu apa aja yang bisa aku eksplor di sini?",
       },
       {
-        name: "Rafi",
+        name: "Daffa",
         dialogs:
           "Wah, mantap! Selamat datang di RDK! Ini bukan sekadar acara biasa, tapi pengalaman Ramadhan yang berkesan.",
       },
@@ -255,7 +255,7 @@ export const npcs: NPC[] = [
         dialogs: "Menarik! Emangnya ada acara apa aja?"
     },
       {
-        name: "Rafi",
+        name: "Daffa",
         dialogs:
           "Banyak, Bro! Ada Kajian Buka Bersama buat yang pengen dapet insight sambil ngabuburit, terus ada Ramadan Public Lecture sebelum tarawih, dan Mimbar Subuh buat yang mau dapet ilmu setelah sholat subuh. Nah, kalau lo pengen liat update lengkap, cek aja papan informasi di sana!",
       },

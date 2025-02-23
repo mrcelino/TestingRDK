@@ -154,8 +154,8 @@ export const npcsAnims: Dictinary<Dictinary<animation>> = {
         }
     },
 
-    "Rafi": {
-        "Rafi_idle":
+    "Daffa": {
+        "Daffa_idle":
         {
             key: 'Rafi_idle',
             frames:
