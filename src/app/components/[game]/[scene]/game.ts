@@ -357,12 +357,12 @@ export class GameScene extends Scene
                                       "Assalamualaikum kak, ini stand apa kak?",
                                   },
                                   {
-                                    name: "Tegar",
+                                    name: "Damar",
                                     dialogs:
                                       "Waalaikumsalam, ini stand penukaran kupon makanan dan iftar kak. Kupon ini bisa ditukar makanan atau iftar. Tapi maaf kak, masih siap siap dulu ya kak",
                                   },
                                   {
-                                    name: "Tegar",
+                                    name: "Damar",
                                     dialogs:
                                       "Sementara kakak mengikuti kajian terlebih dahulu untuk dapetin tiketnya",
                                   },
@@ -371,7 +371,7 @@ export class GameScene extends Scene
                                     dialogs: "Oh gitu makasih informasinya kak"
                                 },
                                 {
-                                    name: "Tegar",
+                                    name: "Damar",
                                     dialogs: "Sama-sama kak"
                                 }
                             ], order:  [[[0,1,2,3,4]]], callback: ()=>{
@@ -392,12 +392,12 @@ export class GameScene extends Scene
                                       "Kak, aku dapet kupon ini. Bisa ditukarkan makanan kan, kak?",
                                   },
                                   {
-                                    name: "Tegar",
+                                    name: "Damar",
                                     dialogs:
                                       "Kupon ini bisa buat tukar makanan atau iftar. Tapi maaf kak, tapi ini tempat penukaran untuk laki - laki kak!",
                                   },
                                   {
-                                    name: "Tegar",
+                                    name: "Damar",
                                     dialogs:
                                       "Tempat penukaran perempuan ada di sebelah kanan",
                                   },
@@ -406,7 +406,7 @@ export class GameScene extends Scene
                                     dialogs: "Oh gitu makasih informasinya kak"
                                 },
                                 {
-                                    name: "Tegar",
+                                    name: "Damar",
                                     dialogs: "Sama-sama kak"
                                 }
                             ], order:  [[[0,1,2,3,4]]], callback: ()=>{
@@ -428,7 +428,7 @@ export class GameScene extends Scene
                                         dialogs: "Terima kasih atas iftarnya kak",
                                     },
                                     {
-                                        name: "Tegar",
+                                        name: "Damar",
                                         dialogs: "Sama sama, selamat menikmati",
                                     }
 
@@ -455,7 +455,7 @@ export class GameScene extends Scene
                                   "Kak, aku dapet kupon ini. Bisa ditukar sama apa aja?",
                               },
                               {
-                                name: "Tegar",
+                                name: "Damar",
                                 dialogs:
                                   "Kupon ini bisa buat tukar makanan atau iftar. Tapi inget ya, sehari cuma dapet satu kupon!",
                               },
@@ -464,7 +464,7 @@ export class GameScene extends Scene
                                 dialogs: "Oh gitu… Kalau aku mau dapet hadiah tambahan, bisa nggak?"
                             },
                               {
-                                name: "Tegar",
+                                name: "Damar",
                                 dialogs:
                                   "Bisa dong! Caranya, ikut Kajian Buka Bersama. Biasanya setelah kajian, kita bagiin kupon tambahan buat yang aktif. Jadi selain dapet ilmu, dapet bonus juga!",
                               },
@@ -474,7 +474,7 @@ export class GameScene extends Scene
                                   "Wah, jadi makin semangat ikut kajian nih!",
                               },
                               {
-                                name: "Tegar",
+                                name: "Damar",
                                 dialogs: "Nah, itu baru semangat RDK!"
                               },
                               {
@@ -512,12 +512,12 @@ export class GameScene extends Scene
                                       "Assalamualaikum kak, ini stand apa kak?",
                                   },
                                   {
-                                    name: "Aisyah",
+                                    name: "Rahma",
                                     dialogs:
                                       "Waalaikumsalam, ini stand penukaran kupon makanan dan iftar kak. Kupon ini bisa ditukar makanan atau iftar. Tapi maaf kak, masih siap siap dulu ya kak",
                                   },
                                   {
-                                    name: "Aisyah",
+                                    name: "Rahma",
                                     dialogs:
                                       "Sementara kakak mengikuti kajian terlebih dahulu untuk dapetin tiketnya",
                                   },
@@ -526,7 +526,7 @@ export class GameScene extends Scene
                                     dialogs: "Oh gitu makasih informasinya kak"
                                 },
                                 {
-                                    name: "Aisyah",
+                                    name: "Rahma",
                                     dialogs: "Sama-sama kak"
                                 }
                             ], order:  [[[0,1,2,3,4]]], callback: ()=>{
@@ -548,11 +548,11 @@ export class GameScene extends Scene
                                     dialogs: "Kak, aku dapet kupon ini. Kak, aku dapet kupon ini. Bisa ditukar sama apa aja?"
                                 },
                                 {
-                                    name: "Aisyah",
+                                    name: "Rahma",
                                     dialogs: "Kupon ini bisa buat tukar makanan atau iftar. Tapi kamu tampaknya berada di area yang salah untuk penukaran."
                                 },
                                 {
-                                    name: "Aisyah",
+                                    name: "Rahma",
                                     dialogs: "Tempat penukaran yang tepat untuk kamu, ada di sisi sebelah Kiri."
                                 },
                                 { 
@@ -560,7 +560,7 @@ export class GameScene extends Scene
                                     dialogs: "Oh, begitu. Makasih banyak atas informasinya."
                                 },
                                 {
-                                    name: "Aisyah",
+                                    name: "Rahma",
                                     dialogs: "Sama-sama, kak!"
                                 }
                             ], order:  [[[0,1,2,3,4]]], callback: ()=>{
@@ -582,7 +582,7 @@ export class GameScene extends Scene
                                         dialogs: "Terima kasih atas iftarnya kak",
                                     },
                                     {
-                                        name: "Aisyah",
+                                        name: "Rahma",
                                         dialogs: "Sama sama, selamat menikmati",
                                     }
 
@@ -610,7 +610,7 @@ export class GameScene extends Scene
                                     dialogs: "Kak, aku dapet kupon ini. Bisa ditukar sama apa aja?",
                                 },
                                 {
-                                    name: "Aisyah",
+                                    name: "Rahma",
                                     dialogs: "Kupon ini bisa buat tukar makanan atau iftar. Tapi inget ya, sehari cuma dapet satu kupon!",
                                 },
                                 {
@@ -618,7 +618,7 @@ export class GameScene extends Scene
                                     dialogs: "Oh gitu… Kalau aku mau dapet hadiah tambahan, bisa nggak?",
                                 },
                                 {
-                                    name: "Aisyah",
+                                    name: "Rahma",
                                     dialogs: "Bisa dong! Caranya, ikut Kajian Buka Bersama. Biasanya setelah kajian, kita bagiin kupon tambahan buat yang aktif. Jadi selain dapet ilmu, dapet bonus juga!",
                                 },
                                 {
@@ -626,7 +626,7 @@ export class GameScene extends Scene
                                     dialogs: "Wah, jadi makin semangat ikut kajian nih!",
                                 },
                                 {
-                                    name: "Aisyah",
+                                    name: "Rahma",
                                     dialogs: "Nah, itu baru semangat RDK!",
                                 },
                                 {
