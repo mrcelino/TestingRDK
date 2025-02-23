@@ -4,10 +4,10 @@
 import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
-import TopArticle from "./TopArticle";
-import RegularArticles1 from "./RegularArticle1";
-import RegularArticles2 from "./RegularArticle2";
-import HotArticle from "./HotArticle";
+import TopArticle from "../../../components/artikel/big-agenda-ramadan/TopArticle";
+import RegularArticles1 from "../../../components/artikel/big-agenda-ramadan/RegularArticle1";
+import RegularArticles2 from "../../../components/artikel/big-agenda-ramadan/RegularArticle2";
+import HotArticle from "../../../components/artikel/big-agenda-ramadan/HotArticle";
 
 
 
@@ -15,7 +15,6 @@ export default function BigAgendaRamadan() {
 
 	return (
 		<section className="font-body">
-			{/* Top Article */}
 			<TopArticle />
 
 			<main className="p-4 mb-10 w-11/12 mx-auto">
@@ -24,7 +23,6 @@ export default function BigAgendaRamadan() {
 						Big Agenda Ramadan
 					</p>
 				</div>
-
 				<ul>
 				
 					<RegularArticles1 />

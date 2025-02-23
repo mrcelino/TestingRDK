@@ -24,10 +24,9 @@ export default function TopArticle() {
 				)
 				.slice(0, 3);
 
-			if (topArticles.length === 0) {
-				topArticles = data
-					.filter((slide) => slide.category === "Samudera")
-					.slice(0, 3);
+		
+			if(topArticles.length === 0){
+				topArticles = data.filter((slide) => slide.category === "Samudera").slice(0, 3);
 			}
 
 			setArticles(topArticles);
@@ -36,6 +35,7 @@ export default function TopArticle() {
 
 		getArticles();
 	}, []);
+
 	return (
 		<div className="relative w-full  lg:h-screen">
 			{isLoading ? (

@@ -34,7 +34,7 @@ export const fetchArticles = async (): Promise<Article[]> => {
 			throw new Error("Gagal mengambil data artikel");
 		}
 		const jsonData = await response.json();
-		return jsonData.data as Article[]; // Menyesuaikan format API
+		return jsonData.data as Article[]; // Sesuaikan format sesuai dengan API
 	} catch (error) {
 		console.error("Error fetching articles:", error);
 		return [];

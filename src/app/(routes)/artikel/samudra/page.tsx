@@ -4,10 +4,10 @@
 import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
-import TopArticle from "./TopArticle";
-import RegularArticles1 from "./RegularArticle1";
-import RegularArticles2 from "./RegularArticle2";
-import HotArticle from "./HotArticle";
+import TopArticle from "../../../components/artikel/samudra/TopArticle";
+import RegularArticles1 from "../../../components/artikel/samudra/RegularArticle1";
+import RegularArticles2 from "../../../components/artikel/samudra/RegularArticle2";
+import HotArticle from "../../../components/artikel/samudra/HotArticle";
 
 
 

@@ -17,16 +17,15 @@ export default function RegularArticles2() {
 	const [isLoading, setIsLoading] = useState(true);
 	const regularArticles = articles.filter(
 		(slide) =>
-			slide.category === "Big_Agenda_Ramadhan" &&
-			slide.like >= 0 &&
-			slide.like <= 50
+			slide.category === "Mimbar_Subuh" &&
+			slide.like > 0
 	);
 
-	// Jika regularArticles kosong, menggunakan semua artikel dengan kategori "Big_Agenda_Ramadhan"
+	// Jika regularArticles kosong, menggunakan semua artikel dengan kategori "Mimbar_Subuh"
 	const displayedArticles =
 		regularArticles.length > 0
 			? regularArticles
-			: articles.filter((slide) => slide.category === "Big_Agenda_Ramadhan");
+			: articles.filter((slide) => slide.category === "Mimbar_Subuh");
 
 	useEffect(() => {
 		const getArticles = async () => {
@@ -110,7 +109,7 @@ export default function RegularArticles2() {
 				>
 					{displayedArticles.map((slide) => (
 						<SwiperSlide key={slide.id}>
-							<div className="my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[17rem] max-w-lg mx-auto">
+							<div className="my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[18rem] max-w-lg mx-auto">
 								<Link
 									href={`/artikel/${slide.id}`}
 									passHref

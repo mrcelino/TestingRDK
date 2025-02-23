@@ -24,10 +24,9 @@ export default function TopArticle() {
 				)
 				.slice(0, 3);
 
-			if (topArticles.length === 0) {
-				topArticles = data
-					.filter((slide) => slide.category === "RPL")
-					.slice(0, 3);
+		
+			if(topArticles.length === 0){
+				topArticles = data.filter((slide) => slide.category === "RPL").slice(0, 3);
 			}
 
 			setArticles(topArticles);

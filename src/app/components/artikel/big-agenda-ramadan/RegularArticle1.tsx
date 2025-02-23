@@ -9,7 +9,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 import { useEffect, useState } from "react";
 import { Article, fetchArticles, updateArticleLike } from "@/app/lib/article";
 
-export default function RegularArticles2() {
+export default function RegularArticles1() {
 	const [articles, setArticles] = useState<Article[]>([]);
 	const [likedArticles, setLikedArticles] = useState<Record<number, boolean>>(
 		{}
@@ -17,16 +17,15 @@ export default function RegularArticles2() {
 	const [isLoading, setIsLoading] = useState(true);
 	const regularArticles = articles.filter(
 		(slide) =>
-			slide.category === "RPL" &&
-			slide.like >= 0 &&
-			slide.like <= 50
+			slide.category === "Big_Agenda_Ramadhan" &&
+			slide.like > 0
 	);
 
-	// Jika regularArticles kosong, menggunakan semua artikel dengan kategori "RPL"
+
 	const displayedArticles =
 		regularArticles.length > 0
 			? regularArticles
-			: articles.filter((slide) => slide.category === "RPL");
+			: articles.filter((slide) => slide.category === "Big_Agenda_Ramadhan");
 
 	useEffect(() => {
 		const getArticles = async () => {
@@ -83,7 +82,10 @@ export default function RegularArticles2() {
 					{[...Array(3)].map((_, index) => (
 						<div
 							key={index}
-							className="bg-gray-200 animate-pulse w-[90%] lg:w-[25rem] h-[15rem] rounded-3xl"
+							className={`bg-gray-200 animate-pulse w-[90%] lg:w-[25rem] h-[15rem] rounded-3xl 
+					  ${index >= 1 ? "hidden sm:block" : ""}  // Tablet (2 item)
+					  ${index >= 2 ? "hidden lg:block" : ""}  // Desktop (3 item)
+					`}
 						></div>
 					))}
 				</div>
@@ -97,7 +99,6 @@ export default function RegularArticles2() {
 					autoplay={{
 						delay: 5000,
 						disableOnInteraction: false,
-						reverseDirection: true,
 					}}
 					loop={true}
 					modules={[Navigation, Autoplay]}
@@ -110,7 +111,7 @@ export default function RegularArticles2() {
 				>
 					{displayedArticles.map((slide) => (
 						<SwiperSlide key={slide.id}>
-							<div className="my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[17rem] max-w-lg mx-auto">
+							<div className="my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[18rem] max-w-lg mx-auto">
 								<Link
 									href={`/artikel/${slide.id}`}
 									passHref

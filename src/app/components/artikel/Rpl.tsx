@@ -9,38 +9,39 @@ import { Autoplay, Navigation } from "swiper/modules";
 import { useEffect, useState } from "react";
 import { Article, fetchArticles, updateArticleLike } from "@/app/lib/article";
 
-export default function RegularArticles1() {
+export default function RamadanPublicLecture() {
 	const [articles, setArticles] = useState<Article[]>([]);
 	const [likedArticles, setLikedArticles] = useState<Record<number, boolean>>(
 		{}
 	);
-	const [isLoading, setIsLoading] = useState(true);
-	const regularArticles = articles.filter(
-		(slide) =>
-			slide.category === "RPL" &&
-			slide.like >= 0 &&
-			slide.like <= 50
-	);
-
-	// Jika regularArticles kosong, menggunakan semua artikel dengan kategori "RPL"
-	const displayedArticles =
-		regularArticles.length > 0
-			? regularArticles
-			: articles.filter((slide) => slide.category === "RPL");
+	const [isLoading, setIsLoading] = useState<boolean>(true);
 
 	useEffect(() => {
 		const getArticles = async () => {
-			const data = await fetchArticles();
-			setArticles(data);
-			setIsLoading(false);
+			try {
+				const data = await fetchArticles();
+				setArticles(data);
+			} catch (error) {
+				console.error("Failed to fetch articles", error);
+			} finally {
+				setIsLoading(false);
+			}
 		};
 		getArticles();
 	}, []);
 
+	const rplArticles = articles
+		.filter((slide) => slide.category === "RPL" && slide.like >= 50)
+		.slice(0, 5);
+
+	const displayedArticles =
+		rplArticles.length > 0
+			? rplArticles
+			: articles.filter((slide) => slide.category === "RPL");
+
 	const handleLike = async (articleId: number) => {
-		// Optimistic UI update
-		setArticles((prevArticles) =>
-			prevArticles.map((article) =>
+		setArticles((prev) =>
+			prev.map((article) =>
 				article.id === articleId
 					? {
 							...article,
@@ -50,40 +51,51 @@ export default function RegularArticles1() {
 			)
 		);
 
-		// Pastikan state terbaru digunakan
 		setLikedArticles((prev) => {
-			const newLikedArticles = { ...prev, [articleId]: !prev[articleId] };
-
-			// Update backend dengan nilai terbaru
-			updateArticleLike(articleId, newLikedArticles[articleId] ? 1 : -1).catch(
+			const updatedLikes = { ...prev, [articleId]: !prev[articleId] };
+			updateArticleLike(articleId, updatedLikes[articleId] ? 1 : -1).catch(
 				() => {
-					// Jika gagal, rollback UI
-					setArticles((prevArticles) =>
-						prevArticles.map((article) =>
+					setArticles((prev) =>
+						prev.map((article) =>
 							article.id === articleId
 								? {
 										...article,
-										like: article.like + (newLikedArticles[articleId] ? -1 : 1),
+										like: article.like + (updatedLikes[articleId] ? -1 : 1),
 								  }
 								: article
 						)
 					);
-					setLikedArticles(prev); // Rollback state
+					setLikedArticles(prev);
 				}
 			);
-
-			return newLikedArticles;
+			return updatedLikes;
 		});
 	};
 
 	return (
 		<li className="mb-10 max-w-7xl mx-auto">
+			<div className="flex justify-between items-center">
+				<div>
+					<h1 className="text-lg lg:text-2xl font-semibold text-greenCS italic">
+						Ramadan Public Lecture
+					</h1>
+					<div className="h-0.5 w-[12rem] bg-greenCS lg:mt-2 lg:w-[25rem]"></div>
+				</div>
+				<Link href="/artikel/ramadan-public-lecture">
+					<button className="text-sm lg:text-base text-greenCS font-semibold italic hover:scale-105">
+						View More...
+					</button>
+				</Link>
+			</div>
+
 			{isLoading ? (
 				<div className="flex space-x-4 mt-6">
 					{[...Array(3)].map((_, index) => (
 						<div
 							key={index}
-							className="bg-gray-200 animate-pulse w-[90%] lg:w-[25rem] h-[15rem] rounded-3xl"
+							className={`bg-gray-200 animate-pulse w-[90%] lg:w-[25rem] h-[15rem] rounded-3xl ${
+								index >= 1 ? "hidden sm:block" : ""
+							} ${index >= 2 ? "hidden lg:block" : ""}`}
 						></div>
 					))}
 				</div>
@@ -94,10 +106,7 @@ export default function RegularArticles1() {
 						nextEl: ".custom-swiper-button-next",
 						prevEl: ".custom-swiper-button-prev",
 					}}
-					autoplay={{
-						delay: 5000,
-						disableOnInteraction: false,
-					}}
+					autoplay={{ delay: 5000, disableOnInteraction: false }}
 					loop={true}
 					modules={[Navigation, Autoplay]}
 					slidesPerView={1}
@@ -109,12 +118,8 @@ export default function RegularArticles1() {
 				>
 					{displayedArticles.map((slide) => (
 						<SwiperSlide key={slide.id}>
-							<div className="my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[17rem] max-w-lg mx-auto">
-								<Link
-									href={`/artikel/${slide.id}`}
-									passHref
-									className="max-w-7xl"
-								>
+							<div className="my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[18rem] max-w-lg mx-auto">
+								<Link href={`/artikel/${slide.id}`} className="max-w-7xl">
 									<Image
 										alt={slide.title}
 										src={slide.article_images?.[0]?.publicUrl || "/default.jpg"}
@@ -137,19 +142,15 @@ export default function RegularArticles1() {
 											}
 											width={36}
 											height={36}
-											className="transition-transform scale-x-100 hover:scale-110 transition-transform duration-300 ease-in-out"
+											className="transition-transform hover:scale-110 duration-300"
 										/>
-
 										<p className="text-greenCS text-center font-heading text-sm">
 											{slide.like}
 										</p>
 									</div>
-
-									<Link href={`/artikel/${slide.id}`}>
-										<h3 className="p-5 text-center font-bold italic text-greenCS text-sm ml-8">
-											{slide.title}
-										</h3>
-									</Link>
+									<h3 className="p-5 text-center font-bold italic text-greenCS text-sm ml-8">
+										{slide.title}
+									</h3>
 								</div>
 							</div>
 						</SwiperSlide>

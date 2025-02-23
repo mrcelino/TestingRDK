@@ -4,10 +4,10 @@
 import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
-import TopArticle from "./TopArticle";
-import RegularArticles1 from "./RegularArticle1";
-import RegularArticles2 from "./RegularArticle2";
-import HotArticle from "./HotArticle";
+import TopArticle from "../../../components/artikel/ramadan-public-lecture/TopArticle";
+import RegularArticles1 from "../../../components/artikel/ramadan-public-lecture/RegularArticle1";
+import RegularArticles2 from "../../../components/artikel/ramadan-public-lecture/RegularArticle2";
+import HotArticle from "../../../components/artikel/ramadan-public-lecture/HotArticle";
 
 
 

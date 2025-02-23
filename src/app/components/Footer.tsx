@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
-
 	return (
 		<div className="right-0 bottom-100 left-0 absolute">
 			<div className="flex grid grid-cols-2 items-center text-white w-full bg-greenCS border-black md:border-y-[3px] lg:border-y-4 border-y-2 relative">
@@ -138,7 +137,7 @@ export default function Footer() {
 						<div className="flex justify-evenly items-center text-greenCS font-bold mt-6 text-sm gap-2 text-center ">
 							{/* Narahubung Donasi Kegiatan */}
 							<Link href="https://wa.me/62895332785320" target="_blank">
-								<div className="rounded-2xl border-2 md:border-[3px] lg:border-4 border-[#15575B] py-2 px-4 md:px-5 lg:px-6 text-xs md:text-sm lg:text-base">
+								<div className="rounded-2xl border-2 md:border-[3px] lg:border-4 border-[#15575B] py-2 px-4 md:px-5 lg:px-6 text-xs md:text-sm lg:text-base hover:scale-105">
 									<p>0895332785320</p>
 									<p>(Salma Arsepti)</p>
 								</div>
@@ -147,7 +146,7 @@ export default function Footer() {
 							{/* Narahubung Donasi Buka & Sahur */}
 
 							<Link target="_blank" href="https://wa.me/6281377660189">
-								<div className="rounded-2xl border-2 md:border-[3px] lg:border-4 border-[#15575B] py-2 px-4 md:px-5 lg:px-6 text-xs md:text-sm lg:text-base">
+								<div className="rounded-2xl border-2 md:border-[3px] lg:border-4 border-[#15575B] py-2 px-4 md:px-5 lg:px-6 text-xs md:text-sm lg:text-base hover:scale-105">
 									<p>081377660189</p>
 									<p>(Rofi’ Khoirullah)</p>
 								</div>
@@ -168,11 +167,11 @@ export default function Footer() {
 								href="https://bit.ly/DonasiOperasionalRDK46H"
 								target="_blank"
 							>
-								<p className="text-greenCS font-semibold p-2 lg:text-base xl:hidden text-center text-[10px] md:text-xs">
+								<p className="text-greenCS font-semibold p-2 lg:text-base xl:hidden text-center text-[10px] md:text-xs hover:font-bold">
 									bit.ly/DonasiOperasional RDK46H
 								</p>
 
-								<p className="text-greenCS font-semibold p-2 lg:text-base hidden xl:block text-[10px] md:text-base">
+								<p className="text-greenCS font-semibold p-2 lg:text-base hidden xl:block text-[10px] md:text-base hover:font-bold">
 									bit.ly/DonasiOperasionalRDK46H
 								</p>
 							</Link>
@@ -186,11 +185,11 @@ export default function Footer() {
 								</p>
 							</div>
 							<Link href="https://bit.ly/DonasiSahurBukaRDK46H" target="_blank">
-								<p className="text-greenCS font-semibold p-2 lg:text-base xl:hidden text-center text-[10px] md:text-xs">
+								<p className="text-greenCS font-semibold p-2 lg:text-base xl:hidden text-center text-[10px] md:text-xs hover:font-bold">
 									bit.ly/DonasiSahurBuka RDK46H
 								</p>
 
-								<p className="text-greenCS hidden font-semibold p-2 lg:text-base md:hidden xl:block">
+								<p className="text-greenCS hidden font-semibold p-2 lg:text-base md:hidden xl:block hover:font-bold">
 									bit.ly/DonasiSahurBukaRDK46H
 								</p>
 							</Link>
@@ -330,10 +329,10 @@ export default function Footer() {
 				<div className="bg-greenCS mt-10 flex justify-center items-center z-10 border-y-2 md:border-y-[3px] lg:border-y-4 border-black p-4 px-10 lg:p-10">
 					<div className="bg-white border-black lg:border-4 p-5 border-2 rounded-3xl text-center italic text-greenCS font-medium text-[10px] md:text-xs lg:text-base lg:py-8 md:w-2/3 lg:w-[75%] lg:max-w-3xl">
 						<p>
-						&quot;Kamu sekali-kali tidak akan memperoleh kebajikan (yang sempurna)
-							sebelum kamu menginfakkan sebagian harta yang kamu cintai. Apa pun
-							yang kamu infakkan, sesungguhnya Allah Maha Mengetahui
-							tentangnya.&quot; <br />
+							&quot;Kamu sekali-kali tidak akan memperoleh kebajikan (yang
+							sempurna) sebelum kamu menginfakkan sebagian harta yang kamu
+							cintai. Apa pun yang kamu infakkan, sesungguhnya Allah Maha
+							Mengetahui tentangnya.&quot; <br />
 							<span className="font-bold">(QS. Ali Imran : 92)</span>
 						</p>
 					</div>
@@ -360,11 +359,10 @@ export default function Footer() {
 
 			{/* Footer Bawah */}
 			<div className="bg-greenCS mt-10 text-white text-xs lg:text-base relative">
-		
 				{/* Ini di Atas */}
 				<div className="lg:py-7 lg:px-14 p-4 lg:flex max-w-7xl mx-auto z-50 relative ">
 					{/* Kiri */}
-					<div >
+					<div>
 						<p className="font-heading lg:text-3xl text-base ">
 							Ramadhan Di Kampus
 						</p>

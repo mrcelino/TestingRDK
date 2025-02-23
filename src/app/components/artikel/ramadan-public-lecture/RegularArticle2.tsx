@@ -9,7 +9,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 import { useEffect, useState } from "react";
 import { Article, fetchArticles, updateArticleLike } from "@/app/lib/article";
 
-export default function RegularArticles1() {
+export default function RegularArticles2() {
 	const [articles, setArticles] = useState<Article[]>([]);
 	const [likedArticles, setLikedArticles] = useState<Record<number, boolean>>(
 		{}
@@ -17,16 +17,15 @@ export default function RegularArticles1() {
 	const [isLoading, setIsLoading] = useState(true);
 	const regularArticles = articles.filter(
 		(slide) =>
-			slide.category === "Mimbar_Subuh" &&
-			slide.like >= 0 &&
-			slide.like <= 50
+			slide.category === "RPL" &&
+			slide.like > 0
 	);
 
-	// Jika regularArticles kosong, menggunakan semua artikel dengan kategori "Mimbar_Subuh"
+	// Jika regularArticles kosong, menggunakan semua artikel dengan kategori "RPL"
 	const displayedArticles =
 		regularArticles.length > 0
 			? regularArticles
-			: articles.filter((slide) => slide.category === "Mimbar_Subuh");
+			: articles.filter((slide) => slide.category === "RPL");
 
 	useEffect(() => {
 		const getArticles = async () => {
@@ -97,6 +96,7 @@ export default function RegularArticles1() {
 					autoplay={{
 						delay: 5000,
 						disableOnInteraction: false,
+						reverseDirection: true,
 					}}
 					loop={true}
 					modules={[Navigation, Autoplay]}
@@ -109,7 +109,7 @@ export default function RegularArticles1() {
 				>
 					{displayedArticles.map((slide) => (
 						<SwiperSlide key={slide.id}>
-							<div className="my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[17rem] max-w-lg mx-auto">
+							<div className="my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[18rem] max-w-lg mx-auto">
 								<Link
 									href={`/artikel/${slide.id}`}
 									passHref

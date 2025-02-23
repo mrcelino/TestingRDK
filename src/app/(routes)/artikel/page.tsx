@@ -2,11 +2,11 @@
 
 import "swiper/css";
 import "swiper/css/navigation";
-import HeroSlider from "./HeroSlider";
-import BigAgendaRamadan from "./BigAgendaRamadan";
-import Samudra from "./Samudra";
-import MimbarSubuh from "./MimbarSubuh";
-import RamadanPublicLecture from "./Rpl";
+import HeroSlider from "../../components/artikel/HeroSlider";
+import BigAgendaRamadan from "../../components/artikel/BigAgendaRamadan";
+import Samudra from "../../components/artikel/Samudra";
+import MimbarSubuh from "../../components/artikel/MimbarSubuh";
+import RamadanPublicLecture from "../../components/artikel/Rpl";
 
 export default function Artikel() {
 
