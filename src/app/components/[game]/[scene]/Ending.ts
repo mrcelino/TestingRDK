@@ -136,7 +136,7 @@ export class Ending extends Scene
         const hadiah= data.data as Hadiah[];
         const Today = new Date();
         const date = Today.getFullYear()+'-'+(Today.getMonth()+1)+'-'+Today.getDate();
-        hadiah.filter((hadiah) => hadiah.date === "2025-03-01");
+        hadiah.filter((hadiah) => hadiah.date ===date);
         return hadiah;
     }
 
