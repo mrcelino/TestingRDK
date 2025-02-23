@@ -1,18 +1,23 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { fetchArticles, Article } from "@/app/lib/article";
+import { Article } from "@/app/lib/article";
 import Link from "next/link";
 
-export default function TopArticle() {
-	const [articles, setArticles] = useState<Article[]>([]);
-	const [isLoading, setIsLoading] = useState(true);
+interface Props {
+	articles: Article[];
+	isLoading: boolean;
+  }
 
+export default function TopArticle({ articles, isLoading }: Props) {
+	// const [articles, setArticles] = useState<Article[]>([]);
+	// const [isLoading, setIsLoading] = useState(true);
+
+<<<<<<< HEAD:src/app/components/artikel/ramadan-public-lecture/TopArticle.tsx
 	useEffect(() => {
 		const getArticles = async () => {
 			const data = await fetchArticles();
@@ -32,9 +37,26 @@ export default function TopArticle() {
 			setArticles(topArticles);
 			setIsLoading(false);
 		};
+=======
+	const regularArticles = articles.filter(
+		(slide) => slide.category === "RPL" && slide.like >= 100
+	);
 
-		getArticles();
-	}, []);
+	const displayedArticles =
+		regularArticles.length > 0
+			? regularArticles
+			: articles.filter((slide) => slide.category === "RPL");
+
+	// useEffect(() => {
+	// 	const getArticles = async () => {
+	// 		const data = await fetchArticles();
+	// 		setArticles(data);
+	// 		setIsLoading(false);
+	// 	};
+>>>>>>> 7e356a584f05ce2bcead4b15596178d4027896c3:src/app/(routes)/artikel/ramadan-public-lecture/TopArticle.tsx
+
+	// 	getArticles();
+	// }, []);
 
 	return (
 		<div className="relative w-full  lg:h-screen">
