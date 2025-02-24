@@ -62,7 +62,7 @@ export default function TopArticle({ articles, isLoading }: Props) {
 					modules={[Navigation, Autoplay]}
 					className="w-full h-full"
 				>
-					{displayedArticles.map((article) => (
+					{displayedArticles.slice(0, 3).map((article) => (
 						<SwiperSlide key={article.id}>
 							<div className="relative w-full h-full ">
 								<Link href={`/artikel/${article.id}`}>

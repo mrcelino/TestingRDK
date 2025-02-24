@@ -11,17 +11,16 @@ interface Props {
 }
 
 export default function HotArticle({ articles, isLoading }: Props) {
-	// const [articles, setArticles] = useState<Article[]>([]);
-	// const [loading, setLoading] = useState(true);
+
 	const hotArticles = articles.filter(
-		(slide) => slide.category === "RPL" && slide.like >= 50 && slide.like <= 100
+		(slide) => slide.category === "Mimbar_Subuh" && slide.like >= 50 && slide.like <= 100
 	);
 
-	// Jika Hot Articles kosong, menggunakan semua artikel dengan kategori "RPL"
+	// Jika Hot Articles kosong, menggunakan semua artikel dengan kategori "Mimbar_Subuh"
 	const displayedArticles =
 		hotArticles.length > 0
 			? hotArticles
-			: articles.filter((slide) => slide.category === "RPL");
+			: articles.filter((slide) => slide.category === "Mimbar_Subuh");
 
 	return (
 		<li className="mt-6 text-white max-w-7xl mx-auto">
@@ -57,7 +56,7 @@ export default function HotArticle({ articles, isLoading }: Props) {
 						},
 					}}
 				>
-					{displayedArticles.map((article) => (
+					{displayedArticles.slice(0,5).map((article) => (
 						<SwiperSlide key={article.id}>
 							<Link href={`/artikel/${article.id}`}>
 								<div className="relative transition-transform duration-300 ease-in-out hover:scale-105 max-w-2xl mx-auto">

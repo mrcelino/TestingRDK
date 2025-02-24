@@ -13,13 +13,13 @@ interface Props {
 }
 
 export default function HeroSlider({ articles, isLoading }: Props) {
-	const regularArticles = articles.filter(
+	const heroArticles = articles.filter(
 		(slide) => slide.like >= 100
 	);
 
 	const displayedArticles =
-		regularArticles.length > 0
-			? regularArticles
+		heroArticles.length > 0
+			? heroArticles
 			: articles.filter((slide) => slide.like >= 0);
 
 	return (
@@ -61,7 +61,7 @@ export default function HeroSlider({ articles, isLoading }: Props) {
 					modules={[Navigation, Autoplay]}
 					className="w-full h-full"
 				>
-					{articles.slice(0, 5).map((article) => (
+					{articles.slice(0, 4).map((article) => (
 						<SwiperSlide key={article.id}>
 							<div className="relative w-full h-full ">
 								<Link href={`/artikel/${article.id}`}>

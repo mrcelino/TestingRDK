@@ -57,7 +57,7 @@ export default function HotArticle({ articles, isLoading }: Props) {
 						},
 					}}
 				>
-					{displayedArticles.map((article) => (
+					{displayedArticles.slice(0, 5).map((article) => (
 						<SwiperSlide key={article.id}>
 							<Link href={`/artikel/${article.id}`}>
 								<div className="relative transition-transform duration-300 ease-in-out hover:scale-105 max-w-2xl mx-auto">

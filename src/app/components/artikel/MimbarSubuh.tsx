@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import { useEffect, useState } from "react";
 import { Article, updateArticleLike } from "@/app/lib/article";
+import LoadingSkeleton from "./LoadingSkeleton";
 
 interface Props {
 	articles: Article[];
@@ -67,18 +68,7 @@ export default function MimbarSubuh({ articles, isLoading }: Props) {
 			</div>
 
 			{isLoading ? (
-				<div className="flex space-x-4 mt-6">
-					{[
-						...Array(
-							window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3
-						),
-					].map((_, index) => (
-						<div
-							key={index}
-							className="bg-gray-200 animate-pulse w-[90%] lg:w-[25rem] h-[15rem] rounded-3xl"
-						></div>
-					))}
-				</div>
+				<LoadingSkeleton />
 			) : (
 				<Swiper
 					spaceBetween={20}
