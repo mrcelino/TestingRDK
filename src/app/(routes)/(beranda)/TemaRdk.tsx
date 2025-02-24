@@ -48,8 +48,7 @@ export default function TemaRdk() {
 					<p data-aos="fade-up" data-aos-duration="1000">
 						Bulan Ramadan 1446 Hijriah hadir pada masa pascaperalihan
 						kepemimpinan nasional 2024. Tema ini diangkat sebagai bentuk
-						tanggung jawab mahasiswa dalam menyongsong kabinet baru Indonesia
-						2024-2029. dalam momen Ramadan ini, kami ingin membangun kesadaran
+						kontribusi mahasiswa dalam menyongsong pembangunan nasional. dalam momen Ramadan ini, kami ingin membangun kesadaran
 						dan aksi nyata untuk mendorong pembangunan yang melibatkan seluruh
 						lapisan masyarakat serta menjaga keseimbangan antara pertumbuhan
 						ekonomi dan kelestarian lingkungan.

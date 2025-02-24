@@ -17,8 +17,11 @@ const worksans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-	title: "RDK UGM Website",
+	title: "RDK UGM 2025",
 	description: "Ramadhan di Kampus UGM Offical Website",
+	icons: {
+		icon: "/svg/logo-rdk.svg"
+	  },
 };
 
 export default function RootLayout({
