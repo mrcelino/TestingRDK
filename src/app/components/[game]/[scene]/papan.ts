@@ -7,6 +7,9 @@ export class papan extends Scene
         super('papan');
     }
 
+    poster_compe!: Phaser.GameObjects.Image;
+    posterRDK!: Phaser.GameObjects.Image;
+
     create(){
         this.scale.on('enterfullscreen', () => {
             this.sys.canvas.classList.remove('hidden')
@@ -36,21 +39,44 @@ export class papan extends Scene
             this.scene.stop();
         });
         
-        const poster_compe = this.add.image(0, 0, 'poster-donasi-js');
-        poster_compe.setScale(0.12);
+        this.poster_compe = this.add.image(0, 0, 'poster-donasi-js');
+        this.poster_compe.setScale(0.12);
 
-        poster_compe.setPosition(this.sys.canvas.width / 2 -200, this.sys.canvas.height / 2+30);
+        this.poster_compe.setPosition(this.sys.canvas.width / 2 -200, this.sys.canvas.height / 2+30);
 
-        poster_compe.setInteractive(new Phaser.Geom.Rectangle(0, 0, poster_compe.width, poster_compe.height), Phaser.Geom.Rectangle.Contains);
+        this.poster_compe.setInteractive(new Phaser.Geom.Rectangle(0, 0, this.poster_compe.width, this.poster_compe.height), Phaser.Geom.Rectangle.Contains);
          
-        poster_compe.on('pointerdown', () => {
-            if(poster_compe.scaleX === 0.12){
-                poster_compe.setScale(.301)
-                poster_compe.setPosition(this.sys.canvas.width / 2 , this.sys.canvas.height / 2);
+        this.poster_compe.on('pointerdown', () => {
+            if(this.poster_compe.scaleX === 0.12){
+                this.poster_compe.setScale(.301)
+                this.poster_compe.setPosition(this.sys.canvas.width / 2 , this.sys.canvas.height / 2);
+                this.posterRDK.setVisible(false);
             }else
             {
-                poster_compe.setScale(0.12)
-                poster_compe.setPosition(this.sys.canvas.width / 2 -200, this.sys.canvas.height / 2+30);
+                this.poster_compe.setScale(0.12)
+                this.poster_compe.setPosition(this.sys.canvas.width / 2 -200, this.sys.canvas.height / 2+30);
+                this.posterRDK.setVisible(true);
+            }
+
+        });
+
+        this.posterRDK = this.add.image(0, 0, 'poster-donasi-maskam');
+        this.posterRDK.setScale(0.12);
+
+        this.posterRDK.setPosition(this.sys.canvas.width / 2 +200, this.sys.canvas.height / 2+30);
+
+        this.posterRDK.setInteractive(new Phaser.Geom.Rectangle(0, 0, this.posterRDK.width, this.posterRDK.height), Phaser.Geom.Rectangle.Contains);
+         
+        this.posterRDK.on('pointerdown', () => {
+            if(this.posterRDK.scaleX === 0.12){
+                this.posterRDK.setScale(.301)
+                this.posterRDK.setPosition(this.sys.canvas.width / 2 , this.sys.canvas.height / 2);
+                this.poster_compe.setVisible(false);
+            }else
+            {
+                this.posterRDK.setScale(0.12)
+                this.posterRDK.setPosition(this.sys.canvas.width / 2 +200, this.sys.canvas.height / 2+30);
+                this.poster_compe.setVisible(true);
             }
 
         });
