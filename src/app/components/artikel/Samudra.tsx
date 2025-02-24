@@ -37,7 +37,7 @@ export default function Samudra({ articles, isLoading }: Props) {
 		// Optimistic UI update
 		updateArticleLike(articleId);
 		setArticles((prevArticles) =>
-			prevArticles.map((article) =>
+			prevArticles.map((article: Article) =>
 				article.id === articleId
 					? {
 							...article,
