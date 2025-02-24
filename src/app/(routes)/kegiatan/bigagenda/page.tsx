@@ -15,7 +15,7 @@ function GrandOpening(){
         alt="sign"
       />
       <div className="flex flex-col xl:justify-around w-full p-4 xl:p-0">
-        <div className="flex flex-row justify-center xl:justify-start 2xl:justify-center gap-4 items-center mt-10 mb-10">
+        <div className="flex flex-row justify-center xl:justify-start 2xl:justify-center gap-4 items-center mt-2 mb-10">
             <Image
             src="/images/kegiatan/logo.png"
             width={100}
@@ -62,14 +62,14 @@ function GrandOpening(){
           className="w-96 xl:w-[500px] mb-5 xl:mb-10 md:order-2"
           alt="laptop"
           />
-          <div className="bg-[#15575B] min-h-20 md:h-36 lg:h-32 xl:h-64 rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm lg:max-w-md xl:max-w-2xl">
+          <div className="bg-[#15575B] min-h-20 md:h-36 lg:h-[120px] xl:h-64 1xl:min-h-[260px] rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm lg:max-w-md xl:max-w-2xl">
             <div className="flex flex-row gap-1 mb-2 xl:mb-4">
                 <div className="bg-[#D64758] border-2 border-black rounded-full size-3 xl:size-5"/>
                 <div className="bg-[#F4B653] border-2 border-black rounded-full size-3 xl:size-5"/>
                 <div className="bg-[#7DB037] border-2 border-black rounded-full size-3 xl:size-5"/>
             </div>
             <div className="bg-white xl:h-48 rounded-xl lg:rounded-2xl">
-                <h2 className="text-xs xl:text-xl italic font-body leading-5 xl:leading-relaxed p-3 xl:p-8">Grand Opening merupakan pembukaan rangkaian kegiatan Ramadhan Di Kampus UGM, yang bertujuan untuk menyambut bulan Ramadan dan pengenalan tema besar RDK 1446 H.</h2>
+                <h2 className="text-xs xl:text-xl italic font-body leading-5 xl:leading-relaxed p-3 xl:p-6">Grand Opening merupakan pembukaan rangkaian kegiatan Ramadhan Di Kampus UGM, yang bertujuan untuk menyambut bulan Ramadan dan pengenalan tema besar RDK 1446 H.</h2>
             </div>
           </div>
       </section>
@@ -108,7 +108,7 @@ function MIT(){
           className="w-72 md:w-80 xl:w-[550px] mb-4 xl:mb-10"
           alt="laptop"
           />
-          <div className="bg-[#15575B] min-h-20 md:h-36 lg:h-32 xl:h-56 rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm lg:max-w-md xl:max-w-2xl">
+          <div className="bg-[#15575B] min-h-20 md:h-36 lg:h-[120px] xl:h-56 1xl:min-h-[228px] rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm lg:max-w-md xl:max-w-2xl">
             <div className="flex flex-row gap-1 mb-2 xl:mb-4">
                 <div className="bg-[#D64758] border-2 border-black rounded-full size-3 xl:size-5"/>
                 <div className="bg-[#F4B653] border-2 border-black rounded-full size-3 xl:size-5"/>
@@ -147,7 +147,7 @@ function RDKFestival(){
         <div className="hidden md:block absolute rounded-full size-52 lg:size-72 blur-[80px] -top-20 -left-20 bg-[#76D0D5] opacity-50"></div>
       </section>
 
-      <section className="flex flex-col md:flex-row md:justify-center justify-around items-center mt-2 xl:mt-10 xl:items-center p-4 xl:p-0 xl:mx-4 md:gap-10 xl:gap-20 xl:mb-16">
+      <section className="flex flex-col md:flex-row md:justify-center justify-around items-center mt-2 xl:mt-10 xl:items-center p-4 xl:p-0 xl:mx-4 md:gap-10 xl:gap-20 xl:mb-10">
         <Image
           src="/images/kegiatan/tv.svg"
           width={300}
@@ -155,14 +155,14 @@ function RDKFestival(){
           className="w-80 xl:w-[700px] mb-6 xl:mb-10 md:order-2"
           alt="laptop"
           />
-          <div className="bg-[#15575B] min-h-20 md:h-32 xl:h-56 rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm  xl:max-w-xl">
+          <div className="bg-[#15575B] min-h-20 md:h-[120px] xl:min-h-[232px] rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm  xl:max-w-xl">
             <div className="flex flex-row gap-1 mb-2 xl:mb-4">
                 <div className="bg-[#D64758] border-2 border-black rounded-full size-3 xl:size-5"/>
                 <div className="bg-[#F4B653] border-2 border-black rounded-full size-3 xl:size-5"/>
                 <div className="bg-[#7DB037] border-2 border-black rounded-full size-3 xl:size-5"/>
             </div>
-            <div className="bg-white xl:h-40 rounded-xl xl:rounded-2xl">
-                <h2 className="text-xs xl:text-xl italic font-body leading-5 xl:leading-relaxed p-3 xl:p-8">Rangkaian Kegiatan di RDK Festival terdiri dari talkshow dan penampilan UKM yang dilaksanakan secara daring maupun luring.</h2>
+            <div className="bg-white xl:min-h-40 rounded-xl xl:rounded-2xl">
+                <h2 className="text-xs xl:text-xl italic font-body leading-5 xl:leading-relaxed p-3 xl:p-5">Rangkaian Kegiatan di RDK Festival terdiri dari talkshow dan penampilan UKM yang dilaksanakan secara daring maupun luring.</h2>
             </div>
           </div>
       </section>
@@ -201,7 +201,7 @@ function GebyarSore(){
           className="w-72 xl:w-[550px] mb-10 my-5 xl:mb-10"
           alt="laptop"
           />
-          <div className="bg-[#15575B] min-h-20 md:h-36 xl:h-[225px] rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm lg:max-w-md xl:max-w-2xl">
+          <div className="bg-[#15575B] min-h-20 md:h-36 xl:min-h-[238px] 1xl:min-h-[230px] rounded-2xl xl:rounded-3xl p-2 xl:p-4 max-w-sm lg:max-w-md xl:max-w-2xl">
             <div className="flex flex-row gap-1 mb-2 xl:mb-4">
                 <div className="bg-[#D64758] border-2 border-black rounded-full size-3 xl:size-5"/>
                 <div className="bg-[#F4B653] border-2 border-black rounded-full size-3 xl:size-5"/>
