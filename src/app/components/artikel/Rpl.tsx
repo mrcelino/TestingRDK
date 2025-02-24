@@ -18,7 +18,7 @@ interface Props {
 export default function RamadanPublicLecture({ articles, isLoading }: Props) {
 	const [article, setArticles] = useState<Article[]>([]);
 	const rplArticles = article.filter(
-		(slide) => slide.category === "RPL" && slide.like >= 100
+		(slide) => slide.category === "RPL" && slide.like >= 0
 	);
 
 	const displayedArticles =

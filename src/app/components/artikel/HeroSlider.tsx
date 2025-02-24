@@ -12,16 +12,40 @@ interface Props {
 	isLoading: boolean;
 }
 
-export default function HeroSlider({ articles, isLoading }: Props) {
-	const heroArticles = articles.filter(
-		(slide) => slide.like >= 100
+const getTopArticleByCategory = (
+	articles: Article[],
+	category: string
+): Article | null => {
+	const filteredArticles = articles.filter(
+		(article) => article.category === category && article.like >= 100
 	);
+	return filteredArticles.length > 0
+		? filteredArticles.reduce((prev, current) =>
+				prev.like > current.like ? prev : current
+		  )
+		: null;
+};
 
-	const displayedArticles =
-		heroArticles.length > 0
-			? heroArticles
-			: articles.filter((slide) => slide.like >= 0);
+export default function HeroSlider({ articles, isLoading }: Props) {
+	// Ambil satu artikel terbaik dari setiap kategori yang like-nya ≥ 100
+	const samudra = getTopArticleByCategory(articles, "Samudera");
+	const bigAgendaRamadan = getTopArticleByCategory(
+		articles,
+		"Big_Agenda_Ramadhan"
+	);
+	const rpl = getTopArticleByCategory(articles, "RPL");
+	const mimbarSubuh = getTopArticleByCategory(articles, "Mimbar_Subuh");
 
+	// Jika kategori utama tidak memenuhi syarat, ambil artikel lain yang like-nya ≥ 100
+	const alternativeArticle =
+		articles.find((article) => article.like >= 100) || null;
+
+	const filteredArticles = [
+		samudra ?? alternativeArticle,
+		bigAgendaRamadan ?? alternativeArticle,
+		rpl ?? alternativeArticle,
+		mimbarSubuh ?? alternativeArticle,
+	].filter((article): article is Article => article !== null); // Filter out null values
 	return (
 		<div className="relative w-full  lg:h-screen">
 			{isLoading ? (
@@ -47,7 +71,7 @@ export default function HeroSlider({ articles, isLoading }: Props) {
 						}
 					`}</style>
 				</div>
-			) : displayedArticles.length > 0 ? (
+			) : filteredArticles.length > 0 ? (
 				<Swiper
 					navigation={{
 						nextEl: ".custom-swiper-button-next",
@@ -61,72 +85,77 @@ export default function HeroSlider({ articles, isLoading }: Props) {
 					modules={[Navigation, Autoplay]}
 					className="w-full h-full"
 				>
-					{articles.slice(0, 4).map((article) => (
-						<SwiperSlide key={article.id}>
-							<div className="relative w-full h-full ">
-								<Link href={`/artikel/${article.id}`}>
-									{/* Menampilkan gambar dari article_images */}
-									{article.article_images.length > 0 ? (
-										<Image
-											src={
-												article.article_images[0].publicUrl ||
-												"/images/default.png"
-											}
-											alt={article.title}
-											width={1507}
-											height={805}
-											className="w-full md:h-[520px]  md:h-[520px]  object-cover lg:h-full"
-										/>
-									) : (
-										<div className="w-full h-full bg-gray-500 flex items-center justify-center">
-											<p className="text-white">Gambar tidak tersedia</p>
+					{filteredArticles
+						.filter((article) => article !== undefined) // Hilangkan undefined
+						.slice(0, 4)
+						.map((article) => (
+							<SwiperSlide key={article!.id}>
+								{" "}
+								{/* Gunakan "!" karena kita sudah menyaring undefined */}
+								<div className="relative w-full h-full">
+									<Link href={`/artikel/${article!.id}`}>
+										{/* Menampilkan gambar dari article_images */}
+										{article!.article_images.length > 0 ? (
+											<Image
+												src={
+													article!.article_images[0].publicUrl ||
+													"/images/default.png"
+												}
+												alt={article!.title}
+												width={1507}
+												height={805}
+												className="w-full md:h-[520px] object-cover lg:h-full"
+											/>
+										) : (
+											<div className="w-full h-full bg-gray-500 flex items-center justify-center">
+												<p className="text-white">Gambar tidak tersedia</p>
+											</div>
+										)}
+
+										<div className="absolute 2xl:bottom-[16rem] lg:bottom-[14rem] lg:left-[4rem] md:bottom-[10rem] bottom-[8rem] md:left-[4rem] left-4 flex gap-5 items-center z-20 text-xs">
+											<p className="lg:text-xl text-orangeCS italic font-semibold">
+												RDK <span className="text-white">News</span>
+											</p>
+											<Image
+												src="/svg/logo-rdk.svg"
+												alt="Logo RDK"
+												width={30}
+												height={30}
+												className="hidden lg:block"
+											/>
+											<Image
+												src="/svg/logo-rdk.svg"
+												alt="Logo RDK"
+												width={20}
+												height={20}
+												className="lg:hidden"
+											/>
+											<div className="lg:w-[3px] w-[1px] lg:h-8 h-6 bg-white"></div>
+											<p className="font-light italic text-white lg:text-lg">
+												{new Date(article!.date).toLocaleDateString("id-ID", {
+													day: "numeric",
+													month: "long",
+													year: "numeric",
+												})}
+											</p>
 										</div>
-									)}
 
-									<div className="absolute 2xl:bottom-[16rem] lg:bottom-[14rem] lg:left-[4rem] md:bottom-[10rem] bottom-[8rem] md:left-[4rem]  left-4 flex gap-5 items-center z-20 text-xs ">
-										<p className="lg:text-xl text-orangeCS italic font-semibold">
-											RDK <span className="text-white">News</span>
-										</p>
+										{/* Judul Artikel */}
+										<div className="absolute lg:bottom-16 md:bottom-14 bottom-5 text-center font-semibold italic text-white p-4 z-50 w-full lg:text-3xl md:text-xl lg:w-[75%] md:w-[70%] left-1/2 transform -translate-x-1/2">
+											{article!.title}
+										</div>
+
 										<Image
-											src="/svg/logo-rdk.svg"
-											alt="Logo RDK"
-											width={30}
-											height={30}
-											className="hidden lg:block"
+											src="/images/smoke-green.png"
+											alt="smoke-rdk"
+											width={1507}
+											height={100}
+											className="absolute bottom-0 left-0 right-0 lg:h-[30rem] md:h-[25rem] h-[16rem] w-full"
 										/>
-										<Image
-											src="/svg/logo-rdk.svg"
-											alt="Logo RDK"
-											width={20}
-											height={20}
-											className="lg:hidden"
-										/>
-										<div className="lg:w-[3px] w-[1px] lg:h-8 h-6 bg-white"></div>
-										<p className="font-light italic text-white lg:text-lg">
-											{new Date(article.date).toLocaleDateString("id-ID", {
-												day: "numeric",
-												month: "long",
-												year: "numeric",
-											})}
-										</p>
-									</div>
-
-									{/* Judul Artikel */}
-									<div className=" absolute lg:bottom-16 md:bottom-14 bottom-5 text-center font-semibold italic text-white p-4  z-50 w-full lg:text-3xl md:text-xl lg:w-[75%] md:w-[70%] left-1/2 transform -translate-x-1/2">
-										{article.title}
-									</div>
-
-									<Image
-										src="/images/smoke-green.png"
-										alt="smoke-rdk"
-										width={1507}
-										height={100}
-										className="absolute bottom-0 left-0 right-0 lg:h-[30rem] md:h-[25rem] h-[16rem] w-full"
-									/>
-								</Link>
-							</div>
-						</SwiperSlide>
-					))}
+									</Link>
+								</div>
+							</SwiperSlide>
+						))}
 				</Swiper>
 			) : (
 				<p className="text-center text-white">Memuat artikel...</p>
@@ -142,5 +171,4 @@ export default function HeroSlider({ articles, isLoading }: Props) {
 			</div>
 		</div>
 	);
-
 }

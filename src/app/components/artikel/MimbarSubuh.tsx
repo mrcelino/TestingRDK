@@ -18,7 +18,7 @@ interface Props {
 export default function MimbarSubuh({ articles, isLoading }: Props) {
 	const [article, setArticles] = useState<Article[]>([]);
 	const mimbarSubuhArticles = article.filter(
-		(slide) => slide.category === "Mimbar_Subuh" && slide.like >= 100
+		(slide) => slide.category === "Mimbar_Subuh" && slide.like >= 0
 	);
 
 	const displayedArticles =

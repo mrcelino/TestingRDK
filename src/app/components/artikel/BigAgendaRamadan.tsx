@@ -18,7 +18,7 @@ interface Props {
 export default function BigAgendaRamadan({ articles, isLoading }: Props) {
 	const [article, setArticles] = useState<Article[]>([]);
 	const bigAgendaRamadanArticles = article.filter(
-		(slide) => slide.category === "Big_Agenda_Ramadhan" && slide.like >= 100
+		(slide) => slide.category === "Big_Agenda_Ramadhan" && slide.like >= 0 
 	);
 
 	const displayedArticles =

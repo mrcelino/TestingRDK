@@ -18,7 +18,7 @@ interface Props {
 export default function Samudra({ articles, isLoading }: Props) {
 	const [article, setArticles] = useState<Article[]>([]);
 	const samudraArticles = article.filter(
-		(slide) => slide.category === "Samudera" && slide.like >= 100
+		(slide) => slide.category === "Samudera" && slide.like >= 0
 	);
 
 	const displayedArticles =
