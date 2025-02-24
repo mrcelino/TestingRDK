@@ -65,6 +65,9 @@ export class Preloader extends Scene {
         this.load.image("papanTanpa", 'assets/game/Pengumuman/Papan.png');
         this.load.image("close-button", 'assets/game/Pengumuman/Exit Icon.png');
         this.load.image("poster-competition", 'assets/game/Pengumuman/RDk-Competition.png');
+        this.load.image("poster-donasi-js", 'assets/game/Pengumuman/POSTER DONASI JS FEED IG.png');
+        this.load.image("poster-donasi-maskam", 'assets/game/Pengumuman/POSTER DONASI MASKAM FEED IG FIX.png');
+        
 
 
         // Pause Menu

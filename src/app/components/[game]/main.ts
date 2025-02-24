@@ -57,6 +57,7 @@ const config: Phaser.Types.Core.GameConfig = {
             debug: false
         }
     },
+    antialias: false,
 };
 
 const StartGame = (parent: string) => {
