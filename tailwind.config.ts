@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        '1xl': '1440px', // Menambahkan viewport 1440px
+      },
       fontFamily: {
         heading: ['Titania', 'serif'],
         title: ['Trirong', 'serif'],
@@ -26,7 +29,7 @@ export default {
         'pattern': "url('/svg/pattern.svg')", 
       },
       backgroundSize: {
-        'pattern-size': "100px 100px", // Menyesuaikan ukuran pattern
+        'pattern-size': "100px 100px",
       },
       animation: {
         fadeIn: 'fadeIn 1s ease-out',
@@ -67,11 +70,9 @@ export default {
           '100%': { transform: 'rotate(90deg)' },
         },
       },
-      
-
     },
   },
   plugins: [
-    require("tailwindcss-textshadow"), // Plugin text-shadow
+    require("tailwindcss-textshadow"),
   ],
 } satisfies Config;
