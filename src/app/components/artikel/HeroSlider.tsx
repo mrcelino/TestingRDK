@@ -14,13 +14,13 @@ interface Props {
 
 export default function HeroSlider({ articles, isLoading }: Props) {
 	const regularArticles = articles.filter(
-		(slide) => slide.category === "Big_Agenda_Ramadhan" && slide.like >= 100
+		(slide) => slide.like >= 100
 	);
 
 	const displayedArticles =
 		regularArticles.length > 0
 			? regularArticles
-			: articles.filter((slide) => slide.category === "Big_Agenda_Ramadhan");
+			: articles.filter((slide) => slide.like >= 0);
 
 	return (
 		<div className="relative w-full  lg:h-screen">
@@ -61,7 +61,7 @@ export default function HeroSlider({ articles, isLoading }: Props) {
 					modules={[Navigation, Autoplay]}
 					className="w-full h-full"
 				>
-					{articles.map((article) => (
+					{articles.slice(0, 5).map((article) => (
 						<SwiperSlide key={article.id}>
 							<div className="relative w-full h-full ">
 								<Link href={`/artikel/${article.id}`}>

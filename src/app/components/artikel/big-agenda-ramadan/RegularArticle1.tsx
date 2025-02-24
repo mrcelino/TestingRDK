@@ -23,19 +23,10 @@ export default function RegularArticles1({ articles, isLoading }: Props) {
 		};
 		fetchArticles();
 	}, [articles]);
-	//   const [isLoading, setIsLoading] = useState(true);
-	const regularArticles = article.filter(
-		(slide) =>
-			slide.category === "Big_Agenda_Ramadhan" &&
-			slide.like >= 0 &&
-			slide.like <= 50
-	);
 
-	// Jika regularArticles kosong, menggunakan semua artikel dengan kategori "Big_Agenda_Ramadhan"
-	const displayedArticles =
-		regularArticles.length > 0
-			? regularArticles
-			: article.filter((slide) => slide.category === "Big_Agenda_Ramadhan");
+	const regularArticles = article.filter(
+		(slide) => slide.category === "Big_Agenda_Ramadhan"
+	);
 
 	const handleLike = async (articleId: number) => {
 		// Optimistic UI update
@@ -57,14 +48,18 @@ export default function RegularArticles1({ articles, isLoading }: Props) {
 		<li className="mb-10 max-w-7xl mx-auto">
 			{isLoading ? (
 				<div className="flex space-x-4 mt-6">
-					{[...Array(3)].map((_, index) => (
+					{[
+						...Array(
+							window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3
+						),
+					].map((_, index) => (
 						<div
 							key={index}
 							className="bg-gray-200 animate-pulse w-[90%] lg:w-[25rem] h-[15rem] rounded-3xl"
 						></div>
 					))}
 				</div>
-			) : displayedArticles.length > 0 ? (
+			) : regularArticles.length > 0 ? (
 				<Swiper
 					spaceBetween={20}
 					navigation={{
@@ -84,9 +79,9 @@ export default function RegularArticles1({ articles, isLoading }: Props) {
 						1024: { slidesPerView: 3 },
 					}}
 				>
-					{displayedArticles.map((slide) => (
+					{regularArticles.map((slide) => (
 						<SwiperSlide key={slide.id}>
-							<div className="my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[17rem] max-w-lg mx-auto">
+							<div className="my-4 mt-6 transition-transform duration-300 ease-in-out hover:scale-105 h-[18rem] max-w-lg mx-auto">
 								<Link
 									href={`/artikel/${slide.id}`}
 									passHref
@@ -100,7 +95,7 @@ export default function RegularArticles1({ articles, isLoading }: Props) {
 										className="rounded-t-3xl bg-black h-44 w-[500px] xl:w-full object-cover"
 									/>
 								</Link>
-								<div className="flex bg-white rounded-b-3xl border-2 relative">
+								<div className="flex justify-center bg-white rounded-b-3xl border-2 relative">
 									<div
 										className="absolute left-2 top-6 cursor-pointer"
 										onClick={() => handleLike(slide.id)}
@@ -124,7 +119,7 @@ export default function RegularArticles1({ articles, isLoading }: Props) {
 									</div>
 
 									<Link href={`/artikel/${slide.id}`}>
-										<h3 className="p-5 text-center font-bold italic text-greenCS text-sm ml-8">
+										<h3 className="p-5 text-center font-bold italic flex flex-col justify-center items-center text-greenCS text-sm ml-8 xl:min-h-[6.8rem]  min-h-[7.6rem]">
 											{slide.title}
 										</h3>
 									</Link>
