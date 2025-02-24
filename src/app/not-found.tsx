@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Custom404() {
   return (
-    <div className="w-screen h-screen flex flex-col  bg-[#21666A] items-center relative">
+    <div className="w-full h-screen flex flex-col  bg-[#21666A] items-center relative overflow-hidden">
       <div className="absolute w-full h-fit top-1/3 max-w-[1920px]">
         <div className="flex w-full justify-between opacity-75">
           <div className="bg-white h-96 w-96 rounded-full blur-[100px] opacity-[0.09]"></div>
@@ -25,7 +25,7 @@ export default function Custom404() {
         </div>
       </div>
       <div className="absolute inset-0 bg-[url('/images/jadwal/pattern-bg-mobile3.svg')] lg:bg-[url('/images/jadwal/pattern-for-bg.svg')] bg-repeat opacity-10 lg:opacity-[0.08] mix-blend-difference"></div>
-      <div className="w-full h-full relative flex flex-col items-center justify-center">
+      <div className="w-full h-full relative flex flex-col items-center justify-center overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="relative">
             <Image
@@ -45,9 +45,6 @@ export default function Custom404() {
           </div>
           <div
             className="flex flex-col justify-center items-center md:items-start mt-5 md:mt-0"
-            data-aos="fade-right"
-            data-aos-duration="800"
-            data-aos-delay="50"
           >
             <h1 className="font-heading text-[#EFC828] font-medium text-3xl md:text-4xl lg:text-8xl">
               404
@@ -59,10 +56,6 @@ export default function Custom404() {
         </div>
         <Link
           href={"/"}
-          className="mt-10"
-          data-aos="fade-up"
-          data-aos-duration="700"
-          data-aos-delay="500"
         >
           <div className="rounded-xl bg-[#EFC828] px-2 py-1 font-heading text-[#15575B] border border-black md:text-lg lg:text-2xl">
             Kembali ke Beranda
