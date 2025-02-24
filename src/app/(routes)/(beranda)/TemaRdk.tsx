@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function TemaRdk() {
 	return (
-		<div className="lg:justify-between mt-20 md:flex max-w-7xl mx-auto">
+		<div className="lg:justify-between mt-20 md:flex max-w-7xl mx-auto ">
 			{/* Maskot */}
 			<Image
 				data-aos="zoom-in" data-aos-duration="3000"

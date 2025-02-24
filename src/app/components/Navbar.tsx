@@ -43,9 +43,13 @@ export default function Navbar() {
 	};
 
 	return (
-		<nav className={`bg-gradient-to-r from-[#155458] from-30% to-[#51B2B8] text-white fixed left-1/2 transform -translate-x-1/2 z-[100] shadow-md w-full  lg:mx-auto transition-all duration-500 ${
-			isScrolled ? "lg:top-10 lg:rounded-full lg:w-[90%] xl:w-[75%]" : "lg:top-0 lg:rounded-none lg:w-full p-2"
-		}`}>
+		<nav
+			className={`bg-gradient-to-r from-[#155458] from-30% to-[#51B2B8] text-white fixed left-1/2 transform -translate-x-1/2 z-[100] shadow-md w-full lg:mx-auto transition-all duration-500 ${
+				isScrolled
+					? "lg:top-10 lg:rounded-full lg:w-[90%] xl:w-[75%]"
+					: "lg:top-0 lg:rounded-none lg:w-screen lg:p-2"
+			}`}
+		>
 			<div className="flex items-center lg:justify-between px-4 py-2">
 				{/* Hamburger Icon */}
 				<button
@@ -60,13 +64,16 @@ export default function Navbar() {
 				</button>
 
 				{/* Logo */}
-				<Image
-					src="/svg/logo-rdk.svg"
-					alt="Logo"
-					width={30}
-					height={50}
-					className="mx-auto lg:mx-0 w-10 h-10"
-				/>
+
+				<Link href="/" className="mx-auto lg:mx-0 w-10 h-10">
+					<Image
+						src="/svg/logo-rdk.svg"
+						alt="Logo"
+						width={30}
+						height={50}
+						
+					/>
+				</Link>
 
 				{/* Desktop Menu */}
 				<ul className="hidden lg:flex space-x-0 mx-auto">
@@ -140,8 +147,7 @@ function menuItems(
 				["/kegiatan/bigagenda", "/kegiatan/daily-agenda"].some((route) =>
 					pathname.startsWith(route)
 				)) ||
-
-				// Nanti cukup pakai sub menu yang salah satunya saja
+			// Nanti cukup pakai sub menu yang salah satunya saja
 			(submenu &&
 				href.startsWith("/menu") &&
 				["/menu/sahur", "/menu/buka"].some((route) =>

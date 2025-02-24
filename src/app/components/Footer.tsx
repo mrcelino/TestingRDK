@@ -305,7 +305,7 @@ export default function Footer() {
 								/>
 
 								<p className="italic text-white text-center text-xs mt-2 md:w-[130px] lg:w-full">
-									a.n. Jama&apos;ah Shalahuddin
+									a.n. Jamaah Shalahuddin UGM
 								</p>
 							</div>
 

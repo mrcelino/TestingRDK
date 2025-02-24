@@ -8,7 +8,7 @@ import RdkQuest from "./RdkQuest";
 
 export default function Home() {
 	return (
-		<main>
+		<main className="overflow-hidden">
 
 			<HeroSlider />			
 			<Head />

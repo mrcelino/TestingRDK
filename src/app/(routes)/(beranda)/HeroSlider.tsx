@@ -64,7 +64,7 @@ export default function HeroSlider() {
 
 			{/* Teks - Awalnya hidden, lalu muncul dengan animasi */}
 			<div
-				className={`z-20 absolute font-semibold text-white italic left-5 top-40 md:top-[18rem] lg:top-[19rem] max-w-7xl md:left-10 transition-all duration-1000 ${
+				className={`z-20 absolute font-semibold text-white italic left-5 top-40 md:top-[18rem] xl:top-[22rem] lg:top-[19rem] max-w-7xl md:left-10 transition-all duration-1000 ${
 					isLanding ? "opacity-0 translate-y-20" : "opacity-100"
 				}`}
 			>
