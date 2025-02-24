@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 interface MenuItem {
@@ -19,6 +19,21 @@ export default function Navbar() {
 		null
 	);
 
+	const [isScrolled, setIsScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 10) {
+				setIsScrolled(true);
+			} else {
+				setIsScrolled(false);
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
 	const toggleDropdown = (label: string) => {
 		setOpenDropdown(openDropdown === label ? null : label);
 	};
@@ -28,7 +43,9 @@ export default function Navbar() {
 	};
 
 	return (
-		<nav className="bg-gradient-to-r from-[#155458] from-30% to-[#51B2B8] text-white fixed lg:top-10 left-1/2 transform -translate-x-1/2 z-[100]  shadow-md lg:w-[90%] xl:w-[75%] w-full lg:mx-auto lg:rounded-full ">
+		<nav className={`bg-gradient-to-r from-[#155458] from-30% to-[#51B2B8] text-white fixed left-1/2 transform -translate-x-1/2 z-[100] shadow-md w-full  lg:mx-auto transition-all duration-500 ${
+			isScrolled ? "lg:top-10 lg:rounded-full lg:w-[90%] xl:w-[75%]" : "lg:top-0 lg:rounded-none lg:w-full p-2"
+		}`}>
 			<div className="flex items-center lg:justify-between px-4 py-2">
 				{/* Hamburger Icon */}
 				<button
